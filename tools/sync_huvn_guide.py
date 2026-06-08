@@ -11,7 +11,7 @@ from urllib.parse import unquote, urljoin, urlparse, urlunparse
 
 import requests
 import urllib3
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
 
 SEED_URL = (
@@ -221,10 +221,35 @@ def extract_title(soup: BeautifulSoup, fallback_url: str) -> str:
     return slug_from_url(fallback_url).replace("_", " ").title()
 
 
+def clean_html_node(main) -> None:
+    for bad in main.select(
+        "script, style, nav, header, footer, form, iframe, button, "
+        ".breadcrumb, .breadcrumbs, .migas, .social, .share, "
+        ".sidebar, .nav-wrap, .sonata-bc, #flash-messages, "
+        "#a2a_menu_container, .a2a_kit, #botones_compartir, "
+        "input[data-function='swipe'], #swipe"
+    ):
+        bad.decompose()
+
+    for comment in main.find_all(string=lambda text: isinstance(text, Comment)):
+        comment.extract()
+
+    allowed_attrs = {"href", "src", "alt", "title", "colspan", "rowspan"}
+
+    for tag in main.find_all(True):
+        for attr in list(tag.attrs):
+            if attr not in allowed_attrs:
+                del tag.attrs[attr]
+
+        if tag.name in {"font", "span"}:
+            tag.unwrap()
+            
 def find_main_element(soup: BeautifulSoup):
     selectors = [
+        "#contenido .main",
         "main",
         "article",
+        ".main",
         "#content",
         "#contenido",
         "#main-content",
@@ -247,13 +272,7 @@ def find_main_element(soup: BeautifulSoup):
 
 def extract_main_html(soup: BeautifulSoup) -> str:
     main = find_main_element(soup)
-
-    for bad in main.select(
-        "script, style, nav, header, footer, form, iframe, button, "
-        ".breadcrumb, .breadcrumbs, .migas, .social, .share"
-    ):
-        bad.decompose()
-
+    clean_html_node(main)
     return str(main).strip()
 
 
@@ -262,36 +281,61 @@ def make_summary(content_text: str) -> str:
 
 
 def infer_tags(title: str, content_text: str, url: str) -> list[str]:
-    combined = f"{title} {content_text} {url}".lower()
+    title_norm = title.lower()
+    slug_norm = slug_from_url(url).lower()
+
+    # Para evitar falsos positivos, las etiquetas principales se infieren
+    # desde el título y el último segmento de la URL, no desde todo el texto.
+    # Ejemplo: "ITU" aparecía falsamente por fragmentos como "situación".
+    category_text = f"{title_norm} {slug_norm}"
 
     tags = ["Guía de Antibioterapia"]
 
-    if any(token in combined for token in ["pediatr", "pediátr", "niño", "neonato"]):
-        tags.append("Pediatría")
+    is_pediatric = any(
+        token in category_text
+        for token in ["pediatr", "pediátr", "niño", "neonato"]
+    )
 
-    if any(token in combined for token in ["adulto", "adultos"]):
+    if is_pediatric:
+        tags.append("Pediatría")
+    elif any(token in category_text for token in ["adulto", "adultos"]):
         tags.append("Adultos")
 
-    if "sepsis" in combined:
+    if "sepsis" in category_text:
         tags.append("Sepsis")
 
-    if "neumon" in combined:
+    if "neumon" in category_text:
         tags.append("Neumonía")
 
-    if "urinari" in combined or "itu" in combined:
+    if re.search(r"\bitu\b", category_text) or "urinari" in category_text:
         tags.append("ITU")
 
-    if "intraabdominal" in combined:
+    if "intraabdominal" in category_text:
         tags.append("Intraabdominal")
 
-    if "orl" in combined:
+    if "orl" in category_text:
         tags.append("ORL")
 
-    if "meningitis" in combined:
+    if "meningitis" in category_text:
         tags.append("Meningitis")
 
-    if "piel" in combined or "partes blandas" in combined:
+    if "piel" in category_text or "partes blandas" in category_text:
         tags.append("Piel y partes blandas")
+
+    if "endovascular" in category_text:
+        tags.append("Endovascular")
+
+    if "osteoarticular" in category_text:
+        tags.append("Osteoarticular")
+
+    if "neutropenia" in category_text:
+        tags.append("Neutropenia febril")
+
+    if "gastrointestinal" in category_text:
+        tags.append("Gastrointestinal")
+
+    if "transmision_sexual" in category_text or "transmisión sexual" in category_text:
+        tags.append("ITS")
 
     return list(dict.fromkeys(tags))
 
