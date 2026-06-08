@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import unicodedata
 from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path
@@ -57,6 +58,10 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def now_epoch_ms() -> int:
+    return int(datetime.now(timezone.utc).timestamp() * 1000)
+
+
 def download_text(url: str) -> str:
     response = requests.get(
         url,
@@ -67,6 +72,27 @@ def download_text(url: str) -> str:
     response.raise_for_status()
     response.encoding = response.apparent_encoding or response.encoding
     return response.text
+
+
+def download_binary(url: str) -> tuple[bytes, str]:
+    response = requests.get(
+        url,
+        headers=HEADERS,
+        timeout=60,
+        verify=VERIFY_SSL,
+        stream=True,
+    )
+    response.raise_for_status()
+
+    chunks: list[bytes] = []
+    for chunk in response.iter_content(chunk_size=64 * 1024):
+        if chunk:
+            chunks.append(chunk)
+
+    content = b"".join(chunks)
+    content_type = response.headers.get("content-type", "")
+
+    return content, content_type
 
 
 def normalize_url(base_url: str, href: str) -> str | None:
@@ -140,6 +166,15 @@ def strip_html(html: str) -> str:
     return clean_text(soup.get_text(" "))
 
 
+def slugify(value: str, fallback: str = "resource") -> str:
+    normalized = unicodedata.normalize("NFKD", value)
+    ascii_value = normalized.encode("ascii", "ignore").decode("ascii")
+    ascii_value = ascii_value.lower()
+    ascii_value = re.sub(r"[^a-z0-9]+", "-", ascii_value)
+    ascii_value = re.sub(r"-+", "-", ascii_value).strip("-")
+    return ascii_value or fallback
+
+
 def slug_from_url(url: str) -> str:
     path = urlparse(url).path.rstrip("/")
     last = path.split("/")[-1] or "guia_de_antibioterapia"
@@ -149,6 +184,25 @@ def slug_from_url(url: str) -> str:
     last = last.replace("-", "_")
     last = re.sub(r"_+", "_", last)
     return last.strip("_") or hashlib.sha1(url.encode("utf-8")).hexdigest()[:12]
+
+
+def filename_from_url(url: str) -> str:
+    path = urlparse(url).path
+    name = unquote(path.split("/")[-1] or "documento.pdf")
+    return name.replace("_", " ")
+
+
+def resource_filename(title: str, source_url: str) -> str:
+    original_name = filename_from_url(source_url)
+    name_without_ext = original_name
+
+    if name_without_ext.lower().endswith(".pdf"):
+        name_without_ext = name_without_ext[:-4]
+
+    base = slugify(name_without_ext or title, fallback="documento")
+    digest = hashlib.sha1(source_url.encode("utf-8")).hexdigest()[:10]
+
+    return f"{base}-{digest}.pdf"
 
 
 def extract_title(soup: BeautifulSoup, fallback_url: str) -> str:
@@ -260,8 +314,10 @@ def discover_links(html: str, base_url: str) -> tuple[list[str], list[dict]]:
             pdf_resources[normalized] = {
                 "title": title,
                 "url": normalized,
+                "sourceUrl": normalized,
                 "localPath": None,
                 "lastSyncEpochMs": None,
+                "downloaded": False,
             }
             continue
 
@@ -271,13 +327,7 @@ def discover_links(html: str, base_url: str) -> tuple[list[str], list[dict]]:
     return sorted(guide_links), list(pdf_resources.values())
 
 
-def filename_from_url(url: str) -> str:
-    path = urlparse(url).path
-    name = unquote(path.split("/")[-1] or "documento.pdf")
-    return name.replace("_", " ")
-
-
-def crawl() -> tuple[list[dict], dict]:
+def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
     queue: deque[tuple[str, int, str | None]] = deque()
     queued: set[str] = set()
     visited: set[str] = set()
@@ -285,7 +335,7 @@ def crawl() -> tuple[list[dict], dict]:
     topics_by_url: dict[str, dict] = {}
     pages: list[dict] = []
     all_guide_links: set[str] = set()
-    all_pdf_links: dict[str, dict] = {}
+    all_pdf_resources: dict[str, dict] = {}
     warnings: list[dict] = []
     errors: list[dict] = []
 
@@ -319,7 +369,7 @@ def crawl() -> tuple[list[dict], dict]:
 
             all_guide_links.update(guide_links)
             for resource in pdf_resources:
-                all_pdf_links[resource["url"]] = resource
+                all_pdf_resources[resource["sourceUrl"]] = resource
 
             if depth < MAX_DEPTH:
                 for link in guide_links:
@@ -340,11 +390,11 @@ def crawl() -> tuple[list[dict], dict]:
                     "guideLinkCount": len(guide_links),
                     "pdfLinkCount": len(pdf_resources),
                     "guideLinks": guide_links,
-                    "pdfLinks": [r["url"] for r in pdf_resources],
+                    "pdfLinks": [r["sourceUrl"] for r in pdf_resources],
                 }
             )
 
-            # La página índice se usa para descubrir enlaces, pero no la guardamos como tema clínico.
+            # La página índice se usa para descubrir enlaces, pero no se guarda como tema clínico.
             if url == SEED_URL:
                 continue
 
@@ -377,7 +427,7 @@ def crawl() -> tuple[list[dict], dict]:
                 "contentHtml": main_html,
                 "contentText": content_text,
                 "updatedAt": now_iso(),
-                "lastSyncedAt": int(datetime.now(timezone.utc).timestamp() * 1000),
+                "lastSyncedAt": now_epoch_ms(),
             }
 
             topics_by_url[url] = topic
@@ -410,17 +460,102 @@ def crawl() -> tuple[list[dict], dict]:
         "visitedPageCount": len(visited),
         "topicCount": len(topics_by_url),
         "allGuideLinkCount": len(all_guide_links),
-        "allPdfLinkCount": len(all_pdf_links),
+        "allPdfLinkCount": len(all_pdf_resources),
         "pediatricCandidateCount": len(pediatric_candidates),
         "pediatricCandidates": pediatric_candidates,
         "allGuideLinks": sorted(all_guide_links),
-        "allPdfLinks": sorted(all_pdf_links),
+        "allPdfLinks": sorted(all_pdf_resources.keys()),
         "pages": pages,
         "warnings": warnings,
         "errors": errors,
     }
 
-    return list(topics_by_url.values()), debug
+    return list(topics_by_url.values()), debug, all_pdf_resources
+
+
+def download_resources(
+    source_resources: dict[str, dict],
+    warnings: list[dict],
+) -> dict[str, dict]:
+    RESOURCES_DIR.mkdir(parents=True, exist_ok=True)
+
+    downloaded_map: dict[str, dict] = {}
+
+    for source_url, resource in sorted(source_resources.items()):
+        title = resource.get("title") or filename_from_url(source_url)
+        filename = resource_filename(title, source_url)
+        output_path = RESOURCES_DIR / filename
+        public_url = f"resources/{filename}"
+
+        print(f"Descargando recurso: {title} -> {output_path}")
+
+        try:
+            content, content_type = download_binary(source_url)
+
+            if not content:
+                raise ValueError("Respuesta vacía")
+
+            output_path.write_bytes(content)
+
+            downloaded_map[source_url] = {
+                "title": title,
+                "url": public_url,
+                "sourceUrl": source_url,
+                "localPath": None,
+                "lastSyncEpochMs": None,
+                "downloaded": True,
+                "sizeBytes": len(content),
+                "contentType": content_type,
+            }
+
+        except Exception as exc:
+            warnings.append(
+                {
+                    "type": "resource_download_failed",
+                    "title": title,
+                    "sourceUrl": source_url,
+                    "errorType": exc.__class__.__name__,
+                    "error": str(exc),
+                }
+            )
+
+            # Fallback: dejamos la URL original online.
+            downloaded_map[source_url] = {
+                "title": title,
+                "url": source_url,
+                "sourceUrl": source_url,
+                "localPath": None,
+                "lastSyncEpochMs": None,
+                "downloaded": False,
+                "error": str(exc),
+            }
+
+    return downloaded_map
+
+
+def replace_topic_resources(
+    topics: list[dict],
+    resource_map: dict[str, dict],
+) -> list[dict]:
+    updated_topics: list[dict] = []
+
+    for topic in topics:
+        updated_resources = []
+
+        for resource in topic.get("resources", []):
+            source_url = resource.get("sourceUrl") or resource.get("url")
+            mapped = resource_map.get(source_url)
+
+            if mapped:
+                updated_resources.append(mapped)
+            else:
+                updated_resources.append(resource)
+
+        updated_topic = dict(topic)
+        updated_topic["resources"] = updated_resources
+        updated_topics.append(updated_topic)
+
+    return updated_topics
 
 
 def write_json(path: Path, data) -> None:
@@ -437,17 +572,22 @@ def main() -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     RESOURCES_DIR.mkdir(parents=True, exist_ok=True)
 
-    topics, debug = crawl()
+    topics, debug, source_resources = crawl()
 
-    global_resources = [
-        {
-            "title": filename_from_url(url),
-            "url": url,
-            "localPath": None,
-            "lastSyncEpochMs": None,
-        }
-        for url in debug["allPdfLinks"]
-    ]
+    resource_map = download_resources(
+        source_resources=source_resources,
+        warnings=debug["warnings"],
+    )
+
+    topics = replace_topic_resources(topics, resource_map)
+
+    global_resources = sorted(
+        resource_map.values(),
+        key=lambda item: item.get("title", "").lower(),
+    )
+
+    downloaded_resource_count = sum(1 for r in global_resources if r.get("downloaded"))
+    failed_resource_count = sum(1 for r in global_resources if not r.get("downloaded"))
 
     manifest = {
         "version": 1,
@@ -457,11 +597,16 @@ def main() -> None:
         "resourcesBaseUrl": "resources/",
         "topicCount": len(topics),
         "resourceCount": len(global_resources),
+        "downloadedResourceCount": downloaded_resource_count,
+        "failedResourceCount": failed_resource_count,
         "pediatricTopicCount": debug["pediatricCandidateCount"],
         "globalResources": global_resources,
         "warnings": debug["warnings"],
         "errors": debug["errors"],
     }
+
+    debug["downloadedResourceCount"] = downloaded_resource_count
+    debug["failedResourceCount"] = failed_resource_count
 
     write_json(GUIDE_TOPICS_OUTPUT, topics)
     write_json(MANIFEST_OUTPUT, manifest)
@@ -470,6 +615,8 @@ def main() -> None:
     print()
     print(f"Temas generados: {len(topics)}")
     print(f"PDFs detectados: {len(global_resources)}")
+    print(f"PDFs descargados: {downloaded_resource_count}")
+    print(f"PDFs fallidos: {failed_resource_count}")
     print(f"Candidatos pediátricos: {debug['pediatricCandidateCount']}")
     print(f"Warnings: {len(debug['warnings'])}")
     print(f"Errores: {len(debug['errors'])}")
