@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-08T11:52:58.858606+00:00",
+  "generatedAt": "2026-06-08T12:18:10.021181+00:00",
   "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "topicsUrl": "guide_topics.json",
   "resourcesBaseUrl": "resources/",
   "topicCount": 20,
-  "resourceCount": 10,
+  "resourceCount": 11,
   "pediatricTopicCount": 3,
   "globalResources": [
     {
@@ -57,6 +57,12 @@
       "lastSyncEpochMs": null
     },
     {
+      "title": "TRATAMIENTO DE INFECCIONES POR BGN PRODUCTORES DE MBL.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/TRATAMIENTO%20DE%20INFECCIONES%20POR%20BGN%20PRODUCTORES%20DE%20MBL.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
       "title": "profilaxis EI.pdf",
       "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/profilaxis%20EI.pdf",
       "localPath": null,
@@ -71,7 +77,7 @@
   ],
   "warnings": [
     {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast/tratamiento_de_las_infecciones_por_bgn_productores_de_mbl",
       "title": "Iniciar sesión",
       "warning": "Contenido breve: 169 caracteres"
     }
