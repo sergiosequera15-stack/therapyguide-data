@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, urlunparse
+from urllib.parse import unquote, urljoin, urlparse, urlunparse
 
 import requests
 import urllib3
@@ -25,21 +26,21 @@ GUIDE_PATH = (
 )
 
 PUBLIC_DIR = Path("public")
+RESOURCES_DIR = PUBLIC_DIR / "resources"
+
+GUIDE_TOPICS_OUTPUT = PUBLIC_DIR / "guide_topics.json"
+MANIFEST_OUTPUT = PUBLIC_DIR / "manifest.json"
 DEBUG_OUTPUT = PUBLIC_DIR / "debug_discovery.json"
 
 ALLOWED_HOSTS = {"www.huvn.es", "huvn.es"}
 
-# Profundidad:
-# 0 = página índice
-# 1 = temas enlazados desde el índice
-# 2 = subtemas enlazados desde cada tema
 MAX_DEPTH = 2
 MAX_PAGES = 80
 
-# DEMO:
-# La web HUVN dio problemas de cadena SSL en Android.
-# En esta prueba desactivamos la verificación SSL.
 VERIFY_SSL = False
+
+MIN_CONTENT_LENGTH = 80
+LOW_CONTENT_WARNING_LENGTH = 300
 
 HEADERS = {
     "User-Agent": (
@@ -94,7 +95,6 @@ def normalize_url(base_url: str, href: str) -> str | None:
     if not path:
         return None
 
-    # Normalizamos siempre a https://www.huvn.es y quitamos query/fragment.
     return urlunparse(("https", "www.huvn.es", path, "", "", ""))
 
 
@@ -135,22 +135,118 @@ def clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def strip_html(html: str) -> str:
+    soup = BeautifulSoup(html, "lxml")
+    return clean_text(soup.get_text(" "))
+
+
+def slug_from_url(url: str) -> str:
+    path = urlparse(url).path.rstrip("/")
+    last = path.split("/")[-1] or "guia_de_antibioterapia"
+    last = unquote(last)
+    last = last.lower()
+    last = re.sub(r"[^a-z0-9áéíóúüñ_-]+", "_", last)
+    last = last.replace("-", "_")
+    last = re.sub(r"_+", "_", last)
+    return last.strip("_") or hashlib.sha1(url.encode("utf-8")).hexdigest()[:12]
+
+
 def extract_title(soup: BeautifulSoup, fallback_url: str) -> str:
     h1 = soup.select_one("h1")
     if h1 and clean_text(h1.get_text()):
         return clean_text(h1.get_text())
 
     if soup.title and clean_text(soup.title.get_text()):
-        return clean_text(soup.title.get_text())
+        title = clean_text(soup.title.get_text())
+        title = title.replace("Hospital Universitario Virgen de las Nieves", "")
+        title = title.replace("Guía de Antibioterapia", "")
+        title = clean_text(title.strip("-| "))
+        if title:
+            return title
 
-    return urlparse(fallback_url).path.rstrip("/").split("/")[-1].replace("_", " ")
+    return slug_from_url(fallback_url).replace("_", " ").title()
 
 
-def discover_links(html: str, base_url: str) -> tuple[list[str], list[str]]:
+def find_main_element(soup: BeautifulSoup):
+    selectors = [
+        "main",
+        "article",
+        "#content",
+        "#contenido",
+        "#main-content",
+        ".content",
+        ".contenido",
+        ".region-content",
+        ".main-content",
+        ".node__content",
+        ".field-name-body",
+        ".field--name-body",
+    ]
+
+    for selector in selectors:
+        candidate = soup.select_one(selector)
+        if candidate and len(clean_text(candidate.get_text(" "))) > MIN_CONTENT_LENGTH:
+            return candidate
+
+    return soup.body or soup
+
+
+def extract_main_html(soup: BeautifulSoup) -> str:
+    main = find_main_element(soup)
+
+    for bad in main.select(
+        "script, style, nav, header, footer, form, iframe, button, "
+        ".breadcrumb, .breadcrumbs, .migas, .social, .share"
+    ):
+        bad.decompose()
+
+    return str(main).strip()
+
+
+def make_summary(content_text: str) -> str:
+    return clean_text(content_text)[:260]
+
+
+def infer_tags(title: str, content_text: str, url: str) -> list[str]:
+    combined = f"{title} {content_text} {url}".lower()
+
+    tags = ["Guía de Antibioterapia"]
+
+    if any(token in combined for token in ["pediatr", "pediátr", "niño", "neonato"]):
+        tags.append("Pediatría")
+
+    if any(token in combined for token in ["adulto", "adultos"]):
+        tags.append("Adultos")
+
+    if "sepsis" in combined:
+        tags.append("Sepsis")
+
+    if "neumon" in combined:
+        tags.append("Neumonía")
+
+    if "urinari" in combined or "itu" in combined:
+        tags.append("ITU")
+
+    if "intraabdominal" in combined:
+        tags.append("Intraabdominal")
+
+    if "orl" in combined:
+        tags.append("ORL")
+
+    if "meningitis" in combined:
+        tags.append("Meningitis")
+
+    if "piel" in combined or "partes blandas" in combined:
+        tags.append("Piel y partes blandas")
+
+    return list(dict.fromkeys(tags))
+
+
+def discover_links(html: str, base_url: str) -> tuple[list[str], list[dict]]:
     soup = BeautifulSoup(html, "lxml")
 
     guide_links: set[str] = set()
-    pdf_links: set[str] = set()
+    pdf_resources: dict[str, dict] = {}
 
     for a in soup.select("a[href]"):
         href = a.get("href", "")
@@ -160,23 +256,37 @@ def discover_links(html: str, base_url: str) -> tuple[list[str], list[str]]:
             continue
 
         if is_pdf_url(normalized):
-            pdf_links.add(normalized)
+            title = clean_text(a.get_text(" ")) or filename_from_url(normalized)
+            pdf_resources[normalized] = {
+                "title": title,
+                "url": normalized,
+                "localPath": None,
+                "lastSyncEpochMs": None,
+            }
             continue
 
         if is_guide_page(normalized):
             guide_links.add(normalized)
 
-    return sorted(guide_links), sorted(pdf_links)
+    return sorted(guide_links), list(pdf_resources.values())
 
 
-def crawl() -> dict:
+def filename_from_url(url: str) -> str:
+    path = urlparse(url).path
+    name = unquote(path.split("/")[-1] or "documento.pdf")
+    return name.replace("_", " ")
+
+
+def crawl() -> tuple[list[dict], dict]:
     queue: deque[tuple[str, int, str | None]] = deque()
     queued: set[str] = set()
     visited: set[str] = set()
 
+    topics_by_url: dict[str, dict] = {}
     pages: list[dict] = []
     all_guide_links: set[str] = set()
-    all_pdf_links: set[str] = set()
+    all_pdf_links: dict[str, dict] = {}
+    warnings: list[dict] = []
     errors: list[dict] = []
 
     def enqueue(url: str, depth: int, found_from: str | None) -> None:
@@ -205,30 +315,72 @@ def crawl() -> dict:
             html = download_text(url)
             soup = BeautifulSoup(html, "lxml")
 
-            guide_links, pdf_links = discover_links(html, url)
+            guide_links, pdf_resources = discover_links(html, url)
 
             all_guide_links.update(guide_links)
-            all_pdf_links.update(pdf_links)
-
-            title = extract_title(soup, url)
-            body_text = clean_text(soup.get_text(" "))
-            page_record = {
-                "url": url,
-                "depth": depth,
-                "foundFrom": found_from,
-                "title": title,
-                "htmlLength": len(html),
-                "textLength": len(body_text),
-                "guideLinkCount": len(guide_links),
-                "pdfLinkCount": len(pdf_links),
-                "guideLinks": guide_links,
-                "pdfLinks": pdf_links,
-            }
-            pages.append(page_record)
+            for resource in pdf_resources:
+                all_pdf_links[resource["url"]] = resource
 
             if depth < MAX_DEPTH:
                 for link in guide_links:
                     enqueue(link, depth + 1, url)
+
+            title = extract_title(soup, url)
+            main_html = extract_main_html(soup)
+            content_text = strip_html(main_html)
+
+            pages.append(
+                {
+                    "url": url,
+                    "depth": depth,
+                    "foundFrom": found_from,
+                    "title": title,
+                    "htmlLength": len(html),
+                    "contentTextLength": len(content_text),
+                    "guideLinkCount": len(guide_links),
+                    "pdfLinkCount": len(pdf_resources),
+                    "guideLinks": guide_links,
+                    "pdfLinks": [r["url"] for r in pdf_resources],
+                }
+            )
+
+            # La página índice se usa para descubrir enlaces, pero no la guardamos como tema clínico.
+            if url == SEED_URL:
+                continue
+
+            if len(content_text) < MIN_CONTENT_LENGTH:
+                errors.append(
+                    {
+                        "url": url,
+                        "title": title,
+                        "error": f"Contenido demasiado corto: {len(content_text)} caracteres",
+                    }
+                )
+                continue
+
+            if len(content_text) < LOW_CONTENT_WARNING_LENGTH:
+                warnings.append(
+                    {
+                        "url": url,
+                        "title": title,
+                        "warning": f"Contenido breve: {len(content_text)} caracteres",
+                    }
+                )
+
+            topic = {
+                "id": slug_from_url(url),
+                "title": title,
+                "summary": make_summary(content_text),
+                "tags": infer_tags(title, content_text, url),
+                "resources": pdf_resources,
+                "sourceUrl": url,
+                "contentHtml": main_html,
+                "contentText": content_text,
+                "updatedAt": now_iso(),
+                "lastSyncedAt": int(datetime.now(timezone.utc).timestamp() * 1000),
+            }
+
+            topics_by_url[url] = topic
 
         except Exception as exc:
             errors.append(
@@ -242,21 +394,21 @@ def crawl() -> dict:
             )
 
     pediatric_candidates = [
-        link
-        for link in sorted(all_guide_links)
+        url
+        for url in sorted(topics_by_url)
         if any(
-            token in link.lower()
+            token in url.lower()
             for token in ("pediatr", "pediatrico", "pediatrica", "neonato", "nino")
         )
     ]
 
-    return {
+    debug = {
         "generatedAt": now_iso(),
         "seedUrl": SEED_URL,
         "maxDepth": MAX_DEPTH,
         "maxPages": MAX_PAGES,
         "visitedPageCount": len(visited),
-        "pageRecordCount": len(pages),
+        "topicCount": len(topics_by_url),
         "allGuideLinkCount": len(all_guide_links),
         "allPdfLinkCount": len(all_pdf_links),
         "pediatricCandidateCount": len(pediatric_candidates),
@@ -264,8 +416,18 @@ def crawl() -> dict:
         "allGuideLinks": sorted(all_guide_links),
         "allPdfLinks": sorted(all_pdf_links),
         "pages": pages,
+        "warnings": warnings,
         "errors": errors,
     }
+
+    return list(topics_by_url.values()), debug
+
+
+def write_json(path: Path, data) -> None:
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
 
 def main() -> None:
@@ -273,26 +435,52 @@ def main() -> None:
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
+    RESOURCES_DIR.mkdir(parents=True, exist_ok=True)
 
-    result = crawl()
+    topics, debug = crawl()
 
-    DEBUG_OUTPUT.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    global_resources = [
+        {
+            "title": filename_from_url(url),
+            "url": url,
+            "localPath": None,
+            "lastSyncEpochMs": None,
+        }
+        for url in debug["allPdfLinks"]
+    ]
+
+    manifest = {
+        "version": 1,
+        "generatedAt": now_iso(),
+        "source": SEED_URL,
+        "topicsUrl": "guide_topics.json",
+        "resourcesBaseUrl": "resources/",
+        "topicCount": len(topics),
+        "resourceCount": len(global_resources),
+        "pediatricTopicCount": debug["pediatricCandidateCount"],
+        "globalResources": global_resources,
+        "warnings": debug["warnings"],
+        "errors": debug["errors"],
+    }
+
+    write_json(GUIDE_TOPICS_OUTPUT, topics)
+    write_json(MANIFEST_OUTPUT, manifest)
+    write_json(DEBUG_OUTPUT, debug)
 
     print()
-    print(f"Páginas visitadas: {result['visitedPageCount']}")
-    print(f"Enlaces de guía totales: {result['allGuideLinkCount']}")
-    print(f"PDFs totales: {result['allPdfLinkCount']}")
-    print(f"Candidatos pediátricos: {result['pediatricCandidateCount']}")
-    print(f"Errores: {len(result['errors'])}")
-    print(f"Informe escrito en: {DEBUG_OUTPUT}")
+    print(f"Temas generados: {len(topics)}")
+    print(f"PDFs detectados: {len(global_resources)}")
+    print(f"Candidatos pediátricos: {debug['pediatricCandidateCount']}")
+    print(f"Warnings: {len(debug['warnings'])}")
+    print(f"Errores: {len(debug['errors'])}")
+    print(f"Escrito: {GUIDE_TOPICS_OUTPUT}")
+    print(f"Escrito: {MANIFEST_OUTPUT}")
+    print(f"Escrito: {DEBUG_OUTPUT}")
 
-    if result["pediatricCandidates"]:
+    if debug["pediatricCandidates"]:
         print()
-        print("Candidatos pediátricos:")
-        for link in result["pediatricCandidates"]:
+        print("Temas pediátricos:")
+        for link in debug["pediatricCandidates"]:
             print(f"- {link}")
 
 
