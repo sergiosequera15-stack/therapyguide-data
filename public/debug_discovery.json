@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-08T11:41:25.901423+00:00",
+  "generatedAt": "2026-06-08T11:48:31.927519+00:00",
   "seedUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "maxDepth": 2,
   "maxPages": 80,
   "visitedPageCount": 21,
-  "pageRecordCount": 20,
+  "topicCount": 19,
   "allGuideLinkCount": 21,
   "allPdfLinkCount": 10,
   "pediatricCandidateCount": 3,
@@ -53,9 +53,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "depth": 0,
       "foundFrom": null,
-      "title": "Guía de Antibioterapia - Hospital Universitario Virgen de las Nieves",
+      "title": "Guia De Antibioterapia",
       "htmlLength": 68630,
-      "textLength": 3761,
+      "contentTextLength": 1171,
       "guideLinkCount": 16,
       "pdfLinkCount": 10,
       "guideLinks": [
@@ -77,54 +77,25 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": [
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/2.%20Sepsis%20en%20gestacio%CC%81n%20y%20puerperio.pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/20230720122820Esquema%20Sepsis-2-5%20(1).pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/CRITERIOS%20PARA%20EL%20TRASPLANTE%20FECAL%20en%20caso%20de%20infeccio%CC%81n%20por%20C.pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/Calendario%20Vacunacion%2020-06-24.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/Mapa%20Microbiologico%202024.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/PNT%20CO%CC%81DIGO%20SEPSIS%2010%20de%20enero%20de%202023.pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/RESUMEN%20Cap%C3%ADtulo%20AISLAMIENTOS%20vertical_2024.pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/20230720122820Esquema%20Sepsis-2-5%20(1).pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/2.%20Sepsis%20en%20gestacio%CC%81n%20y%20puerperio.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/TABLA%20administracion%20ATB%20para%20Enfermer%C3%ADa.pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/tripticomarzo2025.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/profilaxis%20EI.pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/tripticomarzo2025.pdf"
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/CRITERIOS%20PARA%20EL%20TRASPLANTE%20FECAL%20en%20caso%20de%20infeccio%CC%81n%20por%20C.pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/Calendario%20Vacunacion%2020-06-24.pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/RESUMEN%20Cap%C3%ADtulo%20AISLAMIENTOS%20vertical_2024.pdf"
       ]
     },
     {
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infección de Piel y Partes blandas - Hospital Universitario Virgen de las Nieves",
+      "title": "Infección de Piel y Partes blandas",
       "htmlLength": 64511,
-      "textLength": 8746,
-      "guideLinkCount": 16,
-      "pdfLinkCount": 0,
-      "guideLinks": [
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
-      ],
-      "pdfLinks": []
-    },
-    {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
-      "depth": 1,
-      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infección del Tracto Urinario - Hospital Universitario Virgen de las Nieves",
-      "htmlLength": 80066,
-      "textLength": 8259,
+      "contentTextLength": 7157,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -151,9 +122,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infección gastrointestinal - Hospital Universitario Virgen de las Nieves",
+      "title": "Infección gastrointestinal",
       "htmlLength": 62176,
-      "textLength": 11303,
+      "contentTextLength": 9738,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -180,9 +151,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infección intraabdominal complicada en pacientes adultos - Hospital Universitario Virgen de las Nieves",
+      "title": "Infección intraabdominal complicada en pacientes adultos",
       "htmlLength": 71350,
-      "textLength": 12006,
+      "contentTextLength": 10201,
       "guideLinkCount": 17,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -210,9 +181,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infección Osteoarticular - Hospital Universitario Virgen de las Nieves",
+      "title": "Infección Osteoarticular",
       "htmlLength": 79241,
-      "textLength": 7428,
+      "contentTextLength": 5869,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -239,9 +210,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infecciones de Transmisión Sexual - Hospital Universitario Virgen de las Nieves",
+      "title": "Infecciones de Transmisión Sexual",
       "htmlLength": 56385,
-      "textLength": 6090,
+      "contentTextLength": 4504,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -268,9 +239,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infecciones endovasculares - Hospital Universitario Virgen de las Nieves",
+      "title": "Infecciones endovasculares",
       "htmlLength": 71703,
-      "textLength": 8727,
+      "contentTextLength": 7162,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -297,9 +268,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infecciones oculares en pacientes adultos - Hospital Universitario Virgen de las Nieves",
+      "title": "Infecciones oculares en pacientes adultos",
       "htmlLength": 68403,
-      "textLength": 7092,
+      "contentTextLength": 5482,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -326,9 +297,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Infecciones ORL - Hospital Universitario Virgen de las Nieves",
+      "title": "Infecciones ORL",
       "htmlLength": 66733,
-      "textLength": 8405,
+      "contentTextLength": 6750,
       "guideLinkCount": 17,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -356,9 +327,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Manejo de Neutropenia Febril - Hospital Universitario Virgen de las Nieves",
+      "title": "Manejo de Neutropenia Febril",
       "htmlLength": 86045,
-      "textLength": 9076,
+      "contentTextLength": 7505,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -385,9 +356,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Meningitis bacteriana - Hospital Universitario Virgen de las Nieves",
+      "title": "Meningitis bacteriana",
       "htmlLength": 77167,
-      "textLength": 12649,
+      "contentTextLength": 11099,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -414,9 +385,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Neumonía en pacientes adultos - Hospital Universitario Virgen de las Nieves",
+      "title": "Neumonía en pacientes adultos",
       "htmlLength": 84461,
-      "textLength": 8609,
+      "contentTextLength": 6939,
       "guideLinkCount": 17,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -444,9 +415,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Síndrome febril y sepsis sin foco reconocible en Adultos - Hospital Universitario Virgen de las Nieves",
+      "title": "Síndrome febril y sepsis sin foco reconocible en Adultos",
       "htmlLength": 86182,
-      "textLength": 19664,
+      "contentTextLength": 17802,
       "guideLinkCount": 18,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -475,9 +446,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Iniciar sesión - Hospital Universitario Virgen de las Nieves",
+      "title": "Iniciar sesión",
       "htmlLength": 38707,
-      "textLength": 962,
+      "contentTextLength": 169,
       "guideLinkCount": 0,
       "pdfLinkCount": 0,
       "guideLinks": [],
@@ -487,9 +458,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast",
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Tratamiento de infecciones por P.aeruginosa según EUCAST - Hospital Universitario Virgen de las Nieves",
+      "title": "Tratamiento de infecciones por P.aeruginosa según EUCAST",
       "htmlLength": 54114,
-      "textLength": 2435,
+      "contentTextLength": 780,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -513,12 +484,28 @@
       "pdfLinks": []
     },
     {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "depth": 2,
+      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "title": "Infección intraabdominal en pacientes pediátricos",
+      "htmlLength": 58809,
+      "contentTextLength": 3015,
+      "guideLinkCount": 3,
+      "pdfLinkCount": 0,
+      "guideLinks": [
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      ],
+      "pdfLinks": []
+    },
+    {
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
       "depth": 2,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
-      "title": "Infecciones ORL en pacientes pediátricos - Hospital Universitario Virgen de las Nieves",
+      "title": "Infecciones ORL en pacientes pediátricos",
       "htmlLength": 72927,
-      "textLength": 7143,
+      "contentTextLength": 6068,
       "guideLinkCount": 3,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -532,9 +519,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
       "depth": 2,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-      "title": "Neumonía en paciente pediátrico - Hospital Universitario Virgen de las Nieves",
+      "title": "Neumonía en paciente pediátrico",
       "htmlLength": 99495,
-      "textLength": 14611,
+      "contentTextLength": 13558,
       "guideLinkCount": 3,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -548,9 +535,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/diagnostico_microbiologico_en_sepsis_1",
       "depth": 2,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-      "title": "Diagnostico microbiológico en Sepsis - Hospital Universitario Virgen de las Nieves",
+      "title": "Diagnostico microbiológico en Sepsis",
       "htmlLength": 48409,
-      "textLength": 3245,
+      "contentTextLength": 2032,
       "guideLinkCount": 4,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -565,9 +552,9 @@
       "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
       "depth": 2,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-      "title": "SEPSIS EN GESTACIÓN Y PUERPERIO - Hospital Universitario Virgen de las Nieves",
+      "title": "SEPSIS EN GESTACIÓN Y PUERPERIO",
       "htmlLength": 94191,
-      "textLength": 14554,
+      "contentTextLength": 13356,
       "guideLinkCount": 4,
       "pdfLinkCount": 0,
       "guideLinks": [
@@ -579,11 +566,18 @@
       "pdfLinks": []
     }
   ],
+  "warnings": [
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "title": "Iniciar sesión",
+      "warning": "Contenido breve: 169 caracteres"
+    }
+  ],
   "errors": [
     {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
-      "depth": 2,
-      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "depth": 1,
+      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "errorType": "ReadTimeout",
       "error": "HTTPSConnectionPool(host='www.huvn.es', port=443): Read timed out. (read timeout=30)"
     }
