@@ -1,10 +1,80 @@
 {
   "version": 1,
-  "generatedAt": null,
+  "generatedAt": "2026-06-08T11:52:58.858606+00:00",
   "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "topicsUrl": "guide_topics.json",
   "resourcesBaseUrl": "resources/",
-  "topicCount": 0,
-  "resourceCount": 0,
-  "notes": "Archivo inicial. Se actualizará automáticamente con GitHub Actions."
+  "topicCount": 20,
+  "resourceCount": 10,
+  "pediatricTopicCount": 3,
+  "globalResources": [
+    {
+      "title": "2. Sepsis en gestación y puerperio.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/2.%20Sepsis%20en%20gestacio%CC%81n%20y%20puerperio.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "20230720122820Esquema Sepsis-2-5 (1).pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/20230720122820Esquema%20Sepsis-2-5%20(1).pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "CRITERIOS PARA EL TRASPLANTE FECAL en caso de infección por C.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/CRITERIOS%20PARA%20EL%20TRASPLANTE%20FECAL%20en%20caso%20de%20infeccio%CC%81n%20por%20C.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "Calendario Vacunacion 20-06-24.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/Calendario%20Vacunacion%2020-06-24.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "Mapa Microbiologico 2024.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/Mapa%20Microbiologico%202024.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "PNT CÓDIGO SEPSIS 10 de enero de 2023.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/PNT%20CO%CC%81DIGO%20SEPSIS%2010%20de%20enero%20de%202023.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "RESUMEN Capítulo AISLAMIENTOS vertical 2024.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/RESUMEN%20Cap%C3%ADtulo%20AISLAMIENTOS%20vertical_2024.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "TABLA administracion ATB para Enfermería.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/TABLA%20administracion%20ATB%20para%20Enfermer%C3%ADa.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "profilaxis EI.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/profilaxis%20EI.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    },
+    {
+      "title": "tripticomarzo2025.pdf",
+      "url": "https://www.huvn.es/archivos/cms/goa/archivos/publico/tripticomarzo2025.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null
+    }
+  ],
+  "warnings": [
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "title": "Iniciar sesión",
+      "warning": "Contenido breve: 169 caracteres"
+    }
+  ],
+  "errors": []
 }
