@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T12:18:10.020891+00:00",
+  "generatedAt": "2026-06-08T12:33:19.435984+00:00",
   "seedUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "maxDepth": 2,
   "maxPages": 80,
@@ -590,5 +590,7 @@
       "warning": "Contenido breve: 169 caracteres"
     }
   ],
-  "errors": []
+  "errors": [],
+  "downloadedResourceCount": 11,
+  "failedResourceCount": 0
 }
