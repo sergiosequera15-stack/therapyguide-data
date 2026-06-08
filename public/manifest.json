@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "generatedAt": null,
+  "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+  "topicsUrl": "guide_topics.json",
+  "resourcesBaseUrl": "resources/",
+  "topicCount": 0,
+  "resourceCount": 0,
+  "notes": "Archivo inicial. Se actualizará automáticamente con GitHub Actions."
+}
