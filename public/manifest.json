@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-08T12:33:45.715185+00:00",
+  "generatedAt": "2026-06-08T12:56:23.029082+00:00",
   "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "topicsUrl": "guide_topics.json",
   "resourcesBaseUrl": "resources/",
-  "topicCount": 20,
+  "topicCount": 19,
   "resourceCount": 11,
   "downloadedResourceCount": 11,
   "failedResourceCount": 0,
@@ -121,12 +121,6 @@
       "contentType": "application/pdf"
     }
   ],
-  "warnings": [
-    {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast/tratamiento_de_las_infecciones_por_bgn_productores_de_mbl",
-      "title": "Iniciar sesión",
-      "warning": "Contenido breve: 169 caracteres"
-    }
-  ],
+  "warnings": [],
   "errors": []
 }
