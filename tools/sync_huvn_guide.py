@@ -26,7 +26,7 @@ GUIDE_PATH = (
     "guia_de_antibioterapia"
 )
 
-PUBLIC_DIR = Path("public")
+PUBLIC_DIR = Path("docs")
 RESOURCES_DIR = PUBLIC_DIR / "resources"
 
 GUIDE_TOPICS_OUTPUT = PUBLIC_DIR / "guide_topics.json"
