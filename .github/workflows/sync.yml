@@ -25,6 +25,72 @@ jobs:
       - name: Run HUVN guide sync script
         run: python tools/sync_huvn_guide.py
 
+      - name: Verify structured guide data
+        run: |
+          python <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          manifest_path = Path("docs/manifest.json")
+          topics_path = Path("docs/guide_topics.json")
+
+          if not manifest_path.exists():
+              sys.exit("ERROR: docs/manifest.json does not exist")
+
+          if not topics_path.exists():
+              sys.exit("ERROR: docs/guide_topics.json does not exist")
+
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          topics = json.loads(topics_path.read_text(encoding="utf-8"))
+
+          if manifest.get("version") != 2:
+              sys.exit(f"ERROR: manifest version is {manifest.get('version')}, expected 2")
+
+          if "contentBlockCount" not in manifest:
+              sys.exit("ERROR: manifest lacks contentBlockCount")
+
+          if "tableBlockCount" not in manifest:
+              sys.exit("ERROR: manifest lacks tableBlockCount")
+
+          if manifest.get("topicCount") != len(topics):
+              sys.exit(
+                  f"ERROR: manifest topicCount {manifest.get('topicCount')} "
+                  f"does not match topics length {len(topics)}"
+              )
+
+          missing = [topic.get("id") for topic in topics if "contentBlocks" not in topic]
+          if missing:
+              sys.exit(f"ERROR: topics without contentBlocks: {missing[:5]}")
+
+          total_blocks = sum(len(topic.get("contentBlocks", [])) for topic in topics)
+          table_blocks = sum(
+              1
+              for topic in topics
+              for block in topic.get("contentBlocks", [])
+              if block.get("type") == "table"
+          )
+
+          if total_blocks == 0:
+              sys.exit("ERROR: no contentBlocks generated")
+
+          if manifest.get("contentBlockCount") != total_blocks:
+              sys.exit(
+                  f"ERROR: manifest contentBlockCount {manifest.get('contentBlockCount')} "
+                  f"does not match computed {total_blocks}"
+              )
+
+          if manifest.get("tableBlockCount") != table_blocks:
+              sys.exit(
+                  f"ERROR: manifest tableBlockCount {manifest.get('tableBlockCount')} "
+                  f"does not match computed {table_blocks}"
+              )
+
+          print(f"Structured topics OK: {len(topics)} topics")
+          print(f"Content blocks: {total_blocks}")
+          print(f"Table blocks: {table_blocks}")
+          PY
+
       - name: Commit generated guide data
         run: |
           git config user.name "github-actions"
