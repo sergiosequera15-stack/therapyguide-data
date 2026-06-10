@@ -25,6 +25,9 @@ jobs:
       - name: Run HUVN guide sync script
         run: python tools/sync_huvn_guide.py
 
+      - name: Enrich resource metadata
+        run: python tools/enrich_resources.py
+
       - name: Verify structured guide data
         run: |
           python <<'PY'
@@ -52,6 +55,9 @@ jobs:
 
           if "tableBlockCount" not in manifest:
               sys.exit("ERROR: manifest lacks tableBlockCount")
+
+          if manifest.get("resourceHashAlgorithm") != "sha256":
+              sys.exit("ERROR: manifest lacks SHA-256 resource hash metadata")
 
           if manifest.get("topicCount") != len(topics):
               sys.exit(
@@ -86,9 +92,25 @@ jobs:
                   f"does not match computed {table_blocks}"
               )
 
+          downloaded_resources = [
+              resource
+              for resource in manifest.get("globalResources", [])
+              if resource.get("downloaded")
+          ]
+
+          missing_hash = [
+              resource.get("title") or resource.get("url")
+              for resource in downloaded_resources
+              if not resource.get("sha256") or not resource.get("version")
+          ]
+
+          if missing_hash:
+              sys.exit(f"ERROR: downloaded resources without hash metadata: {missing_hash[:5]}")
+
           print(f"Structured topics OK: {len(topics)} topics")
           print(f"Content blocks: {total_blocks}")
           print(f"Table blocks: {table_blocks}")
+          print(f"Downloaded resources with SHA-256: {len(downloaded_resources)}")
           PY
 
       - name: Commit generated guide data
