@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generatedAt": "2026-06-09T08:11:38.622676+00:00",
+  "version": 2,
+  "generatedAt": "2026-06-10T10:45:03.317519+00:00",
   "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "topicsUrl": "guide_topics.json",
   "resourcesBaseUrl": "resources/",
@@ -9,6 +9,8 @@
   "downloadedResourceCount": 11,
   "failedResourceCount": 0,
   "pediatricTopicCount": 3,
+  "contentBlockCount": 681,
+  "tableBlockCount": 4,
   "globalResources": [
     {
       "title": "Calendario vacunación 2024",
