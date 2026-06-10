@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-10T00:00:00Z",
+  "entries": [
+    {
+      "id": "2026-06-10-structured-content",
+      "date": "2026-06-10",
+      "type": "app_data_structure",
+      "title": "Mejoras en la visualización de contenidos",
+      "description": "Se ha preparado la guía para mostrar contenidos estructurados, incluidas tablas de tratamiento, desde los datos remotos.",
+      "priority": "normal"
+    },
+    {
+      "id": "2026-06-10-remote-services",
+      "date": "2026-06-10",
+      "type": "app_config_updated",
+      "title": "Lista de servicios configurable",
+      "description": "La lista de servicios consultantes pasa a gestionarse desde la configuración remota de la app.",
+      "priority": "normal"
+    }
+  ]
+}
