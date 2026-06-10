@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-10T00:00:00Z",
+  "services": [
+    "Urgencias",
+    "Medicina Interna",
+    "Pediatría",
+    "UCI",
+    "Farmacia",
+    "Microbiología",
+    "Neumología",
+    "Digestivo",
+    "Urología",
+    "Hematología",
+    "Oncología",
+    "Cirugía",
+    "Traumatología",
+    "Ginecología/Obstetricia",
+    "Atención Primaria",
+    "Medicina Preventiva",
+    "Enfermedades Infecciosas",
+    "Otro servicio"
+  ],
+  "notices": [],
+  "changelogUrl": "changelog.json"
+}
