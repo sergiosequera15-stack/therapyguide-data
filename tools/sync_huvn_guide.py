@@ -12,6 +12,7 @@ from urllib.parse import unquote, urljoin, urlparse, urlunparse
 import requests
 import urllib3
 from bs4 import BeautifulSoup, Comment
+from bs4.element import NavigableString, Tag
 
 
 SEED_URL = (
@@ -52,6 +53,9 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "es-ES,es;q=0.9",
 }
+
+
+ContentBlock = dict
 
 
 def now_iso() -> str:
@@ -161,6 +165,13 @@ def clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def clean_multiline_text(text: str) -> str:
+    text = text.replace("\xa0", " ")
+    lines = [clean_text(line) for line in text.splitlines()]
+    lines = [line for line in lines if line]
+    return "\n".join(lines).strip()
+
+
 def strip_html(html: str) -> str:
     soup = BeautifulSoup(html, "lxml")
     return clean_text(soup.get_text(" "))
@@ -243,7 +254,8 @@ def clean_html_node(main) -> None:
 
         if tag.name in {"font", "span"}:
             tag.unwrap()
-            
+
+
 def find_main_element(soup: BeautifulSoup):
     selectors = [
         "#contenido .main",
@@ -278,6 +290,159 @@ def extract_main_html(soup: BeautifulSoup) -> str:
 
 def make_summary(content_text: str) -> str:
     return clean_text(content_text)[:260]
+
+
+def text_with_line_breaks(element: Tag) -> str:
+    clone = BeautifulSoup(str(element), "lxml")
+
+    for br in clone.find_all("br"):
+        br.replace_with("\n")
+
+    return clean_multiline_text(clone.get_text("\n"))
+
+
+def parse_int_attr(tag: Tag, attr: str) -> int:
+    raw_value = tag.get(attr)
+
+    if raw_value is None:
+        return 1
+
+    try:
+        value = int(str(raw_value).strip())
+    except ValueError:
+        return 1
+
+    return max(value, 1)
+
+
+def parse_table(table: Tag) -> ContentBlock | None:
+    rows: list[list[dict]] = []
+    caption_tag = table.find("caption")
+    caption = text_with_line_breaks(caption_tag) if isinstance(caption_tag, Tag) else None
+
+    for tr in table.find_all("tr"):
+        cells: list[dict] = []
+
+        for cell in tr.find_all(["th", "td"], recursive=False):
+            if not isinstance(cell, Tag):
+                continue
+
+            text = text_with_line_breaks(cell)
+            html = str(cell).strip()
+
+            if not text and not html:
+                continue
+
+            cells.append(
+                {
+                    "text": text,
+                    "html": html,
+                    "header": cell.name == "th",
+                    "colspan": parse_int_attr(cell, "colspan"),
+                    "rowspan": parse_int_attr(cell, "rowspan"),
+                }
+            )
+
+        if cells:
+            rows.append(cells)
+
+    if not rows:
+        return None
+
+    has_header = any(cell.get("header") for cell in rows[0])
+
+    return {
+        "type": "table",
+        "caption": caption,
+        "hasHeader": has_header,
+        "rows": rows,
+    }
+
+
+def html_block_from_tag(tag: Tag) -> ContentBlock | None:
+    html = str(tag).strip()
+    text = clean_text(tag.get_text(" "))
+
+    if not html or not text:
+        return None
+
+    return {
+        "type": "html",
+        "html": html,
+        "text": text,
+    }
+
+
+def node_to_content_blocks(node) -> list[ContentBlock]:
+    if isinstance(node, NavigableString):
+        text = clean_text(str(node))
+        if not text:
+            return []
+        return [
+            {
+                "type": "html",
+                "html": f"<p>{escape_html(text)}</p>",
+                "text": text,
+            }
+        ]
+
+    if not isinstance(node, Tag):
+        return []
+
+    if node.name == "table":
+        table_block = parse_table(node)
+        return [table_block] if table_block else []
+
+    if node.find("table"):
+        blocks: list[ContentBlock] = []
+        for child in node.children:
+            blocks.extend(node_to_content_blocks(child))
+        return blocks
+
+    block = html_block_from_tag(node)
+    return [block] if block else []
+
+
+def meaningful_children(root: Tag | BeautifulSoup) -> list:
+    children = [child for child in root.children if not _is_blank_node(child)]
+
+    if len(children) == 1 and isinstance(children[0], Tag):
+        only_child = children[0]
+        if only_child.name in {"div", "main", "article", "section"}:
+            return [child for child in only_child.children if not _is_blank_node(child)]
+
+    return children
+
+
+def _is_blank_node(node) -> bool:
+    if isinstance(node, NavigableString):
+        return not clean_text(str(node))
+
+    if isinstance(node, Tag):
+        return not clean_text(node.get_text(" ")) and not node.find("table")
+
+    return True
+
+
+def extract_content_blocks(main_html: str) -> list[ContentBlock]:
+    soup = BeautifulSoup(main_html, "lxml")
+    root = soup.body or soup
+
+    blocks: list[ContentBlock] = []
+    for child in meaningful_children(root):
+        blocks.extend(node_to_content_blocks(child))
+
+    return blocks
+
+
+def escape_html(value: str) -> str:
+    return (
+        value.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&#039;")
+    )
 
 
 def infer_tags(title: str, content_text: str, url: str) -> list[str]:
@@ -403,8 +568,6 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
 
         visited.add(url)
 
-        print(f"[depth={depth}] Descargando: {url}")
-
         try:
             html = download_text(url)
             soup = BeautifulSoup(html, "lxml")
@@ -422,6 +585,8 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
             title = extract_title(soup, url)
             main_html = extract_main_html(soup)
             content_text = strip_html(main_html)
+            content_blocks = extract_content_blocks(main_html)
+            table_block_count = sum(1 for block in content_blocks if block.get("type") == "table")
 
             pages.append(
                 {
@@ -431,6 +596,8 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
                     "title": title,
                     "htmlLength": len(html),
                     "contentTextLength": len(content_text),
+                    "contentBlockCount": len(content_blocks),
+                    "tableBlockCount": table_block_count,
                     "guideLinkCount": len(guide_links),
                     "pdfLinkCount": len(pdf_resources),
                     "guideLinks": guide_links,
@@ -470,6 +637,7 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
                 "sourceUrl": url,
                 "contentHtml": main_html,
                 "contentText": content_text,
+                "contentBlocks": content_blocks,
                 "updatedAt": now_iso(),
                 "lastSyncedAt": now_epoch_ms(),
             }
@@ -496,6 +664,16 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
         )
     ]
 
+    total_content_blocks = sum(
+        len(topic.get("contentBlocks", [])) for topic in topics_by_url.values()
+    )
+    total_table_blocks = sum(
+        1
+        for topic in topics_by_url.values()
+        for block in topic.get("contentBlocks", [])
+        if block.get("type") == "table"
+    )
+
     debug = {
         "generatedAt": now_iso(),
         "seedUrl": SEED_URL,
@@ -503,6 +681,8 @@ def crawl() -> tuple[list[dict], dict, dict[str, dict]]:
         "maxPages": MAX_PAGES,
         "visitedPageCount": len(visited),
         "topicCount": len(topics_by_url),
+        "contentBlockCount": total_content_blocks,
+        "tableBlockCount": total_table_blocks,
         "allGuideLinkCount": len(all_guide_links),
         "allPdfLinkCount": len(all_pdf_resources),
         "pediatricCandidateCount": len(pediatric_candidates),
@@ -634,7 +814,7 @@ def main() -> None:
     failed_resource_count = sum(1 for r in global_resources if not r.get("downloaded"))
 
     manifest = {
-        "version": 1,
+        "version": 2,
         "generatedAt": now_iso(),
         "source": SEED_URL,
         "topicsUrl": "guide_topics.json",
@@ -644,6 +824,8 @@ def main() -> None:
         "downloadedResourceCount": downloaded_resource_count,
         "failedResourceCount": failed_resource_count,
         "pediatricTopicCount": debug["pediatricCandidateCount"],
+        "contentBlockCount": debug["contentBlockCount"],
+        "tableBlockCount": debug["tableBlockCount"],
         "globalResources": global_resources,
         "warnings": debug["warnings"],
         "errors": debug["errors"],
@@ -661,6 +843,8 @@ def main() -> None:
     print(f"PDFs detectados: {len(global_resources)}")
     print(f"PDFs descargados: {downloaded_resource_count}")
     print(f"PDFs fallidos: {failed_resource_count}")
+    print(f"Bloques de contenido: {debug['contentBlockCount']}")
+    print(f"Bloques de tabla: {debug['tableBlockCount']}")
     print(f"Candidatos pediátricos: {debug['pediatricCandidateCount']}")
     print(f"Warnings: {len(debug['warnings'])}")
     print(f"Errores: {len(debug['errors'])}")
