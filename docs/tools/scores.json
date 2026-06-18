@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Scores clínicos",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-18T00:00:00Z",
+    "validationStatus": "draft"
+  },
+  "scores": [
+    {
+      "id": "curb65",
+      "title": "CURB-65",
+      "clinicalUse": "Neumonía adquirida en la comunidad",
+      "inputs": [],
+      "scoring": [],
+      "interpretation": [],
+      "linkedSyndromes": [
+        "neumonia"
+      ],
+      "source": {
+        "sourceTopicId": null,
+        "sourceUrl": null,
+        "sourceText": null
+      },
+      "validation": {
+        "status": "draft",
+        "testCases": []
+      },
+      "enabled": false,
+      "warnings": [
+        "Placeholder estructural. No usar hasta completar fuente, fórmula e interpretación validada."
+      ]
+    }
+  ]
+}
