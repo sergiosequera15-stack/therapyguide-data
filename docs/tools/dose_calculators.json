@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "Calculadoras de dosis",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-18T00:00:00Z",
+    "validationStatus": "draft",
+    "allowedFormulaKinds": [
+      "mg_per_kg",
+      "mg_per_kg_per_day",
+      "max_dose",
+      "simple_rounding",
+      "cockcroft_gault",
+      "weight_descriptor"
+    ]
+  },
+  "calculators": [
+    {
+      "id": "example_mg_per_kg_disabled",
+      "title": "Ejemplo de calculadora mg/kg pendiente de validación",
+      "type": "dose_by_weight",
+      "drug": null,
+      "enabled": false,
+      "inputs": [
+        {
+          "id": "weightKg",
+          "label": "Peso",
+          "unit": "kg",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "formula": {
+        "kind": "mg_per_kg",
+        "doseMgPerKg": null,
+        "frequency": null,
+        "maxDoseMg": null,
+        "rounding": null
+      },
+      "output": {
+        "unit": "mg",
+        "label": "Dosis calculada"
+      },
+      "warnings": [
+        "Calculadora pendiente de validación local. Verifique el resultado antes de usarlo.",
+        "Placeholder estructural: no contiene dosis activa."
+      ],
+      "source": {
+        "sourceTopicId": null,
+        "sourceTopicTitle": null,
+        "sourceUrl": null,
+        "sourceText": null
+      },
+      "validation": {
+        "status": "draft",
+        "testCases": []
+      }
+    }
+  ]
+}
