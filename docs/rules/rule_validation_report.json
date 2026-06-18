@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-06-18T00:00:00Z",
+  "status": "passed_with_empty_draft_rules",
+  "checkedFiles": [
+    "rules/recommendation_rules.json",
+    "rules/allergy_rules.json"
+  ],
+  "summary": {
+    "recommendationRuleCount": 0,
+    "allergyRuleCount": 0,
+    "errors": 0,
+    "warnings": 2
+  },
+  "warnings": [
+    "No hay reglas de recomendación activas todavía.",
+    "No hay reglas específicas de alergia vinculadas a escenarios clínicos todavía."
+  ],
+  "errors": []
+}
