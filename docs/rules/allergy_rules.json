@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "title": "Reglas de alergia a betalactámicos",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-18T00:00:00Z",
+    "source": "guide_topics.json",
+    "validationStatus": "draft",
+    "clinicalContentStatus": "structure_only_no_recommendations"
+  },
+  "allergyQuestion": {
+    "id": "betalactam_allergy",
+    "label": "¿Alergia a betalactámicos?",
+    "type": "single_select",
+    "required": true,
+    "options": [
+      {
+        "id": "no",
+        "label": "No"
+      },
+      {
+        "id": "penicillin_non_severe",
+        "label": "Alergia a penicilina no grave / reacción tardía leve"
+      },
+      {
+        "id": "immediate_severe",
+        "label": "Reacción inmediata grave: anafilaxia, angioedema, broncoespasmo"
+      },
+      {
+        "id": "severe_cutaneous",
+        "label": "Reacción cutánea grave: DRESS, SJS/TEN, AGEP u otra SCAR"
+      },
+      {
+        "id": "unknown",
+        "label": "Historia desconocida, incompleta o dudosa"
+      }
+    ]
+  },
+  "generalWarnings": [
+    "Antes de excluir betalactámicos debe documentarse fármaco implicado, tipo de reacción, gravedad, fecha de reacción y tolerancias posteriores.",
+    "En infección grave, anafilaxia, reacción cutánea grave o historia dudosa, valorar consulta con PROA/Alergología/Microbiología/Farmacia.",
+    "No reinterpretar alergias ni sustituir la valoración clínica."
+  ],
+  "rules": []
+}
