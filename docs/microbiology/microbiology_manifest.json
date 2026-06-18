@@ -1,21 +1,30 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "generatedAt": "2026-06-18T00:00:00Z",
-  "status": "draft",
+  "status": "draft_catalog_and_methodology_extracted",
   "title": "Mapa microbiológico HUVN",
   "currentMap": {
     "yearLabel": 2025,
-    "dataYear": 2024,
+    "dataYear": 2025,
     "path": "microbiology/microbiology_map_2025.json",
     "sourcePdf": {
       "title": "Mapa Microbiológico 2025",
-      "uploadedFileName": "Mapa Microbiologico 2025(1).pdf",
+      "uploadedFileName": "Mapa Microbiologico 2025 (1).pdf",
+      "sha256": "a3c338b169f5a54e807e003b07420494ce2e2f4803d202cf5414d67379b4825e",
+      "sizeBytes": 45735934,
+      "pageCount": 73,
       "dataRepositoryPath": null,
       "sourceUrl": null,
-      "availableInData": false
+      "availableInData": false,
+      "note": "PDF corregido aportado en conversación; pendiente de publicar el binario en DATA si se decide hacerlo por otra vía."
     },
-    "reviewStatus": "pending_extraction",
-    "interactiveMapAvailable": false
+    "reviewStatus": "pending_table_extraction_review",
+    "interactiveMapAvailable": false,
+    "catalogAvailable": true,
+    "catalogStatus": "partial_first_pass",
+    "catalogedSectionCount": 30,
+    "expectedSectionCountFromIndex": 66,
+    "recordCount": 0
   },
   "fallback": {
     "behavior": "show_notice_or_source_pdf_when_available",
@@ -27,25 +36,31 @@
       "hospital_general",
       "materno_infantil",
       "neurotraumatologia",
-      "extrahospitalario"
+      "extrahospitalario",
+      "service_specific"
     ],
     "population": [
       "adult",
-      "pediatric"
+      "pediatric",
+      "all"
     ],
     "sampleType": [
       "hemocultivo",
       "orina",
       "exudado",
-      "respiratoria",
-      "otros"
+      "respiratoria"
     ],
-    "service": [],
+    "service": [
+      "Cardiología",
+      "Cirugía"
+    ],
     "microorganism": [],
     "antibiotic": []
   },
   "warnings": [
     "No usar como mapa interactivo hasta completar extracción estructurada y revisión manual.",
-    "El informe anual puede contener tablas con bajo número de aislados; debe conservarse advertencia si n < 30."
+    "El informe anual puede contener tablas con bajo número de aislados; debe conservarse advertencia si n < 30.",
+    "El PDF corregido indica año de datos 2025.",
+    "La primera explotación publicada cataloga metodología y primeras secciones; no contiene datos numéricos activos."
   ]
 }
