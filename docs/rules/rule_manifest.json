@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-18T00:00:00Z",
+  "status": "draft",
+  "basePath": "rules/",
+  "files": {
+    "recommendationRules": {
+      "path": "rules/recommendation_rules.json",
+      "required": true,
+      "status": "draft"
+    },
+    "allergyRules": {
+      "path": "rules/allergy_rules.json",
+      "required": true,
+      "status": "draft"
+    },
+    "validationReport": {
+      "path": "rules/rule_validation_report.json",
+      "required": true,
+      "status": "draft"
+    }
+  },
+  "warnings": [
+    "Las reglas de recomendación están vacías en esta fase.",
+    "No debe activarse un generador clínico visible hasta que existan reglas con fuente y revisión manual."
+  ]
+}
