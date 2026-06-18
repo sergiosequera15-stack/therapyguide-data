@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-18T00:00:00Z",
+  "status": "draft",
+  "modules": {
+    "rules": {
+      "manifestUrl": "rules/rule_manifest.json",
+      "recommendationRulesUrl": "rules/recommendation_rules.json",
+      "allergyRulesUrl": "rules/allergy_rules.json",
+      "validationReportUrl": "rules/rule_validation_report.json",
+      "status": "draft"
+    },
+    "tools": {
+      "scoresUrl": "tools/scores.json",
+      "doseCalculatorsUrl": "tools/dose_calculators.json",
+      "validationReportUrl": "tools/tool_validation_report.json",
+      "status": "draft"
+    },
+    "microbiology": {
+      "manifestUrl": "microbiology/microbiology_manifest.json",
+      "currentMapUrl": "microbiology/microbiology_map_2025.json",
+      "status": "draft_pending_extraction"
+    }
+  },
+  "warnings": [
+    "Estos módulos son estructura de datos, no funcionalidad clínica activa.",
+    "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local."
+  ]
+}
