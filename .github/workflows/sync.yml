@@ -2,6 +2,8 @@ name: Sync HUVN Guide Data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"
 
 permissions:
   contents: write
