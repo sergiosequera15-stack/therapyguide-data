@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-18T00:00:00Z",
+  "status": "draft",
+  "title": "Mapa microbiológico HUVN",
+  "currentMap": {
+    "yearLabel": 2025,
+    "dataYear": 2024,
+    "path": "microbiology/microbiology_map_2025.json",
+    "sourcePdf": {
+      "title": "Mapa Microbiológico 2025",
+      "uploadedFileName": "Mapa Microbiologico 2025(1).pdf",
+      "dataRepositoryPath": null,
+      "sourceUrl": null,
+      "availableInData": false
+    },
+    "reviewStatus": "pending_extraction",
+    "interactiveMapAvailable": false
+  },
+  "fallback": {
+    "behavior": "show_notice_or_source_pdf_when_available",
+    "message": "Mapa microbiológico interactivo pendiente de extracción y validación. Consultar el PDF original hasta revisión manual."
+  },
+  "supportedDimensions": {
+    "scope": [
+      "huvn",
+      "hospital_general",
+      "materno_infantil",
+      "neurotraumatologia",
+      "extrahospitalario"
+    ],
+    "population": [
+      "adult",
+      "pediatric"
+    ],
+    "sampleType": [
+      "hemocultivo",
+      "orina",
+      "exudado",
+      "respiratoria",
+      "otros"
+    ],
+    "service": [],
+    "microorganism": [],
+    "antibiotic": []
+  },
+  "warnings": [
+    "No usar como mapa interactivo hasta completar extracción estructurada y revisión manual.",
+    "El informe anual puede contener tablas con bajo número de aislados; debe conservarse advertencia si n < 30."
+  ]
+}
