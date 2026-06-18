@@ -125,6 +125,37 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
             "microbiology map has records but manualReviewStatus is not reviewed",
         )
 
+    section_catalog = microbiology_map.get("sectionCatalog") or []
+    require(isinstance(section_catalog, list), "microbiology_map_2025.sectionCatalog must be a list")
+
+    for index, section in enumerate(section_catalog):
+        prefix = f"microbiology_map_2025.sectionCatalog[{index}]"
+        require(section.get("id"), f"{prefix} lacks id")
+        require(section.get("title"), f"{prefix} lacks title")
+        require(section.get("printedPage"), f"{prefix} lacks printedPage")
+        require(section.get("pdfPage"), f"{prefix} lacks pdfPage")
+        require(section.get("scope"), f"{prefix} lacks scope")
+        require(section.get("contentType"), f"{prefix} lacks contentType")
+
+    mechanism_records = microbiology_map.get("resistanceMechanismRecords") or []
+    require(
+        isinstance(mechanism_records, list),
+        "microbiology_map_2025.resistanceMechanismRecords must be a list",
+    )
+
+    for index, record in enumerate(mechanism_records):
+        prefix = f"microbiology_map_2025.resistanceMechanismRecords[{index}]"
+        require(record.get("microorganism"), f"{prefix} lacks microorganism")
+        require(record.get("resistanceMechanism"), f"{prefix} lacks resistanceMechanism")
+        require(isinstance(record.get("count"), (int, float)), f"{prefix} lacks numeric count")
+        require(isinstance(record.get("percent"), (int, float)), f"{prefix} lacks numeric percent")
+        require(record.get("source"), f"{prefix} lacks source")
+        review = record.get("review") or {}
+        require(review.get("status"), f"{prefix} lacks review.status")
+
+        if review.get("status") == "reviewed":
+            require(review.get("reviewedAt"), f"{prefix} reviewed record lacks reviewedAt")
+
 
 def main() -> None:
     for path in REQUIRED_FILES:
@@ -149,6 +180,8 @@ def main() -> None:
     print(f"Dose calculators: {len(dose_calculators.get('calculators', []))}")
     print(f"Scores: {len(scores.get('scores', []))}")
     print(f"Microbiology records: {len(microbiology_map.get('records', []))}")
+    print(f"Microbiology sections: {len(microbiology_map.get('sectionCatalog', []))}")
+    print(f"Microbiology resistance mechanism records: {len(microbiology_map.get('resistanceMechanismRecords', []))}")
 
 
 if __name__ == "__main__":
