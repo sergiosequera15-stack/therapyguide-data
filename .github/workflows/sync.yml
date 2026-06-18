@@ -30,6 +30,9 @@ jobs:
       - name: Enrich resource metadata
         run: python tools/enrich_resources.py
 
+      - name: Publish data module manifest
+        run: python tools/update_data_module_manifest.py
+
       - name: Verify structured guide data
         run: |
           python <<'PY'
@@ -109,11 +112,18 @@ jobs:
           if missing_hash:
               sys.exit(f"ERROR: downloaded resources without hash metadata: {missing_hash[:5]}")
 
+          if "dataModules" not in manifest:
+              sys.exit("ERROR: manifest lacks dataModules")
+
           print(f"Structured topics OK: {len(topics)} topics")
           print(f"Content blocks: {total_blocks}")
           print(f"Table blocks: {table_blocks}")
           print(f"Downloaded resources with SHA-256: {len(downloaded_resources)}")
+          print("Data modules published in manifest")
           PY
+
+      - name: Verify data modules
+        run: python tools/validate_data_modules.py
 
       - name: Commit generated guide data
         run: |
