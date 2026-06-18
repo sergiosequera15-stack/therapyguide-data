@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "title": "Mapa Microbiológico 2025 HUVN",
+    "version": "0.1.0",
+    "yearLabel": 2025,
+    "dataYear": 2024,
+    "generatedAt": "2026-06-18T00:00:00Z",
+    "sourcePdf": {
+      "title": "Mapa Microbiológico 2025",
+      "uploadedFileName": "Mapa Microbiologico 2025(1).pdf",
+      "dataRepositoryPath": null,
+      "sourceUrl": null,
+      "availableInData": false
+    },
+    "extractionStatus": "not_extracted",
+    "manualReviewStatus": "pending",
+    "interactiveUseAllowed": false
+  },
+  "methodologyNotes": [
+    "Placeholder estructural. Los datos numéricos no han sido extraídos todavía.",
+    "El informe agrupa categorías S e I para calcular sensibilidad.",
+    "Debe conservarse advertencia de escaso valor estadístico cuando n < 30.",
+    "La extracción debe realizarse fuera de la app y revisarse manualmente antes de activar el mapa interactivo."
+  ],
+  "records": [],
+  "schema": {
+    "scope": "huvn|hospital_general|materno_infantil|neurotraumatologia|extrahospitalario|service_specific",
+    "population": "adult|pediatric|all|null",
+    "sampleType": "hemocultivo|orina|exudado|respiratoria|other|null",
+    "service": "string|null",
+    "microorganism": "string",
+    "antibiotic": "string",
+    "isolatesTested": "number|null",
+    "susceptibilityPercent": "number|null",
+    "resistanceMechanisms": "array",
+    "lowCountWarning": "boolean",
+    "source": {
+      "pdfPage": "number|null",
+      "tableTitle": "string|null",
+      "sourceText": "string|null"
+    },
+    "review": {
+      "status": "pending|reviewed|rejected",
+      "reviewer": "string|null",
+      "reviewedAt": "string|null"
+    }
+  },
+  "warnings": [
+    "Mapa microbiológico interactivo pendiente de validación. Consultar el PDF original.",
+    "No hay registros estructurados activos en esta versión."
+  ]
+}
