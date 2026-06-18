@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-06-18T00:00:00Z",
+  "status": "passed_with_disabled_draft_tools",
+  "checkedFiles": [
+    "tools/scores.json",
+    "tools/dose_calculators.json"
+  ],
+  "summary": {
+    "scoreCount": 1,
+    "calculatorCount": 1,
+    "enabledCalculatorCount": 0,
+    "validatedCalculatorCount": 0,
+    "errors": 0,
+    "warnings": 2
+  },
+  "warnings": [
+    "Todos los scores están en estado draft o sin implementación completa.",
+    "No hay calculadoras activas validadas todavía."
+  ],
+  "errors": []
+}
