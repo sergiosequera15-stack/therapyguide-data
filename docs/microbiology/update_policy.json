@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Política de actualización del módulo microbiológico",
+    "version": "0.1.0",
+    "createdAt": "2026-06-19T00:00:00Z",
+    "status": "active_policy"
+  },
+  "policy": {
+    "rationale": "El mapa microbiológico HUVN tiene actualización anual; no justifica una regeneración semanal de datos microbiológicos estructurados.",
+    "scheduledRefresh": {
+      "frequency": "twice_yearly",
+      "months": [
+        1,
+        7
+      ],
+      "cron": "0 5 1 1,7 *"
+    },
+    "manualRefresh": {
+      "enabled": true,
+      "useCases": [
+        "nuevo PDF anual del mapa microbiológico",
+        "corrección de erratas del PDF fuente",
+        "corrección manual de extracción",
+        "publicación urgente de un recurso validado"
+      ]
+    },
+    "clinicalActivationRules": [
+      "Los datos extraídos deben permanecer interactiveUseAllowed=false hasta revisión manual.",
+      "Los registros con n < 30 deben mantener advertencia estadística.",
+      "La consolidación automática no equivale a validación clínica.",
+      "Antes de activar datos en app, debe existir QA sin conflictos y revisión manual documentada."
+    ]
+  }
+}
