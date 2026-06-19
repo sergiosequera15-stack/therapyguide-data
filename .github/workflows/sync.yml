@@ -128,6 +128,12 @@ jobs:
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
+      - name: Validate pending microbiology table extractions
+        run: python tools/validate_microbiology_pending_tables.py
+
+      - name: Consolidate enterobacteria pending extraction and QA
+        run: python tools/consolidate_enterobacteria_pending.py
+
       - name: Commit generated guide data
         run: |
           git config user.name "github-actions"
