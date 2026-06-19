@@ -1,0 +1,136 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-19T00:00:00Z",
+  "status": "draft_pending_manual_review",
+  "title": "Gestor de consultas microbiológicas HUVN",
+  "description": "Contrato de datos para preparar consultas estructuradas del mapa microbiológico HUVN sin activar soporte a la decisión clínica.",
+  "clinicalDecisionSupport": false,
+  "interactiveUseAllowed": false,
+  "queryPreviewAllowed": true,
+  "therapeuticRecommendationAllowed": false,
+  "requiresManualReviewBeforeClinicalUse": true,
+  "source": {
+    "title": "Mapa Microbiológico 2025",
+    "uploadedFileName": "Mapa Microbiologico 2025 (1).pdf",
+    "sha256": "a3c338b169f5a54e807e003b07420494ce2e2f4803d202cf5414d67379b4825e",
+    "dataYear": 2025,
+    "pageCount": 73,
+    "status": "source_pdf_registered_not_published_as_binary"
+  },
+  "datasets": [
+    {
+      "id": "antibiotic_abbreviations_2025",
+      "title": "Diccionario de abreviaturas antibióticas 2025",
+      "url": "microbiology/antibiotic_abbreviations_2025.json",
+      "status": "draft_pending_manual_review",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_bgn_non_enterobacteria_susceptibility_2025",
+      "title": "Sensibilidad HUVN BGN no enterobacterias 2025",
+      "url": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
+      "status": "draft_pending_manual_review",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_consolidated_pending_2025",
+      "title": "Sensibilidad HUVN enterobacterias consolidada pendiente 2025",
+      "url": "microbiology/susceptibility_huvn_bgn_enterobacterias_consolidated_pending_2025.json",
+      "status": "draft_pending_manual_review",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_qa_2025",
+      "title": "QA extracción enterobacterias 2025",
+      "url": "microbiology/qa_enterobacterias_2025.json",
+      "status": "draft_pending_manual_review",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "resistance_mechanisms_2025",
+      "title": "Mecanismos de resistencia 2025",
+      "url": "microbiology/microbiology_map_2025.json#resistanceMechanismRecords",
+      "status": "draft_pending_manual_review",
+      "clinicalUseAllowed": false
+    }
+  ],
+  "supportedFilters": [
+    {
+      "id": "scope",
+      "label": "Ámbito",
+      "type": "single_select",
+      "valuesFrom": "microbiology_manifest.supportedDimensions.scope"
+    },
+    {
+      "id": "population",
+      "label": "Población",
+      "type": "single_select",
+      "valuesFrom": "microbiology_manifest.supportedDimensions.population"
+    },
+    {
+      "id": "sampleType",
+      "label": "Tipo de muestra",
+      "type": "single_select",
+      "valuesFrom": "microbiology_manifest.supportedDimensions.sampleType"
+    },
+    {
+      "id": "organismGroup",
+      "label": "Grupo de microorganismo",
+      "type": "single_select",
+      "values": [
+        "enterobacterias",
+        "bgn_no_enterobacterias",
+        "gram_positivos",
+        "hongos",
+        "otros"
+      ]
+    },
+    {
+      "id": "microorganism",
+      "label": "Microorganismo",
+      "type": "text_or_select",
+      "valuesFrom": "dataset.microorganism"
+    },
+    {
+      "id": "antibiotic",
+      "label": "Antibiótico",
+      "type": "text_or_select",
+      "valuesFrom": "dataset.antibiotic"
+    },
+    {
+      "id": "year",
+      "label": "Año",
+      "type": "single_select",
+      "values": [
+        2025
+      ]
+    }
+  ],
+  "queryOutputPolicy": {
+    "mayShowExtractedPercentages": true,
+    "mayShowRawCounts": true,
+    "mustShowPendingReviewBanner": true,
+    "mustShowClinicalUseBlockedBanner": true,
+    "mustWarnWhenNBelow": 30,
+    "mustStateSusceptibilityGrouping": "S + I agrupadas según metodología del documento fuente cuando aplique.",
+    "mustNotRankAntibioticsForTreatment": true,
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustNotHideMissingOrPendingData": true
+  },
+  "warnings": [
+    "Datos pendientes de revisión manual; no usar como recomendación terapéutica.",
+    "clinicalDecisionSupport=false: este módulo no debe activar recomendaciones ni selección automática de tratamiento.",
+    "interactiveUseAllowed=false: solo se permite preparar la visualización/preview del contrato de consulta.",
+    "Si n < 30, la app debe mostrar advertencia explícita de baja estabilidad de la estimación.",
+    "S + I pueden aparecer agrupadas según la metodología del documento; conservar esta advertencia junto al resultado.",
+    "La consolidación automática de tablas no equivale a validación clínica ni microbiológica.",
+    "No ocultar tablas o campos sin revisar; mostrarlos como pending o no disponible."
+  ],
+  "nextManualReviewChecklist": [
+    "Confirmar correspondencia de cada tabla extraída con página/sección del PDF fuente.",
+    "Revisar abreviaturas antibióticas y equivalencias antes de permitir consulta interactiva.",
+    "Revisar registros con n < 30 y definir el texto final de advertencia.",
+    "Validar que ninguna pantalla de APP convierte porcentajes en recomendación terapéutica.",
+    "Actualizar status a reviewed únicamente tras revisión manual documentada."
+  ]
+}
