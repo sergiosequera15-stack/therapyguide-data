@@ -32,7 +32,6 @@ DATA_MODULES = {
             "huvnGramNegativeEnterobacteriaFirstPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
             "huvnGramNegativeEnterobacteriaSecondPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
             "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
-            "huvnGramNegativeEnterobacteriaConsolidatedPendingUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_consolidated_pending_2025.json",
             "huvnGramNegativeEnterobacteriaQaUrl": "microbiology/qa_enterobacterias_2025.json",
         },
         "queryPreviewAllowed": True,
