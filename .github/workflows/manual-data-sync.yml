@@ -1,0 +1,46 @@
+name: Manual data sync
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync HUVN guide data
+        run: python tools/sync_huvn_guide.py
+
+      - name: Enrich resource metadata
+        run: python tools/enrich_resources.py
+
+      - name: Build microbiology module
+        run: python tools/build_microbiology_2025.py
+
+      - name: Publish data module manifest
+        run: python tools/update_data_module_manifest.py
+
+      - name: Validate data modules
+        run: python tools/validate_data_modules.py
+
+      - name: Commit generated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs
+          git commit -m "Update generated HUVN guide data" || echo "No changes to commit"
+          git push
