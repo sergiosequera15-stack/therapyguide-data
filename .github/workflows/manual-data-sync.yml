@@ -37,6 +37,9 @@ jobs:
       - name: Validate data modules
         run: python tools/validate_data_modules.py
 
+      - name: Validate pending microbiology table extractions
+        run: python tools/validate_microbiology_pending_tables.py
+
       - name: Commit generated data
         run: |
           git config user.name "github-actions"
