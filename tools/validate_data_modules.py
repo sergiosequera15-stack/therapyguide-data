@@ -33,6 +33,12 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(f"ERROR: {message}")
 
 
+def resolve_dataset_path(dataset_url: str) -> Path:
+    relative_path = dataset_url.split("#", 1)[0]
+    require(relative_path.endswith(".json"), f"dataset url must point to a JSON file: {dataset_url}")
+    return DOCS_DIR / relative_path
+
+
 def validate_recommendation_rules(data: dict[str, Any]) -> None:
     require(isinstance(data.get("rules"), list), "recommendation_rules.json must contain rules[]")
 
@@ -169,11 +175,16 @@ def validate_microbiology_query_manifest(data: dict[str, Any]) -> None:
 
     for index, dataset in enumerate(data["datasets"]):
         prefix = f"microbiology_query_manifest.datasets[{index}]"
+        dataset_url = dataset.get("url")
         require(dataset.get("id"), f"{prefix} lacks id")
         require(dataset.get("title"), f"{prefix} lacks title")
-        require(dataset.get("url"), f"{prefix} lacks url")
+        require(dataset_url, f"{prefix} lacks url")
         require(dataset.get("status") == "draft_pending_manual_review", f"{prefix} must remain draft_pending_manual_review")
         require(dataset.get("clinicalUseAllowed") is False, f"{prefix}.clinicalUseAllowed must be false")
+
+        dataset_path = resolve_dataset_path(str(dataset_url))
+        require(dataset_path.exists(), f"{prefix} points to missing file: {dataset_path}")
+        load_json(dataset_path)
 
     output_policy = data.get("queryOutputPolicy") or {}
     require(output_policy.get("mustNotGenerateTherapeuticRecommendations") is True, "queryOutputPolicy must block therapeutic recommendations")
