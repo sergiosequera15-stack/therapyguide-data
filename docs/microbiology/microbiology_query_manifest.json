@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "generatedAt": "2026-06-19T00:00:00Z",
   "status": "draft_pending_manual_review",
   "title": "Gestor de consultas microbiológicas HUVN",
@@ -50,13 +50,6 @@
       "id": "huvn_enterobacteria_third_pass_2025",
       "title": "Sensibilidad HUVN enterobacterias 2025 - tercera pasada",
       "url": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
-      "status": "draft_pending_manual_review",
-      "clinicalUseAllowed": false
-    },
-    {
-      "id": "huvn_enterobacteria_qa_2025",
-      "title": "QA extracción enterobacterias 2025",
-      "url": "microbiology/qa_enterobacterias_2025.json",
       "status": "draft_pending_manual_review",
       "clinicalUseAllowed": false
     },
@@ -143,6 +136,7 @@
   "nextManualReviewChecklist": [
     "Confirmar correspondencia de cada tabla extraída con página/sección del PDF fuente.",
     "Revisar abreviaturas antibióticas y equivalencias antes de permitir consulta interactiva.",
+    "Crear QA de enterobacterias si se necesita trazabilidad específica de extracción.",
     "Revisar registros con n < 30 y definir el texto final de advertencia.",
     "Consolidar o etiquetar explícitamente las pasadas de extracción de enterobacterias antes de permitir resultados interpretables.",
     "Validar que ninguna pantalla de APP convierte porcentajes en recomendación terapéutica.",
