@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "generatedAt": "2026-06-19T00:00:00Z",
   "status": "draft",
   "modules": {
@@ -18,6 +18,7 @@
     },
     "microbiology": {
       "manifestUrl": "microbiology/microbiology_manifest.json",
+      "queryManifestUrl": "microbiology/microbiology_query_manifest.json",
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
       "updatePolicyUrl": "microbiology/update_policy.json",
       "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
@@ -29,12 +30,16 @@
         "huvnGramNegativeEnterobacteriaConsolidatedPendingUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_consolidated_pending_2025.json",
         "huvnGramNegativeEnterobacteriaQaUrl": "microbiology/qa_enterobacterias_2025.json"
       },
+      "queryPreviewAllowed": true,
+      "interactiveUseAllowed": false,
+      "clinicalDecisionSupport": false,
       "status": "draft_pending_manual_review"
     }
   },
   "warnings": [
     "Estos módulos son estructura de datos, no funcionalidad clínica activa.",
     "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local.",
-    "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false."
+    "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false.",
+    "El gestor de consultas microbiológicas solo puede mostrar preview de contrato/datasets; no debe emitir recomendaciones terapéuticas."
   ]
 }
