@@ -3,7 +3,9 @@ name: Sync HUVN Guide Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * 1"
+    # The microbiology map is annual; scheduled DATA refresh is intentionally conservative.
+    # Manual workflow_dispatch remains available for urgent guide/data updates.
+    - cron: "0 5 1 1,7 *"
 
 permissions:
   contents: write
