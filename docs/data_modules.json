@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "generatedAt": "2026-06-18T00:00:00Z",
+  "version": "0.2.0",
+  "generatedAt": "2026-06-19T00:00:00Z",
   "status": "draft",
   "modules": {
     "rules": {
@@ -19,11 +19,22 @@
     "microbiology": {
       "manifestUrl": "microbiology/microbiology_manifest.json",
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
-      "status": "draft_pending_extraction"
+      "updatePolicyUrl": "microbiology/update_policy.json",
+      "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
+      "susceptibilityTables": {
+        "huvnGramNegativeNonEnterobacteriaUrl": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
+        "huvnGramNegativeEnterobacteriaFirstPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
+        "huvnGramNegativeEnterobacteriaSecondPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
+        "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
+        "huvnGramNegativeEnterobacteriaConsolidatedPendingUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_consolidated_pending_2025.json",
+        "huvnGramNegativeEnterobacteriaQaUrl": "microbiology/qa_enterobacterias_2025.json"
+      },
+      "status": "draft_pending_manual_review"
     }
   },
   "warnings": [
     "Estos módulos son estructura de datos, no funcionalidad clínica activa.",
-    "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local."
+    "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local.",
+    "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false."
   ]
 }
