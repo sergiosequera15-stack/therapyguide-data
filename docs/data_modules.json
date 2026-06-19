@@ -1,5 +1,5 @@
 {
-  "version": "0.3.1",
+  "version": "0.3.2",
   "generatedAt": "2026-06-19T00:00:00Z",
   "status": "draft",
   "modules": {
@@ -26,8 +26,7 @@
         "huvnGramNegativeNonEnterobacteriaUrl": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
         "huvnGramNegativeEnterobacteriaFirstPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
         "huvnGramNegativeEnterobacteriaSecondPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
-        "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
-        "huvnGramNegativeEnterobacteriaQaUrl": "microbiology/qa_enterobacterias_2025.json"
+        "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
       },
       "queryPreviewAllowed": true,
       "interactiveUseAllowed": false,
@@ -40,6 +39,7 @@
     "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local.",
     "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false.",
     "El gestor de consultas microbiológicas solo puede mostrar preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
-    "Las pasadas de enterobacterias no están consolidadas automáticamente; revisar frente al PDF antes de uso clínico."
+    "Las pasadas de enterobacterias no están consolidadas automáticamente; revisar frente al PDF antes de uso clínico.",
+    "El QA específico de enterobacterias aún no está publicado como archivo; no anunciarlo como dataset disponible."
   ]
 }
