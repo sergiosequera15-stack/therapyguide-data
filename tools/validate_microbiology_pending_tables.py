@@ -8,6 +8,7 @@ MICROBIOLOGY_DIR = Path("docs") / "microbiology"
 REQUIRED_SUSCEPTIBILITY_FILES = [
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_non_enterobacterias_2025.json",
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_2025.json",
+    MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
 ]
 REQUIRED_DICTIONARY_FILES = [
     MICROBIOLOGY_DIR / "antibiotic_abbreviations_2025.json",
