@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     DOCS_DIR / "tools" / "tool_validation_report.json",
     DOCS_DIR / "microbiology" / "microbiology_manifest.json",
     DOCS_DIR / "microbiology" / "microbiology_map_2025.json",
+    DOCS_DIR / "microbiology" / "microbiology_query_manifest.json",
 ]
 
 
@@ -157,6 +158,28 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
             require(review.get("reviewedAt"), f"{prefix} reviewed record lacks reviewedAt")
 
 
+def validate_microbiology_query_manifest(data: dict[str, Any]) -> None:
+    require(data.get("status") == "draft_pending_manual_review", "microbiology_query_manifest.status must remain draft_pending_manual_review")
+    require(data.get("clinicalDecisionSupport") is False, "microbiology_query_manifest.clinicalDecisionSupport must be false")
+    require(data.get("interactiveUseAllowed") is False, "microbiology_query_manifest.interactiveUseAllowed must be false")
+    require(data.get("queryPreviewAllowed") is True, "microbiology_query_manifest.queryPreviewAllowed must be true")
+    require(data.get("therapeuticRecommendationAllowed") is False, "microbiology_query_manifest.therapeuticRecommendationAllowed must be false")
+    require(isinstance(data.get("datasets"), list) and data["datasets"], "microbiology_query_manifest.datasets must be a non-empty list")
+    require(isinstance(data.get("supportedFilters"), list) and data["supportedFilters"], "microbiology_query_manifest.supportedFilters must be a non-empty list")
+
+    for index, dataset in enumerate(data["datasets"]):
+        prefix = f"microbiology_query_manifest.datasets[{index}]"
+        require(dataset.get("id"), f"{prefix} lacks id")
+        require(dataset.get("title"), f"{prefix} lacks title")
+        require(dataset.get("url"), f"{prefix} lacks url")
+        require(dataset.get("status") == "draft_pending_manual_review", f"{prefix} must remain draft_pending_manual_review")
+        require(dataset.get("clinicalUseAllowed") is False, f"{prefix}.clinicalUseAllowed must be false")
+
+    output_policy = data.get("queryOutputPolicy") or {}
+    require(output_policy.get("mustNotGenerateTherapeuticRecommendations") is True, "queryOutputPolicy must block therapeutic recommendations")
+    require(output_policy.get("mustWarnWhenNBelow") == 30, "queryOutputPolicy.mustWarnWhenNBelow must be 30")
+
+
 def main() -> None:
     for path in REQUIRED_FILES:
         require(path.exists(), f"missing required data module file: {path}")
@@ -167,12 +190,14 @@ def main() -> None:
     scores = load_json(DOCS_DIR / "tools" / "scores.json")
     microbiology_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_manifest.json")
     microbiology_map = load_json(DOCS_DIR / "microbiology" / "microbiology_map_2025.json")
+    microbiology_query_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_query_manifest.json")
 
     validate_recommendation_rules(recommendation_rules)
     validate_allergy_rules(allergy_rules)
     validate_dose_calculators(dose_calculators)
     validate_scores(scores)
     validate_microbiology(microbiology_manifest, microbiology_map)
+    validate_microbiology_query_manifest(microbiology_query_manifest)
 
     print("Data modules OK")
     print(f"Recommendation rules: {len(recommendation_rules.get('rules', []))}")
@@ -182,6 +207,7 @@ def main() -> None:
     print(f"Microbiology records: {len(microbiology_map.get('records', []))}")
     print(f"Microbiology sections: {len(microbiology_map.get('sectionCatalog', []))}")
     print(f"Microbiology resistance mechanism records: {len(microbiology_map.get('resistanceMechanismRecords', []))}")
+    print(f"Microbiology query datasets: {len(microbiology_query_manifest.get('datasets', []))}")
 
 
 if __name__ == "__main__":
