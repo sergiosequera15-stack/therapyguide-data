@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-10T10:45:03.317519+00:00",
+  "generatedAt": "2026-06-19T06:37:10.543747+00:00",
   "source": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "topicsUrl": "guide_topics.json",
   "resourcesBaseUrl": "resources/",
-  "topicCount": 19,
-  "resourceCount": 11,
-  "downloadedResourceCount": 11,
+  "topicCount": 20,
+  "resourceCount": 12,
+  "downloadedResourceCount": 12,
   "failedResourceCount": 0,
   "pediatricTopicCount": 3,
-  "contentBlockCount": 681,
+  "contentBlockCount": 682,
   "tableBlockCount": 4,
   "globalResources": [
     {
@@ -20,7 +20,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 173206,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "5ec6ab8aa616da3b7f51c30917b504afdf200d518c058354eb9a73389339edfc",
+      "version": "5ec6ab8aa616"
     },
     {
       "title": "Criterios y circuito Trasplante Fecal",
@@ -30,7 +32,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 101564,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "f93ac24aba052f1bc98028613c08d5bec3656ea3c302667d5b64bd39d0e5fdd2",
+      "version": "f93ac24aba05"
     },
     {
       "title": "Código Sepsis 2023",
@@ -40,7 +44,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 391709,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "f9c809ad213e2a1e1573f0a082f86fca8b98ab1bb09c6392d3611404664aee24",
+      "version": "f9c809ad213e"
     },
     {
       "title": "Mapa microbiológico local 2024",
@@ -50,7 +56,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 4161545,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "fd01bc3bcd4c8ac6456060e4920b10c2f02ebb9eb4350f48f30da556a4757b4c",
+      "version": "fd01bc3bcd4c"
     },
     {
       "title": "Poster Código Sepsis",
@@ -60,7 +68,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 917074,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "ef0a572a05719c4acac92bdafb579b492dd7efdb07dcfd5b45c5a15133932414",
+      "version": "ef0a572a0571"
     },
     {
       "title": "Profilaxis Endocarditis Infecciosa",
@@ -70,7 +80,21 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 75281,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "50f6d286cd8f1d01f393bee617b38542f35cd3dac3724e20a85da458064f13a8",
+      "version": "50f6d286cd8f"
+    },
+    {
+      "title": "PROTOCOLO ADMINISTRACIÓN DE ANTIFÚNGICOS",
+      "url": "resources/antifungicos-9fadf5f989.pdf",
+      "sourceUrl": "https://www.huvn.es/archivos/cms/goa/archivos/publico/Antifungicos.pdf",
+      "localPath": null,
+      "lastSyncEpochMs": null,
+      "downloaded": true,
+      "sizeBytes": 429925,
+      "contentType": "application/pdf",
+      "sha256": "1eea0efe4f3aab1fff29913e94a4d3a22af637d83ab21054dd9b7364c3eff541",
+      "version": "1eea0efe4f3a"
     },
     {
       "title": "Protocolo sepsis en gestación y puerperio",
@@ -80,7 +104,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 2018461,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "8ab3b647c8a2a7347e973127b56416f5ffca28cd53b01437f17de63c54e6bc12",
+      "version": "8ab3b647c8a2"
     },
     {
       "title": "Resumen aislamiento vertical 2024",
@@ -90,7 +116,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 441415,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "ca5f693509fbab9b72020ddc7836b8c852ecc1ae2605fd33af46307543e4c3c0",
+      "version": "ca5f693509fb"
     },
     {
       "title": "TABLA DE ADMINISTRACIÓN DE ANTIBIOTICOS PARA ENFERMERÍA",
@@ -100,7 +128,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 241748,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "032f0cd2fa705c12346fc5501ce5e0ac8e85da73de808c6203bc91d7bf04e66a",
+      "version": "032f0cd2fa70"
     },
     {
       "title": "TRATAMIENTO DE INFECCIONES POR BGN PRODUCTORES DE MBL.pdf",
@@ -110,7 +140,9 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 252269,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "511dbc8bf1f2c8449993c2686d5c4d2e6c875db51af41de57de274f4f0f0a1fc",
+      "version": "511dbc8bf1f2"
     },
     {
       "title": "TRIPTICO FACULTATIVOS ADMINISTRACION ATB",
@@ -120,9 +152,39 @@
       "lastSyncEpochMs": null,
       "downloaded": true,
       "sizeBytes": 1148492,
-      "contentType": "application/pdf"
+      "contentType": "application/pdf",
+      "sha256": "a8c3012f1867bdb7cf2d0eaacc0e8d4aecdae4d3432f91e62c68816bf06ea2fb",
+      "version": "a8c3012f1867"
     }
   ],
-  "warnings": [],
-  "errors": []
+  "warnings": [
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "title": "Iniciar sesión",
+      "warning": "Contenido breve: 169 caracteres"
+    }
+  ],
+  "errors": [],
+  "resourceHashAlgorithm": "sha256",
+  "dataModules": {
+    "rules": {
+      "manifestUrl": "rules/rule_manifest.json",
+      "recommendationRulesUrl": "rules/recommendation_rules.json",
+      "allergyRulesUrl": "rules/allergy_rules.json",
+      "validationReportUrl": "rules/rule_validation_report.json",
+      "status": "draft"
+    },
+    "tools": {
+      "scoresUrl": "tools/scores.json",
+      "doseCalculatorsUrl": "tools/dose_calculators.json",
+      "validationReportUrl": "tools/tool_validation_report.json",
+      "status": "draft"
+    },
+    "microbiology": {
+      "manifestUrl": "microbiology/microbiology_manifest.json",
+      "currentMapUrl": "microbiology/microbiology_map_2025.json",
+      "status": "draft_pending_extraction"
+    }
+  },
+  "dataModulesUpdatedAt": "2026-06-19T06:37:10.738148+00:00"
 }

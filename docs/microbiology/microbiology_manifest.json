@@ -1,7 +1,7 @@
 {
-  "version": "0.2.0",
-  "generatedAt": "2026-06-18T00:00:00Z",
-  "status": "draft_catalog_and_methodology_extracted",
+  "version": "0.3.0",
+  "generatedAt": "2026-06-19T06:37:10Z",
+  "status": "draft_full_catalog_with_pending_mechanism_records",
   "title": "Mapa microbiológico HUVN",
   "currentMap": {
     "yearLabel": 2025,
@@ -16,15 +16,16 @@
       "dataRepositoryPath": null,
       "sourceUrl": null,
       "availableInData": false,
-      "note": "PDF corregido aportado en conversación; pendiente de publicar el binario en DATA si se decide hacerlo por otra vía."
+      "note": "PDF corregido aportado en conversación; pendiente de incorporar como binario al repositorio si se decide publicar el PDF desde DATA."
     },
     "reviewStatus": "pending_table_extraction_review",
     "interactiveMapAvailable": false,
     "catalogAvailable": true,
-    "catalogStatus": "partial_first_pass",
-    "catalogedSectionCount": 30,
+    "catalogStatus": "complete_from_index",
+    "catalogedSectionCount": 66,
     "expectedSectionCountFromIndex": 66,
-    "recordCount": 0
+    "recordCount": 0,
+    "resistanceMechanismRecordCount": 43
   },
   "fallback": {
     "behavior": "show_notice_or_source_pdf_when_available",
@@ -32,35 +33,64 @@
   },
   "supportedDimensions": {
     "scope": [
-      "huvn",
+      "extrahospitalario",
       "hospital_general",
+      "huvn",
       "materno_infantil",
       "neurotraumatologia",
-      "extrahospitalario",
       "service_specific"
     ],
     "population": [
       "adult",
-      "pediatric",
-      "all"
+      "all",
+      "pediatric"
     ],
     "sampleType": [
+      "exudado",
       "hemocultivo",
       "orina",
-      "exudado",
       "respiratoria"
     ],
     "service": [
       "Cardiología",
-      "Cirugía"
+      "Cirugía",
+      "Cirugía Cardio-vascular",
+      "Cirugía Maxilofacial",
+      "Cirugía Plástica",
+      "Cirugía Torácica",
+      "Cuidados Críticos Neurotraumatología",
+      "Cuidados Críticos hospital general",
+      "Ginecología y Obstetricia",
+      "Hematología",
+      "Medicina Interna",
+      "Nefrología",
+      "Neumología",
+      "Neurología",
+      "Oncología",
+      "Reanimación",
+      "Traumatología",
+      "Urología"
     ],
     "microorganism": [],
-    "antibiotic": []
+    "antibiotic": [],
+    "resistanceMechanism": [
+      "AMPc",
+      "BLEE",
+      "IMP",
+      "KPC",
+      "MDR",
+      "NDM",
+      "OXA",
+      "PDR",
+      "SARM",
+      "VIM",
+      "XDR"
+    ]
   },
   "warnings": [
     "No usar como mapa interactivo hasta completar extracción estructurada y revisión manual.",
     "El informe anual puede contener tablas con bajo número de aislados; debe conservarse advertencia si n < 30.",
     "El PDF corregido indica año de datos 2025.",
-    "La primera explotación publicada cataloga metodología y primeras secciones; no contiene datos numéricos activos."
+    "Catálogo completo desde índice; primera extracción de mecanismos HUVN pendiente de revisión manual."
   ]
 }

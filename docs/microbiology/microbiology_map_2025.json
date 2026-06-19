@@ -1,10 +1,10 @@
 {
   "metadata": {
     "title": "Mapa Microbiológico 2025 HUVN",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "yearLabel": 2025,
     "dataYear": 2025,
-    "generatedAt": "2026-06-18T00:00:00Z",
+    "generatedAt": "2026-06-19T06:37:10Z",
     "sourcePdf": {
       "title": "Mapa Microbiológico 2025",
       "uploadedFileName": "Mapa Microbiologico 2025 (1).pdf",
@@ -16,7 +16,7 @@
       "availableInData": false,
       "note": "PDF corregido aportado en conversación; pendiente de incorporar como binario al repositorio si se decide publicar el PDF desde DATA."
     },
-    "extractionStatus": "catalog_and_methodology_extracted",
+    "extractionStatus": "full_section_catalog_and_huvn_resistance_mechanisms_extracted",
     "manualReviewStatus": "pending_table_extraction_review",
     "interactiveUseAllowed": false
   },
@@ -436,6 +436,538 @@
       "organismGroup": "resistance_mechanisms",
       "extractionStatus": "cataloged_pending_table_extraction",
       "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cirugia-cardio-vascular-bacilos-gram-negativos-y-bacterias-gram-positivas",
+      "title": "Aislamientos S Cirugía Cardio-vascular bacilos Gram negativos y bacterias Gram positivas",
+      "printedPage": 33,
+      "pdfPage": 34,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Cardio-vascular",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-cirugia-cardio-vascular",
+      "title": "Mecanismos de resistencia S. Cirugía Cardio-vascular",
+      "printedPage": 34,
+      "pdfPage": 35,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Cardio-vascular",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cirugia-maxilofacial-bacilos-gram-negativos-y-bacterias-gram-positivas",
+      "title": "Aislamientos S Cirugía Maxilofacial bacilos Gram negativos y bacterias Gram positivas",
+      "printedPage": 35,
+      "pdfPage": 36,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Maxilofacial",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cirugia-plastica-bacilos-gram-negativos-y-bacterias-gram-positivas",
+      "title": "Aislamientos S Cirugía Plástica bacilos Gram negativos y bacterias Gram positivas",
+      "printedPage": 36,
+      "pdfPage": 37,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Plástica",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-cirugia-plastica",
+      "title": "Mecanismos de resistencia S. Cirugía Plástica",
+      "printedPage": 37,
+      "pdfPage": 38,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Plástica",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cirugia-toracica-bacilos-gram-negativos-y-bacterias-gram-positivas",
+      "title": "Aislamientos S Cirugía Torácica bacilos Gram negativos y bacterias Gram positivas",
+      "printedPage": 38,
+      "pdfPage": 39,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Torácica",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-cirugia-toracica",
+      "title": "Mecanismos de resistencia S. Cirugía Torácica",
+      "printedPage": 39,
+      "pdfPage": 40,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cirugía Torácica",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cuidados-criticos-hospital-general",
+      "title": "Aislamientos S. Cuidados Críticos hospital general",
+      "printedPage": 40,
+      "pdfPage": 41,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cuidados Críticos hospital general",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-cuidados-criticos-hospital-general",
+      "title": "Mecanismos de resistencia S. Cuidados Críticos hospital general",
+      "printedPage": 41,
+      "pdfPage": 42,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cuidados Críticos hospital general",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-cuidados-criticos-neurotraumatologia",
+      "title": "Aislamientos S. Cuidados Críticos Neurotraumatología",
+      "printedPage": 42,
+      "pdfPage": 43,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cuidados Críticos Neurotraumatología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-cuidados-criticos-neurotraumatologia",
+      "title": "Mecanismos de resistencia S. Cuidados Críticos Neurotraumatología",
+      "printedPage": 43,
+      "pdfPage": 44,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Cuidados Críticos Neurotraumatología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-ginecologia-y-obstetricia",
+      "title": "Aislamientos S. Ginecología y Obstetricia",
+      "printedPage": 44,
+      "pdfPage": 45,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Ginecología y Obstetricia",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-de-resistencia-s-ginecologia-y-obstetricia",
+      "title": "Mecanismos de resistencia S. Ginecología y Obstetricia",
+      "printedPage": 45,
+      "pdfPage": 46,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Ginecología y Obstetricia",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-hematologia-bacilos-gram-negativos-bacterias-gram-positivas-y-de-crecimiento-dificultoso",
+      "title": "Aislamientos S Hematología bacilos Gram negativos, bacterias Gram positivas y de crecimiento dificultoso",
+      "printedPage": 46,
+      "pdfPage": 47,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Hematología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-hematologia",
+      "title": "Mecanismos S. Hematología",
+      "printedPage": 47,
+      "pdfPage": 48,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Hematología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-medicina-interna-bacilos-gram-negativos-y-bacterias-gram-positivas",
+      "title": "Aislamientos S. Medicina Interna bacilos Gram negativos y bacterias Gram positivas",
+      "printedPage": 48,
+      "pdfPage": 49,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Medicina Interna",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-medicina-interna",
+      "title": "Mecanismos S. Medicina Interna",
+      "printedPage": 49,
+      "pdfPage": 50,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Medicina Interna",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-nefrologia",
+      "title": "Aislamientos S. Nefrología",
+      "printedPage": 50,
+      "pdfPage": 51,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Nefrología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-nefrologia",
+      "title": "Mecanismos S. Nefrología",
+      "printedPage": 51,
+      "pdfPage": 52,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Nefrología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-neumologia-bacilos-gram-negativos-bacterias-gram-positivas-y-crecimiento-dificultoso",
+      "title": "Aislamientos S. Neumología bacilos Gram negativos, bacterias Gram positivas y crecimiento dificultoso",
+      "printedPage": 52,
+      "pdfPage": 53,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Neumología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-neumologia",
+      "title": "Mecanismos S. Neumología",
+      "printedPage": 53,
+      "pdfPage": 54,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Neumología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-neurologia",
+      "title": "Aislamientos S. Neurología",
+      "printedPage": 54,
+      "pdfPage": 55,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Neurología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-neurologia",
+      "title": "Mecanismos S. Neurología",
+      "printedPage": 55,
+      "pdfPage": 56,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Neurología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-oncologia",
+      "title": "Aislamientos S. Oncología",
+      "printedPage": 56,
+      "pdfPage": 57,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Oncología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-oncologia",
+      "title": "Mecanismos S. Oncología",
+      "printedPage": 57,
+      "pdfPage": 58,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Oncología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-reanimacion",
+      "title": "Aislamientos S. Reanimación",
+      "printedPage": 58,
+      "pdfPage": 59,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Reanimación",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "mecanismos-s-reanimacion",
+      "title": "Mecanismos S. Reanimación",
+      "printedPage": 59,
+      "pdfPage": 60,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Reanimación",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-servicio-traumatologia",
+      "title": "Aislamientos servicio Traumatología",
+      "printedPage": 60,
+      "pdfPage": 61,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Traumatología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "servicio-traumatologia-mecanismos-de-resistencia",
+      "title": "Servicio Traumatología mecanismos de resistencia",
+      "printedPage": 61,
+      "pdfPage": 62,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Traumatología",
+      "contentType": "resistance_mechanisms",
+      "organismGroup": "resistance_mechanisms",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "aislamientos-s-urologia",
+      "title": "Aislamientos S. Urología",
+      "printedPage": 62,
+      "pdfPage": 63,
+      "scope": "service_specific",
+      "population": "all",
+      "sampleType": null,
+      "service": "Urología",
+      "contentType": "susceptibility_table",
+      "organismGroup": "mixed",
+      "extractionStatus": "cataloged_pending_table_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-1-evolucion-de-la-sensibilidad-a-los-antibioticos-de-escherichia-coli",
+      "title": "Gráfico 1. Evolución de la sensibilidad a los antibióticos de Escherichia coli",
+      "printedPage": 64,
+      "pdfPage": 65,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-2-evolucion-de-la-sensibilidad-a-los-antibioticos-de-klebsiella-pneumoniae",
+      "title": "Gráfico 2. Evolución de la sensibilidad a los antibióticos de Klebsiella pneumoniae",
+      "printedPage": 65,
+      "pdfPage": 66,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-3-evolucion-de-la-sensibilidad-a-los-antibioticos-de-k-oxytoca-y-k-aerogenes",
+      "title": "Gráfico 3. Evolución de la sensibilidad a los antibióticos de K. oxytoca y K. aerogenes",
+      "printedPage": 66,
+      "pdfPage": 67,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-4-evolucion-de-la-sensibilidad-a-los-antibioticos-de-enterobacter-cloacae-complex",
+      "title": "Gráfico 4. Evolución de la sensibilidad a los antibióticos de Enterobacter cloacae complex",
+      "printedPage": 67,
+      "pdfPage": 68,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-5-evolucion-de-la-sensibilidad-a-los-antibioticos-de-p-mirabilis-y-m-morganii",
+      "title": "Gráfico 5. Evolución de la sensibilidad a los antibióticos de P. mirabilis y M. morganii",
+      "printedPage": 68,
+      "pdfPage": 69,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-6-evolucion-de-la-sensibilidad-a-los-antibioticos-p-aeruginosa",
+      "title": "Gráfico 6. Evolución de la sensibilidad a los antibióticos P. aeruginosa",
+      "printedPage": 69,
+      "pdfPage": 70,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-7-evolucion-sensibilidad-a-los-antibioticos-staphylococcus-aureus-y-s-aureus-meticilin-resistentes",
+      "title": "Gráfico 7. Evolución sensibilidad a los antibióticos Staphylococcus aureus y S. aureus meticilin resistentes",
+      "printedPage": 70,
+      "pdfPage": 71,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
+    },
+    {
+      "id": "grafico-8-evolucion-de-la-sensibilidad-a-los-antibioticos-enterococcus-faecalis-y-e-faecium",
+      "title": "Gráfico 8. Evolución de la sensibilidad a los antibióticos Enterococcus faecalis y E. faecium",
+      "printedPage": 71,
+      "pdfPage": 72,
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "contentType": "trend_chart",
+      "organismGroup": "trend",
+      "extractionStatus": "cataloged_pending_chart_extraction",
+      "manualReviewStatus": "pending"
     }
   ],
   "dimensions": {
@@ -458,6 +990,26 @@
       "orina",
       "respiratoria"
     ],
+    "services": [
+      "Cardiología",
+      "Cirugía",
+      "Cirugía Cardio-vascular",
+      "Cirugía Maxilofacial",
+      "Cirugía Plástica",
+      "Cirugía Torácica",
+      "Cuidados Críticos Neurotraumatología",
+      "Cuidados Críticos hospital general",
+      "Ginecología y Obstetricia",
+      "Hematología",
+      "Medicina Interna",
+      "Nefrología",
+      "Neumología",
+      "Neurología",
+      "Oncología",
+      "Reanimación",
+      "Traumatología",
+      "Urología"
+    ],
     "contentTypes": [
       "resistance_mechanisms",
       "susceptibility_table",
@@ -474,32 +1026,952 @@
     ]
   },
   "records": [],
-  "schema": {
-    "scope": "huvn|hospital_general|materno_infantil|neurotraumatologia|extrahospitalario|service_specific",
-    "population": "adult|pediatric|all|null",
-    "sampleType": "hemocultivo|orina|exudado|respiratoria|other|null",
-    "service": "string|null",
-    "microorganism": "string",
-    "antibiotic": "string",
-    "isolatesTested": "number|null",
-    "susceptibilityPercent": "number|null",
-    "resistanceMechanisms": "array",
-    "lowCountWarning": "boolean",
-    "source": {
-      "pdfPage": "number|null",
-      "printedPage": "number|null",
-      "tableTitle": "string|null",
-      "sourceText": "string|null"
+  "resistanceMechanismRecords": [
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Aci. baumanii cplx",
+      "resistanceMechanism": "OXA",
+      "count": 4,
+      "percent": 21.05,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
     },
-    "review": {
-      "status": "pending|reviewed|rejected",
-      "reviewer": "string|null",
-      "reviewedAt": "string|null"
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Aeromonas",
+      "resistanceMechanism": "VIM",
+      "count": 1,
+      "percent": 2.85,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Cit freundii cplx",
+      "resistanceMechanism": "OXA",
+      "count": 3,
+      "percent": 2.97,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Cit freundii cplx",
+      "resistanceMechanism": "KPC",
+      "count": 1,
+      "percent": 0.99,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Cit freundii cplx",
+      "resistanceMechanism": "VIM",
+      "count": 2,
+      "percent": 1.98,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Cit freundii cplx",
+      "resistanceMechanism": "NDM",
+      "count": 1,
+      "percent": 0.99,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Cit freundii cplx",
+      "resistanceMechanism": "AMPc",
+      "count": 4,
+      "percent": 3.96,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "E. coli",
+      "resistanceMechanism": "BLEE",
+      "count": 742,
+      "percent": 13.35,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "E. coli",
+      "resistanceMechanism": "OXA",
+      "count": 8,
+      "percent": 0.14,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "E. coli",
+      "resistanceMechanism": "VIM",
+      "count": 1,
+      "percent": 0.01,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "E. coli",
+      "resistanceMechanism": "NDM",
+      "count": 3,
+      "percent": 0.05,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "E. coli",
+      "resistanceMechanism": "AMPc",
+      "count": 19,
+      "percent": 0.34,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "BLEE",
+      "count": 1,
+      "percent": 0.23,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "OXA",
+      "count": 9,
+      "percent": 2.53,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "KPC",
+      "count": 9,
+      "percent": 2.53,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "VIM",
+      "count": 22,
+      "percent": 6.19,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "NDM",
+      "count": 1,
+      "percent": 0.28,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Ent. cloacae cplx",
+      "resistanceMechanism": "AMPc",
+      "count": 18,
+      "percent": 5.07,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. oxytoca",
+      "resistanceMechanism": "BLEE",
+      "count": 18,
+      "percent": 10.22,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. oxytoca",
+      "resistanceMechanism": "OXA",
+      "count": 1,
+      "percent": 0.56,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. oxytoca",
+      "resistanceMechanism": "VIM",
+      "count": 1,
+      "percent": 0.56,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. oxytoca",
+      "resistanceMechanism": "NDM",
+      "count": 2,
+      "percent": 1.13,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. pneumoniae",
+      "resistanceMechanism": "BLEE",
+      "count": 279,
+      "percent": 19.51,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. pneumoniae",
+      "resistanceMechanism": "OXA",
+      "count": 119,
+      "percent": 8.32,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. pneumoniae",
+      "resistanceMechanism": "KPC",
+      "count": 3,
+      "percent": 0.2,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. pneumoniae",
+      "resistanceMechanism": "NDM",
+      "count": 39,
+      "percent": 2.72,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "K. pneumoniae",
+      "resistanceMechanism": "AMPc",
+      "count": 14,
+      "percent": 0.97,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Klebsiella",
+      "resistanceMechanism": "BLEE",
+      "count": 1,
+      "percent": 6.25,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Klebsiella",
+      "resistanceMechanism": "OXA",
+      "count": 1,
+      "percent": 6.25,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Proteus mirabilis",
+      "resistanceMechanism": "BLEE",
+      "count": 17,
+      "percent": 3.1,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Proteus mirabilis",
+      "resistanceMechanism": "AMPc",
+      "count": 2,
+      "percent": 0.36,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas",
+      "resistanceMechanism": "VIM",
+      "count": 6,
+      "percent": 22.22,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas",
+      "resistanceMechanism": "IMP",
+      "count": 1,
+      "percent": 3.7,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "KPC",
+      "count": 4,
+      "percent": 0.35,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "VIM",
+      "count": 67,
+      "percent": 6.01,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "IMP",
+      "count": 18,
+      "percent": 1.61,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "NDM",
+      "count": 5,
+      "percent": 0.44,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "MDR",
+      "count": 155,
+      "percent": 14.67,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "XDR",
+      "count": 94,
+      "percent": 8.9,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Pseudomonas aeruginosa",
+      "resistanceMechanism": "PDR",
+      "count": 1,
+      "percent": 0.09,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Raoultella",
+      "resistanceMechanism": "VIM",
+      "count": 1,
+      "percent": 7.69,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "S. aureus",
+      "resistanceMechanism": "SARM",
+      "count": 187,
+      "percent": 14.82,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    },
+    {
+      "scope": "huvn",
+      "population": "all",
+      "sampleType": null,
+      "service": null,
+      "microorganism": "Salmonella",
+      "resistanceMechanism": "BLEE",
+      "count": 1,
+      "percent": 2.08,
+      "source": {
+        "pdfPage": 10,
+        "printedPage": 9,
+        "tableTitle": "Aislamientos HUVN. Mecanismos de resistencia",
+        "sourceText": null
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "reviewedAt": null
+      }
+    }
+  ],
+  "schema": {
+    "susceptibilityRecord": {
+      "scope": "huvn|hospital_general|materno_infantil|neurotraumatologia|extrahospitalario|service_specific",
+      "population": "adult|pediatric|all|null",
+      "sampleType": "hemocultivo|orina|exudado|respiratoria|other|null",
+      "service": "string|null",
+      "microorganism": "string",
+      "antibiotic": "string",
+      "isolatesTested": "number|null",
+      "susceptibilityPercent": "number|null",
+      "resistanceMechanisms": "array",
+      "lowCountWarning": "boolean",
+      "source": {
+        "pdfPage": "number|null",
+        "printedPage": "number|null",
+        "tableTitle": "string|null",
+        "sourceText": "string|null"
+      },
+      "review": {
+        "status": "pending|reviewed|rejected",
+        "reviewer": "string|null",
+        "reviewedAt": "string|null"
+      }
+    },
+    "resistanceMechanismRecord": {
+      "scope": "string",
+      "population": "string",
+      "sampleType": "string|null",
+      "service": "string|null",
+      "microorganism": "string",
+      "resistanceMechanism": "BLEE|OXA|KPC|VIM|IMP|NDM|AMPc|MDR|XDR|PDR|SARM|other",
+      "count": "number",
+      "percent": "number",
+      "source": "object",
+      "review": "object"
     }
   },
   "warnings": [
-    "Mapa microbiológico interactivo pendiente de extracción de tablas y validación manual. Consultar el PDF original.",
-    "No hay registros numéricos estructurados activos en esta versión.",
-    "El catálogo de secciones está extraído parcialmente y puede usarse para orientar la futura extracción externa."
+    "Mapa microbiológico interactivo pendiente de extracción de tablas de sensibilidad y validación manual. Consultar el PDF original.",
+    "Los registros de mecanismos de resistencia son una primera extracción manual asistida y siguen con review.status = pending.",
+    "No hay registros de sensibilidad antimicrobiana estructurados activos en esta versión.",
+    "No activar en la app como soporte decisional hasta revisión manual."
   ]
 }

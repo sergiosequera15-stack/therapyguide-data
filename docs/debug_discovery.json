@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-10T10:44:08.070297+00:00",
+  "generatedAt": "2026-06-19T06:36:36.355371+00:00",
   "seedUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
   "maxDepth": 2,
   "maxPages": 80,
-  "visitedPageCount": 20,
-  "topicCount": 19,
-  "contentBlockCount": 681,
+  "visitedPageCount": 21,
+  "topicCount": 20,
+  "contentBlockCount": 682,
   "tableBlockCount": 4,
-  "allGuideLinkCount": 20,
-  "allPdfLinkCount": 11,
+  "allGuideLinkCount": 21,
+  "allPdfLinkCount": 12,
   "pediatricCandidateCount": 3,
   "pediatricCandidates": [
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
@@ -35,11 +35,13 @@
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/diagnostico_microbiologico_en_sepsis_1",
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+    "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
   ],
   "allPdfLinks": [
     "https://www.huvn.es/archivos/cms/goa/archivos/publico/2.%20Sepsis%20en%20gestacio%CC%81n%20y%20puerperio.pdf",
     "https://www.huvn.es/archivos/cms/goa/archivos/publico/20230720122820Esquema%20Sepsis-2-5%20(1).pdf",
+    "https://www.huvn.es/archivos/cms/goa/archivos/publico/Antifungicos.pdf",
     "https://www.huvn.es/archivos/cms/goa/archivos/publico/CRITERIOS%20PARA%20EL%20TRASPLANTE%20FECAL%20en%20caso%20de%20infeccio%CC%81n%20por%20C.pdf",
     "https://www.huvn.es/archivos/cms/goa/archivos/publico/Calendario%20Vacunacion%2020-06-24.pdf",
     "https://www.huvn.es/archivos/cms/goa/archivos/publico/Mapa%20Microbiologico%202024.pdf",
@@ -56,12 +58,12 @@
       "depth": 0,
       "foundFrom": null,
       "title": "Guia De Antibioterapia",
-      "htmlLength": 67276,
-      "contentTextLength": 1201,
+      "htmlLength": 69090,
+      "contentTextLength": 1322,
       "contentBlockCount": 4,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
-      "pdfLinkCount": 11,
+      "guideLinkCount": 16,
+      "pdfLinkCount": 12,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
@@ -77,6 +79,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": [
@@ -90,7 +93,8 @@
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/CRITERIOS%20PARA%20EL%20TRASPLANTE%20FECAL%20en%20caso%20de%20infeccio%CC%81n%20por%20C.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/Calendario%20Vacunacion%2020-06-24.pdf",
         "https://www.huvn.es/archivos/cms/goa/archivos/publico/RESUMEN%20Cap%C3%ADtulo%20AISLAMIENTOS%20vertical_2024.pdf",
-        "https://www.huvn.es/archivos/cms/goa/archivos/publico/TRATAMIENTO%20DE%20INFECCIONES%20POR%20BGN%20PRODUCTORES%20DE%20MBL.pdf"
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/TRATAMIENTO%20DE%20INFECCIONES%20POR%20BGN%20PRODUCTORES%20DE%20MBL.pdf",
+        "https://www.huvn.es/archivos/cms/goa/archivos/publico/Antifungicos.pdf"
       ]
     },
     {
@@ -98,11 +102,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infección de Piel y Partes blandas",
-      "htmlLength": 64100,
+      "htmlLength": 64511,
       "contentTextLength": 7157,
       "contentBlockCount": 3,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -119,6 +123,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -128,11 +133,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infección del Tracto Urinario",
-      "htmlLength": 79655,
+      "htmlLength": 80066,
       "contentTextLength": 6682,
       "contentBlockCount": 56,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -149,6 +154,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -158,11 +164,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infección gastrointestinal",
-      "htmlLength": 61765,
+      "htmlLength": 62176,
       "contentTextLength": 9738,
       "contentBlockCount": 47,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -179,6 +185,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -188,11 +195,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infección intraabdominal complicada en pacientes adultos",
-      "htmlLength": 70939,
+      "htmlLength": 71350,
       "contentTextLength": 10199,
       "contentBlockCount": 24,
       "tableBlockCount": 0,
-      "guideLinkCount": 16,
+      "guideLinkCount": 17,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -210,6 +217,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -219,11 +227,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infección Osteoarticular",
-      "htmlLength": 78830,
+      "htmlLength": 79241,
       "contentTextLength": 5852,
       "contentBlockCount": 44,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -240,6 +248,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -249,11 +258,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infecciones de Transmisión Sexual",
-      "htmlLength": 55974,
+      "htmlLength": 56385,
       "contentTextLength": 4504,
       "contentBlockCount": 2,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -270,6 +279,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -279,11 +289,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infecciones endovasculares",
-      "htmlLength": 71292,
+      "htmlLength": 71703,
       "contentTextLength": 7162,
       "contentBlockCount": 41,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -300,6 +310,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -309,11 +320,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infecciones oculares en pacientes adultos",
-      "htmlLength": 67992,
+      "htmlLength": 68403,
       "contentTextLength": 5482,
       "contentBlockCount": 14,
       "tableBlockCount": 0,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -330,6 +341,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -339,11 +351,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Infecciones ORL",
-      "htmlLength": 66322,
+      "htmlLength": 66733,
       "contentTextLength": 6750,
       "contentBlockCount": 37,
       "tableBlockCount": 0,
-      "guideLinkCount": 16,
+      "guideLinkCount": 17,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -361,6 +373,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -370,69 +383,9 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Manejo de Neutropenia Febril",
-      "htmlLength": 85634,
+      "htmlLength": 86045,
       "contentTextLength": 7502,
       "contentBlockCount": 68,
-      "tableBlockCount": 0,
-      "guideLinkCount": 15,
-      "pdfLinkCount": 0,
-      "guideLinks": [
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
-      ],
-      "pdfLinks": []
-    },
-    {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
-      "depth": 1,
-      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Meningitis bacteriana",
-      "htmlLength": 76756,
-      "contentTextLength": 11099,
-      "contentBlockCount": 55,
-      "tableBlockCount": 1,
-      "guideLinkCount": 15,
-      "pdfLinkCount": 0,
-      "guideLinks": [
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
-      ],
-      "pdfLinks": []
-    },
-    {
-      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-      "depth": 1,
-      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
-      "title": "Neumonía en pacientes adultos",
-      "htmlLength": 84050,
-      "contentTextLength": 6937,
-      "contentBlockCount": 58,
       "tableBlockCount": 0,
       "guideLinkCount": 16,
       "pdfLinkCount": 0,
@@ -450,8 +403,71 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
+      ],
+      "pdfLinks": []
+    },
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
+      "depth": 1,
+      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+      "title": "Meningitis bacteriana",
+      "htmlLength": 77167,
+      "contentTextLength": 11099,
+      "contentBlockCount": 55,
+      "tableBlockCount": 1,
+      "guideLinkCount": 16,
+      "pdfLinkCount": 0,
+      "guideLinks": [
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
+      ],
+      "pdfLinks": []
+    },
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "depth": 1,
+      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+      "title": "Neumonía en pacientes adultos",
+      "htmlLength": 84461,
+      "contentTextLength": 6937,
+      "contentBlockCount": 58,
+      "tableBlockCount": 0,
+      "guideLinkCount": 17,
+      "pdfLinkCount": 0,
+      "guideLinks": [
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_gastrointestinal",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -461,11 +477,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Síndrome febril y sepsis sin foco reconocible en Adultos",
-      "htmlLength": 85771,
+      "htmlLength": 86182,
       "contentTextLength": 17802,
       "contentBlockCount": 28,
       "tableBlockCount": 0,
-      "guideLinkCount": 17,
+      "guideLinkCount": 18,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -484,8 +500,23 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/diagnostico_microbiologico_en_sepsis_1",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
+      "pdfLinks": []
+    },
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "depth": 1,
+      "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
+      "title": "Iniciar sesión",
+      "htmlLength": 38707,
+      "contentTextLength": 169,
+      "contentBlockCount": 1,
+      "tableBlockCount": 0,
+      "guideLinkCount": 0,
+      "pdfLinkCount": 0,
+      "guideLinks": [],
       "pdfLinks": []
     },
     {
@@ -493,11 +524,11 @@
       "depth": 1,
       "foundFrom": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
       "title": "Tratamiento de infecciones por P.aeruginosa según EUCAST",
-      "htmlLength": 53703,
+      "htmlLength": 54114,
       "contentTextLength": 780,
       "contentBlockCount": 1,
       "tableBlockCount": 1,
-      "guideLinkCount": 15,
+      "guideLinkCount": 16,
       "pdfLinkCount": 0,
       "guideLinks": [
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia",
@@ -514,6 +545,7 @@
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
         "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_p_aeruginosa_segun_eucast"
       ],
       "pdfLinks": []
@@ -611,8 +643,14 @@
       "pdfLinks": []
     }
   ],
-  "warnings": [],
+  "warnings": [
+    {
+      "url": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_por_bgn_productores_de_mbl",
+      "title": "Iniciar sesión",
+      "warning": "Contenido breve: 169 caracteres"
+    }
+  ],
   "errors": [],
-  "downloadedResourceCount": 11,
+  "downloadedResourceCount": 12,
   "failedResourceCount": 0
 }
