@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-22T00:00:00Z",
+  "status": "draft_pending_manual_review",
+  "title": "Catálogo de ámbitos/centros del mapa microbiológico",
+  "description": "Catálogo explícito de ámbitos consultables para evitar mezclar datos HUVN globales con datos de centros o poblaciones específicas.",
+  "clinicalDecisionSupport": false,
+  "interactiveUseAllowed": false,
+  "queryPreviewAllowed": true,
+  "defaultScopeId": "huvn",
+  "scopes": [
+    {
+      "id": "huvn",
+      "label": "HUVN global",
+      "status": "available_pending_manual_review",
+      "datasetUseAllowed": true,
+      "metadataScopeValues": ["huvn"],
+      "description": "Datos globales HUVN publicados como extracción estructurada pendiente de revisión manual. No extrapolar a centros específicos."
+    },
+    {
+      "id": "hospital_general",
+      "label": "Hospital General",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["hospital_general"],
+      "description": "Sin dataset estructurado publicado para consulta específica de Hospital General."
+    },
+    {
+      "id": "neurotrauma",
+      "label": "Neurotraumatología / Trauma",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["neurotrauma", "neurotraumatologia"],
+      "description": "Sin dataset estructurado publicado para consulta específica de Neurotraumatología / Trauma."
+    },
+    {
+      "id": "materno_infantil",
+      "label": "Materno-Infantil",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["materno_infantil"],
+      "description": "Sin dataset estructurado publicado para consulta específica de Materno-Infantil."
+    },
+    {
+      "id": "pediatria",
+      "label": "Pediatría",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["pediatria", "pediatric"],
+      "description": "Sin dataset estructurado publicado para consulta específica de Pediatría."
+    },
+    {
+      "id": "extrahospitalario",
+      "label": "Extrahospitalario",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["extrahospitalario"],
+      "description": "Ámbito recogido en el índice del mapa, pero sin dataset estructurado publicado para consulta en la app."
+    },
+    {
+      "id": "service_specific",
+      "label": "Servicios específicos",
+      "status": "not_published",
+      "datasetUseAllowed": false,
+      "metadataScopeValues": ["service_specific"],
+      "description": "Ámbito recogido en el índice del mapa, pero sin dataset estructurado publicado para consulta en la app."
+    }
+  ],
+  "queryRules": {
+    "scopeIsRequired": true,
+    "microorganismFilterRequired": false,
+    "antibioticFilterRequired": false,
+    "allowEmptyOptionalFilters": true,
+    "emptyOptionalFiltersBehavior": "return_all_records_for_selected_scope_limited_by_app",
+    "forbidScopeFallback": true,
+    "forbidUsingGlobalHuvnAsSpecificCenter": true,
+    "noDatasetMessage": "No hay dataset estructurado publicado para este centro/ámbito."
+  },
+  "warnings": [
+    "No usar datos HUVN globales como si fueran datos de Pediatría, Neurotraumatología, Hospital General o Materno-Infantil.",
+    "Los ámbitos con status not_published deben mostrarse como sin dataset estructurado, no como cero aislamientos ni como datos ausentes interpretables.",
+    "Este catálogo no valida clínicamente ningún dato; solo evita mezclas de ámbito durante la consulta."
+  ]
+}
