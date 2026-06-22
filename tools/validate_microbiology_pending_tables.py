@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,7 @@ REQUIRED_DICTIONARY_FILES = [
     MICROBIOLOGY_DIR / "antibiotic_abbreviations_2025.json",
 ]
 ENTEROBACTERIA_QA_FILE = MICROBIOLOGY_DIR / "qa_enterobacterias_pending_2025.json"
+ENTEROBACTERIA_PRECONSOLIDATION_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
 
 
 def require(condition: bool, message: str) -> None:
@@ -111,6 +113,31 @@ def validate_no_conflicting_duplicate_records(records: list[dict[str, Any]]) -> 
         )
 
 
+def group_records_by_key(records: list[dict[str, Any]]) -> dict[tuple[str, str], list[dict[str, Any]]]:
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        grouped[(record["microorganism"], record["antibiotic"])].append(record)
+    return grouped
+
+
+def calculate_key_classes(records: list[dict[str, Any]]) -> tuple[set[tuple[str, str]], set[tuple[str, str]], set[tuple[str, str]]]:
+    grouped = group_records_by_key(records)
+    single_record_keys: set[tuple[str, str]] = set()
+    duplicate_identical_keys: set[tuple[str, str]] = set()
+    conflicting_keys: set[tuple[str, str]] = set()
+
+    for key, key_records in grouped.items():
+        value_pairs = {(record["isolatesTested"], record["susceptibilityPercent"]) for record in key_records}
+        if len(key_records) == 1:
+            single_record_keys.add(key)
+        elif len(value_pairs) == 1:
+            duplicate_identical_keys.add(key)
+        else:
+            conflicting_keys.add(key)
+
+    return single_record_keys, duplicate_identical_keys, conflicting_keys
+
+
 def validate_enterobacteria_qa_against_records(
     qa_path: Path,
     records: list[dict[str, Any]],
@@ -183,6 +210,107 @@ def validate_enterobacteria_qa_against_records(
     )
 
 
+def validate_enterobacteria_preconsolidation_against_records(
+    preconsolidation_path: Path,
+    records: list[dict[str, Any]],
+) -> None:
+    require(preconsolidation_path.exists(), f"missing enterobacteria preconsolidation file: {preconsolidation_path}")
+    data = load_json(preconsolidation_path)
+    metadata = data.get("metadata") or {}
+    input_datasets = data.get("inputDatasets") or []
+    summary = data.get("summary") or {}
+    duplicate_identical_keys = data.get("duplicateIdenticalKeys") or []
+    conflicting_keys = data.get("conflictingKeys") or []
+    low_count_groups = data.get("lowCountGroups") or []
+
+    require(
+        metadata.get("status") == "preconsolidation_draft_pending_manual_review",
+        "enterobacteria preconsolidation must remain draft pending manual review",
+    )
+    require(metadata.get("clinicalUseAllowed") is False, "enterobacteria preconsolidation must not allow clinical use")
+    require(metadata.get("interactiveUseAllowed") is False, "enterobacteria preconsolidation must not allow interactive use")
+    require(
+        metadata.get("therapeuticRecommendationAllowed") is False,
+        "enterobacteria preconsolidation must not allow therapeutic recommendations",
+    )
+    require(isinstance(input_datasets, list) and len(input_datasets) == 3, "enterobacteria preconsolidation must reference exactly three passes")
+
+    source_files = {str(item.get("file")) for item in input_datasets if item.get("file")}
+    source_records = [record for record in records if record["sourceFile"] in source_files]
+    require(source_records, "enterobacteria preconsolidation references no source records")
+
+    records_by_source: dict[str, list[dict[str, Any]]] = {}
+    for record in source_records:
+        records_by_source.setdefault(str(record["sourceFile"]), []).append(record)
+
+    for index, item in enumerate(input_datasets):
+        prefix = f"enterobacteria_preconsolidation.inputDatasets[{index}]"
+        source_file = item.get("file")
+        require(isinstance(source_file, str) and source_file.endswith(".json"), f"{prefix}.file must be a JSON filename")
+        current_records = records_by_source.get(source_file) or []
+        require(current_records, f"{prefix}.file has no matching source records: {source_file}")
+        source_organisms = {record["microorganism"] for record in current_records}
+        source_antibiotics = {record["antibiotic"] for record in current_records}
+        require(item.get("recordCount") == len(current_records), f"{prefix}.recordCount mismatch")
+        require(item.get("microorganismGroupCount") == len(source_organisms), f"{prefix}.microorganismGroupCount mismatch")
+        require(item.get("antibioticCount") == len(source_antibiotics), f"{prefix}.antibioticCount mismatch")
+
+    grouped = group_records_by_key(source_records)
+    single_record_keys, expected_duplicate_identical_keys, expected_conflicting_keys = calculate_key_classes(source_records)
+
+    require(summary.get("sourceRecordCount") == len(source_records), "preconsolidation.sourceRecordCount mismatch")
+    require(summary.get("uniqueKeyCount") == len(grouped), "preconsolidation.uniqueKeyCount mismatch")
+    require(summary.get("singleRecordKeyCount") == len(single_record_keys), "preconsolidation.singleRecordKeyCount mismatch")
+    require(
+        summary.get("duplicateIdenticalKeyCount") == len(expected_duplicate_identical_keys),
+        "preconsolidation.duplicateIdenticalKeyCount mismatch",
+    )
+    require(summary.get("conflictingKeyCount") == len(expected_conflicting_keys), "preconsolidation.conflictingKeyCount mismatch")
+    require(summary.get("readyForConsolidatedPublication") is False, "preconsolidation must not be publication-ready")
+    require(
+        summary.get("readyForAppQueryAsConsolidatedDataset") is False,
+        "preconsolidation must not be APP-ready as a consolidated dataset",
+    )
+    require(summary.get("readyForClinicalUse") is False, "preconsolidation must not be clinical-use ready")
+
+    observed_duplicate_identical_keys = {
+        (item.get("microorganism"), item.get("antibiotic"))
+        for item in duplicate_identical_keys
+        if isinstance(item, dict)
+    }
+    observed_conflicting_keys = {
+        (item.get("microorganism"), item.get("antibiotic"))
+        for item in conflicting_keys
+        if isinstance(item, dict)
+    }
+    expected_low_count_groups = {
+        (record["microorganism"], record["isolatesTested"])
+        for record in source_records
+        if int(record["isolatesTested"]) < 30
+    }
+    observed_low_count_groups = {
+        (item.get("microorganism"), item.get("isolatesTested"))
+        for item in low_count_groups
+        if isinstance(item, dict)
+    }
+
+    require(
+        observed_duplicate_identical_keys == expected_duplicate_identical_keys,
+        "preconsolidation.duplicateIdenticalKeys does not match source records",
+    )
+    require(observed_conflicting_keys == expected_conflicting_keys, "preconsolidation.conflictingKeys does not match source records")
+    require(observed_low_count_groups == expected_low_count_groups, "preconsolidation.lowCountGroups does not match source records")
+
+    safe_behavior = data.get("safeAppBehavior") or {}
+    require(safe_behavior.get("mustNotUseAsConsolidatedDataset") is True, "preconsolidation must block consolidated use")
+    require(safe_behavior.get("mustNotRankAntibiotics") is True, "preconsolidation must block ranking")
+    require(
+        safe_behavior.get("mustNotGenerateTherapeuticRecommendations") is True,
+        "preconsolidation must block therapeutic recommendations",
+    )
+    require(safe_behavior.get("mustShowPendingReview") is True, "preconsolidation must show pending review")
+
+
 def main() -> None:
     allowed_antibiotics: set[str] = set()
 
@@ -197,12 +325,14 @@ def main() -> None:
 
     validate_no_conflicting_duplicate_records(all_records)
     validate_enterobacteria_qa_against_records(ENTEROBACTERIA_QA_FILE, all_records)
+    validate_enterobacteria_preconsolidation_against_records(ENTEROBACTERIA_PRECONSOLIDATION_FILE, all_records)
 
     print("Pending microbiology table extractions OK")
     print(f"Antibiotic dictionary entries: {len(allowed_antibiotics)}")
     print(f"Susceptibility files: {len(REQUIRED_SUSCEPTIBILITY_FILES)}")
     print(f"Susceptibility records: {len(all_records)}")
-    print(f"Enterobacteria QA: validated against source passes")
+    print("Enterobacteria QA: validated against source passes")
+    print("Enterobacteria preconsolidation: validated against source passes")
 
 
 if __name__ == "__main__":
