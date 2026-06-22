@@ -1,5 +1,5 @@
 {
-  "version": "0.3.3",
+  "version": "0.3.4",
   "generatedAt": "2026-06-22T00:00:00Z",
   "status": "draft",
   "modules": {
@@ -20,6 +20,7 @@
       "manifestUrl": "microbiology/microbiology_manifest.json",
       "queryManifestUrl": "microbiology/microbiology_query_manifest.json",
       "scopeCatalogUrl": "microbiology/scope_catalog.json",
+      "extractionStatusUrl": "microbiology/extraction_status_2025.json",
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
       "updatePolicyUrl": "microbiology/update_policy.json",
       "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
@@ -42,6 +43,7 @@
     "El gestor de consultas microbiológicas solo puede mostrar preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
     "Las pasadas de enterobacterias no están consolidadas automáticamente; revisar frente al PDF antes de uso clínico.",
     "El QA específico de enterobacterias aún no está publicado como archivo; no anunciarlo como dataset disponible.",
-    "El catálogo de ámbitos evita mezclar datos HUVN globales con datos de centros específicos no publicados."
+    "El catálogo de ámbitos evita mezclar datos HUVN globales con datos de centros específicos no publicados.",
+    "El estado de explotación indica que el mapa completo no está extraído ni revisado; no presentar como mapa interactivo completo."
   ]
 }
