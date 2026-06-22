@@ -127,6 +127,9 @@ jobs:
           print("Data modules published in manifest")
           PY
 
+      - name: Verify data module index
+        run: python tools/validate_data_module_index.py
+
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
