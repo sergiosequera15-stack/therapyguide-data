@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     DOCS_DIR / "microbiology" / "microbiology_map_2025.json",
     DOCS_DIR / "microbiology" / "microbiology_query_manifest.json",
     DOCS_DIR / "microbiology" / "scope_catalog.json",
+    DOCS_DIR / "microbiology" / "extraction_status_2025.json",
 ]
 
 
@@ -174,6 +175,44 @@ def validate_scope_catalog(scope_catalog: dict[str, Any]) -> set[str]:
     return get_scope_metadata_values(scope_catalog)
 
 
+def validate_extraction_status(extraction_status: dict[str, Any], microbiology_map: dict[str, Any]) -> None:
+    require(
+        extraction_status.get("status") == "partial_extraction_pending_manual_review",
+        "extraction_status.status must remain partial_extraction_pending_manual_review",
+    )
+    require(extraction_status.get("source"), "extraction_status lacks source")
+
+    summary = extraction_status.get("summary") or {}
+    require(summary.get("fullInteractiveMapExtracted") is False, "extraction_status must not claim fullInteractiveMapExtracted")
+    require(summary.get("fullInteractiveMapReviewed") is False, "extraction_status must not claim fullInteractiveMapReviewed")
+    require(summary.get("enterobacteriaConsolidated") is False, "extraction_status must not claim enterobacteriaConsolidated")
+    require(summary.get("enterobacteriaQaPublished") is False, "extraction_status must not claim enterobacteriaQaPublished")
+    require(summary.get("sectionCatalogCount") == len(microbiology_map.get("sectionCatalog", [])), "extraction_status.sectionCatalogCount mismatch")
+    require(
+        summary.get("generalRecordsInMicrobiologyMap") == len(microbiology_map.get("records", [])),
+        "extraction_status.generalRecordsInMicrobiologyMap mismatch",
+    )
+    require(
+        summary.get("resistanceMechanismRecords") == len(microbiology_map.get("resistanceMechanismRecords", [])),
+        "extraction_status.resistanceMechanismRecords mismatch",
+    )
+
+    safe_behavior = extraction_status.get("safeAppBehavior") or {}
+    require(safe_behavior.get("mustBlockClinicalDecisionSupport") is True, "extraction_status.safeAppBehavior must block clinical decision support")
+    require(safe_behavior.get("mustNotRankAntibiotics") is True, "extraction_status.safeAppBehavior must block ranking")
+    require(
+        safe_behavior.get("mustNotGenerateTherapeuticRecommendations") is True,
+        "extraction_status.safeAppBehavior must block therapeutic recommendations",
+    )
+    require(
+        safe_behavior.get("mustNotUseGlobalHuvnAsSpecificCenter") is True,
+        "extraction_status.safeAppBehavior must block HUVN global fallback to specific centers",
+    )
+
+    not_completed = extraction_status.get("notCompletedItems") or []
+    require(isinstance(not_completed, list) and not_completed, "extraction_status.notCompletedItems must be a non-empty list")
+
+
 def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, Any], declared_scope_values: set[str]) -> None:
     current_map = manifest.get("currentMap") or {}
     require(current_map.get("path"), "microbiology_manifest.currentMap lacks path")
@@ -248,6 +287,10 @@ def validate_microbiology_query_manifest(data: dict[str, Any], declared_scope_va
     require(data.get("queryPreviewAllowed") is True, "microbiology_query_manifest.queryPreviewAllowed must be true")
     require(data.get("therapeuticRecommendationAllowed") is False, "microbiology_query_manifest.therapeuticRecommendationAllowed must be false")
     require(data.get("scopeCatalogUrl") == "microbiology/scope_catalog.json", "microbiology_query_manifest.scopeCatalogUrl must point to scope_catalog.json")
+    require(
+        data.get("extractionStatusUrl") == "microbiology/extraction_status_2025.json",
+        "microbiology_query_manifest.extractionStatusUrl must point to extraction_status_2025.json",
+    )
     require(isinstance(data.get("datasets"), list) and data["datasets"], "microbiology_query_manifest.datasets must be a non-empty list")
     require(isinstance(data.get("supportedFilters"), list) and data["supportedFilters"], "microbiology_query_manifest.supportedFilters must be a non-empty list")
 
@@ -301,6 +344,7 @@ def main() -> None:
     microbiology_map = load_json(DOCS_DIR / "microbiology" / "microbiology_map_2025.json")
     microbiology_query_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_query_manifest.json")
     scope_catalog = load_json(DOCS_DIR / "microbiology" / "scope_catalog.json")
+    extraction_status = load_json(DOCS_DIR / "microbiology" / "extraction_status_2025.json")
 
     validate_recommendation_rules(recommendation_rules)
     validate_allergy_rules(allergy_rules)
@@ -308,6 +352,7 @@ def main() -> None:
     validate_scores(scores)
     declared_scope_values = validate_scope_catalog(scope_catalog)
     validate_microbiology(microbiology_manifest, microbiology_map, declared_scope_values)
+    validate_extraction_status(extraction_status, microbiology_map)
     validate_microbiology_query_manifest(microbiology_query_manifest, declared_scope_values)
 
     print("Data modules OK")
@@ -320,6 +365,7 @@ def main() -> None:
     print(f"Microbiology resistance mechanism records: {len(microbiology_map.get('resistanceMechanismRecords', []))}")
     print(f"Microbiology query datasets: {len(microbiology_query_manifest.get('datasets', []))}")
     print(f"Microbiology scopes: {len(scope_catalog.get('scopes', []))}")
+    print(f"Microbiology extraction status: {extraction_status.get('status')}")
 
 
 if __name__ == "__main__":
