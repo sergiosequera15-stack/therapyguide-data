@@ -29,5 +29,8 @@ jobs:
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
+      - name: Generate enterobacteria preconsolidation draft
+        run: python tools/generate_enterobacteria_preconsolidation.py
+
       - name: Validate pending microbiology table extractions
         run: python tools/validate_microbiology_pending_tables.py
