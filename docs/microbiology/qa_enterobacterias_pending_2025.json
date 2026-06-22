@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "title": "QA pendiente de enterobacterias HUVN 2025",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-22T00:00:00Z",
+    "dataYear": 2025,
+    "scope": "huvn",
+    "population": "all",
+    "organismGroup": "gram_negative_enterobacteria",
+    "status": "qa_draft_pending_manual_review",
+    "clinicalUseAllowed": false,
+    "interactiveUseAllowed": false,
+    "therapeuticRecommendationAllowed": false,
+    "sourcePdf": {
+      "title": "Mapa Microbiológico 2025",
+      "uploadedFileName": "Mapa Microbiologico 2025 (1).pdf",
+      "sha256": "a3c338b169f5a54e807e003b07420494ce2e2f4803d202cf5414d67379b4825e",
+      "printedPage": 5,
+      "pdfPage": 6,
+      "tableTitle": "Bacilos Gram negativos Enterobacterias"
+    },
+    "notes": [
+      "QA descriptivo de las tres pasadas de extracción de enterobacterias ya publicadas en DATA.",
+      "No consolida registros ni resuelve discrepancias entre pasadas.",
+      "No debe usarse como fuente clínica ni como recomendación terapéutica.",
+      "La revisión manual frente al PDF fuente sigue pendiente."
+    ]
+  },
+  "inputDatasets": [
+    {
+      "id": "huvn_enterobacteria_first_pass_2025",
+      "url": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
+      "extractionStatus": "manually_extracted_first_pass_pending_manual_review",
+      "recordCountEstimated": 80,
+      "microorganismGroupsWithRecords": 6
+    },
+    {
+      "id": "huvn_enterobacteria_second_pass_2025",
+      "url": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
+      "extractionStatus": "manually_extracted_second_pass_pending_manual_review",
+      "recordCountEstimated": 88,
+      "microorganismGroupsWithRecords": 7
+    },
+    {
+      "id": "huvn_enterobacteria_third_pass_2025",
+      "url": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
+      "extractionStatus": "manually_extracted_third_pass_pending_manual_review",
+      "recordCountEstimated": 78,
+      "microorganismGroupsWithRecords": 6
+    }
+  ],
+  "aggregateDraft": {
+    "totalRecordCountEstimated": 246,
+    "microorganismGroupsWithRecordsEstimated": 19,
+    "sourceTable": "Bacilos Gram negativos Enterobacterias",
+    "passesAreConsolidated": false,
+    "readyForAppQueryAsConsolidatedDataset": false,
+    "readyForClinicalUse": false
+  },
+  "knownLowCountGroupsInExtractedRecords": [
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "sourcePass": "second_pass",
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "sourcePass": "third_pass",
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "sourcePass": "third_pass",
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "sourcePass": "third_pass",
+      "warning": "n < 30; estimates should be flagged as unstable."
+    }
+  ],
+  "manualReviewChecklist": [
+    {
+      "id": "verify_source_page",
+      "label": "Confirm source page/table against PDF",
+      "status": "pending"
+    },
+    {
+      "id": "verify_record_counts",
+      "label": "Verify estimated record counts programmatically or by manual recount",
+      "status": "pending"
+    },
+    {
+      "id": "verify_microorganism_coverage",
+      "label": "Confirm all organism rows from the table are extracted or explicitly marked not extracted",
+      "status": "pending"
+    },
+    {
+      "id": "detect_duplicate_keys",
+      "label": "Check duplicate microorganism-antibiotic keys across passes before consolidation",
+      "status": "pending"
+    },
+    {
+      "id": "resolve_conflicts",
+      "label": "Resolve any duplicate or conflicting susceptibility values before publishing a consolidated dataset",
+      "status": "pending"
+    },
+    {
+      "id": "confirm_low_count_flags",
+      "label": "Ensure all n < 30 rows remain visibly flagged in APP outputs",
+      "status": "pending"
+    }
+  ],
+  "safeAppBehavior": {
+    "mayShowQaStatus": true,
+    "mayShowDatasetAsPending": true,
+    "mustNotUseAsConsolidatedDataset": true,
+    "mustNotRankAntibiotics": true,
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustShowPendingReview": true
+  },
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null
+  }
+}
