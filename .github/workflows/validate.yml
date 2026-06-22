@@ -34,3 +34,10 @@ jobs:
 
       - name: Validate pending microbiology table extractions
         run: python tools/validate_microbiology_pending_tables.py
+
+      - name: Upload enterobacteria preconsolidation draft
+        uses: actions/upload-artifact@v4
+        with:
+          name: enterobacteria-preconsolidation-draft-2025
+          path: docs/microbiology/preconsolidation_enterobacterias_draft_2025.json
+          if-no-files-found: error
