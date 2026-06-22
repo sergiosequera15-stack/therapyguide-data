@@ -5,8 +5,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-MICROBIOLOGY_DIR = Path("docs") / "microbiology
-"
+MICROBIOLOGY_DIR = Path("docs") / "microbiology"
 INPUT_FILES = [
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_2025.json",
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
