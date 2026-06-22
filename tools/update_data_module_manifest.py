@@ -25,6 +25,7 @@ DATA_MODULES = {
         "manifestUrl": "microbiology/microbiology_manifest.json",
         "queryManifestUrl": "microbiology/microbiology_query_manifest.json",
         "scopeCatalogUrl": "microbiology/scope_catalog.json",
+        "extractionStatusUrl": "microbiology/extraction_status_2025.json",
         "currentMapUrl": "microbiology/microbiology_map_2025.json",
         "updatePolicyUrl": "microbiology/update_policy.json",
         "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
