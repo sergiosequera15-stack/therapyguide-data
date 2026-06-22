@@ -1,0 +1,135 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-06-22T00:00:00Z",
+  "status": "partial_extraction_pending_manual_review",
+  "title": "Estado de explotación estructurada del Mapa Microbiológico 2025",
+  "source": {
+    "title": "Mapa Microbiológico 2025",
+    "uploadedFileName": "Mapa Microbiologico 2025 (1).pdf",
+    "sha256": "a3c338b169f5a54e807e003b07420494ce2e2f4803d202cf5414d67379b4825e",
+    "dataYear": 2025,
+    "pageCount": 73,
+    "binaryPublishedInData": false
+  },
+  "summary": {
+    "sectionCatalogStatus": "complete_from_index_pending_manual_review",
+    "sectionCatalogCount": 66,
+    "fullInteractiveMapExtracted": false,
+    "fullInteractiveMapReviewed": false,
+    "generalRecordsInMicrobiologyMap": 0,
+    "resistanceMechanismRecords": 43,
+    "structuredSusceptibilityDatasetCount": 4,
+    "enterobacteriaConsolidated": false,
+    "enterobacteriaQaPublished": false
+  },
+  "completedOrPartiallyCompletedItems": [
+    {
+      "id": "section_catalog",
+      "label": "Catálogo de secciones del índice",
+      "status": "complete_from_index_pending_manual_review",
+      "recordsOrSections": 66,
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_resistance_mechanisms",
+      "label": "Mecanismos de resistencia HUVN",
+      "status": "extracted_pending_manual_review",
+      "recordsOrSections": 43,
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_bgn_non_enterobacteria_susceptibility_2025",
+      "label": "Sensibilidad HUVN BGN no enterobacterias",
+      "status": "manually_extracted_first_pass_pending_manual_review",
+      "datasetUrl": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_first_pass_2025",
+      "label": "Sensibilidad HUVN enterobacterias - primera pasada",
+      "status": "manually_extracted_first_pass_pending_manual_review",
+      "datasetUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_second_pass_2025",
+      "label": "Sensibilidad HUVN enterobacterias - segunda pasada",
+      "status": "manually_extracted_second_pass_pending_manual_review",
+      "datasetUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_third_pass_2025",
+      "label": "Sensibilidad HUVN enterobacterias - tercera pasada",
+      "status": "manually_extracted_third_pass_pending_manual_review",
+      "datasetUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
+      "clinicalUseAllowed": false
+    },
+    {
+      "id": "antibiotic_abbreviations_2025",
+      "label": "Diccionario de abreviaturas antibióticas",
+      "status": "draft_pending_manual_review",
+      "datasetUrl": "microbiology/antibiotic_abbreviations_2025.json",
+      "clinicalUseAllowed": false
+    }
+  ],
+  "notCompletedItems": [
+    {
+      "id": "full_susceptibility_map",
+      "label": "Extracción completa de todas las tablas de sensibilidad del PDF",
+      "status": "not_complete",
+      "reason": "microbiology_map_2025.records está vacío y las secciones del índice siguen como cataloged_pending_table_extraction."
+    },
+    {
+      "id": "hospital_general_specific_tables",
+      "label": "Tablas específicas de Hospital General",
+      "status": "not_published"
+    },
+    {
+      "id": "neurotrauma_specific_tables",
+      "label": "Tablas específicas de Neurotraumatología / Trauma",
+      "status": "not_published"
+    },
+    {
+      "id": "materno_infantil_specific_tables",
+      "label": "Tablas específicas de Materno-Infantil",
+      "status": "not_published"
+    },
+    {
+      "id": "pediatric_specific_tables",
+      "label": "Tablas específicas pediátricas",
+      "status": "not_published"
+    },
+    {
+      "id": "enterobacteria_consolidation",
+      "label": "Consolidación auditada de pasadas de enterobacterias",
+      "status": "not_complete"
+    },
+    {
+      "id": "enterobacteria_qa",
+      "label": "QA específico de enterobacterias",
+      "status": "not_published"
+    },
+    {
+      "id": "manual_review",
+      "label": "Revisión manual documentada frente al PDF fuente",
+      "status": "not_complete"
+    }
+  ],
+  "safeAppBehavior": {
+    "mayShowAvailablePendingDatasets": true,
+    "mayShowExtractionStatus": true,
+    "mayShowUnavailableScopes": true,
+    "mustShowPendingReview": true,
+    "mustBlockClinicalDecisionSupport": true,
+    "mustNotRankAntibiotics": true,
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustNotUseGlobalHuvnAsSpecificCenter": true
+  },
+  "nextRemoteSafeTasks": [
+    "Mantener consulta APP limitada a datasets publicados y pendientes de revisión.",
+    "No presentar Hospital General, Neurotrauma, Materno-Infantil o Pediatría como disponibles hasta publicar datasets específicos.",
+    "Crear QA de enterobacterias antes de consolidar sus pasadas.",
+    "Completar extracción de tablas restantes por ámbitos solo con trazabilidad de página/sección y revisión manual."
+  ]
+}
