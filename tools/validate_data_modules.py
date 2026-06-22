@@ -20,6 +20,7 @@ REQUIRED_FILES = [
     DOCS_DIR / "microbiology" / "microbiology_query_manifest.json",
     DOCS_DIR / "microbiology" / "scope_catalog.json",
     DOCS_DIR / "microbiology" / "extraction_status_2025.json",
+    DOCS_DIR / "microbiology" / "qa_enterobacterias_pending_2025.json",
 ]
 
 
@@ -186,6 +187,7 @@ def validate_extraction_status(extraction_status: dict[str, Any], microbiology_m
     require(summary.get("fullInteractiveMapExtracted") is False, "extraction_status must not claim fullInteractiveMapExtracted")
     require(summary.get("fullInteractiveMapReviewed") is False, "extraction_status must not claim fullInteractiveMapReviewed")
     require(summary.get("enterobacteriaConsolidated") is False, "extraction_status must not claim enterobacteriaConsolidated")
+    require(summary.get("enterobacteriaQaDraft") is True, "extraction_status must claim enterobacteriaQaDraft only after QA draft exists")
     require(summary.get("enterobacteriaQaPublished") is False, "extraction_status must not claim enterobacteriaQaPublished")
     require(summary.get("sectionCatalogCount") == len(microbiology_map.get("sectionCatalog", [])), "extraction_status.sectionCatalogCount mismatch")
     require(
@@ -211,6 +213,41 @@ def validate_extraction_status(extraction_status: dict[str, Any], microbiology_m
 
     not_completed = extraction_status.get("notCompletedItems") or []
     require(isinstance(not_completed, list) and not_completed, "extraction_status.notCompletedItems must be a non-empty list")
+
+
+def validate_enterobacteria_qa(qa_data: dict[str, Any]) -> None:
+    metadata = qa_data.get("metadata") or {}
+    require(metadata.get("status") == "qa_draft_pending_manual_review", "enterobacteria QA must remain qa_draft_pending_manual_review")
+    require(metadata.get("clinicalUseAllowed") is False, "enterobacteria QA clinicalUseAllowed must be false")
+    require(metadata.get("interactiveUseAllowed") is False, "enterobacteria QA interactiveUseAllowed must be false")
+    require(metadata.get("therapeuticRecommendationAllowed") is False, "enterobacteria QA therapeuticRecommendationAllowed must be false")
+
+    input_datasets = qa_data.get("inputDatasets") or []
+    require(isinstance(input_datasets, list) and len(input_datasets) == 3, "enterobacteria QA must reference exactly three input passes")
+    for index, dataset in enumerate(input_datasets):
+        prefix = f"enterobacteria_qa.inputDatasets[{index}]"
+        require(dataset.get("id"), f"{prefix} lacks id")
+        dataset_url = dataset.get("url")
+        require(dataset_url, f"{prefix} lacks url")
+        require(resolve_dataset_path(str(dataset_url)).exists(), f"{prefix} points to missing file")
+        require(isinstance(dataset.get("recordCountEstimated"), int), f"{prefix}.recordCountEstimated must be integer")
+        require(isinstance(dataset.get("microorganismGroupsWithRecords"), int), f"{prefix}.microorganismGroupsWithRecords must be integer")
+
+    aggregate = qa_data.get("aggregateDraft") or {}
+    require(aggregate.get("passesAreConsolidated") is False, "enterobacteria QA must not claim passes are consolidated")
+    require(aggregate.get("readyForAppQueryAsConsolidatedDataset") is False, "enterobacteria QA must not be ready for app query as consolidated dataset")
+    require(aggregate.get("readyForClinicalUse") is False, "enterobacteria QA must not be ready for clinical use")
+
+    checklist = qa_data.get("manualReviewChecklist") or []
+    require(isinstance(checklist, list) and checklist, "enterobacteria QA manualReviewChecklist must be non-empty")
+    for index, item in enumerate(checklist):
+        require(item.get("status") == "pending", f"enterobacteria_qa.manualReviewChecklist[{index}] must remain pending")
+
+    safe_behavior = qa_data.get("safeAppBehavior") or {}
+    require(safe_behavior.get("mustNotUseAsConsolidatedDataset") is True, "enterobacteria QA must block consolidated use")
+    require(safe_behavior.get("mustNotRankAntibiotics") is True, "enterobacteria QA must block ranking")
+    require(safe_behavior.get("mustNotGenerateTherapeuticRecommendations") is True, "enterobacteria QA must block therapeutic recommendations")
+    require(safe_behavior.get("mustShowPendingReview") is True, "enterobacteria QA must show pending review")
 
 
 def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, Any], declared_scope_values: set[str]) -> None:
@@ -345,6 +382,7 @@ def main() -> None:
     microbiology_query_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_query_manifest.json")
     scope_catalog = load_json(DOCS_DIR / "microbiology" / "scope_catalog.json")
     extraction_status = load_json(DOCS_DIR / "microbiology" / "extraction_status_2025.json")
+    enterobacteria_qa = load_json(DOCS_DIR / "microbiology" / "qa_enterobacterias_pending_2025.json")
 
     validate_recommendation_rules(recommendation_rules)
     validate_allergy_rules(allergy_rules)
@@ -353,6 +391,7 @@ def main() -> None:
     declared_scope_values = validate_scope_catalog(scope_catalog)
     validate_microbiology(microbiology_manifest, microbiology_map, declared_scope_values)
     validate_extraction_status(extraction_status, microbiology_map)
+    validate_enterobacteria_qa(enterobacteria_qa)
     validate_microbiology_query_manifest(microbiology_query_manifest, declared_scope_values)
 
     print("Data modules OK")
@@ -366,6 +405,7 @@ def main() -> None:
     print(f"Microbiology query datasets: {len(microbiology_query_manifest.get('datasets', []))}")
     print(f"Microbiology scopes: {len(scope_catalog.get('scopes', []))}")
     print(f"Microbiology extraction status: {extraction_status.get('status')}")
+    print(f"Enterobacteria QA status: {enterobacteria_qa.get('metadata', {}).get('status')}")
 
 
 if __name__ == "__main__":
