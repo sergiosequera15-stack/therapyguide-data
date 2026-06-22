@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "generatedAt": "2026-06-22T00:00:00Z",
   "status": "partial_extraction_pending_manual_review",
   "title": "Estado de explotación estructurada del Mapa Microbiológico 2025",
@@ -20,6 +20,7 @@
     "resistanceMechanismRecords": 43,
     "structuredSusceptibilityDatasetCount": 4,
     "enterobacteriaConsolidated": false,
+    "enterobacteriaQaDraft": true,
     "enterobacteriaQaPublished": false
   },
   "completedOrPartiallyCompletedItems": [
@@ -66,6 +67,13 @@
       "clinicalUseAllowed": false
     },
     {
+      "id": "enterobacteria_qa_draft",
+      "label": "QA descriptivo pendiente de enterobacterias",
+      "status": "qa_draft_pending_manual_review",
+      "datasetUrl": "microbiology/qa_enterobacterias_pending_2025.json",
+      "clinicalUseAllowed": false
+    },
+    {
       "id": "antibiotic_abbreviations_2025",
       "label": "Diccionario de abreviaturas antibióticas",
       "status": "draft_pending_manual_review",
@@ -103,12 +111,13 @@
     {
       "id": "enterobacteria_consolidation",
       "label": "Consolidación auditada de pasadas de enterobacterias",
-      "status": "not_complete"
+      "status": "not_complete",
+      "reason": "Existe QA descriptivo pendiente, pero aún no hay revisión manual ni consolidación auditada de duplicados/conflictos."
     },
     {
-      "id": "enterobacteria_qa",
-      "label": "QA específico de enterobacterias",
-      "status": "not_published"
+      "id": "enterobacteria_qa_publication",
+      "label": "Publicación de QA específico de enterobacterias como recurso estable",
+      "status": "draft_pending_manual_review"
     },
     {
       "id": "manual_review",
@@ -129,7 +138,7 @@
   "nextRemoteSafeTasks": [
     "Mantener consulta APP limitada a datasets publicados y pendientes de revisión.",
     "No presentar Hospital General, Neurotrauma, Materno-Infantil o Pediatría como disponibles hasta publicar datasets específicos.",
-    "Crear QA de enterobacterias antes de consolidar sus pasadas.",
+    "Revisar QA de enterobacterias frente al PDF antes de consolidar sus pasadas.",
     "Completar extracción de tablas restantes por ámbitos solo con trazabilidad de página/sección y revisión manual."
   ]
 }
