@@ -18,6 +18,7 @@ REQUIRED_FILES = [
     DOCS_DIR / "microbiology" / "microbiology_manifest.json",
     DOCS_DIR / "microbiology" / "microbiology_map_2025.json",
     DOCS_DIR / "microbiology" / "microbiology_query_manifest.json",
+    DOCS_DIR / "microbiology" / "scope_catalog.json",
 ]
 
 
@@ -116,7 +117,64 @@ def validate_scores(data: dict[str, Any]) -> None:
             require(validation.get("testCases"), f"{prefix} is validated without testCases")
 
 
-def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, Any]) -> None:
+def get_scope_metadata_values(scope_catalog: dict[str, Any]) -> set[str]:
+    values: set[str] = set()
+    for scope in scope_catalog.get("scopes") or []:
+        values.add(str(scope.get("id")))
+        for metadata_value in scope.get("metadataScopeValues") or []:
+            values.add(str(metadata_value))
+    return values
+
+
+def validate_scope_catalog(scope_catalog: dict[str, Any]) -> set[str]:
+    require(scope_catalog.get("status") == "draft_pending_manual_review", "scope_catalog.status must remain draft_pending_manual_review")
+    require(scope_catalog.get("clinicalDecisionSupport") is False, "scope_catalog.clinicalDecisionSupport must be false")
+    require(scope_catalog.get("interactiveUseAllowed") is False, "scope_catalog.interactiveUseAllowed must be false")
+    require(scope_catalog.get("queryPreviewAllowed") is True, "scope_catalog.queryPreviewAllowed must be true")
+    require(isinstance(scope_catalog.get("scopes"), list) and scope_catalog["scopes"], "scope_catalog.scopes must be a non-empty list")
+
+    seen_ids: set[str] = set()
+    available_count = 0
+
+    for index, scope in enumerate(scope_catalog["scopes"]):
+        prefix = f"scope_catalog.scopes[{index}]"
+        scope_id = scope.get("id")
+        require(scope_id, f"{prefix} lacks id")
+        require(scope_id not in seen_ids, f"{prefix}.id is duplicated: {scope_id}")
+        seen_ids.add(str(scope_id))
+        require(scope.get("label"), f"{prefix} lacks label")
+        require(scope.get("status") in {"available_pending_manual_review", "not_published"}, f"{prefix}.status is invalid")
+        require(isinstance(scope.get("datasetUseAllowed"), bool), f"{prefix}.datasetUseAllowed must be boolean")
+        require(isinstance(scope.get("metadataScopeValues"), list) and scope["metadataScopeValues"], f"{prefix}.metadataScopeValues must be a non-empty list")
+        require(scope.get("description"), f"{prefix} lacks description")
+
+        if scope.get("datasetUseAllowed"):
+            available_count += 1
+            require(
+                scope.get("status") == "available_pending_manual_review",
+                f"{prefix} allows dataset use but is not available_pending_manual_review",
+            )
+        else:
+            require(scope.get("status") == "not_published", f"{prefix} blocks dataset use but is not not_published")
+
+    require("huvn" in seen_ids, "scope_catalog must include huvn")
+    require(available_count >= 1, "scope_catalog must expose at least one pending available scope")
+
+    query_rules = scope_catalog.get("queryRules") or {}
+    require(query_rules.get("scopeIsRequired") is True, "scope_catalog.queryRules.scopeIsRequired must be true")
+    require(query_rules.get("microorganismFilterRequired") is False, "scope_catalog.queryRules.microorganismFilterRequired must be false")
+    require(query_rules.get("antibioticFilterRequired") is False, "scope_catalog.queryRules.antibioticFilterRequired must be false")
+    require(query_rules.get("allowEmptyOptionalFilters") is True, "scope_catalog.queryRules.allowEmptyOptionalFilters must be true")
+    require(query_rules.get("forbidScopeFallback") is True, "scope_catalog.queryRules.forbidScopeFallback must be true")
+    require(
+        query_rules.get("forbidUsingGlobalHuvnAsSpecificCenter") is True,
+        "scope_catalog.queryRules.forbidUsingGlobalHuvnAsSpecificCenter must be true",
+    )
+
+    return get_scope_metadata_values(scope_catalog)
+
+
+def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, Any], declared_scope_values: set[str]) -> None:
     current_map = manifest.get("currentMap") or {}
     require(current_map.get("path"), "microbiology_manifest.currentMap lacks path")
     require(current_map.get("reviewStatus"), "microbiology_manifest.currentMap lacks reviewStatus")
@@ -141,7 +199,9 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
         require(section.get("title"), f"{prefix} lacks title")
         require(section.get("printedPage"), f"{prefix} lacks printedPage")
         require(section.get("pdfPage"), f"{prefix} lacks pdfPage")
-        require(section.get("scope"), f"{prefix} lacks scope")
+        section_scope = section.get("scope")
+        require(section_scope, f"{prefix} lacks scope")
+        require(str(section_scope) in declared_scope_values, f"{prefix}.scope is not declared in scope_catalog: {section_scope}")
         require(section.get("contentType"), f"{prefix} lacks contentType")
 
     mechanism_records = microbiology_map.get("resistanceMechanismRecords") or []
@@ -164,14 +224,51 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
             require(review.get("reviewedAt"), f"{prefix} reviewed record lacks reviewedAt")
 
 
-def validate_microbiology_query_manifest(data: dict[str, Any]) -> None:
+def validate_query_dataset_metadata(dataset: dict[str, Any], dataset_data: Any, declared_scope_values: set[str]) -> None:
+    dataset_id = str(dataset.get("id"))
+    if not isinstance(dataset_data, dict):
+        return
+
+    if dataset_id == "antibiotic_abbreviations_2025":
+        require(isinstance(dataset_data.get("abbreviations"), list), "antibiotic_abbreviations_2025 must contain abbreviations[]")
+        return
+
+    metadata = dataset_data.get("metadata") or {}
+    require(metadata.get("interactiveUseAllowed") is False, f"{dataset_id}.metadata.interactiveUseAllowed must be false")
+
+    scope = metadata.get("scope")
+    if scope is not None:
+        require(str(scope) in declared_scope_values, f"{dataset_id}.metadata.scope is not declared in scope_catalog: {scope}")
+
+
+def validate_microbiology_query_manifest(data: dict[str, Any], declared_scope_values: set[str]) -> None:
     require(data.get("status") == "draft_pending_manual_review", "microbiology_query_manifest.status must remain draft_pending_manual_review")
     require(data.get("clinicalDecisionSupport") is False, "microbiology_query_manifest.clinicalDecisionSupport must be false")
     require(data.get("interactiveUseAllowed") is False, "microbiology_query_manifest.interactiveUseAllowed must be false")
     require(data.get("queryPreviewAllowed") is True, "microbiology_query_manifest.queryPreviewAllowed must be true")
     require(data.get("therapeuticRecommendationAllowed") is False, "microbiology_query_manifest.therapeuticRecommendationAllowed must be false")
+    require(data.get("scopeCatalogUrl") == "microbiology/scope_catalog.json", "microbiology_query_manifest.scopeCatalogUrl must point to scope_catalog.json")
     require(isinstance(data.get("datasets"), list) and data["datasets"], "microbiology_query_manifest.datasets must be a non-empty list")
     require(isinstance(data.get("supportedFilters"), list) and data["supportedFilters"], "microbiology_query_manifest.supportedFilters must be a non-empty list")
+
+    supported_filters = data.get("supportedFilters") or []
+    scope_filter = next((item for item in supported_filters if item.get("id") == "scope"), None)
+    require(scope_filter is not None, "microbiology_query_manifest.supportedFilters must include scope")
+    require(scope_filter.get("type") == "single_select_required", "scope filter must be single_select_required")
+    require(scope_filter.get("valuesFrom") == "scope_catalog.scopes", "scope filter must read from scope_catalog.scopes")
+
+    for filter_id in ("microorganism", "antibiotic"):
+        filter_item = next((item for item in supported_filters if item.get("id") == filter_id), None)
+        require(filter_item is not None, f"microbiology_query_manifest.supportedFilters must include {filter_id}")
+        require(str(filter_item.get("type", "")).endswith("_optional"), f"{filter_id} filter must be optional")
+
+    query_behavior = data.get("queryBehavior") or {}
+    require(query_behavior.get("scopeIsRequired") is True, "queryBehavior.scopeIsRequired must be true")
+    require(query_behavior.get("microorganismFilterRequired") is False, "queryBehavior.microorganismFilterRequired must be false")
+    require(query_behavior.get("antibioticFilterRequired") is False, "queryBehavior.antibioticFilterRequired must be false")
+    require(query_behavior.get("allowEmptyOptionalFilters") is True, "queryBehavior.allowEmptyOptionalFilters must be true")
+    require(query_behavior.get("forbidScopeFallback") is True, "queryBehavior.forbidScopeFallback must be true")
+    require(query_behavior.get("forbidUsingGlobalHuvnAsSpecificCenter") is True, "queryBehavior.forbidUsingGlobalHuvnAsSpecificCenter must be true")
 
     for index, dataset in enumerate(data["datasets"]):
         prefix = f"microbiology_query_manifest.datasets[{index}]"
@@ -184,7 +281,8 @@ def validate_microbiology_query_manifest(data: dict[str, Any]) -> None:
 
         dataset_path = resolve_dataset_path(str(dataset_url))
         require(dataset_path.exists(), f"{prefix} points to missing file: {dataset_path}")
-        load_json(dataset_path)
+        dataset_data = load_json(dataset_path)
+        validate_query_dataset_metadata(dataset, dataset_data, declared_scope_values)
 
     output_policy = data.get("queryOutputPolicy") or {}
     require(output_policy.get("mustNotGenerateTherapeuticRecommendations") is True, "queryOutputPolicy must block therapeutic recommendations")
@@ -202,13 +300,15 @@ def main() -> None:
     microbiology_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_manifest.json")
     microbiology_map = load_json(DOCS_DIR / "microbiology" / "microbiology_map_2025.json")
     microbiology_query_manifest = load_json(DOCS_DIR / "microbiology" / "microbiology_query_manifest.json")
+    scope_catalog = load_json(DOCS_DIR / "microbiology" / "scope_catalog.json")
 
     validate_recommendation_rules(recommendation_rules)
     validate_allergy_rules(allergy_rules)
     validate_dose_calculators(dose_calculators)
     validate_scores(scores)
-    validate_microbiology(microbiology_manifest, microbiology_map)
-    validate_microbiology_query_manifest(microbiology_query_manifest)
+    declared_scope_values = validate_scope_catalog(scope_catalog)
+    validate_microbiology(microbiology_manifest, microbiology_map, declared_scope_values)
+    validate_microbiology_query_manifest(microbiology_query_manifest, declared_scope_values)
 
     print("Data modules OK")
     print(f"Recommendation rules: {len(recommendation_rules.get('rules', []))}")
@@ -219,6 +319,7 @@ def main() -> None:
     print(f"Microbiology sections: {len(microbiology_map.get('sectionCatalog', []))}")
     print(f"Microbiology resistance mechanism records: {len(microbiology_map.get('resistanceMechanismRecords', []))}")
     print(f"Microbiology query datasets: {len(microbiology_query_manifest.get('datasets', []))}")
+    print(f"Microbiology scopes: {len(scope_catalog.get('scopes', []))}")
 
 
 if __name__ == "__main__":
