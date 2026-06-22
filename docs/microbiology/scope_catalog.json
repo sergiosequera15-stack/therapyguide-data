@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "generatedAt": "2026-06-22T00:00:00Z",
   "status": "draft_pending_manual_review",
   "title": "Catálogo de ámbitos/centros del mapa microbiológico",
@@ -46,8 +46,12 @@
       "label": "Pediatría",
       "status": "not_published",
       "datasetUseAllowed": false,
-      "metadataScopeValues": ["pediatria", "pediatric"],
-      "description": "Sin dataset estructurado publicado para consulta específica de Pediatría."
+      "metadataScopeValues": ["pediatria"],
+      "requiredDatasetCriteria": {
+        "scope": ["huvn"],
+        "population": ["pediatric"]
+      },
+      "description": "Sin dataset estructurado publicado para consulta específica pediátrica. En el índice del mapa aparece como población pediátrica HUVN, no como scope independiente."
     },
     {
       "id": "extrahospitalario",
@@ -78,6 +82,7 @@
   },
   "warnings": [
     "No usar datos HUVN globales como si fueran datos de Pediatría, Neurotraumatología, Hospital General o Materno-Infantil.",
+    "Pediatría no debe resolverse contra HUVN global salvo que exista un dataset con población pediátrica estructurada y declarado como datasetUseAllowed.",
     "Los ámbitos con status not_published deben mostrarse como sin dataset estructurado, no como cero aislamientos ni como datos ausentes interpretables.",
     "Este catálogo no valida clínicamente ningún dato; solo evita mezclas de ámbito durante la consulta."
   ]
