@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "generatedAt": "2026-06-22T00:00:00Z",
   "status": "draft_pending_manual_review",
   "title": "Gestor de consultas microbiológicas HUVN",
@@ -18,6 +18,7 @@
     "status": "source_pdf_registered_not_published_as_binary"
   },
   "scopeCatalogUrl": "microbiology/scope_catalog.json",
+  "extractionStatusUrl": "microbiology/extraction_status_2025.json",
   "datasets": [
     {
       "id": "antibiotic_abbreviations_2025",
@@ -144,6 +145,7 @@
     "Si n < 30, la app debe mostrar advertencia explícita de baja estabilidad de la estimación.",
     "S + I pueden aparecer agrupadas según la metodología del documento; conservar esta advertencia junto al resultado.",
     "Las pasadas de extracción de enterobacterias no están consolidadas automáticamente; deben revisarse frente al PDF antes de uso clínico.",
+    "El mapa microbiológico completo no está explotado ni revisado; extraction_status_2025.json debe mostrarse si se informa estado de cobertura.",
     "No ocultar tablas o campos sin revisar; mostrarlos como pending o no disponible."
   ],
   "nextManualReviewChecklist": [
