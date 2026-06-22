@@ -182,9 +182,23 @@
     },
     "microbiology": {
       "manifestUrl": "microbiology/microbiology_manifest.json",
+      "queryManifestUrl": "microbiology/microbiology_query_manifest.json",
+      "scopeCatalogUrl": "microbiology/scope_catalog.json",
+      "extractionStatusUrl": "microbiology/extraction_status_2025.json",
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
-      "status": "draft_pending_extraction"
+      "updatePolicyUrl": "microbiology/update_policy.json",
+      "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
+      "susceptibilityTables": {
+        "huvnGramNegativeNonEnterobacteriaUrl": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
+        "huvnGramNegativeEnterobacteriaFirstPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
+        "huvnGramNegativeEnterobacteriaSecondPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
+        "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+      },
+      "queryPreviewAllowed": true,
+      "interactiveUseAllowed": false,
+      "clinicalDecisionSupport": false,
+      "status": "draft_pending_manual_review"
     }
   },
-  "dataModulesUpdatedAt": "2026-06-19T06:37:10.738148+00:00"
+  "dataModulesUpdatedAt": "2026-06-22T00:00:00+00:00"
 }
