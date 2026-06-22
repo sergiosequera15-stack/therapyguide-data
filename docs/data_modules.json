@@ -1,6 +1,6 @@
 {
-  "version": "0.3.2",
-  "generatedAt": "2026-06-19T00:00:00Z",
+  "version": "0.3.3",
+  "generatedAt": "2026-06-22T00:00:00Z",
   "status": "draft",
   "modules": {
     "rules": {
@@ -19,6 +19,7 @@
     "microbiology": {
       "manifestUrl": "microbiology/microbiology_manifest.json",
       "queryManifestUrl": "microbiology/microbiology_query_manifest.json",
+      "scopeCatalogUrl": "microbiology/scope_catalog.json",
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
       "updatePolicyUrl": "microbiology/update_policy.json",
       "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
@@ -40,6 +41,7 @@
     "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false.",
     "El gestor de consultas microbiológicas solo puede mostrar preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
     "Las pasadas de enterobacterias no están consolidadas automáticamente; revisar frente al PDF antes de uso clínico.",
-    "El QA específico de enterobacterias aún no está publicado como archivo; no anunciarlo como dataset disponible."
+    "El QA específico de enterobacterias aún no está publicado como archivo; no anunciarlo como dataset disponible.",
+    "El catálogo de ámbitos evita mezclar datos HUVN globales con datos de centros específicos no publicados."
   ]
 }
