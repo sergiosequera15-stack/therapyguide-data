@@ -57,6 +57,69 @@ def build_candidate_record(
     }
 
 
+def build_manual_review_worklist(
+    conflicting_keys: list[dict[str, Any]],
+    low_count_groups: list[tuple[str, int]],
+    deduplicated_candidate_record_count: int,
+) -> dict[str, Any]:
+    publication_blockers = [
+        {
+            "code": "manual_review_pending",
+            "message": "Manual review has not been completed.",
+            "blocksPublication": True,
+        }
+    ]
+
+    if conflicting_keys:
+        publication_blockers.append(
+            {
+                "code": "unresolved_conflicts",
+                "message": "One or more microorganism/antibiotic keys have conflicting extracted values.",
+                "blocksPublication": True,
+            }
+        )
+
+    if low_count_groups:
+        publication_blockers.append(
+            {
+                "code": "low_count_groups_need_flagging",
+                "message": "Some microorganism groups have n < 30 and require explicit instability flagging before publication.",
+                "blocksPublication": True,
+            }
+        )
+
+    return {
+        "status": "pending",
+        "conflictsToResolve": [
+            {
+                "microorganism": item["microorganism"],
+                "antibiotic": item["antibiotic"],
+                "sources": item["sources"],
+                "actionRequired": "Review source extractions and decide whether one value is correct or whether the key must remain excluded.",
+                "blocksPublication": True,
+            }
+            for item in conflicting_keys
+        ],
+        "lowCountGroupsToFlag": [
+            {
+                "microorganism": microorganism,
+                "isolatesTested": isolates_tested,
+                "actionRequired": "Confirm that the low-count warning is visible before any publication or APP exposure.",
+                "blocksPublication": True,
+            }
+            for microorganism, isolates_tested in low_count_groups
+        ],
+        "candidateRecordsToReview": [
+            {
+                "recordCount": deduplicated_candidate_record_count,
+                "actionRequired": "Review deduplicated candidate records before promoting them to any published consolidated dataset.",
+                "blocksPublication": True,
+            }
+        ],
+        "publicationBlockers": publication_blockers,
+    }
+
+
 def main() -> None:
     all_records: list[dict[str, Any]] = []
     input_summaries: list[dict[str, Any]] = []
@@ -150,6 +213,12 @@ def main() -> None:
         }
     )
 
+    manual_review_worklist = build_manual_review_worklist(
+        conflicting_keys=conflicting_keys,
+        low_count_groups=low_count_groups,
+        deduplicated_candidate_record_count=len(deduplicated_candidate_records),
+    )
+
     report = {
         "metadata": {
             "title": "Preconsolidación auditada pendiente de enterobacterias HUVN 2025",
@@ -191,6 +260,7 @@ def main() -> None:
             "readyForAppQueryAsConsolidatedDataset": False,
             "readyForClinicalUse": False,
         },
+        "manualReviewWorklist": manual_review_worklist,
         "deduplicatedCandidateRecords": deduplicated_candidate_records,
         "duplicateIdenticalKeys": duplicate_identical_keys,
         "conflictingKeys": conflicting_keys,
@@ -222,6 +292,7 @@ def main() -> None:
     print(f"Source records: {len(all_records)}")
     print(f"Unique keys: {len(grouped)}")
     print(f"Candidate deduplicated records: {len(deduplicated_candidate_records)}")
+    print(f"Manual review blockers: {len(manual_review_worklist['publicationBlockers'])}")
     print(f"Conflicts: {len(conflicting_keys)}")
 
 
