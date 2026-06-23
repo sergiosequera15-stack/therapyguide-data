@@ -29,6 +29,13 @@ jobs:
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
+      - name: Ensure enterobacteria preconsolidation draft is not committed
+        run: |
+          if [ -f docs/microbiology/preconsolidation_enterobacterias_draft_2025.json ]; then
+            echo "Generated preconsolidation draft must remain a temporary artifact, not a committed DATA file."
+            exit 1
+          fi
+
       - name: Generate enterobacteria preconsolidation draft
         run: python tools/generate_enterobacteria_preconsolidation.py
 
