@@ -1,6 +1,6 @@
 {
-  "version": "0.1.4",
-  "generatedAt": "2026-06-22T00:00:00Z",
+  "version": "0.1.5",
+  "generatedAt": "2026-06-23T00:00:00Z",
   "status": "draft_pending_manual_review",
   "title": "Gestor de consultas microbiológicas HUVN",
   "description": "Contrato de datos para preparar consultas estructuradas del mapa microbiológico HUVN sin activar soporte a la decisión clínica.",
@@ -26,6 +26,23 @@
       "url": "microbiology/antibiotic_abbreviations_2025.json",
       "status": "draft_pending_manual_review",
       "clinicalUseAllowed": false
+    },
+    {
+      "id": "huvn_enterobacteria_annual_map_2025",
+      "title": "Mapa anual parcial HUVN enterobacterias 2025",
+      "url": "microbiology/published/huvn_enterobacterias_2025.json",
+      "status": "published_annual_map",
+      "scope": "huvn",
+      "organismGroup": "gram_negative_enterobacteria",
+      "dataYear": 2025,
+      "isFullMicrobiologyMap": false,
+      "appConsultationAllowed": true,
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "mustShowLowCountWarnings": true,
+      "mustNotRankAntibiotics": true,
+      "mustNotFallbackToDifferentScope": true
     },
     {
       "id": "huvn_bgn_non_enterobacteria_susceptibility_2025",
@@ -126,6 +143,7 @@
     "noDatasetMessage": "No hay dataset estructurado publicado para este centro/ámbito."
   },
   "queryOutputPolicy": {
+    "mayShowPublishedAnnualMaps": true,
     "mayShowExtractedPercentages": true,
     "mayShowRawCounts": true,
     "mustShowPendingReviewBanner": true,
@@ -134,27 +152,24 @@
     "mustStateSusceptibilityGrouping": "S + I agrupadas según metodología del documento fuente cuando aplique.",
     "mustNotRankAntibioticsForTreatment": true,
     "mustNotGenerateTherapeuticRecommendations": true,
-    "mustNotHideMissingOrPendingData": true
+    "mustNotHideMissingOrPendingData": true,
+    "mustNotDescribePartialMapAsFullMicrobiologyMap": true
   },
   "warnings": [
-    "Datos pendientes de revisión manual; no usar como recomendación terapéutica.",
+    "El mapa anual HUVN enterobacterias 2025 es un mapa parcial por grupo, no el mapa microbiológico global completo.",
     "clinicalDecisionSupport=false: este módulo no debe activar recomendaciones ni selección automática de tratamiento.",
-    "interactiveUseAllowed=false: solo se permite preparar la visualización/preview del contrato de consulta.",
+    "interactiveUseAllowed=false: el manifiesto global sigue sin activar soporte interactivo clínico completo.",
     "El filtro Centro/ámbito es obligatorio; microorganismo/mecanismo y antibiótico/sigla son opcionales.",
     "No usar datos HUVN globales como si fueran datos de Pediatría, Neurotraumatología, Hospital General o Materno-Infantil.",
     "Si n < 30, la app debe mostrar advertencia explícita de baja estabilidad de la estimación.",
     "S + I pueden aparecer agrupadas según la metodología del documento; conservar esta advertencia junto al resultado.",
-    "Las pasadas de extracción de enterobacterias no están consolidadas automáticamente; deben revisarse frente al PDF antes de uso clínico.",
-    "El mapa microbiológico completo no está explotado ni revisado; extraction_status_2025.json debe mostrarse si se informa estado de cobertura.",
     "No ocultar tablas o campos sin revisar; mostrarlos como pending o no disponible."
   ],
   "nextManualReviewChecklist": [
     "Confirmar correspondencia de cada tabla extraída con página/sección del PDF fuente.",
-    "Revisar abreviaturas antibióticas y equivalencias antes de permitir consulta interactiva.",
-    "Crear QA de enterobacterias si se necesita trazabilidad específica de extracción.",
+    "Revisar abreviaturas antibióticas y equivalencias antes de permitir consulta interactiva clínica.",
     "Revisar registros con n < 30 y definir el texto final de advertencia.",
-    "Consolidar o etiquetar explícitamente las pasadas de extracción de enterobacterias antes de permitir resultados interpretables.",
     "Validar que ninguna pantalla de APP convierte porcentajes en recomendación terapéutica.",
-    "Actualizar status a reviewed únicamente tras revisión manual documentada."
+    "Actualizar status global únicamente tras revisión manual documentada del mapa completo."
   ]
 }
