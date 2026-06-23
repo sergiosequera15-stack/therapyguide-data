@@ -6,6 +6,10 @@ from typing import Any
 
 DOCS_DIR = Path("docs")
 DATA_MODULES_PATH = DOCS_DIR / "data_modules.json"
+ALLOWED_MICROBIOLOGY_STATUSES = {
+    "draft_pending_manual_review",
+    "partial_published_annual_map_available",
+}
 
 
 def load_json(path: Path) -> Any:
@@ -37,10 +41,11 @@ def main() -> None:
     microbiology = modules.get("microbiology") or {}
     require(isinstance(microbiology, dict), "data_modules.modules.microbiology must be an object")
 
-    require(microbiology.get("status") == "draft_pending_manual_review", "microbiology.status must remain draft_pending_manual_review")
+    require(microbiology.get("status") in ALLOWED_MICROBIOLOGY_STATUSES, "microbiology.status is invalid")
     require(microbiology.get("queryPreviewAllowed") is True, "microbiology.queryPreviewAllowed must be true")
     require(microbiology.get("interactiveUseAllowed") is False, "microbiology.interactiveUseAllowed must be false")
     require(microbiology.get("clinicalDecisionSupport") is False, "microbiology.clinicalDecisionSupport must be false")
+    require(microbiology.get("therapeuticRecommendationAllowed", False) is False, "microbiology.therapeuticRecommendationAllowed must be false")
 
     required_urls = {
         "manifestUrl": "microbiology/microbiology_manifest.json",
@@ -56,6 +61,15 @@ def main() -> None:
         actual_url = microbiology.get(field_name)
         require(actual_url == expected_url, f"microbiology.{field_name} must be {expected_url}, got {actual_url}")
         require_json_url(str(actual_url), f"microbiology.{field_name}")
+
+    published_annual_maps = microbiology.get("publishedAnnualMaps") or {}
+    require(isinstance(published_annual_maps, dict), "microbiology.publishedAnnualMaps must be an object")
+    published_enterobacteria_url = published_annual_maps.get("huvnEnterobacteria2025Url")
+    require(
+        published_enterobacteria_url == "microbiology/published/huvn_enterobacterias_2025.json",
+        "microbiology.publishedAnnualMaps.huvnEnterobacteria2025Url is invalid",
+    )
+    require_json_url(str(published_enterobacteria_url), "microbiology.publishedAnnualMaps.huvnEnterobacteria2025Url")
 
     susceptibility_tables = microbiology.get("susceptibilityTables") or {}
     require(isinstance(susceptibility_tables, dict), "microbiology.susceptibilityTables must be an object")
@@ -74,7 +88,7 @@ def main() -> None:
 
     print("Data module index OK")
     print(f"Data modules version: {data_modules.get('version')}")
-    print("Microbiology scope catalog and extraction status exposed")
+    print("Microbiology scope catalog, extraction status and partial annual maps exposed")
 
 
 if __name__ == "__main__":
