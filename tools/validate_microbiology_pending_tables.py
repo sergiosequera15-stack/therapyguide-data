@@ -18,6 +18,7 @@ REQUIRED_DICTIONARY_FILES = [
 ]
 ENTEROBACTERIA_QA_FILE = MICROBIOLOGY_DIR / "qa_enterobacterias_pending_2025.json"
 ENTEROBACTERIA_PRECONSOLIDATION_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
+ENTEROBACTERIA_CONSOLIDATED_CANDIDATE_FILE = MICROBIOLOGY_DIR / "consolidated_enterobacterias_candidate_2025.json"
 
 
 def require(condition: bool, message: str) -> None:
@@ -348,6 +349,64 @@ def validate_manual_review_worklist(
         require(isinstance(item.get("message"), str) and item.get("message"), f"{prefix}.message is required")
 
 
+def validate_consolidated_candidate_artifact(
+    candidate_path: Path,
+    preconsolidation_generated_at: str,
+    input_datasets: list[dict[str, Any]],
+    expected_candidate_records: list[dict[str, Any]],
+    expected_conflicting_keys: set[tuple[str, str]],
+    expected_low_count_groups: set[tuple[str, int]],
+) -> None:
+    require(candidate_path.exists(), f"missing enterobacteria consolidated candidate file: {candidate_path}")
+    data = load_json(candidate_path)
+    metadata = data.get("metadata") or {}
+    summary = data.get("summary") or {}
+    records = data.get("records") or []
+    excluded_conflicts = data.get("excludedConflicts") or []
+    low_count_groups_to_flag = data.get("lowCountGroupsToFlag") or []
+
+    require(metadata.get("status") == "consolidated_candidate_pending_manual_review", "consolidated candidate must remain pending manual review")
+    require(metadata.get("sourcePreconsolidationArtifact") == ENTEROBACTERIA_PRECONSOLIDATION_FILE.name, "consolidated candidate source artifact mismatch")
+    validate_utc_timestamp(metadata.get("generatedAt"), "enterobacteria consolidated candidate generatedAt")
+    require(metadata.get("generatedAt") == preconsolidation_generated_at, "consolidated candidate generatedAt must match preconsolidation artifact")
+    require(metadata.get("scope") == "huvn", "consolidated candidate scope must remain huv n".replace("huv n", "huvn"))
+    require(metadata.get("clinicalUseAllowed") is False, "consolidated candidate must not allow clinical use")
+    require(metadata.get("interactiveUseAllowed") is False, "consolidated candidate must not allow interactive use")
+    require(metadata.get("therapeuticRecommendationAllowed") is False, "consolidated candidate must not allow therapeutic recommendations")
+    require(metadata.get("manualReviewStatus") == "pending", "consolidated candidate manualReviewStatus must remain pending")
+
+    require(data.get("inputDatasets") == input_datasets, "consolidated candidate inputDatasets mismatch")
+    require(records == expected_candidate_records, "consolidated candidate records must match preconsolidation deduplicatedCandidateRecords")
+    require(summary.get("recordCount") == len(expected_candidate_records), "consolidated candidate recordCount mismatch")
+    require(summary.get("excludedConflictKeyCount") == len(expected_conflicting_keys), "consolidated candidate excludedConflictKeyCount mismatch")
+    require(summary.get("lowCountGroupCount") == len(expected_low_count_groups), "consolidated candidate lowCountGroupCount mismatch")
+    require(summary.get("readyForManifestPublication") is False, "consolidated candidate must not be manifest-ready")
+    require(summary.get("readyForAppQueryAsConsolidatedDataset") is False, "consolidated candidate must not be APP-ready")
+    require(summary.get("readyForClinicalUse") is False, "consolidated candidate must not be clinical-use ready")
+
+    observed_excluded_conflicts = {
+        (item.get("microorganism"), item.get("antibiotic"))
+        for item in excluded_conflicts
+        if isinstance(item, dict)
+    }
+    observed_low_count_groups = {
+        (item.get("microorganism"), item.get("isolatesTested"))
+        for item in low_count_groups_to_flag
+        if isinstance(item, dict)
+    }
+    require(observed_excluded_conflicts == expected_conflicting_keys, "consolidated candidate excludedConflicts mismatch")
+    require(observed_low_count_groups == expected_low_count_groups, "consolidated candidate lowCountGroupsToFlag mismatch")
+
+    safe_behavior = data.get("safeAppBehavior") or {}
+    require(safe_behavior.get("mustNotUseAsConsolidatedDataset") is True, "consolidated candidate must block consolidated use")
+    require(safe_behavior.get("mustNotRankAntibiotics") is True, "consolidated candidate must block ranking")
+    require(safe_behavior.get("mustNotGenerateTherapeuticRecommendations") is True, "consolidated candidate must block therapeutic recommendations")
+    require(safe_behavior.get("mustShowPendingReview") is True, "consolidated candidate must show pending review")
+
+    review = data.get("review") or {}
+    require(review.get("status") == "pending", "consolidated candidate review.status must remain pending")
+
+
 def validate_enterobacteria_preconsolidation_against_records(
     preconsolidation_path: Path,
     records: list[dict[str, Any]],
@@ -467,6 +526,15 @@ def validate_enterobacteria_preconsolidation_against_records(
         candidate_record_count=len(expected_candidate_keys),
     )
 
+    validate_consolidated_candidate_artifact(
+        candidate_path=ENTEROBACTERIA_CONSOLIDATED_CANDIDATE_FILE,
+        preconsolidation_generated_at=metadata.get("generatedAt"),
+        input_datasets=input_datasets,
+        expected_candidate_records=candidate_records,
+        expected_conflicting_keys=expected_conflicting_keys,
+        expected_low_count_groups=expected_low_count_groups,
+    )
+
     safe_behavior = data.get("safeAppBehavior") or {}
     require(safe_behavior.get("mustNotUseAsConsolidatedDataset") is True, "preconsolidation must block consolidated use")
     require(safe_behavior.get("mustNotRankAntibiotics") is True, "preconsolidation must block ranking")
@@ -499,6 +567,7 @@ def main() -> None:
     print(f"Susceptibility records: {len(all_records)}")
     print("Enterobacteria QA: validated against source passes")
     print("Enterobacteria preconsolidation: validated against source passes")
+    print("Enterobacteria consolidated candidate: validated against preconsolidation artifact")
 
 
 if __name__ == "__main__":
