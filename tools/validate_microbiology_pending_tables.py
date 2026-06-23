@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,17 @@ def load_json(path: Path) -> dict[str, Any]:
         return json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise SystemExit(f"ERROR: invalid JSON in {path}: {exc}") from exc
+
+
+def validate_utc_timestamp(value: Any, label: str) -> None:
+    require(isinstance(value, str) and value.strip(), f"{label} must be a non-empty string")
+    require(value.endswith("Z"), f"{label} must be UTC and end with Z")
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise SystemExit(f"ERROR: {label} is not valid ISO 8601: {value}") from exc
+    offset = parsed.utcoffset()
+    require(offset is not None and offset.total_seconds() == 0, f"{label} must be UTC")
 
 
 def validate_dictionary_file(path: Path) -> set[str]:
@@ -227,6 +239,7 @@ def validate_enterobacteria_preconsolidation_against_records(
         metadata.get("status") == "preconsolidation_draft_pending_manual_review",
         "enterobacteria preconsolidation must remain draft pending manual review",
     )
+    validate_utc_timestamp(metadata.get("generatedAt"), "enterobacteria preconsolidation generatedAt")
     require(metadata.get("clinicalUseAllowed") is False, "enterobacteria preconsolidation must not allow clinical use")
     require(metadata.get("interactiveUseAllowed") is False, "enterobacteria preconsolidation must not allow interactive use")
     require(
