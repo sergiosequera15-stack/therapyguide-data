@@ -1,19 +1,22 @@
 {
-  "generatedAt": "2026-06-18T00:00:00Z",
-  "status": "passed_with_empty_draft_rules",
+  "generatedAt": "2026-06-23T00:00:00Z",
+  "status": "passed_with_empty_therapeutic_rules_and_allergy_consultant_draft",
   "checkedFiles": [
     "rules/recommendation_rules.json",
-    "rules/allergy_rules.json"
+    "rules/allergy_rules.json",
+    "rules/betalactam_allergy_consultant.json"
   ],
   "summary": {
     "recommendationRuleCount": 0,
     "allergyRuleCount": 0,
+    "allergyConsultantQuestionCount": 6,
     "errors": 0,
-    "warnings": 2
+    "warnings": 3
   },
   "warnings": [
-    "No hay reglas de recomendación activas todavía.",
-    "No hay reglas específicas de alergia vinculadas a escenarios clínicos todavía."
+    "No hay reglas de recomendación terapéutica activas todavía.",
+    "No hay reglas específicas de alergia vinculadas a escenarios clínicos todavía.",
+    "El consultor de alergia a betalactámicos es structure_only: no genera alternativas antibióticas."
   ],
   "errors": []
 }
