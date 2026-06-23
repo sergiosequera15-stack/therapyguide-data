@@ -8,7 +8,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -50,7 +50,7 @@ jobs:
       - name: Validate pending microbiology table extractions
         run: python tools/validate_microbiology_pending_tables.py
 
-      - name: Validate published microbiology maps
+      - name: Validate existing published microbiology maps
         run: python tools/validate_published_microbiology_maps.py
 
       - name: Dry-run promote enterobacteria annual map
@@ -67,6 +67,39 @@ jobs:
 
       - name: Validate dry-run promoted enterobacteria annual map
         run: python tools/validate_published_microbiology_maps.py --map-file docs/microbiology/published_dry_run/huvn_enterobacterias_2025.json
+
+      - name: Promote reviewed enterobacteria annual map
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if [ -f docs/microbiology/published/huvn_enterobacterias_2025.json ]; then
+            echo "Permanent enterobacteria annual map already exists; skipping promotion."
+            exit 0
+          fi
+          python tools/promote_enterobacteria_candidate.py \
+            --candidate docs/microbiology/consolidated_enterobacterias_candidate_2025.json \
+            --output docs/microbiology/published/huvn_enterobacterias_2025.json \
+            --reviewer "Grupo de expertos PROA HUVN" \
+            --reviewed-at "2026-06-23" \
+            --review-notes "Revisión manual documentada para publicación anual parcial HUVN enterobacterias 2025." \
+            --accept-low-count-warnings \
+            --accept-excluded-conflicts \
+            --approve-publication
+
+      - name: Validate published microbiology maps after promotion
+        run: python tools/validate_published_microbiology_maps.py
+
+      - name: Commit reviewed enterobacteria annual map
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/microbiology/published/huvn_enterobacterias_2025.json
+          if git diff --cached --quiet; then
+            echo "No permanent enterobacteria annual map changes to commit."
+            exit 0
+          fi
+          git commit -m "Publish HUVN enterobacteria annual map 2025"
+          git push
 
       - name: Upload enterobacteria preconsolidation draft
         uses: actions/upload-artifact@v4
