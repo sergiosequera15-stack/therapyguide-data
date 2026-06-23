@@ -1,6 +1,6 @@
 {
-  "version": "0.3.4",
-  "generatedAt": "2026-06-22T00:00:00Z",
+  "version": "0.3.5",
+  "generatedAt": "2026-06-23T00:00:00Z",
   "status": "draft",
   "modules": {
     "rules": {
@@ -24,6 +24,9 @@
       "currentMapUrl": "microbiology/microbiology_map_2025.json",
       "updatePolicyUrl": "microbiology/update_policy.json",
       "antibioticAbbreviationsUrl": "microbiology/antibiotic_abbreviations_2025.json",
+      "publishedAnnualMaps": {
+        "huvnEnterobacteria2025Url": "microbiology/published/huvn_enterobacterias_2025.json"
+      },
       "susceptibilityTables": {
         "huvnGramNegativeNonEnterobacteriaUrl": "microbiology/susceptibility_huvn_bgn_non_enterobacterias_2025.json",
         "huvnGramNegativeEnterobacteriaFirstPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_2025.json",
@@ -31,17 +34,19 @@
         "huvnGramNegativeEnterobacteriaThirdPassUrl": "microbiology/susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
       },
       "queryPreviewAllowed": true,
+      "publishedAnnualMapConsultationAllowed": true,
       "interactiveUseAllowed": false,
       "clinicalDecisionSupport": false,
-      "status": "draft_pending_manual_review"
+      "therapeuticRecommendationAllowed": false,
+      "status": "partial_published_annual_map_available"
     }
   },
   "warnings": [
     "Estos módulos son estructura de datos, no funcionalidad clínica activa.",
-    "No activar en la app recomendaciones, calculadoras o mapa microbiológico hasta revisión manual y validación local.",
-    "Los archivos microbiológicos de sensibilidad permanecen en estado pending e interactiveUseAllowed=false.",
-    "El gestor de consultas microbiológicas solo puede mostrar preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
-    "Las pasadas de enterobacterias no están consolidadas automáticamente; revisar frente al PDF antes de uso clínico.",
+    "El mapa HUVN enterobacterias 2025 está publicado como mapa anual parcial consultable, no como recomendación terapéutica.",
+    "No activar en la app recomendaciones, calculadoras o mapa microbiológico global completo hasta revisión manual y validación local.",
+    "El gestor de consultas microbiológicas solo puede mostrar datos publicados o preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
+    "Las pasadas antiguas de enterobacterias se conservan como trazabilidad y no deben presentarse como dataset consolidado si existe el mapa anual publicado.",
     "El QA específico de enterobacterias aún no está publicado como archivo; no anunciarlo como dataset disponible.",
     "El catálogo de ámbitos evita mezclar datos HUVN globales con datos de centros específicos no publicados.",
     "El estado de explotación indica que el mapa completo no está extraído ni revisado; no presentar como mapa interactivo completo."
