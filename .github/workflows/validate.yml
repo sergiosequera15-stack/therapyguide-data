@@ -29,6 +29,9 @@ jobs:
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
+      - name: Validate beta-lactam allergy consultant
+        run: python tools/validate_betalactam_allergy_consultant.py
+
       - name: Ensure generated enterobacteria artifacts are not committed
         run: |
           if [ -f docs/microbiology/preconsolidation_enterobacterias_draft_2025.json ]; then
