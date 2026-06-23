@@ -37,6 +37,26 @@ def normalize_record(path: Path, record: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def build_candidate_record(
+    microorganism: str,
+    antibiotic: str,
+    records: list[dict[str, Any]],
+    candidate_type: str,
+) -> dict[str, Any]:
+    first = records[0]
+    return {
+        "microorganism": microorganism,
+        "isolatesTested": first["isolatesTested"],
+        "antibiotic": antibiotic,
+        "susceptibilityPercent": first["susceptibilityPercent"],
+        "candidateSource": {
+            "type": candidate_type,
+            "sourceFiles": sorted({record["sourceFile"] for record in records}),
+            "sourceRecordCount": len(records),
+        },
+    }
+
+
 def main() -> None:
     all_records: list[dict[str, Any]] = []
     input_summaries: list[dict[str, Any]] = []
@@ -68,6 +88,7 @@ def main() -> None:
     duplicate_identical_keys: list[dict[str, Any]] = []
     conflicting_keys: list[dict[str, Any]] = []
     unique_records: list[dict[str, Any]] = []
+    deduplicated_candidate_records: list[dict[str, Any]] = []
 
     for (microorganism, antibiotic), records in sorted(grouped.items()):
         value_pairs = {(record["isolatesTested"], record["susceptibilityPercent"]) for record in records}
@@ -75,6 +96,14 @@ def main() -> None:
 
         if len(records) == 1:
             unique_records.append(records[0])
+            deduplicated_candidate_records.append(
+                build_candidate_record(
+                    microorganism=microorganism,
+                    antibiotic=antibiotic,
+                    records=records,
+                    candidate_type="singleRecordKey",
+                )
+            )
             continue
 
         if len(value_pairs) == 1:
@@ -87,6 +116,14 @@ def main() -> None:
                     "isolatesTested": records[0]["isolatesTested"],
                     "susceptibilityPercent": records[0]["susceptibilityPercent"],
                 }
+            )
+            deduplicated_candidate_records.append(
+                build_candidate_record(
+                    microorganism=microorganism,
+                    antibiotic=antibiotic,
+                    records=records,
+                    candidate_type="duplicateIdenticalCollapsed",
+                )
             )
         else:
             conflicting_keys.append(
@@ -134,9 +171,11 @@ def main() -> None:
             "duplicateIdenticalDefinition": "Same microorganism and antibiotic with identical isolatesTested and susceptibilityPercent values across more than one source pass.",
             "conflictDefinition": "Same microorganism and antibiotic with different isolatesTested or susceptibilityPercent values across source passes.",
             "lowCountDefinition": "Any microorganism group with isolatesTested lower than 30.",
+            "candidateRecordRule": "Includes single-record keys and duplicate-identical keys. Conflicting keys are excluded until manual review.",
             "automaticConsolidationPerformed": False,
             "conflictResolutionPerformed": False,
             "clinicalInterpretationPerformed": False,
+            "candidateRecordsArePublished": False,
         },
         "summary": {
             "sourceRecordCount": len(all_records),
@@ -145,10 +184,14 @@ def main() -> None:
             "duplicateIdenticalKeyCount": len(duplicate_identical_keys),
             "conflictingKeyCount": len(conflicting_keys),
             "lowCountGroupCount": len(low_count_groups),
+            "candidateDeduplicatedRecordCount": len(deduplicated_candidate_records),
+            "candidateExcludedConflictKeyCount": len(conflicting_keys),
+            "candidateReadyForPublication": False,
             "readyForConsolidatedPublication": False,
             "readyForAppQueryAsConsolidatedDataset": False,
             "readyForClinicalUse": False,
         },
+        "deduplicatedCandidateRecords": deduplicated_candidate_records,
         "duplicateIdenticalKeys": duplicate_identical_keys,
         "conflictingKeys": conflicting_keys,
         "lowCountGroups": [
@@ -178,6 +221,7 @@ def main() -> None:
     print(f"Generated at: {report['metadata']['generatedAt']}")
     print(f"Source records: {len(all_records)}")
     print(f"Unique keys: {len(grouped)}")
+    print(f"Candidate deduplicated records: {len(deduplicated_candidate_records)}")
     print(f"Conflicts: {len(conflicting_keys)}")
 
 
