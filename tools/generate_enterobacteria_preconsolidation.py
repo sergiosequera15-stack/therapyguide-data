@@ -286,14 +286,19 @@ def main() -> None:
         },
     }
 
+    candidate_review_count = manual_review_worklist["candidateRecordsToReview"][0]["recordCount"]
+
     write_json(OUTPUT_FILE, report)
     print(f"Wrote {OUTPUT_FILE}")
     print(f"Generated at: {report['metadata']['generatedAt']}")
-    print(f"Source records: {len(all_records)}")
-    print(f"Unique keys: {len(grouped)}")
-    print(f"Candidate deduplicated records: {len(deduplicated_candidate_records)}")
-    print(f"Manual review blockers: {len(manual_review_worklist['publicationBlockers'])}")
-    print(f"Conflicts: {len(conflicting_keys)}")
+    print("Enterobacteria preconsolidation summary:")
+    print(f"  Source records: {len(all_records)}")
+    print(f"  Unique keys: {len(grouped)}")
+    print(f"  Candidate deduplicated records: {len(deduplicated_candidate_records)}")
+    print(f"  Publication blockers: {len(manual_review_worklist['publicationBlockers'])}")
+    print(f"  Conflicts to resolve: {len(manual_review_worklist['conflictsToResolve'])}")
+    print(f"  Low-count groups to flag: {len(manual_review_worklist['lowCountGroupsToFlag'])}")
+    print(f"  Candidate records to review: {candidate_review_count}")
 
 
 if __name__ == "__main__":
