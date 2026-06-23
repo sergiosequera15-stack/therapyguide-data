@@ -19,6 +19,8 @@ REQUIRED_DICTIONARY_FILES = [
 ENTEROBACTERIA_QA_FILE = MICROBIOLOGY_DIR / "qa_enterobacterias_pending_2025.json"
 ENTEROBACTERIA_PRECONSOLIDATION_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
 ENTEROBACTERIA_CONSOLIDATED_CANDIDATE_FILE = MICROBIOLOGY_DIR / "consolidated_enterobacterias_candidate_2025.json"
+ANNUAL_MAP_PUBLICATION_POLICY_FILE = MICROBIOLOGY_DIR / "ANNUAL_MAP_PUBLICATION_POLICY.md"
+INTENDED_ENTEROBACTERIA_PUBLISHED_MAP_PATH = "docs/microbiology/published/huvn_enterobacterias_2025.json"
 
 
 def require(condition: bool, message: str) -> None:
@@ -358,6 +360,7 @@ def validate_consolidated_candidate_artifact(
     expected_low_count_groups: set[tuple[str, int]],
 ) -> None:
     require(candidate_path.exists(), f"missing enterobacteria consolidated candidate file: {candidate_path}")
+    require(ANNUAL_MAP_PUBLICATION_POLICY_FILE.exists(), "missing annual microbiology map publication policy")
     data = load_json(candidate_path)
     metadata = data.get("metadata") or {}
     summary = data.get("summary") or {}
@@ -367,6 +370,8 @@ def validate_consolidated_candidate_artifact(
 
     require(metadata.get("status") == "consolidated_candidate_pending_manual_review", "consolidated candidate must remain pending manual review")
     require(metadata.get("sourcePreconsolidationArtifact") == ENTEROBACTERIA_PRECONSOLIDATION_FILE.name, "consolidated candidate source artifact mismatch")
+    require(metadata.get("publicationPolicy") == ANNUAL_MAP_PUBLICATION_POLICY_FILE.name, "consolidated candidate publication policy mismatch")
+    require(metadata.get("intendedPermanentPathAfterReview") == INTENDED_ENTEROBACTERIA_PUBLISHED_MAP_PATH, "consolidated candidate permanent path mismatch")
     validate_utc_timestamp(metadata.get("generatedAt"), "enterobacteria consolidated candidate generatedAt")
     require(metadata.get("generatedAt") == preconsolidation_generated_at, "consolidated candidate generatedAt must match preconsolidation artifact")
     require(metadata.get("scope") == "huvn", "consolidated candidate scope must remain huv n".replace("huv n", "huvn"))
