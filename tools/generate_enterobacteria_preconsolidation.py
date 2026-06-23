@@ -129,6 +129,15 @@ def main() -> None:
             ],
         },
         "inputDatasets": input_summaries,
+        "preconsolidationMethod": {
+            "keyFields": ["microorganism", "antibiotic"],
+            "duplicateIdenticalDefinition": "Same microorganism and antibiotic with identical isolatesTested and susceptibilityPercent values across more than one source pass.",
+            "conflictDefinition": "Same microorganism and antibiotic with different isolatesTested or susceptibilityPercent values across source passes.",
+            "lowCountDefinition": "Any microorganism group with isolatesTested lower than 30.",
+            "automaticConsolidationPerformed": False,
+            "conflictResolutionPerformed": False,
+            "clinicalInterpretationPerformed": False,
+        },
         "summary": {
             "sourceRecordCount": len(all_records),
             "uniqueKeyCount": len(grouped),
