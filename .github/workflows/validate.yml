@@ -41,3 +41,4 @@ jobs:
           name: enterobacteria-preconsolidation-draft-2025
           path: docs/microbiology/preconsolidation_enterobacterias_draft_2025.json
           if-no-files-found: error
+          retention-days: 30
