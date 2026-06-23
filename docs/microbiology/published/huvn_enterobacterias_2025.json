@@ -1,0 +1,3308 @@
+{
+  "metadata": {
+    "title": "Mapa anual publicado de enterobacterias HUVN 2025",
+    "version": "1.0.0",
+    "status": "published_annual_map",
+    "scope": "huvn",
+    "dataYear": 2025,
+    "organismGroup": "gram_negative_enterobacteria",
+    "sourceCandidateArtifact": "consolidated_enterobacterias_candidate_2025.json",
+    "sourcePreconsolidationArtifact": "preconsolidation_enterobacterias_draft_2025.json",
+    "publicationPolicy": "ANNUAL_MAP_PUBLICATION_POLICY.md",
+    "publishedAt": "2026-06-23T11:10:28Z",
+    "reviewedAt": "2026-06-23",
+    "reviewer": "Grupo de expertos PROA HUVN",
+    "manualReviewStatus": "reviewed",
+    "annualValidity": {
+      "validFrom": "2026-06-23",
+      "validUntilReplacedByNextAnnualSource": true,
+      "regenerateOnEveryCiRun": false
+    },
+    "appConsultationAllowed": true,
+    "clinicalUseAllowed": false,
+    "clinicalDecisionSupportAllowed": false,
+    "therapeuticRecommendationAllowed": false,
+    "notes": [
+      "Mapa anual permanente generado mediante promoción manual controlada.",
+      "Permite consulta por APP como mapa microbiológico anual, no recomendación terapéutica.",
+      "No debe extrapolarse fuera del scope declarado."
+    ]
+  },
+  "inputDatasets": [
+    {
+      "file": "susceptibility_huvn_bgn_enterobacterias_2025.json",
+      "title": "Aislamientos HUVN bacilos Gram negativos enterobacterias",
+      "extractionStatus": "manually_extracted_first_pass",
+      "manualReviewStatus": "pending",
+      "recordCount": 80,
+      "microorganismGroupCount": 6,
+      "antibioticCount": 15
+    },
+    {
+      "file": "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json",
+      "title": "Aislamientos HUVN bacilos Gram negativos enterobacterias - segunda pasada",
+      "extractionStatus": "manually_extracted_second_pass",
+      "manualReviewStatus": "pending",
+      "recordCount": 88,
+      "microorganismGroupCount": 7,
+      "antibioticCount": 16
+    },
+    {
+      "file": "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
+      "title": "Aislamientos HUVN bacilos Gram negativos enterobacterias - tercera pasada",
+      "extractionStatus": "manually_extracted_third_pass",
+      "manualReviewStatus": "pending",
+      "recordCount": 78,
+      "microorganismGroupCount": 6,
+      "antibioticCount": 16
+    }
+  ],
+  "summary": {
+    "recordCount": 246,
+    "excludedConflictKeyCount": 0,
+    "lowCountGroupCount": 4,
+    "readyForManifestPublication": true,
+    "readyForAppQueryAsConsolidatedDataset": true,
+    "readyForClinicalUse": false
+  },
+  "records": [
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 6,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 78,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 82,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 80,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 87,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 90,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Cit freundii cplx",
+      "isolatesTested": 99,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter",
+      "isolatesTested": 43,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Citrobacter koseri",
+      "isolatesTested": 62,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 57,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "AMP",
+      "susceptibilityPercent": 41,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 71,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 89,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli",
+      "isolatesTested": 5552,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 70,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 32,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "AMP",
+      "susceptibilityPercent": 0,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 19,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 13,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 1,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 17,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 68,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "E. coli BLEE",
+      "isolatesTested": 740,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 40,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 1,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 69,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 69,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 85,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 63,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 84,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 68,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 81,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Ent. cloacae cplx",
+      "isolatesTested": 347,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 89,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 3,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 75,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 73,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 78,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. aerogenes",
+      "isolatesTested": 117,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 87,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 95,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 89,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 95,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. oxytoca",
+      "isolatesTested": 176,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 61,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 77,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 78,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 74,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 77,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 85,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 95,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 74,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 74,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 73,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae",
+      "isolatesTested": 1427,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 18,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 7,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 9,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 12,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 3,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 5,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 44,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 21,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 40,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 15,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "K. pneumoniae BLEE",
+      "isolatesTested": 278,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 31,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 75,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 81,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 2,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 82,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 64,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 73,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 87,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 89,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 65,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 95,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Morganella",
+      "isolatesTested": 146,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 60,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 83,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 84,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus",
+      "isolatesTested": 32,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "AMP",
+      "susceptibilityPercent": 59,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 66,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 95,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 71,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 76,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 69,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Proteus mirabilis",
+      "isolatesTested": 549,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 56,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 15,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 79,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 77,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 54,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 77,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 40,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 89,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 68,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 69,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 32,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 75,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "AMP",
+      "susceptibilityPercent": 52,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 98,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 70,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 83,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Salmonella",
+      "isolatesTested": 48,
+      "antibiotic": "TIG",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_second_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 36,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 57,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 67,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 86,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 85,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 83,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 93,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 42,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "AMC",
+      "susceptibilityPercent": 3,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "AMK",
+      "susceptibilityPercent": 2,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "AZM",
+      "susceptibilityPercent": 73,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "C/A",
+      "susceptibilityPercent": 97,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "C/T",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "CAZ",
+      "susceptibilityPercent": 73,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "CIP",
+      "susceptibilityPercent": 92,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "CTX",
+      "susceptibilityPercent": 68,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "FEP",
+      "susceptibilityPercent": 99,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "GM",
+      "susceptibilityPercent": 94,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "IMP",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "LEV",
+      "susceptibilityPercent": 91,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "MER",
+      "susceptibilityPercent": 100,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "PIT",
+      "susceptibilityPercent": 88,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "SXT",
+      "susceptibilityPercent": 96,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    },
+    {
+      "microorganism": "Serratia marcescens",
+      "isolatesTested": 117,
+      "antibiotic": "TOB",
+      "susceptibilityPercent": 1,
+      "candidateSource": {
+        "type": "singleRecordKey",
+        "sourceFiles": [
+          "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json"
+        ],
+        "sourceRecordCount": 1
+      }
+    }
+  ],
+  "excludedConflicts": [],
+  "lowCountGroupsToFlag": [
+    {
+      "microorganism": "Klebsiella",
+      "isolatesTested": 16,
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Providencia",
+      "isolatesTested": 26,
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Raoultella",
+      "isolatesTested": 13,
+      "warning": "n < 30; estimates should be flagged as unstable."
+    },
+    {
+      "microorganism": "Serratia",
+      "isolatesTested": 14,
+      "warning": "n < 30; estimates should be flagged as unstable."
+    }
+  ],
+  "safeAppBehavior": {
+    "mayUseAsAnnualConsultationMap": true,
+    "mustShowScope": true,
+    "mustShowDataYear": true,
+    "mustShowLowCountWarnings": true,
+    "mustNotRankAntibiotics": true,
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustNotFallbackToDifferentScope": true
+  },
+  "review": {
+    "status": "reviewed",
+    "reviewer": "Grupo de expertos PROA HUVN",
+    "reviewedAt": "2026-06-23",
+    "acceptedLowCountWarnings": true,
+    "acceptedExcludedConflicts": true,
+    "notes": "Revisión manual documentada para publicación anual parcial HUVN enterobacterias 2025."
+  }
+}
