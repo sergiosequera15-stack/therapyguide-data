@@ -269,6 +269,85 @@ def validate_candidate_records(
         )
 
 
+def validate_manual_review_worklist(
+    worklist: dict[str, Any],
+    expected_conflicting_keys: set[tuple[str, str]],
+    expected_low_count_groups: set[tuple[str, int]],
+    grouped: dict[tuple[str, str], list[dict[str, Any]]],
+    candidate_record_count: int,
+) -> None:
+    require(isinstance(worklist, dict), "preconsolidation.manualReviewWorklist must be an object")
+    require(worklist.get("status") == "pending", "manualReviewWorklist.status must remain pending")
+
+    conflicts_to_resolve = worklist.get("conflictsToResolve") or []
+    low_count_groups_to_flag = worklist.get("lowCountGroupsToFlag") or []
+    candidate_records_to_review = worklist.get("candidateRecordsToReview") or []
+    publication_blockers = worklist.get("publicationBlockers") or []
+
+    require(isinstance(conflicts_to_resolve, list), "manualReviewWorklist.conflictsToResolve must be a list")
+    require(isinstance(low_count_groups_to_flag, list), "manualReviewWorklist.lowCountGroupsToFlag must be a list")
+    require(isinstance(candidate_records_to_review, list), "manualReviewWorklist.candidateRecordsToReview must be a list")
+    require(isinstance(publication_blockers, list) and publication_blockers, "manualReviewWorklist.publicationBlockers must be a non-empty list")
+
+    observed_conflict_keys = {
+        (item.get("microorganism"), item.get("antibiotic"))
+        for item in conflicts_to_resolve
+        if isinstance(item, dict)
+    }
+    require(observed_conflict_keys == expected_conflicting_keys, "manualReviewWorklist.conflictsToResolve does not match conflicting keys")
+
+    for index, item in enumerate(conflicts_to_resolve):
+        prefix = f"manualReviewWorklist.conflictsToResolve[{index}]"
+        key = (item.get("microorganism"), item.get("antibiotic"))
+        source_records = grouped.get(key) or []
+        expected_sources = sorted({record["sourceFile"] for record in source_records})
+        require(item.get("sources") == expected_sources, f"{prefix}.sources mismatch")
+        require(item.get("blocksPublication") is True, f"{prefix}.blocksPublication must be true")
+        require(isinstance(item.get("actionRequired"), str) and item.get("actionRequired"), f"{prefix}.actionRequired is required")
+
+    observed_low_count_groups = {
+        (item.get("microorganism"), item.get("isolatesTested"))
+        for item in low_count_groups_to_flag
+        if isinstance(item, dict)
+    }
+    require(
+        observed_low_count_groups == expected_low_count_groups,
+        "manualReviewWorklist.lowCountGroupsToFlag does not match low-count source records",
+    )
+
+    for index, item in enumerate(low_count_groups_to_flag):
+        prefix = f"manualReviewWorklist.lowCountGroupsToFlag[{index}]"
+        require(item.get("blocksPublication") is True, f"{prefix}.blocksPublication must be true")
+        require(isinstance(item.get("actionRequired"), str) and item.get("actionRequired"), f"{prefix}.actionRequired is required")
+
+    require(len(candidate_records_to_review) == 1, "manualReviewWorklist.candidateRecordsToReview must contain one aggregate review task")
+    candidate_review = candidate_records_to_review[0]
+    require(candidate_review.get("recordCount") == candidate_record_count, "manualReviewWorklist.candidateRecordsToReview.recordCount mismatch")
+    require(candidate_review.get("blocksPublication") is True, "manualReviewWorklist.candidateRecordsToReview must block publication")
+    require(
+        isinstance(candidate_review.get("actionRequired"), str) and candidate_review.get("actionRequired"),
+        "manualReviewWorklist.candidateRecordsToReview.actionRequired is required",
+    )
+
+    expected_blocker_codes = {"manual_review_pending"}
+    if expected_conflicting_keys:
+        expected_blocker_codes.add("unresolved_conflicts")
+    if expected_low_count_groups:
+        expected_blocker_codes.add("low_count_groups_need_flagging")
+
+    observed_blocker_codes = {
+        item.get("code")
+        for item in publication_blockers
+        if isinstance(item, dict)
+    }
+    require(observed_blocker_codes == expected_blocker_codes, "manualReviewWorklist.publicationBlockers codes mismatch")
+
+    for index, item in enumerate(publication_blockers):
+        prefix = f"manualReviewWorklist.publicationBlockers[{index}]"
+        require(item.get("blocksPublication") is True, f"{prefix}.blocksPublication must be true")
+        require(isinstance(item.get("message"), str) and item.get("message"), f"{prefix}.message is required")
+
+
 def validate_enterobacteria_preconsolidation_against_records(
     preconsolidation_path: Path,
     records: list[dict[str, Any]],
@@ -279,6 +358,7 @@ def validate_enterobacteria_preconsolidation_against_records(
     input_datasets = data.get("inputDatasets") or []
     method = data.get("preconsolidationMethod") or {}
     summary = data.get("summary") or {}
+    worklist = data.get("manualReviewWorklist") or {}
     candidate_records = data.get("deduplicatedCandidateRecords") or []
     duplicate_identical_keys = data.get("duplicateIdenticalKeys") or []
     conflicting_keys = data.get("conflictingKeys") or []
@@ -378,6 +458,14 @@ def validate_enterobacteria_preconsolidation_against_records(
     )
     require(observed_conflicting_keys == expected_conflicting_keys, "preconsolidation.conflictingKeys does not match source records")
     require(observed_low_count_groups == expected_low_count_groups, "preconsolidation.lowCountGroups does not match source records")
+
+    validate_manual_review_worklist(
+        worklist=worklist,
+        expected_conflicting_keys=expected_conflicting_keys,
+        expected_low_count_groups=expected_low_count_groups,
+        grouped=grouped,
+        candidate_record_count=len(expected_candidate_keys),
+    )
 
     safe_behavior = data.get("safeAppBehavior") or {}
     require(safe_behavior.get("mustNotUseAsConsolidatedDataset") is True, "preconsolidation must block consolidated use")
