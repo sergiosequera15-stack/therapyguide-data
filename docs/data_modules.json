@@ -1,5 +1,5 @@
 {
-  "version": "0.3.5",
+  "version": "0.3.6",
   "generatedAt": "2026-06-23T00:00:00Z",
   "status": "draft",
   "modules": {
@@ -7,8 +7,12 @@
       "manifestUrl": "rules/rule_manifest.json",
       "recommendationRulesUrl": "rules/recommendation_rules.json",
       "allergyRulesUrl": "rules/allergy_rules.json",
+      "betalactamAllergyConsultantUrl": "rules/betalactam_allergy_consultant.json",
       "validationReportUrl": "rules/rule_validation_report.json",
-      "status": "draft"
+      "queryPreviewAllowed": true,
+      "clinicalDecisionSupport": false,
+      "therapeuticRecommendationAllowed": false,
+      "status": "draft_with_allergy_consultant_structure"
     },
     "tools": {
       "scoresUrl": "tools/scores.json",
@@ -43,6 +47,7 @@
   },
   "warnings": [
     "Estos módulos son estructura de datos, no funcionalidad clínica activa.",
+    "El consultor de alergia a betalactámicos estructura la anamnesis, pero no genera alternativas antibióticas.",
     "El mapa HUVN enterobacterias 2025 está publicado como mapa anual parcial consultable, no como recomendación terapéutica.",
     "No activar en la app recomendaciones, calculadoras o mapa microbiológico global completo hasta revisión manual y validación local.",
     "El gestor de consultas microbiológicas solo puede mostrar datos publicados o preview de contrato/datasets; no debe emitir recomendaciones terapéuticas.",
