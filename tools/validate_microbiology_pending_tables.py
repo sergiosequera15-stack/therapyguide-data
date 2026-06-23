@@ -222,6 +222,53 @@ def validate_enterobacteria_qa_against_records(
     )
 
 
+def validate_candidate_records(
+    candidate_records: list[dict[str, Any]],
+    grouped: dict[tuple[str, str], list[dict[str, Any]]],
+    expected_single_record_keys: set[tuple[str, str]],
+    expected_duplicate_identical_keys: set[tuple[str, str]],
+) -> None:
+    expected_candidate_keys = expected_single_record_keys | expected_duplicate_identical_keys
+    require(isinstance(candidate_records, list), "preconsolidation.deduplicatedCandidateRecords must be a list")
+
+    observed_candidate_keys = {
+        (item.get("microorganism"), item.get("antibiotic"))
+        for item in candidate_records
+        if isinstance(item, dict)
+    }
+    require(
+        observed_candidate_keys == expected_candidate_keys,
+        "preconsolidation.deduplicatedCandidateRecords keys do not match non-conflicting source keys",
+    )
+
+    for index, item in enumerate(candidate_records):
+        prefix = f"preconsolidation.deduplicatedCandidateRecords[{index}]"
+        microorganism = item.get("microorganism")
+        antibiotic = item.get("antibiotic")
+        key = (microorganism, antibiotic)
+        require(key in expected_candidate_keys, f"{prefix} has unexpected key")
+        source_records = grouped[key]
+        expected_sources = sorted({record["sourceFile"] for record in source_records})
+        expected_value_pairs = {(record["isolatesTested"], record["susceptibilityPercent"]) for record in source_records}
+        require(len(expected_value_pairs) == 1, f"{prefix} must not represent a conflicting key")
+        expected_isolates_tested, expected_susceptibility_percent = next(iter(expected_value_pairs))
+
+        require(item.get("isolatesTested") == expected_isolates_tested, f"{prefix}.isolatesTested mismatch")
+        require(
+            item.get("susceptibilityPercent") == expected_susceptibility_percent,
+            f"{prefix}.susceptibilityPercent mismatch",
+        )
+
+        candidate_source = item.get("candidateSource") or {}
+        expected_type = "singleRecordKey" if key in expected_single_record_keys else "duplicateIdenticalCollapsed"
+        require(candidate_source.get("type") == expected_type, f"{prefix}.candidateSource.type mismatch")
+        require(candidate_source.get("sourceFiles") == expected_sources, f"{prefix}.candidateSource.sourceFiles mismatch")
+        require(
+            candidate_source.get("sourceRecordCount") == len(source_records),
+            f"{prefix}.candidateSource.sourceRecordCount mismatch",
+        )
+
+
 def validate_enterobacteria_preconsolidation_against_records(
     preconsolidation_path: Path,
     records: list[dict[str, Any]],
@@ -232,6 +279,7 @@ def validate_enterobacteria_preconsolidation_against_records(
     input_datasets = data.get("inputDatasets") or []
     method = data.get("preconsolidationMethod") or {}
     summary = data.get("summary") or {}
+    candidate_records = data.get("deduplicatedCandidateRecords") or []
     duplicate_identical_keys = data.get("duplicateIdenticalKeys") or []
     conflicting_keys = data.get("conflictingKeys") or []
     low_count_groups = data.get("lowCountGroups") or []
@@ -253,9 +301,11 @@ def validate_enterobacteria_preconsolidation_against_records(
     require(isinstance(method.get("duplicateIdenticalDefinition"), str) and method.get("duplicateIdenticalDefinition"), "preconsolidation method must define identical duplicates")
     require(isinstance(method.get("conflictDefinition"), str) and method.get("conflictDefinition"), "preconsolidation method must define conflicts")
     require(isinstance(method.get("lowCountDefinition"), str) and method.get("lowCountDefinition"), "preconsolidation method must define low-count groups")
+    require(isinstance(method.get("candidateRecordRule"), str) and method.get("candidateRecordRule"), "preconsolidation method must define candidate record rule")
     require(method.get("automaticConsolidationPerformed") is False, "preconsolidation must not claim automatic consolidation")
     require(method.get("conflictResolutionPerformed") is False, "preconsolidation must not claim conflict resolution")
     require(method.get("clinicalInterpretationPerformed") is False, "preconsolidation must not claim clinical interpretation")
+    require(method.get("candidateRecordsArePublished") is False, "preconsolidation candidate records must not be marked as published")
 
     source_files = {str(item.get("file")) for item in input_datasets if item.get("file")}
     source_records = [record for record in records if record["sourceFile"] in source_files]
@@ -279,6 +329,7 @@ def validate_enterobacteria_preconsolidation_against_records(
 
     grouped = group_records_by_key(source_records)
     single_record_keys, expected_duplicate_identical_keys, expected_conflicting_keys = calculate_key_classes(source_records)
+    expected_candidate_keys = single_record_keys | expected_duplicate_identical_keys
 
     require(summary.get("sourceRecordCount") == len(source_records), "preconsolidation.sourceRecordCount mismatch")
     require(summary.get("uniqueKeyCount") == len(grouped), "preconsolidation.uniqueKeyCount mismatch")
@@ -288,12 +339,17 @@ def validate_enterobacteria_preconsolidation_against_records(
         "preconsolidation.duplicateIdenticalKeyCount mismatch",
     )
     require(summary.get("conflictingKeyCount") == len(expected_conflicting_keys), "preconsolidation.conflictingKeyCount mismatch")
+    require(summary.get("candidateDeduplicatedRecordCount") == len(expected_candidate_keys), "preconsolidation.candidateDeduplicatedRecordCount mismatch")
+    require(summary.get("candidateExcludedConflictKeyCount") == len(expected_conflicting_keys), "preconsolidation.candidateExcludedConflictKeyCount mismatch")
+    require(summary.get("candidateReadyForPublication") is False, "preconsolidation candidate must not be publication-ready")
     require(summary.get("readyForConsolidatedPublication") is False, "preconsolidation must not be publication-ready")
     require(
         summary.get("readyForAppQueryAsConsolidatedDataset") is False,
         "preconsolidation must not be APP-ready as a consolidated dataset",
     )
     require(summary.get("readyForClinicalUse") is False, "preconsolidation must not be clinical-use ready")
+
+    validate_candidate_records(candidate_records, grouped, single_record_keys, expected_duplicate_identical_keys)
 
     observed_duplicate_identical_keys = {
         (item.get("microorganism"), item.get("antibiotic"))
