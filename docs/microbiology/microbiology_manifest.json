@@ -1,7 +1,7 @@
 {
-  "version": "0.3.0",
-  "generatedAt": "2026-06-19T06:37:10Z",
-  "status": "draft_full_catalog_with_pending_mechanism_records",
+  "version": "0.3.1",
+  "generatedAt": "2026-06-23T00:00:00Z",
+  "status": "draft_full_catalog_with_partial_published_annual_map",
   "title": "Mapa microbiológico HUVN",
   "currentMap": {
     "yearLabel": 2025,
@@ -27,9 +27,24 @@
     "recordCount": 0,
     "resistanceMechanismRecordCount": 43
   },
+  "publishedAnnualMaps": [
+    {
+      "id": "huvn_enterobacteria_annual_map_2025",
+      "title": "Mapa anual parcial HUVN enterobacterias 2025",
+      "path": "microbiology/published/huvn_enterobacterias_2025.json",
+      "scope": "huvn",
+      "dataYear": 2025,
+      "organismGroup": "gram_negative_enterobacteria",
+      "isFullMicrobiologyMap": false,
+      "appConsultationAllowed": true,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "warning": "Mapa parcial por grupo; no equivale al mapa microbiológico global completo."
+    }
+  ],
   "fallback": {
     "behavior": "show_notice_or_source_pdf_when_available",
-    "message": "Mapa microbiológico interactivo pendiente de extracción y validación. Consultar el PDF original hasta revisión manual."
+    "message": "Mapa microbiológico interactivo completo pendiente de extracción y validación. Consultar mapas anuales parciales publicados cuando existan y el PDF original hasta revisión manual."
   },
   "supportedDimensions": {
     "scope": [
@@ -88,7 +103,8 @@
     ]
   },
   "warnings": [
-    "No usar como mapa interactivo hasta completar extracción estructurada y revisión manual.",
+    "No usar como mapa interactivo global hasta completar extracción estructurada y revisión manual.",
+    "Existe un mapa anual parcial HUVN enterobacterias 2025 consultable, sin soporte a decisión clínica ni recomendación terapéutica.",
     "El informe anual puede contener tablas con bajo número de aislados; debe conservarse advertencia si n < 30.",
     "El PDF corregido indica año de datos 2025.",
     "Catálogo completo desde índice; primera extracción de mecanismos HUVN pendiente de revisión manual."
