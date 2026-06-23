@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +13,10 @@ INPUT_FILES = [
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
 ]
 OUTPUT_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
+
+
+def utc_now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -112,7 +117,7 @@ def main() -> None:
         "metadata": {
             "title": "Preconsolidación auditada pendiente de enterobacterias HUVN 2025",
             "version": "0.1.0",
-            "generatedAt": "2026-06-22T00:00:00Z",
+            "generatedAt": utc_now_iso(),
             "status": "preconsolidation_draft_pending_manual_review",
             "clinicalUseAllowed": False,
             "interactiveUseAllowed": False,
@@ -161,6 +166,7 @@ def main() -> None:
 
     write_json(OUTPUT_FILE, report)
     print(f"Wrote {OUTPUT_FILE}")
+    print(f"Generated at: {report['metadata']['generatedAt']}")
     print(f"Source records: {len(all_records)}")
     print(f"Unique keys: {len(grouped)}")
     print(f"Conflicts: {len(conflicting_keys)}")
