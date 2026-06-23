@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "generatedAt": "2026-06-23T00:00:00Z",
   "status": "partial_extraction_pending_manual_review",
   "title": "Estado de explotación estructurada del Mapa Microbiológico 2025",
@@ -18,11 +18,11 @@
     "fullInteractiveMapReviewed": false,
     "generalRecordsInMicrobiologyMap": 0,
     "resistanceMechanismRecords": 43,
-    "structuredSusceptibilityDatasetCount": 4,
+    "structuredSusceptibilityDatasetCount": 5,
     "enterobacteriaCandidatePipelineReady": true,
     "enterobacteriaDryRunAnnualMapValidatedInCi": true,
-    "enterobacteriaAnnualMapPublished": false,
-    "enterobacteriaConsolidated": false,
+    "enterobacteriaAnnualMapPublished": true,
+    "enterobacteriaConsolidated": true,
     "enterobacteriaQaDraft": true,
     "enterobacteriaQaPublished": false,
     "globalMicrobiologyMapComplete": false
@@ -78,21 +78,17 @@
       "clinicalUseAllowed": false
     },
     {
-      "id": "enterobacteria_candidate_pipeline",
-      "label": "Pipeline de candidata anual parcial HUVN enterobacterias",
-      "status": "candidate_and_dry_run_ready_pending_manual_publication",
-      "temporaryArtifacts": [
-        "enterobacteria-preconsolidation-draft-2025",
-        "enterobacteria-consolidated-candidate-2025",
-        "enterobacteria-dry-run-annual-map-2025"
-      ],
-      "intendedPermanentPath": "microbiology/published/huvn_enterobacterias_2025.json",
+      "id": "enterobacteria_annual_partial_map",
+      "label": "Mapa anual parcial HUVN enterobacterias 2025",
+      "status": "published_annual_map",
+      "datasetUrl": "microbiology/published/huvn_enterobacterias_2025.json",
       "scope": "huvn",
       "organismGroup": "gram_negative_enterobacteria",
       "isFullMicrobiologyMap": false,
-      "appPublicationAllowed": false,
-      "requiresManualPublication": true,
-      "clinicalUseAllowed": false
+      "appPublicationAllowed": true,
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false
     },
     {
       "id": "antibiotic_abbreviations_2025",
@@ -107,7 +103,7 @@
       "id": "full_susceptibility_map",
       "label": "Extracción completa de todas las tablas de sensibilidad del PDF",
       "status": "not_complete",
-      "reason": "microbiology_map_2025.records está vacío y las secciones del índice siguen como cataloged_pending_table_extraction. El avance de enterobacterias no equivale al mapa microbiológico global completo."
+      "reason": "microbiology_map_2025.records está vacío y las secciones del índice siguen como cataloged_pending_table_extraction. El mapa anual parcial de enterobacterias no equivale al mapa microbiológico global completo."
     },
     {
       "id": "hospital_general_specific_tables",
@@ -130,46 +126,33 @@
       "status": "not_published"
     },
     {
-      "id": "enterobacteria_manual_publication",
-      "label": "Publicación manual del mapa anual parcial HUVN enterobacterias 2025",
-      "status": "not_complete",
-      "reason": "El pipeline técnico y el dry-run están listos, pero aún falta revisión/publicación manual real con revisor y fecha."
-    },
-    {
-      "id": "enterobacteria_manifest_publication",
-      "label": "Exposición del mapa anual parcial HUVN enterobacterias en manifiestos DATA",
-      "status": "not_complete",
-      "reason": "No debe exponerse a APP hasta que exista el archivo permanente revisado en docs/microbiology/published/."
-    },
-    {
       "id": "enterobacteria_qa_publication",
       "label": "Publicación de QA específico de enterobacterias como recurso estable",
       "status": "draft_pending_manual_review"
     },
     {
-      "id": "manual_review",
-      "label": "Revisión manual documentada frente al PDF fuente",
+      "id": "manual_review_global_map",
+      "label": "Revisión manual documentada del mapa microbiológico global completo frente al PDF fuente",
       "status": "not_complete"
     }
   ],
   "safeAppBehavior": {
     "mayShowAvailablePendingDatasets": true,
+    "mayShowPublishedPartialAnnualMaps": true,
     "mayShowExtractionStatus": true,
     "mayShowUnavailableScopes": true,
-    "mayShowEnterobacteriaAsPartialCandidateOnly": true,
-    "mustShowPendingReview": true,
     "mustShowPartialMapScope": true,
     "mustBlockClinicalDecisionSupport": true,
     "mustNotRankAntibiotics": true,
     "mustNotGenerateTherapeuticRecommendations": true,
     "mustNotUseGlobalHuvnAsSpecificCenter": true,
-    "mustNotDescribeEnterobacteriaCandidateAsFullMicrobiologyMap": true
+    "mustNotDescribeEnterobacteriaCandidateAsFullMicrobiologyMap": true,
+    "mustNotDescribePublishedEnterobacteriaMapAsFullMicrobiologyMap": true
   },
   "nextRemoteSafeTasks": [
-    "Mantener consulta APP limitada a datasets publicados y pendientes de revisión.",
+    "Permitir consulta APP solo del mapa anual parcial HUVN enterobacterias 2025, manteniendo bloqueadas recomendaciones y ranking.",
     "No presentar Hospital General, Neurotrauma, Materno-Infantil o Pediatría como disponibles hasta publicar datasets específicos.",
-    "No presentar la candidata de enterobacterias como mapa microbiológico global completo.",
-    "Publicar HUVN enterobacterias 2025 solo como mapa anual parcial tras revisión manual real con revisor y fecha.",
+    "No presentar el mapa anual parcial de enterobacterias como mapa microbiológico global completo.",
     "Completar extracción de tablas restantes por ámbitos solo con trazabilidad de página/sección y revisión manual."
   ]
 }
