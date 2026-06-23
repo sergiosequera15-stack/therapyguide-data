@@ -230,6 +230,7 @@ def validate_enterobacteria_preconsolidation_against_records(
     data = load_json(preconsolidation_path)
     metadata = data.get("metadata") or {}
     input_datasets = data.get("inputDatasets") or []
+    method = data.get("preconsolidationMethod") or {}
     summary = data.get("summary") or {}
     duplicate_identical_keys = data.get("duplicateIdenticalKeys") or []
     conflicting_keys = data.get("conflictingKeys") or []
@@ -247,6 +248,14 @@ def validate_enterobacteria_preconsolidation_against_records(
         "enterobacteria preconsolidation must not allow therapeutic recommendations",
     )
     require(isinstance(input_datasets, list) and len(input_datasets) == 3, "enterobacteria preconsolidation must reference exactly three passes")
+
+    require(method.get("keyFields") == ["microorganism", "antibiotic"], "preconsolidation method keyFields must stay fixed")
+    require(isinstance(method.get("duplicateIdenticalDefinition"), str) and method.get("duplicateIdenticalDefinition"), "preconsolidation method must define identical duplicates")
+    require(isinstance(method.get("conflictDefinition"), str) and method.get("conflictDefinition"), "preconsolidation method must define conflicts")
+    require(isinstance(method.get("lowCountDefinition"), str) and method.get("lowCountDefinition"), "preconsolidation method must define low-count groups")
+    require(method.get("automaticConsolidationPerformed") is False, "preconsolidation must not claim automatic consolidation")
+    require(method.get("conflictResolutionPerformed") is False, "preconsolidation must not claim conflict resolution")
+    require(method.get("clinicalInterpretationPerformed") is False, "preconsolidation must not claim clinical interpretation")
 
     source_files = {str(item.get("file")) for item in input_datasets if item.get("file")}
     source_records = [record for record in records if record["sourceFile"] in source_files]
