@@ -22,6 +22,10 @@ REQUIRED_FILES = [
     DOCS_DIR / "microbiology" / "extraction_status_2025.json",
     DOCS_DIR / "microbiology" / "qa_enterobacterias_pending_2025.json",
 ]
+ALLOWED_QUERY_DATASET_STATUSES = {
+    "draft_pending_manual_review",
+    "published_annual_map",
+}
 
 
 def load_json(path: Path) -> Any:
@@ -186,7 +190,11 @@ def validate_extraction_status(extraction_status: dict[str, Any], microbiology_m
     summary = extraction_status.get("summary") or {}
     require(summary.get("fullInteractiveMapExtracted") is False, "extraction_status must not claim fullInteractiveMapExtracted")
     require(summary.get("fullInteractiveMapReviewed") is False, "extraction_status must not claim fullInteractiveMapReviewed")
-    require(summary.get("enterobacteriaConsolidated") is False, "extraction_status must not claim enterobacteriaConsolidated")
+    require(summary.get("globalMicrobiologyMapComplete") is False, "extraction_status must not claim globalMicrobiologyMapComplete")
+    require(summary.get("enterobacteriaAnnualMapPublished") is True, "extraction_status must claim published annual enterobacteria map after publication")
+    require(summary.get("enterobacteriaCandidatePipelineReady") is True, "extraction_status must claim candidate pipeline readiness")
+    require(summary.get("enterobacteriaDryRunAnnualMapValidatedInCi") is True, "extraction_status must claim dry-run validation")
+    require(summary.get("enterobacteriaConsolidated") is True, "extraction_status must claim enterobacteriaConsolidated after publication")
     require(summary.get("enterobacteriaQaDraft") is True, "extraction_status must claim enterobacteriaQaDraft only after QA draft exists")
     require(summary.get("enterobacteriaQaPublished") is False, "extraction_status must not claim enterobacteriaQaPublished")
     require(summary.get("sectionCatalogCount") == len(microbiology_map.get("sectionCatalog", [])), "extraction_status.sectionCatalogCount mismatch")
@@ -209,6 +217,10 @@ def validate_extraction_status(extraction_status: dict[str, Any], microbiology_m
     require(
         safe_behavior.get("mustNotUseGlobalHuvnAsSpecificCenter") is True,
         "extraction_status.safeAppBehavior must block HUVN global fallback to specific centers",
+    )
+    require(
+        safe_behavior.get("mustNotDescribeEnterobacteriaCandidateAsFullMicrobiologyMap") is True,
+        "extraction_status.safeAppBehavior must block describing enterobacteria as full map",
     )
 
     not_completed = extraction_status.get("notCompletedItems") or []
@@ -266,6 +278,19 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
             "microbiology map has records but manualReviewStatus is not reviewed",
         )
 
+    published_maps = manifest.get("publishedAnnualMaps") or []
+    require(isinstance(published_maps, list), "microbiology_manifest.publishedAnnualMaps must be a list if present")
+    for index, published_map in enumerate(published_maps):
+        prefix = f"microbiology_manifest.publishedAnnualMaps[{index}]"
+        map_path = published_map.get("path")
+        require(published_map.get("id"), f"{prefix} lacks id")
+        require(published_map.get("title"), f"{prefix} lacks title")
+        require(isinstance(map_path, str) and map_path.endswith(".json"), f"{prefix}.path must point to JSON")
+        require((DOCS_DIR / map_path).exists(), f"{prefix}.path points to missing file: {map_path}")
+        require(published_map.get("isFullMicrobiologyMap") is False, f"{prefix} must not claim full map status")
+        require(published_map.get("clinicalDecisionSupportAllowed") is False, f"{prefix} must block CDS")
+        require(published_map.get("therapeuticRecommendationAllowed") is False, f"{prefix} must block therapeutic recommendations")
+
     section_catalog = microbiology_map.get("sectionCatalog") or []
     require(isinstance(section_catalog, list), "microbiology_map_2025.sectionCatalog must be a list")
 
@@ -302,6 +327,7 @@ def validate_microbiology(manifest: dict[str, Any], microbiology_map: dict[str, 
 
 def validate_query_dataset_metadata(dataset: dict[str, Any], dataset_data: Any, declared_scope_values: set[str]) -> None:
     dataset_id = str(dataset.get("id"))
+    dataset_status = dataset.get("status")
     if not isinstance(dataset_data, dict):
         return
 
@@ -310,7 +336,14 @@ def validate_query_dataset_metadata(dataset: dict[str, Any], dataset_data: Any, 
         return
 
     metadata = dataset_data.get("metadata") or {}
-    require(metadata.get("interactiveUseAllowed") is False, f"{dataset_id}.metadata.interactiveUseAllowed must be false")
+    if dataset_status == "published_annual_map":
+        require(metadata.get("status") == "published_annual_map", f"{dataset_id}.metadata.status must be published_annual_map")
+        require(metadata.get("appConsultationAllowed") is True, f"{dataset_id}.metadata.appConsultationAllowed must be true")
+        require(metadata.get("clinicalUseAllowed") is False, f"{dataset_id}.metadata.clinicalUseAllowed must be false")
+        require(metadata.get("clinicalDecisionSupportAllowed") is False, f"{dataset_id}.metadata.clinicalDecisionSupportAllowed must be false")
+        require(metadata.get("therapeuticRecommendationAllowed") is False, f"{dataset_id}.metadata.therapeuticRecommendationAllowed must be false")
+    else:
+        require(metadata.get("interactiveUseAllowed") is False, f"{dataset_id}.metadata.interactiveUseAllowed must be false")
 
     scope = metadata.get("scope")
     if scope is not None:
@@ -356,8 +389,14 @@ def validate_microbiology_query_manifest(data: dict[str, Any], declared_scope_va
         require(dataset.get("id"), f"{prefix} lacks id")
         require(dataset.get("title"), f"{prefix} lacks title")
         require(dataset_url, f"{prefix} lacks url")
-        require(dataset.get("status") == "draft_pending_manual_review", f"{prefix} must remain draft_pending_manual_review")
+        require(dataset.get("status") in ALLOWED_QUERY_DATASET_STATUSES, f"{prefix} has invalid status")
         require(dataset.get("clinicalUseAllowed") is False, f"{prefix}.clinicalUseAllowed must be false")
+        require(dataset.get("therapeuticRecommendationAllowed", False) is False, f"{prefix}.therapeuticRecommendationAllowed must be false")
+
+        if dataset.get("status") == "published_annual_map":
+            require(dataset.get("appConsultationAllowed") is True, f"{prefix}.appConsultationAllowed must be true")
+            require(dataset.get("isFullMicrobiologyMap") is False, f"{prefix}.isFullMicrobiologyMap must be false")
+            require(dataset.get("clinicalDecisionSupportAllowed") is False, f"{prefix}.clinicalDecisionSupportAllowed must be false")
 
         dataset_path = resolve_dataset_path(str(dataset_url))
         require(dataset_path.exists(), f"{prefix} points to missing file: {dataset_path}")
