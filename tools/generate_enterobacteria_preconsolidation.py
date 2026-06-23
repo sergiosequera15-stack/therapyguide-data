@@ -13,6 +13,7 @@ INPUT_FILES = [
     MICROBIOLOGY_DIR / "susceptibility_huvn_bgn_enterobacterias_third_pass_2025.json",
 ]
 OUTPUT_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
+CANDIDATE_OUTPUT_FILE = MICROBIOLOGY_DIR / "consolidated_enterobacterias_candidate_2025.json"
 
 
 def utc_now_iso() -> str:
@@ -120,6 +121,65 @@ def build_manual_review_worklist(
     }
 
 
+def build_consolidated_candidate(
+    generated_at: str,
+    input_summaries: list[dict[str, Any]],
+    deduplicated_candidate_records: list[dict[str, Any]],
+    conflicting_keys: list[dict[str, Any]],
+    low_count_groups: list[tuple[str, int]],
+) -> dict[str, Any]:
+    return {
+        "metadata": {
+            "title": "Candidata técnica consolidada pendiente de enterobacterias HUVN 2025",
+            "version": "0.1.0",
+            "generatedAt": generated_at,
+            "status": "consolidated_candidate_pending_manual_review",
+            "scope": "huvn",
+            "organismGroup": "gram_negative_enterobacteria",
+            "sourcePreconsolidationArtifact": OUTPUT_FILE.name,
+            "clinicalUseAllowed": False,
+            "interactiveUseAllowed": False,
+            "therapeuticRecommendationAllowed": False,
+            "manualReviewStatus": "pending",
+            "notes": [
+                "Candidata técnica derivada de registros únicos y duplicados idénticos colapsados.",
+                "Excluye claves conflictivas hasta revisión manual.",
+                "No está publicada en manifiestos y no debe ser consumida por la APP.",
+            ],
+        },
+        "inputDatasets": input_summaries,
+        "summary": {
+            "recordCount": len(deduplicated_candidate_records),
+            "excludedConflictKeyCount": len(conflicting_keys),
+            "lowCountGroupCount": len(low_count_groups),
+            "readyForManifestPublication": False,
+            "readyForAppQueryAsConsolidatedDataset": False,
+            "readyForClinicalUse": False,
+        },
+        "records": deduplicated_candidate_records,
+        "excludedConflicts": conflicting_keys,
+        "lowCountGroupsToFlag": [
+            {
+                "microorganism": microorganism,
+                "isolatesTested": isolates_tested,
+                "warning": "n < 30; estimates should be flagged as unstable.",
+            }
+            for microorganism, isolates_tested in low_count_groups
+        ],
+        "safeAppBehavior": {
+            "mustNotUseAsConsolidatedDataset": True,
+            "mustNotRankAntibiotics": True,
+            "mustNotGenerateTherapeuticRecommendations": True,
+            "mustShowPendingReview": True,
+        },
+        "review": {
+            "status": "pending",
+            "reviewer": None,
+            "reviewedAt": None,
+        },
+    }
+
+
 def main() -> None:
     all_records: list[dict[str, Any]] = []
     input_summaries: list[dict[str, Any]] = []
@@ -218,12 +278,13 @@ def main() -> None:
         low_count_groups=low_count_groups,
         deduplicated_candidate_record_count=len(deduplicated_candidate_records),
     )
+    generated_at = utc_now_iso()
 
     report = {
         "metadata": {
             "title": "Preconsolidación auditada pendiente de enterobacterias HUVN 2025",
             "version": "0.1.0",
-            "generatedAt": utc_now_iso(),
+            "generatedAt": generated_at,
             "status": "preconsolidation_draft_pending_manual_review",
             "clinicalUseAllowed": False,
             "interactiveUseAllowed": False,
@@ -286,10 +347,19 @@ def main() -> None:
         },
     }
 
+    candidate_report = build_consolidated_candidate(
+        generated_at=generated_at,
+        input_summaries=input_summaries,
+        deduplicated_candidate_records=deduplicated_candidate_records,
+        conflicting_keys=conflicting_keys,
+        low_count_groups=low_count_groups,
+    )
     candidate_review_count = manual_review_worklist["candidateRecordsToReview"][0]["recordCount"]
 
     write_json(OUTPUT_FILE, report)
+    write_json(CANDIDATE_OUTPUT_FILE, candidate_report)
     print(f"Wrote {OUTPUT_FILE}")
+    print(f"Wrote {CANDIDATE_OUTPUT_FILE}")
     print(f"Generated at: {report['metadata']['generatedAt']}")
     print("Enterobacteria preconsolidation summary:")
     print(f"  Source records: {len(all_records)}")
