@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import json
 from datetime import datetime
 from pathlib import Path
@@ -108,8 +109,29 @@ def validate_published_map(path: Path) -> None:
     require(review.get("reviewedAt") == metadata.get("reviewedAt"), f"{path.name} review.reviewedAt mismatch")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Validate permanent or dry-run published microbiology maps.")
+    parser.add_argument(
+        "--map-file",
+        type=Path,
+        action="append",
+        default=[],
+        help="Specific published-map JSON to validate. Can be supplied more than once.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     require(POLICY_PATH.exists(), "annual microbiology map publication policy is missing")
+
+    if args.map_file:
+        for path in args.map_file:
+            require(path.exists(), f"published microbiology map file not found: {path}")
+            validate_published_map(path)
+            print(f"Published microbiology map OK: {path}")
+        print(f"Published microbiology maps validated: {len(args.map_file)}")
+        return
 
     if not PUBLISHED_DIR.exists():
         print("No published microbiology map directory found; skipping published map validation")
