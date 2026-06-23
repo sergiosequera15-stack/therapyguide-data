@@ -1,4 +1,6 @@
 # Generated during validation; uploaded as temporary GitHub Actions artifacts.
-# Do not commit until explicitly approved for publication in docs/microbiology/.
+# These are review artifacts, not permanent DATA maps.
+# Do not commit them directly.
+# Final reviewed maps must be committed separately in a permanent/versioned path such as docs/microbiology/published/.
 docs/microbiology/preconsolidation_enterobacterias_draft_2025.json
 docs/microbiology/consolidated_enterobacterias_candidate_2025.json
