@@ -14,6 +14,8 @@ INPUT_FILES = [
 ]
 OUTPUT_FILE = MICROBIOLOGY_DIR / "preconsolidation_enterobacterias_draft_2025.json"
 CANDIDATE_OUTPUT_FILE = MICROBIOLOGY_DIR / "consolidated_enterobacterias_candidate_2025.json"
+PUBLISHED_MAP_POLICY_FILE = MICROBIOLOGY_DIR / "ANNUAL_MAP_PUBLICATION_POLICY.md"
+INTENDED_PUBLISHED_MAP_PATH = "docs/microbiology/published/huvn_enterobacterias_2025.json"
 
 
 def utc_now_iso() -> str:
@@ -137,6 +139,8 @@ def build_consolidated_candidate(
             "scope": "huvn",
             "organismGroup": "gram_negative_enterobacteria",
             "sourcePreconsolidationArtifact": OUTPUT_FILE.name,
+            "publicationPolicy": PUBLISHED_MAP_POLICY_FILE.name,
+            "intendedPermanentPathAfterReview": INTENDED_PUBLISHED_MAP_PATH,
             "clinicalUseAllowed": False,
             "interactiveUseAllowed": False,
             "therapeuticRecommendationAllowed": False,
@@ -145,6 +149,7 @@ def build_consolidated_candidate(
                 "Candidata técnica derivada de registros únicos y duplicados idénticos colapsados.",
                 "Excluye claves conflictivas hasta revisión manual.",
                 "No está publicada en manifiestos y no debe ser consumida por la APP.",
+                "Tras revisión manual, el mapa debe promocionarse a una ruta permanente anual y no depender de artefactos temporales de CI.",
             ],
         },
         "inputDatasets": input_summaries,
@@ -369,6 +374,7 @@ def main() -> None:
     print(f"  Conflicts to resolve: {len(manual_review_worklist['conflictsToResolve'])}")
     print(f"  Low-count groups to flag: {len(manual_review_worklist['lowCountGroupsToFlag'])}")
     print(f"  Candidate records to review: {candidate_review_count}")
+    print(f"  Intended permanent map path after review: {INTENDED_PUBLISHED_MAP_PATH}")
 
 
 if __name__ == "__main__":
