@@ -1,0 +1,1262 @@
+{
+  "metadata": {
+    "clinicalDecisionSupportAllowed": false,
+    "clinicalUseAllowed": false,
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "guideTopics": "docs/guide_topics.json",
+    "notes": [
+      "This report is a change-detection aid only.",
+      "It checks presence of drug tokens in the current source topic text; it does not validate clinical correctness.",
+      "Rows flagged as possible changes require manual review before any table update."
+    ],
+    "readyForAppConsultant": false,
+    "reportMode": "deterministic_committed_snapshot",
+    "rowCount": 70,
+    "status": "draft_source_change_detection_only",
+    "statusCounts": {
+      "possible_option_change_or_table_source_mismatch": 3,
+      "source_contains_table_drug_tokens": 67
+    },
+    "table": "docs/rules/betalactam_allergy_options_master_table_draft.json",
+    "therapeuticRecommendationAllowed": false,
+    "title": "Beta-lactam allergy master table source check report"
+  },
+  "rows": [
+    {
+      "drugTokens": [
+        "aztreonam",
+        "gentamicina",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 1,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Comunidad, sin sepsis, ingreso, sin FR de bacterias resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "daptomicina",
+        "linezolid",
+        "metronidazol",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present"
+      ],
+      "rowNumber": 2,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "daptomicina",
+        "linezolid",
+        "metronidazol",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 3,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sepsis, sin fragilidad y sin FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "daptomicina",
+        "linezolid",
+        "metronidazol",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 4,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sepsis, frágil/vulnerable o con FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "fosfomicina",
+        "gentamicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 5,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "ITU en gestación/puerperio, reevaluación",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "drugTokens": [
+        "gentamicina",
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 6,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Aborto séptico",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "drugTokens": [
+        "azitromicina",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 7,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Neumonía",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 8,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Apendicitis",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "dexametasona",
+        "linezolid",
+        "metronidazol",
+        "rifampicina",
+        "vancomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 9,
+      "sourceTopicId": "meningitis_bacteriana",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Meningitis bacteriana aguda en adultos, alergia a penicilina",
+      "syndrome": "Meningitis"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 10,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC leve sin comorbilidades ni FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "context_dependent_wording",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 11,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 12,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC moderada-grave con ingreso, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [
+        "tigeciclina"
+      ],
+      "notes": [
+        "One or more drug tokens from the table were not found in the current source topic text."
+      ],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 13,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Neumonía nosocomial o con FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "drugTokens": [
+        "cefuroxima",
+        "josamicina",
+        "levofloxacino",
+        "midecamicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 14,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ambulatoria 4 meses–4 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "context_dependent_wording"
+      ],
+      "rowNumber": 15,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ambulatoria ≥5 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "drugTokens": [
+        "cefotaxima",
+        "ceftriaxona",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 16,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso 4 meses–5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "linezolid",
+        "vancomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 17,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso 4 meses–5 años, grave o con derrame pleural",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "drugTokens": [
+        "cefotaxima",
+        "ceftriaxona",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 18,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso >5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "ertapenem"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 19,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU sistémica sin ingreso",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "fosfomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 20,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU con ingreso, FR MDR, sin sepsis/shock, sospecha de P. aeruginosa MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "fosfomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 21,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU con sepsis/shock, sospecha de resistencia a carbapenémicos o MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "fosfomicina",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 22,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Prostatitis bacteriana con sepsis/shock",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "drugTokens": [
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 23,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, buen control del foco, sin FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "drugTokens": [
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 24,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, con FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "caspofungina",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 25,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis secundaria con sepsis grave, mala evolución o mal control de foco",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "drugTokens": [
+        "clindamicina",
+        "gentamicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 26,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "drugTokens": [
+        "ciprofloxacino",
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 27,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Apendicitis aguda con cirugía demorada",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "drugTokens": [
+        "ciprofloxacino",
+        "metronidazol",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 28,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Colecistitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "metronidazol",
+        "vancomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 29,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis primaria asociada a ascitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "drugTokens": [
+        "gentamicina",
+        "vancomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 30,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "drugTokens": [
+        "cotrimoxazol",
+        "linezolid",
+        "septrim"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 31,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis, paciente sano, sin supuración, sin ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "daptomicina",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 32,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis sin supuración, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "dalbavancina",
+        "daptomicina",
+        "linezolid",
+        "oritavancina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 33,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis con supuración o riesgo SARM, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "daptomicina",
+        "linezolid",
+        "metronidazol",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 34,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Infección de herida quirúrgica profunda o >48–72 h",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "linezolid",
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 35,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis necrotizante / fascitis / mionecrosis",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "dalbavancina",
+        "daptomicina",
+        "linezolid",
+        "oritavancina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 36,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Piomiositis",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "drugTokens": [
+        "ceftriaxona",
+        "daptomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 37,
+      "sourceTopicId": "infecciones_endovasculares",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Endocarditis infecciosa sobre válvula nativa, alérgicos",
+      "syndrome": "Endovascular"
+    },
+    {
+      "drugTokens": [
+        "daptomicina",
+        "fosfomicina"
+      ],
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "notes": [
+        "One or more drug tokens from the table were not found in the current source topic text."
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 38,
+      "sourceTopicId": "infecciones_endovasculares",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis en ADVP, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "drugTokens": [
+        "daptomicina",
+        "fosfomicina"
+      ],
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "notes": [
+        "One or more drug tokens from the table were not found in the current source topic text."
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 39,
+      "sourceTopicId": "infecciones_endovasculares",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "ciprofloxacino",
+        "daptomicina",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 40,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "drugTokens": [
+        "daptomicina",
+        "meropenem"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 41,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, quirófano",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "drugTokens": [
+        "linezolid",
+        "meropenem"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 42,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, planta",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "ciprofloxacino",
+        "daptomicina",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 43,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "drugTokens": [
+        "daptomicina",
+        "linezolid",
+        "meropenem"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 44,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "drugTokens": [
+        "linezolid",
+        "meropenem",
+        "rifampicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 45,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "MOS tras implantación, alergia a penicilina",
+      "syndrome": "Osteoarticular pediátrica"
+    },
+    {
+      "drugTokens": [
+        "cefixima",
+        "ciprofloxacino",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 46,
+      "sourceTopicId": "manejo_de_neutropenia_febril",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Bajo riesgo tras 6–8 h de observación y antibiótico IV",
+      "syndrome": "Neutropenia febril"
+    },
+    {
+      "drugTokens": [
+        "metronidazol",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 47,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Uretritis/cervicitis, alergia a penicilina",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "metronidazol",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 48,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "EPI no grave / no hospitalizada, alérgicas",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "clindamicina",
+        "doxiciclina",
+        "gentamicina",
+        "tigeciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 49,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "EPI grave / hospitalizada",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "azitromicina",
+        "ceftriaxona",
+        "doxiciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 50,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sífilis primaria, secundaria o latente precoz, alternativas a penicilina",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "ceftriaxona",
+        "doxiciclina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 51,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sífilis latente indeterminada / terciaria, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "ceftriaxona",
+        "doxiciclina",
+        "penicilina",
+        "probenecid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "contains_penicillin_named_option_review_needed"
+      ],
+      "rowNumber": 52,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Neurosífilis, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "drugTokens": [
+        "azitromicina",
+        "clindamicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 53,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Faringoamigdalitis",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "clindamicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 54,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, no grave",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "linezolid",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 55,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, grave",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "cefditoreno",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 56,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 57,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Mastoiditis aguda",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "aztreonam",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 58,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Mastoiditis crónica/postquirúrgica",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "aztreonam"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 59,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Otitis externa maligna",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 60,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis aguda comunitaria",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 61,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis dental",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "aztreonam",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 62,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis nosocomial/intrahospitalaria",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 63,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis crónica sin muestra",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "linezolid",
+        "moxifloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 64,
+      "sourceTopicId": "infecciones_orl",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "drugTokens": [
+        "azitromicina",
+        "cefuroxima",
+        "claritromicina",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 65,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "OMA con alergia a penicilina",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "drugTokens": [
+        "cefuroxima",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 66,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Mastoiditis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "drugTokens": [
+        "azitromicina",
+        "ceftibuteno",
+        "cefuroxima",
+        "claritromicina",
+        "levofloxacino"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 67,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "drugTokens": [
+        "levofloxacino",
+        "metronidazol"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 68,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis orbitaria",
+      "syndrome": "Ocular adultos"
+    },
+    {
+      "drugTokens": [
+        "amikacina",
+        "vancomicina"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 69,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Endoftalmitis, tratamiento intravítreo alternativo",
+      "syndrome": "Ocular adultos"
+    },
+    {
+      "drugTokens": [
+        "ciprofloxacino",
+        "daptomicina",
+        "levofloxacino",
+        "linezolid"
+      ],
+      "missingDrugTokens": [],
+      "notes": [],
+      "qualityWarnings": [],
+      "rowNumber": 70,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Endoftalmitis, tratamiento sistémico alternativo",
+      "syndrome": "Ocular adultos"
+    }
+  ]
+}

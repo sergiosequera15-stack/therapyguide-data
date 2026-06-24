@@ -1,0 +1,589 @@
+{
+  "actionRequiredRows": [
+    {
+      "missingDrugTokens": [
+        "tigeciclina"
+      ],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 13,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Neumonía nosocomial o con FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 38,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis en ADVP, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 39,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos, alternativa",
+      "syndrome": "Endovascular"
+    }
+  ],
+  "metadata": {
+    "actionRequiredRowCount": 3,
+    "clinicalDecisionSupportAllowed": false,
+    "clinicalUseAllowed": false,
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "notes": [
+      "Compact deterministic summary for quick review in GitHub.",
+      "Not a clinical validation report.",
+      "Rows listed here require manual review before promotion."
+    ],
+    "qualityWarningRowCount": 44,
+    "readyForAppConsultant": false,
+    "rowCount": 70,
+    "status": "draft_source_change_detection_summary_only",
+    "statusCounts": {
+      "possible_option_change_or_table_source_mismatch": 3,
+      "source_contains_table_drug_tokens": 67
+    },
+    "therapeuticRecommendationAllowed": false,
+    "title": "Beta-lactam allergy master table source check summary"
+  },
+  "qualityWarningRows": [
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 1,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Comunidad, sin sepsis, ingreso, sin FR de bacterias resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present"
+      ],
+      "rowNumber": 2,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 3,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sepsis, sin fragilidad y sin FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 4,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sepsis, frágil/vulnerable o con FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 6,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Aborto séptico",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 10,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC leve sin comorbilidades ni FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "context_dependent_wording",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 11,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 12,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "NAC moderada-grave con ingreso, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "missingDrugTokens": [
+        "tigeciclina"
+      ],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 13,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Neumonía nosocomial o con FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 14,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ambulatoria 4 meses–4 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "context_dependent_wording"
+      ],
+      "rowNumber": 15,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ambulatoria ≥5 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 16,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso 4 meses–5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 17,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso 4 meses–5 años, grave o con derrame pleural",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 18,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Ingreso >5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 19,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU sistémica sin ingreso",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 20,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU con ingreso, FR MDR, sin sepsis/shock, sospecha de P. aeruginosa MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 21,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Pielonefritis/ITU con sepsis/shock, sospecha de resistencia a carbapenémicos o MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 23,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, buen control del foco, sin FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 24,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, con FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 26,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 27,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Apendicitis aguda con cirugía demorada",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 28,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Colecistitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 29,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis primaria asociada a ascitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 30,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "rowNumber": 32,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis sin supuración, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 33,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Celulitis con supuración o riesgo SARM, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 37,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Endocarditis infecciosa sobre válvula nativa, alérgicos",
+      "syndrome": "Endovascular"
+    },
+    {
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 38,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis en ADVP, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "rowNumber": 39,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "possible_option_change_or_table_source_mismatch",
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 40,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 41,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, quirófano",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 42,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, planta",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 43,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 44,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 45,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "MOS tras implantación, alergia a penicilina",
+      "syndrome": "Osteoarticular pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 46,
+      "sourceTopicId": "manejo_de_neutropenia_febril",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Bajo riesgo tras 6–8 h de observación y antibiótico IV",
+      "syndrome": "Neutropenia febril"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 50,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sífilis primaria, secundaria o latente precoz, alternativas a penicilina",
+      "syndrome": "ITS"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 51,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sífilis latente indeterminada / terciaria, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "contains_penicillin_named_option_review_needed"
+      ],
+      "rowNumber": 52,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Neurosífilis, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 56,
+      "sourceTopicId": "infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "rowNumber": 64,
+      "sourceTopicId": "infecciones_orl",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 65,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "OMA con alergia a penicilina",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 66,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Mastoiditis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "missingDrugTokens": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "rowNumber": 67,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "source_contains_table_drug_tokens",
+      "subsyndrome": "Sinusitis",
+      "syndrome": "ORL pediátrica"
+    }
+  ]
+}
