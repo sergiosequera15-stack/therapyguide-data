@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -52,6 +52,15 @@
       "therapeuticRecommendationAllowed": false,
       "readyForAppConsultant": false
     },
+    "betalactamAllergyMasterTableManualReviewQueue": {
+      "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
+      "required": true,
+      "status": "manual_review_pending",
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false
+    },
     "validationReport": {
       "path": "rules/rule_validation_report.json",
       "required": true,
@@ -63,6 +72,7 @@
     "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
     "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
     "Los informes de comprobación de fuente son ayudas de detección: no validan clínicamente las opciones.",
+    "Las filas en la cola de revisión manual deben resolverse antes de cualquier promoción de la tabla.",
     "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
   ]
 }
