@@ -6,6 +6,7 @@ from typing import Any
 
 CANDIDATE_PATH = Path("docs/rules/betalactam_allergy_options_candidate.json")
 WORKLIST_PATH = Path("docs/rules/betalactam_allergy_options_curation_worklist.json")
+OVERLAY_PATH = Path("docs/rules/betalactam_allergy_options_manual_curation.json")
 CURATION_FIELDS = (
     "curationDecision",
     "proposedSyndrome",
@@ -29,8 +30,8 @@ def load_json(path: Path) -> dict[str, Any]:
     return data
 
 
-def existing_entries_by_candidate_id(worklist: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    entries = worklist.get("entries") or []
+def entries_by_id(payload: dict[str, Any], key: str = "entries") -> dict[str, dict[str, Any]]:
+    entries = payload.get(key) or []
     if not isinstance(entries, list):
         return {}
     return {
@@ -40,24 +41,41 @@ def existing_entries_by_candidate_id(worklist: dict[str, Any]) -> dict[str, dict
     }
 
 
-def preserve_curation_fields(candidate_id: str, existing_entries: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    existing = existing_entries.get(candidate_id) or {}
-    preserved = {field: existing.get(field) for field in CURATION_FIELDS if field in existing}
+def expand_options(options: Any, candidate: dict[str, Any]) -> list[dict[str, Any]]:
+    if not isinstance(options, list):
+        return []
+
+    expanded: list[dict[str, Any]] = []
+    for option in options:
+        if not isinstance(option, dict):
+            continue
+        next_option = dict(option)
+        source_field = next_option.pop("sourceTextField", None)
+        if not next_option.get("sourceText") and isinstance(source_field, str):
+            next_option["sourceText"] = candidate.get(source_field)
+        next_option["isTherapeuticRecommendation"] = False
+        expanded.append(next_option)
+    return expanded
+
+
+def curation_fields(candidate: dict[str, Any], existing: dict[str, dict[str, Any]], overlay: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    candidate_id = str(candidate.get("id") or "")
+    source = overlay.get(candidate_id) or existing.get(candidate_id) or {}
+    preserved = {field: source.get(field) for field in CURATION_FIELDS if field in source}
 
     return {
         "curationDecision": preserved.get("curationDecision") or "pending",
         "proposedSyndrome": preserved.get("proposedSyndrome"),
         "proposedSubsyndrome": preserved.get("proposedSubsyndrome"),
-        "extractedOptions": preserved.get("extractedOptions") or [],
+        "extractedOptions": expand_options(preserved.get("extractedOptions") or [], candidate),
         "excludeReason": preserved.get("excludeReason"),
         "curatorNotes": preserved.get("curatorNotes"),
     }
 
 
-def build_entry(candidate: dict[str, Any], existing_entries: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    candidate_id = str(candidate.get("id") or "")
+def build_entry(candidate: dict[str, Any], existing: dict[str, dict[str, Any]], overlay: dict[str, dict[str, Any]]) -> dict[str, Any]:
     entry = {
-        "candidateId": candidate_id,
+        "candidateId": candidate.get("id"),
         "topicId": candidate.get("topicId"),
         "topicTitle": candidate.get("topicTitle"),
         "candidateContext": candidate.get("candidateContext"),
@@ -68,24 +86,35 @@ def build_entry(candidate: dict[str, Any], existing_entries: dict[str, dict[str,
         "readyForConsultant": False,
         "isTherapeuticRecommendation": False,
     }
-    entry.update(preserve_curation_fields(candidate_id, existing_entries))
+    entry.update(curation_fields(candidate, existing, overlay))
     return entry
 
 
-def build_worklist(candidate_payload: dict[str, Any], existing: dict[str, Any]) -> dict[str, Any]:
+def validate_overlay(overlay_payload: dict[str, Any], candidate_ids: set[str]) -> None:
+    overlay_entries = entries_by_id(overlay_payload)
+    unknown = sorted(set(overlay_entries) - candidate_ids)
+    if unknown:
+        raise SystemExit(f"ERROR: overlay references unknown candidates: {', '.join(unknown)}")
+
+
+def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str, Any], overlay_payload: dict[str, Any]) -> dict[str, Any]:
     candidates = candidate_payload.get("candidates") or []
     if not isinstance(candidates, list):
         raise SystemExit("ERROR: candidates must be a list")
 
-    existing_entries = existing_entries_by_candidate_id(existing)
+    candidate_ids = {
+        str(candidate.get("id"))
+        for candidate in candidates
+        if isinstance(candidate, dict) and candidate.get("id")
+    }
+    validate_overlay(overlay_payload, candidate_ids)
+    existing = entries_by_id(existing_payload)
+    overlay = entries_by_id(overlay_payload)
     entries = [
-        build_entry(candidate, existing_entries)
+        build_entry(candidate, existing, overlay)
         for candidate in candidates
         if isinstance(candidate, dict) and candidate.get("id")
     ]
-    pending_count = sum(1 for entry in entries if entry.get("curationDecision") == "pending")
-    included_count = sum(1 for entry in entries if entry.get("curationDecision") == "include")
-    excluded_count = sum(1 for entry in entries if entry.get("curationDecision") == "exclude")
 
     return {
         "metadata": {
@@ -94,10 +123,12 @@ def build_worklist(candidate_payload: dict[str, Any], existing: dict[str, Any]) 
             "generatedAt": "2026-06-24T00:00:00Z",
             "status": "manual_curation_pending",
             "source": "betalactam_allergy_options_candidate.json",
+            "manualCurationSource": "betalactam_allergy_options_manual_curation.json",
             "candidateCount": len(entries),
-            "pendingCount": pending_count,
-            "includedCount": included_count,
-            "excludedCount": excluded_count,
+            "pendingCount": sum(1 for entry in entries if entry.get("curationDecision") == "pending"),
+            "includedCount": sum(1 for entry in entries if entry.get("curationDecision") == "include"),
+            "excludedCount": sum(1 for entry in entries if entry.get("curationDecision") == "exclude"),
+            "needsDiscussionCount": sum(1 for entry in entries if entry.get("curationDecision") == "needs_discussion"),
             "clinicalUseAllowed": False,
             "clinicalDecisionSupportAllowed": False,
             "therapeuticRecommendationAllowed": False,
@@ -105,10 +136,10 @@ def build_worklist(candidate_payload: dict[str, Any], existing: dict[str, Any]) 
         },
         "allowedCurationDecisions": ["pending", "include", "exclude", "needs_discussion"],
         "instructions": [
-            "Use include solo si el fragmento contiene una opción explícita y trazable para pacientes alérgicos.",
-            "Asigne proposedSyndrome y proposedSubsyndrome antes de pasar a optionRecords.",
-            "Use exclude para ruido, duplicados o menciones generales no útiles.",
-            "No marque ningún registro como recomendación terapéutica ni ranking.",
+            "Use include only for explicit source-backed records.",
+            "Set proposedSyndrome and proposedSubsyndrome before promoting records.",
+            "Use exclude for noise or duplicates.",
+            "Do not mark records as recommendations or rankings.",
         ],
         "entries": entries,
     }
@@ -116,8 +147,9 @@ def build_worklist(candidate_payload: dict[str, Any], existing: dict[str, Any]) 
 
 def main() -> None:
     candidate_payload = load_json(CANDIDATE_PATH)
-    existing_worklist = load_json(WORKLIST_PATH)
-    worklist = build_worklist(candidate_payload, existing_worklist)
+    existing_payload = load_json(WORKLIST_PATH)
+    overlay_payload = load_json(OVERLAY_PATH)
+    worklist = build_worklist(candidate_payload, existing_payload, overlay_payload)
     WORKLIST_PATH.write_text(json.dumps(worklist, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {WORKLIST_PATH} with {worklist['metadata']['candidateCount']} entries")
 
