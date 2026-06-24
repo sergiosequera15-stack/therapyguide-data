@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -84,7 +84,8 @@
     "betalactamAllergyMasterTableManualReviewQueue": {
       "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
       "required": true,
-      "status": "manual_review_pending",
+      "status": "superseded_by_reviewed_master_table_v2_pending_source_recheck",
+      "rowCount": 0,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -102,9 +103,8 @@
     "La tabla maestra v2 procede de la hoja Alergia betalactamicos; otras hojas del XLSX se han ignorado en esta pasada.",
     "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
     "Los informes de comprobación de fuente y de dosis son ayudas de detección: no validan clínicamente las opciones.",
-    "Las filas con dosis incompleta deben completarse desde la fuente antes de cualquier visualización estructurada en APP.",
-    "La worklist de completado de dosis es el carril preferente para incorporar la revisión manual de Sergio.",
-    "Las filas en la cola de revisión manual deben resolverse antes de cualquier promoción de la tabla.",
+    "Los informes generados deben regenerarse contra compact_rows_v2 antes de interpretar discrepancias.",
+    "La cola manual antigua de 3 filas queda superseded por la tabla v2 y no debe usarse con la numeración nueva.",
     "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
   ]
 }
