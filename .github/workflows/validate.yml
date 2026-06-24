@@ -50,6 +50,12 @@ jobs:
       - name: Check beta-lactam allergy master table against current guide topics
         run: python tools/check_betalactam_allergy_master_table_sources.py
 
+      - name: Build beta-lactam allergy source review queue
+        run: python tools/build_betalactam_allergy_source_review_queue.py
+
+      - name: Validate beta-lactam allergy source review queue
+        run: python tools/validate_betalactam_allergy_source_review_queue.py
+
       - name: Audit beta-lactam allergy master table dose completeness
         run: python tools/check_betalactam_allergy_master_table_dose_completeness.py
 
@@ -71,6 +77,7 @@ jobs:
             docs/rules/betalactam_allergy_options_master_table_draft.json \
             docs/rules/generated/betalactam_allergy_master_table_source_check_report.json \
             docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json \
+            docs/rules/betalactam_allergy_master_table_manual_review_queue.json \
             docs/rules/generated/betalactam_allergy_master_table_dose_completeness_report.json \
             docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json \
             docs/rules/betalactam_allergy_dose_completion_worklist.json
@@ -134,6 +141,7 @@ jobs:
             docs/rules/betalactam_allergy_options_master_table_draft.json
             docs/rules/generated/betalactam_allergy_master_table_source_check_report.json
             docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json
+            docs/rules/betalactam_allergy_master_table_manual_review_queue.json
             docs/rules/generated/betalactam_allergy_master_table_dose_completeness_report.json
             docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json
             docs/rules/betalactam_allergy_dose_completion_worklist.json
