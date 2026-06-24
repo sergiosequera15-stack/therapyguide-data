@@ -7,31 +7,16 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": false,
       "qualityWarnings": [
-        "alternative_wording_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 2,
-      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "resistance_risk_context_present"
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
       ],
       "routeMatches": [],
       "rowNumber": 3,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
       "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sepsis, sin fragilidad y sin FR MDR",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+      "subsyndrome": "SF con sepsis, sin fragilidad ni FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
       "doseMatches": [],
@@ -40,66 +25,42 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": false,
       "qualityWarnings": [
-        "alternative_wording_present",
-        "resistance_risk_context_present"
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
       ],
       "routeMatches": [],
       "rowNumber": 4,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
       "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sepsis, frágil/vulnerable o con FR MDR",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+      "subsyndrome": "SF con sepsis, fragilidad/vulnerabilidad o FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [],
-      "routeMatches": [
-        "IV"
+      "doseMatches": [
+        "20 mg",
+        "30 mg",
+        "40 mg",
+        "50 mg",
+        "500 mg"
       ],
-      "rowNumber": 5,
-      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "ITU en gestación/puerperio, reevaluación",
-      "syndrome": "Sepsis en gestación/puerperio"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "context_dependent_wording",
-        "resistance_risk_context_present"
+      "frequencyOrDurationMatches": [
+        "cada 12 h"
       ],
-      "routeMatches": [],
-      "rowNumber": 11,
-      "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR",
-      "syndrome": "Neumonía adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
       "hasRoute": false,
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "allergy_reaction_subtype_present",
+        "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option"
       ],
       "routeMatches": [],
-      "rowNumber": 14,
+      "rowNumber": 15,
       "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Ambulatoria 4 meses–4 años, típica",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "NAC típica ambulatoria 4 meses-4 años",
       "syndrome": "Neumonía pediátrica"
     },
     {
@@ -115,158 +76,107 @@
       "hasRoute": false,
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
-        "context_dependent_wording"
-      ],
-      "routeMatches": [],
-      "rowNumber": 15,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "explicit_dose_frequency_route_unspecified",
-      "subsyndrome": "Ambulatoria ≥5 años, típica",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
+        "allergy_reaction_subtype_present"
       ],
       "routeMatches": [],
       "rowNumber": 16,
       "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso 4 meses–5 años, típica no complicada",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "NAC típica ambulatoria ≥5 años",
       "syndrome": "Neumonía pediátrica"
     },
     {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
+      "doseMatches": [
+        "1,5 mg",
+        "10 mg",
+        "240 mg",
+        "900 mg"
       ],
-      "routeMatches": [],
-      "rowNumber": 17,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso 4 meses–5 años, grave o con derrame pleural",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
       "frequencyOrDurationMatches": [],
-      "hasDose": false,
+      "hasDose": true,
       "hasFrequencyOrDuration": false,
       "hasRoute": false,
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 18,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso >5 años, típica no complicada",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [],
-      "routeMatches": [
-        "IV"
-      ],
-      "rowNumber": 22,
-      "sourceTopicId": "infeccion_del_tracto_urinario",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Prostatitis bacteriana con sepsis/shock",
-      "syndrome": "ITU adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 25,
-      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Peritonitis secundaria con sepsis grave, mala evolución o mal control de foco",
-      "syndrome": "Intraabdominal adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 26,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
-      "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 27,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Apendicitis aguda con cirugía demorada",
-      "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
+        "source_topic_not_in_current_guide_topics"
       ],
       "routeMatches": [],
       "rowNumber": 28,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Colecistitis",
+      "status": "partial_dose_information",
+      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
+      "doseMatches": [
+        "1500 mg",
+        "30 mg",
+        "40 mg",
+        "500 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "cada 12 h",
+        "cada 8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
       "hasRoute": false,
       "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
       ],
       "routeMatches": [],
       "rowNumber": 29,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Apendicitis aguda con cirugía demorada",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [
+        "1500 mg",
+        "30 mg",
+        "40 mg",
+        "500 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "cada 12 h",
+        "cada 8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ],
+      "routeMatches": [],
+      "rowNumber": 30,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Colecistitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [
+        "1500 mg",
+        "200 mg",
+        "40 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "cada 8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ],
+      "routeMatches": [],
+      "rowNumber": 31,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "explicit_dose_frequency_route_unspecified",
       "subsyndrome": "Peritonitis primaria asociada a ascitis",
       "syndrome": "Intraabdominal pediátrica"
     },
@@ -277,315 +187,55 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": true,
       "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
       ],
       "routeMatches": [
         "intraperitoneal"
       ],
-      "rowNumber": 30,
+      "rowNumber": 32,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
       "status": "missing_explicit_dose_information",
       "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 33,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Celulitis con supuración o riesgo SARM, con ingreso",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 34,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Infección de herida quirúrgica profunda o >48–72 h",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 35,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Celulitis necrotizante / fascitis / mionecrosis",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 36,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Piomiositis",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 40,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 43,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 44,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 45,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "MOS tras implantación, alergia a penicilina",
-      "syndrome": "Osteoarticular pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [
-        "14 días"
-      ],
-      "hasDose": false,
-      "hasFrequencyOrDuration": true,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 48,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "EPI no grave / no hospitalizada, alérgicas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 49,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "EPI grave / hospitalizada",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [
-        "14 días",
-        "28 días"
-      ],
-      "hasDose": false,
-      "hasFrequencyOrDuration": true,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 51,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Sífilis latente indeterminada / terciaria, alternativas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "contains_penicillin_named_option_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 52,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Neurosífilis, alternativas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 58,
-      "sourceTopicId": "infecciones_orl",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Mastoiditis crónica/postquirúrgica",
-      "syndrome": "ORL adultos"
-    },
-    {
       "doseMatches": [
-        "400 mg"
+        "1 g",
+        "30 mg",
+        "50 mg"
       ],
       "frequencyOrDurationMatches": [
-        "/24 h"
+        "5 días",
+        "cada 12 h"
       ],
       "hasDose": true,
       "hasFrequencyOrDuration": true,
       "hasRoute": false,
-      "qualityWarnings": [],
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ],
       "routeMatches": [],
-      "rowNumber": 61,
-      "sourceTopicId": "infecciones_orl",
+      "rowNumber": 68,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
       "status": "explicit_dose_frequency_route_unspecified",
-      "subsyndrome": "Sinusitis dental",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 62,
-      "sourceTopicId": "infecciones_orl",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Sinusitis nosocomial/intrahospitalaria",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 64,
-      "sourceTopicId": "infecciones_orl",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 65,
-      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "OMA con alergia a penicilina",
+      "subsyndrome": "Faringoamigdalitis",
       "syndrome": "ORL pediátrica"
     },
     {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      "doseMatches": [
+        "15 mg",
+        "30 mg"
       ],
-      "routeMatches": [
-        "IV",
-        "oral"
+      "frequencyOrDurationMatches": [
+        "cada 12 h"
       ],
-      "rowNumber": 66,
-      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Mastoiditis",
-      "syndrome": "ORL pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
       "hasRoute": false,
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
@@ -593,82 +243,83 @@
         "contains_beta_lactam_or_possible_cross_reactivity_option"
       ],
       "routeMatches": [],
-      "rowNumber": 67,
+      "rowNumber": 69,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "doseMatches": [
+        "10 mg",
+        "20 mg",
+        "30 mg",
+        "400 mg",
+        "500 mg",
+        "9 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "cada 12 h",
+        "cada 24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 71,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "explicit_dose_frequency_route_unspecified",
       "subsyndrome": "Sinusitis",
       "syndrome": "ORL pediátrica"
     },
     {
       "doseMatches": [
-        "500 mg",
-        "750 mg"
+        "0,4 mg",
+        "1 mg"
       ],
-      "frequencyOrDurationMatches": [
-        "/24 h",
-        "/8 h"
-      ],
-      "hasDose": true,
-      "hasFrequencyOrDuration": true,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 68,
-      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
-      "status": "explicit_dose_frequency_route_unspecified",
-      "subsyndrome": "Celulitis orbitaria",
-      "syndrome": "Ocular adultos"
-    },
-    {
-      "doseMatches": [],
       "frequencyOrDurationMatches": [],
-      "hasDose": false,
+      "hasDose": true,
       "hasFrequencyOrDuration": false,
       "hasRoute": true,
-      "qualityWarnings": [],
+      "qualityWarnings": [
+        "alternative_or_contextual_source_wording"
+      ],
       "routeMatches": [
         "intravítrea"
       ],
-      "rowNumber": 69,
+      "rowNumber": 73,
       "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Endoftalmitis, tratamiento intravítreo alternativo",
-      "syndrome": "Ocular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 70,
-      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Endoftalmitis, tratamiento sistémico alternativo",
-      "syndrome": "Ocular adultos"
+      "status": "partial_dose_information",
+      "subsyndrome": "Endoftalmitis, tratamiento intravítreo",
+      "syndrome": "Ocular"
     }
   ],
   "metadata": {
     "clinicalDecisionSupportAllowed": false,
     "clinicalUseAllowed": false,
     "generatedAt": "2026-06-24T00:00:00Z",
-    "incompleteDoseInfoRowCount": 39,
-    "noExplicitDoseRowCount": 36,
+    "incompleteDoseInfoRowCount": 13,
+    "noExplicitDoseRowCount": 3,
     "notes": [
       "Compact deterministic summary for dose-completeness review.",
       "Not a clinical validation report.",
       "Incomplete rows are not wrong by default; some are shorthand rows inherited from the source table."
     ],
     "readyForAppConsultant": false,
-    "rowCount": 70,
+    "rowCount": 76,
     "status": "draft_dose_completeness_summary_only",
     "statusCounts": {
-      "class_or_context_shorthand_without_explicit_dose": 8,
-      "explicit_dose_frequency_route_unspecified": 3,
-      "explicit_dose_route_frequency": 31,
-      "missing_explicit_dose_information": 28
+      "class_or_context_shorthand_without_explicit_dose": 2,
+      "explicit_dose_frequency_route_unspecified": 8,
+      "explicit_dose_route_frequency": 63,
+      "missing_explicit_dose_information": 1,
+      "partial_dose_information": 2
     },
     "therapeuticRecommendationAllowed": false,
     "title": "Beta-lactam allergy master table dose completeness summary"
@@ -681,31 +332,16 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": false,
       "qualityWarnings": [
-        "alternative_wording_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 2,
-      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "resistance_risk_context_present"
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
       ],
       "routeMatches": [],
       "rowNumber": 3,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
       "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sepsis, sin fragilidad y sin FR MDR",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+      "subsyndrome": "SF con sepsis, sin fragilidad ni FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
       "doseMatches": [],
@@ -714,213 +350,16 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": false,
       "qualityWarnings": [
-        "alternative_wording_present",
-        "resistance_risk_context_present"
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
       ],
       "routeMatches": [],
       "rowNumber": 4,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
       "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Sepsis, frágil/vulnerable o con FR MDR",
-      "syndrome": "Sepsis / síndrome febril sin foco adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [],
-      "routeMatches": [
-        "IV"
-      ],
-      "rowNumber": 5,
-      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "ITU en gestación/puerperio, reevaluación",
-      "syndrome": "Sepsis en gestación/puerperio"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "context_dependent_wording",
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 11,
-      "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR",
-      "syndrome": "Neumonía adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 14,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Ambulatoria 4 meses–4 años, típica",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 16,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso 4 meses–5 años, típica no complicada",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 17,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso 4 meses–5 años, grave o con derrame pleural",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 18,
-      "sourceTopicId": "neumonia_en_paciente_pediatrico",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Ingreso >5 años, típica no complicada",
-      "syndrome": "Neumonía pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [],
-      "routeMatches": [
-        "IV"
-      ],
-      "rowNumber": 22,
-      "sourceTopicId": "infeccion_del_tracto_urinario",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Prostatitis bacteriana con sepsis/shock",
-      "syndrome": "ITU adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 25,
-      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Peritonitis secundaria con sepsis grave, mala evolución o mal control de foco",
-      "syndrome": "Intraabdominal adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 26,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
-      "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 27,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Apendicitis aguda con cirugía demorada",
-      "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 28,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Colecistitis",
-      "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 29,
-      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Peritonitis primaria asociada a ascitis",
-      "syndrome": "Intraabdominal pediátrica"
+      "subsyndrome": "SF con sepsis, fragilidad/vulnerabilidad o FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
       "doseMatches": [],
@@ -929,339 +368,18 @@
       "hasFrequencyOrDuration": false,
       "hasRoute": true,
       "qualityWarnings": [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
       ],
       "routeMatches": [
         "intraperitoneal"
       ],
-      "rowNumber": 30,
+      "rowNumber": 32,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
       "status": "missing_explicit_dose_information",
       "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
       "syndrome": "Intraabdominal pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 33,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Celulitis con supuración o riesgo SARM, con ingreso",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 34,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Infección de herida quirúrgica profunda o >48–72 h",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 35,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Celulitis necrotizante / fascitis / mionecrosis",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 36,
-      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Piomiositis",
-      "syndrome": "Piel y partes blandas adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 40,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 43,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 44,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
-      "syndrome": "Osteoarticular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 45,
-      "sourceTopicId": "infeccion_osteoarticular",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "MOS tras implantación, alergia a penicilina",
-      "syndrome": "Osteoarticular pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [
-        "14 días"
-      ],
-      "hasDose": false,
-      "hasFrequencyOrDuration": true,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 48,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "EPI no grave / no hospitalizada, alérgicas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 49,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "EPI grave / hospitalizada",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [
-        "14 días",
-        "28 días"
-      ],
-      "hasDose": false,
-      "hasFrequencyOrDuration": true,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 51,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Sífilis latente indeterminada / terciaria, alternativas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "alternative_wording_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "contains_penicillin_named_option_review_needed"
-      ],
-      "routeMatches": [],
-      "rowNumber": 52,
-      "sourceTopicId": "infecciones_de_transmision_sexual",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Neurosífilis, alternativas",
-      "syndrome": "ITS"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 58,
-      "sourceTopicId": "infecciones_orl",
-      "status": "class_or_context_shorthand_without_explicit_dose",
-      "subsyndrome": "Mastoiditis crónica/postquirúrgica",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 62,
-      "sourceTopicId": "infecciones_orl",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Sinusitis nosocomial/intrahospitalaria",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "routeMatches": [],
-      "rowNumber": 64,
-      "sourceTopicId": "infecciones_orl",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
-      "syndrome": "ORL adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 65,
-      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "OMA con alergia a penicilina",
-      "syndrome": "ORL pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [
-        "IV",
-        "oral"
-      ],
-      "rowNumber": 66,
-      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Mastoiditis",
-      "syndrome": "ORL pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "allergy_reaction_subtype_present",
-        "contains_beta_lactam_or_possible_cross_reactivity_option"
-      ],
-      "routeMatches": [],
-      "rowNumber": 67,
-      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Sinusitis",
-      "syndrome": "ORL pediátrica"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": true,
-      "qualityWarnings": [],
-      "routeMatches": [
-        "intravítrea"
-      ],
-      "rowNumber": 69,
-      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Endoftalmitis, tratamiento intravítreo alternativo",
-      "syndrome": "Ocular adultos"
-    },
-    {
-      "doseMatches": [],
-      "frequencyOrDurationMatches": [],
-      "hasDose": false,
-      "hasFrequencyOrDuration": false,
-      "hasRoute": false,
-      "qualityWarnings": [],
-      "routeMatches": [],
-      "rowNumber": 70,
-      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
-      "status": "missing_explicit_dose_information",
-      "subsyndrome": "Endoftalmitis, tratamiento sistémico alternativo",
-      "syndrome": "Ocular adultos"
     }
   ]
 }

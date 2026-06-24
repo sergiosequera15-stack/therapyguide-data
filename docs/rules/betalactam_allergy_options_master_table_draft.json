@@ -365,8 +365,8 @@
       "Amikacina 20 mg/kg/24 h IM hasta 3 días o ertapenem 1 g IM.",
       "Contiene carbapenémico como alternativa; valorar tipo de alergia.",
       "06",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_urinarias",
-      "tratamiento_de_infecciones_urinarias",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
       [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -383,8 +383,8 @@
       "Aztreonam 2 g/8 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
       "",
       "06",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_urinarias",
-      "tratamiento_de_infecciones_urinarias",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
       [
         "age_or_weight_specific_review_needed",
         "resistance_risk_context_present"
@@ -399,8 +399,8 @@
       "Aztreonam 2 g/6 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
       "",
       "06",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_urinarias",
-      "tratamiento_de_infecciones_urinarias",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
       [
         "age_or_weight_specific_review_needed",
         "resistance_risk_context_present"
@@ -415,8 +415,8 @@
       "Fosfomicina 4 g IV/6 h + amikacina 20 mg/kg peso ajustado IV/24 h hasta 3 días tras estabilización o desaparición de fiebre.",
       "",
       "06",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_urinarias",
-      "tratamiento_de_infecciones_urinarias",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
       [
         "age_or_weight_specific_review_needed"
       ]
@@ -430,8 +430,8 @@
       "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
       "",
       "07",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada",
-      "infeccion_intraabdominal_complicada",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
       [
         "resistance_risk_context_present"
       ]
@@ -445,8 +445,8 @@
       "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
       "",
       "07",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada",
-      "infeccion_intraabdominal_complicada",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
       [
         "resistance_risk_context_present"
       ]
@@ -460,8 +460,8 @@
       "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 2 g/8 h IV.",
       "Corrección: en esta fila la pauta de alergia de la guía no incluye amikacina; no añadirla salvo revisión local.",
       "07",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada",
-      "infeccion_intraabdominal_complicada",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
       [
         "age_or_weight_specific_review_needed",
         "resistance_risk_context_present",
@@ -477,8 +477,8 @@
       "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 1-2 g/8 h IV. Alternativa: aztreonam 1-2 g/8 h IV + amikacina 15 mg/kg/24 h IV + linezolid 600 mg/12 h IV o daptomicina 10 mg/kg/24 h IV.",
       "Fila omitida en la tabla previa.",
       "07",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada",
-      "infeccion_intraabdominal_complicada",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
       [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -495,10 +495,11 @@
       "Gentamicina 1,5 mg/kg, máximo 240 mg/dosis + clindamicina 10 mg/kg, máximo 900 mg/dosis.",
       "",
       "08",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil",
-      "infeccion_intrabdominal_complicada_infantil",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
       [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
@@ -510,10 +511,11 @@
       "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "",
       "08",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil",
-      "infeccion_intrabdominal_complicada_infantil",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
       [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
@@ -525,10 +527,11 @@
       "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "",
       "08",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil",
-      "infeccion_intrabdominal_complicada_infantil",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
       [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
@@ -540,10 +543,11 @@
       "Aztreonam 150-200 mg/kg/día cada 6-8 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "",
       "08",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil",
-      "infeccion_intrabdominal_complicada_infantil",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
       [
-        "age_or_weight_specific_review_needed"
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
@@ -555,11 +559,12 @@
       "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
       "La página no especifica dosis; revisar protocolo local de diálisis peritoneal.",
       "08",
-      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil",
-      "infeccion_intrabdominal_complicada_infantil",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
       [
         "age_or_weight_specific_review_needed",
-        "review_note_present"
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
@@ -844,7 +849,8 @@
       [
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present"
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
       ]
     ],
     [
