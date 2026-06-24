@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -23,6 +23,17 @@
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false
     },
+    "betalactamAllergyMasterTableDraft": {
+      "path": "rules/betalactam_allergy_options_master_table_draft.json",
+      "required": true,
+      "status": "draft_pending_source_verification_and_manual_review",
+      "schema": "compact_rows_v1",
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false,
+      "changeDetectionOnly": true
+    },
     "validationReport": {
       "path": "rules/rule_validation_report.json",
       "required": true,
@@ -32,6 +43,7 @@
   "warnings": [
     "Las reglas de recomendación están vacías en esta fase.",
     "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
-    "No debe activarse un generador clínico visible hasta que existan opciones con fuente y revisión manual."
+    "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
+    "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
   ]
 }
