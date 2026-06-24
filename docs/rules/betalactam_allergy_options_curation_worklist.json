@@ -5,7 +5,7 @@
     "generatedAt": "2026-06-24T00:00:00Z",
     "status": "manual_curation_pending",
     "source": "betalactam_allergy_options_candidate.json",
-    "manualCurationSource": "betalactam_allergy_options_manual_curation.json",
+    "manualCurationSource": "betalactam_allergy_options_manual_curation.json plus docs/rules/curation_overlays/*.json",
     "candidateCount": 82,
     "pendingCount": 70,
     "includedCount": 11,
