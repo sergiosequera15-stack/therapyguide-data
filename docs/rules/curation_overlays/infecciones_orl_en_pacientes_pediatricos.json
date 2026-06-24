@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "Curation overlay - infecciones_orl_en_pacientes_pediatricos",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "manual_curation_overlay",
+    "topicId": "infecciones_orl_en_pacientes_pediatricos",
+    "source": "betalactam_allergy_options_candidate.json",
+    "readyForAppConsultant": false
+  },
+  "entries": [
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_061",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Faringoamigdalitis - alergia a penicilina con reacción inmediata",
+      "extractedOptions": [
+        {
+          "label": "Clindamicina 20-30 mg/kg/día cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita para reacción inmediata. No convertir en recomendación ni ocultar que el texto fuente menciona resistencia a macrólidos y alternativas concretas."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_062",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Faringoamigdalitis - alergia a penicilina con reacción tardía",
+      "extractedOptions": [
+        {
+          "label": "Cefadroxilo 30 mg/kg cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Cefuroxima axetilo 15 mg/kg/día cada 12 horas",
+          "sourceTextField": "sourceText",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido preservando el matiz de reacción tardía. Revisar en optionRecords si cefuroxima axetilo debe quedar como opción separada o nota asociada."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_063",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Otitis media aguda - alergia a penicilina con reacción no anafiláctica",
+      "extractedOptions": [
+        {
+          "label": "Cefuroxima-axetilo 30 mg/kg/día cada 12 horas",
+          "sourceTextField": "sourceText",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido porque el texto fuente identifica cefuroxima-axetilo como opción de elección en alergia no anafiláctica."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_064",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Otitis media aguda - alergia a penicilina con reacción anafiláctica",
+      "extractedOptions": [
+        {
+          "label": "Claritromicina 15 mg/kg/día cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Azitromicina 10 mg/kg/día durante 3 días",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita para reacción anafiláctica. Levofloxacino aparece en contexto de fracaso con macrólidos; no se promueve aquí sin revisión final."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_065",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Mastoiditis - alergia a penicilina con reacción no anafiláctica",
+      "extractedOptions": [],
+      "curatorNotes": "El fragmento visible dice 'De elección' pero no conserva de forma clara el fármaco previo; no incluir hasta revisar contexto fuente completo."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_066",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Mastoiditis - alergia a betalactámicos con reacción anafiláctica",
+      "extractedOptions": [
+        {
+          "label": "Levofloxacino oral o IV 10 mg/kg cada 12 horas en menores de 5 años y 10 mg/kg cada 24 horas en mayores de 5 años",
+          "sourceTextField": "sourceText",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita, manteniendo edad y dosis máxima como matices a revisar antes de optionRecords."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_067",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Sinusitis - alergia a penicilina con reacción no anafiláctica",
+      "extractedOptions": [
+        {
+          "label": "Cefuroxima-axetilo 30 mg/kg/día cada 12 horas",
+          "sourceTextField": "sourceText",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Ceftibuteno 9 mg/kg cada 24 horas",
+          "sourceTextField": "sourceText",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por fuente explícita, pero revisar si ceftibuteno debe mostrarse como opción equivalente o secundaria."
+    },
+    {
+      "candidateId": "infecciones_orl_en_pacientes_pediatricos__allergy_candidate_068",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL pediátricas",
+      "proposedSubsyndrome": "Sinusitis - alergia a penicilina con reacción anafiláctica",
+      "extractedOptions": [
+        {
+          "label": "Claritromicina 15 mg/kg/día cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Azitromicina 10 mg/kg/día durante 3 días",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita para reacción anafiláctica. Levofloxacino aparece en casos graves o fracaso terapéutico; no promocionar sin revisión final."
+    }
+  ]
+}
