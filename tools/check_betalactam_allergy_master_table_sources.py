@@ -61,6 +61,7 @@ DRUG_ALIASES: dict[str, list[str]] = {
 }
 DRUG_RE = re.compile(r"\b(" + "|".join(sorted(map(re.escape, DRUG_ALIASES), key=len, reverse=True)) + r")\b", re.IGNORECASE)
 RISKY_STATUSES = {"source_not_found", "possible_option_change_or_table_source_mismatch", "needs_manual_review_no_drug_tokens_detected"}
+SOURCE_TEXT_FIELDS = ("contentText", "summary", "contentHtml")
 
 
 def load_json(path: Path) -> Any:
@@ -81,6 +82,14 @@ def normalize_text(text: str | None) -> str:
     text = "".join(ch for ch in text if not unicodedata.combining(ch))
     text = re.sub(r"[^a-z0-9]+", " ", text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+def combined_topic_text(topic: dict[str, Any]) -> str:
+    # Use all committed source text fields. Some source tokens may survive in HTML while
+    # being absent from the extracted text summary, so checking only one field can create
+    # false-positive mismatch rows. This is still deterministic source-token checking;
+    # it is not clinical validation.
+    return normalize_text("\n".join(str(topic.get(field) or "") for field in SOURCE_TEXT_FIELDS))
 
 
 def extract_drug_tokens(text: str) -> list[str]:
@@ -144,9 +153,9 @@ def check_record(record: dict[str, Any], by_id: dict[str, dict[str, Any]], by_ur
         result["notes"].append("No matching topic found by sourceTopicId or sourceUrl.")
         return result
 
-    content_text = normalize_text(topic.get("contentText") or topic.get("summary") or "")
+    source_text = combined_topic_text(topic)
     drug_tokens = extract_drug_tokens(str(record.get("optionsText") or ""))
-    missing = [token for token in drug_tokens if not token_present(token, content_text)]
+    missing = [token for token in drug_tokens if not token_present(token, source_text)]
     result["drugTokens"] = drug_tokens
     result["missingDrugTokens"] = missing
 
@@ -181,6 +190,7 @@ def build_report(table: dict[str, Any], table_path: str, guide_topics_path: str,
             "generatedAt": table.get("metadata", {}).get("generatedAt", "2026-06-24T00:00:00Z"),
             "status": "draft_source_change_detection_only",
             "reportMode": "deterministic_committed_snapshot",
+            "sourceTextFields": list(SOURCE_TEXT_FIELDS),
             "table": table_path,
             "guideTopics": guide_topics_path,
             "rowCount": len(rows),
@@ -191,7 +201,7 @@ def build_report(table: dict[str, Any], table_path: str, guide_topics_path: str,
             "readyForAppConsultant": False,
             "notes": [
                 "This report is a change-detection aid only.",
-                "It checks presence of drug tokens in the current source topic text; it does not validate clinical correctness.",
+                "It checks presence of drug tokens in the current source topic text fields; it does not validate clinical correctness.",
                 "Rows flagged as possible changes require manual review before any table update."
             ]
         },
@@ -208,6 +218,7 @@ def build_summary(report: dict[str, Any]) -> dict[str, Any]:
             "title": "Beta-lactam allergy master table source check summary",
             "generatedAt": report.get("metadata", {}).get("generatedAt"),
             "status": "draft_source_change_detection_summary_only",
+            "sourceTextFields": report.get("metadata", {}).get("sourceTextFields"),
             "rowCount": report.get("metadata", {}).get("rowCount"),
             "statusCounts": report.get("metadata", {}).get("statusCounts", {}),
             "actionRequiredRowCount": len(risky_rows),
@@ -228,7 +239,7 @@ def build_summary(report: dict[str, Any]) -> dict[str, Any]:
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(parents=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
@@ -259,8 +270,8 @@ def main() -> None:
     print(f"Beta-lactam allergy master table source check summary written to {args.summary_output}")
     print(json.dumps(report["metadata"]["statusCounts"], ensure_ascii=False, sort_keys=True))
 
-    if args.fail_on_possible_change and summary["metadata"]["actionRequiredRowCount"]:
-        raise SystemExit("ERROR: possible source/table changes detected")
+    if args.fail_on_possible_change and any(row.get("status") in RISKY_STATUSES for row in checked_rows):
+        raise SystemExit("ERROR: possible source changes or unresolved source mismatches detected")
 
 
 if __name__ == "__main__":
