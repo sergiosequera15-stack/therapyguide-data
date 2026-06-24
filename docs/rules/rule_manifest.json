@@ -1,6 +1,6 @@
 {
-  "version": "0.1.1",
-  "generatedAt": "2026-06-23T00:00:00Z",
+  "version": "0.1.2",
+  "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
   "files": {
@@ -17,7 +17,8 @@
     "betalactamAllergyConsultant": {
       "path": "rules/betalactam_allergy_consultant.json",
       "required": true,
-      "status": "draft_structure_only",
+      "status": "draft_structure_pending_option_extraction",
+      "consultationMode": "syndrome_subsyndrome_allergy_options",
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false
@@ -30,7 +31,7 @@
   },
   "warnings": [
     "Las reglas de recomendación están vacías en esta fase.",
-    "El consultor de alergia a betalactámicos estructura la anamnesis, pero no genera alternativas antibióticas.",
-    "No debe activarse un generador clínico visible hasta que existan reglas con fuente y revisión manual."
+    "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
+    "No debe activarse un generador clínico visible hasta que existan opciones con fuente y revisión manual."
   ]
 }
