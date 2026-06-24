@@ -7,10 +7,10 @@
     "source": "betalactam_allergy_options_candidate.json",
     "manualCurationSource": "betalactam_allergy_options_manual_curation.json plus docs/rules/curation_overlays/*.json",
     "candidateCount": 82,
-    "pendingCount": 70,
-    "includedCount": 11,
+    "pendingCount": 60,
+    "includedCount": 14,
     "excludedCount": 0,
-    "needsDiscussionCount": 1,
+    "needsDiscussionCount": 8,
     "clinicalUseAllowed": false,
     "clinicalDecisionSupportAllowed": false,
     "therapeuticRecommendationAllowed": false,
@@ -274,12 +274,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - contexto quirófano",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 014",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "QUIRÓFANO: - D aptomicina : 10 mg/Kg /24 h iv + P iperacilina /tazobactam 4g/ 6h iv - En caso de alergia a penicilinas: D aptomicina : 10 mg/Kg /24 h iv + M eropenem : 1 g/ 8h iv."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido como candidato claro por mención explícita en el texto fuente. Extraer etiqueta farmacológica final en fase optionRecords."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_015",
@@ -292,12 +298,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - contexto quirófano",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 015",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "- En alergia a penicilinas: Linezolid : 600 mgr/ 12 h iv + M eropenem : 1 g/ 8h iv."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido como candidato claro. Extraer etiqueta final desde sourceText antes de publicar optionRecords."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_016",
@@ -310,12 +322,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular pediátrica o edad específica",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 016",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "- En alergia a penicilinas: Linezolid (10 mg/kg/12 h en niños menores de 7 días, 10 mg/kg/8 h en niños hasta los 12 años."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido, pero mantener el matiz de edad al generar optionRecords."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_017",
@@ -328,12 +346,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente: contexto no suficientemente claro en el resumen de candidatos."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_018",
@@ -346,12 +364,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_019",
@@ -364,12 +382,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_020",
@@ -382,12 +400,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_021",
@@ -400,12 +418,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_022",
@@ -418,12 +436,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infeccion_osteoarticular__allergy_candidate_023",
@@ -436,12 +454,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
       "extractedOptions": [],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Revisar manualmente antes de incluir."
     },
     {
       "candidateId": "infecciones_de_transmision_sexual__allergy_candidate_024",
