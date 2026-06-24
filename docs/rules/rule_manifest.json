@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1",
+  "version": "0.2.2",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -29,7 +29,6 @@
       "status": "draft_pending_source_verification_and_manual_review",
       "schema": "compact_rows_v2",
       "rowCount": 76,
-      "source": "proa_huvn_alergia_betalactamicos_y_calculadoras_v2(1).xlsx::Alergia betalactamicos",
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -49,6 +48,18 @@
       "path": "rules/generated/betalactam_allergy_master_table_source_check_summary.json",
       "required": true,
       "status": "draft_source_change_detection_summary_only",
+      "rowCount": 76,
+      "actionRequiredRowCount": 7,
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false
+    },
+    "betalactamAllergySourceReviewQueue": {
+      "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
+      "required": true,
+      "status": "manual_source_review_pending",
+      "rowCount": 7,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -58,6 +69,8 @@
       "path": "rules/generated/betalactam_allergy_master_table_dose_completeness_report.json",
       "required": true,
       "status": "draft_dose_completeness_audit_only",
+      "rowCount": 76,
+      "incompleteDoseInfoRowCount": 13,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -67,6 +80,8 @@
       "path": "rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json",
       "required": true,
       "status": "draft_dose_completeness_summary_only",
+      "rowCount": 76,
+      "incompleteDoseInfoRowCount": 13,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -76,16 +91,7 @@
       "path": "rules/betalactam_allergy_dose_completion_worklist.json",
       "required": true,
       "status": "manual_dose_completion_pending",
-      "clinicalUseAllowed": false,
-      "clinicalDecisionSupportAllowed": false,
-      "therapeuticRecommendationAllowed": false,
-      "readyForAppConsultant": false
-    },
-    "betalactamAllergyMasterTableManualReviewQueue": {
-      "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
-      "required": true,
-      "status": "superseded_by_reviewed_master_table_v2_pending_source_recheck",
-      "rowCount": 0,
+      "rowCount": 13,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -98,13 +104,8 @@
     }
   },
   "warnings": [
-    "Las reglas de recomendación están vacías en esta fase.",
-    "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
-    "La tabla maestra v2 procede de la hoja Alergia betalactamicos; otras hojas del XLSX se han ignorado en esta pasada.",
-    "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
-    "Los informes de comprobación de fuente y de dosis son ayudas de detección: no validan clínicamente las opciones.",
-    "Los informes generados deben regenerarse contra compact_rows_v2 antes de interpretar discrepancias.",
-    "La cola manual antigua de 3 filas queda superseded por la tabla v2 y no debe usarse con la numeración nueva.",
-    "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
+    "La tabla maestra v2 es borrador y procede solo de la hoja Alergia betalactamicos.",
+    "Los informes de fuente y dosis son ayudas de deteccion, no validacion de uso.",
+    "La cola fuente v2 y la worklist de dosis v2 deben revisarse antes de cualquier promocion."
   ]
 }
