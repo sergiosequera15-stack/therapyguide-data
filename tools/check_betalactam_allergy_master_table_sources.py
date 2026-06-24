@@ -5,7 +5,6 @@ import json
 import re
 import unicodedata
 from collections import Counter
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -13,6 +12,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 TABLE_PATH = Path("docs/rules/betalactam_allergy_options_master_table_draft.json")
 GUIDE_TOPICS_PATH = Path("docs/guide_topics.json")
 DEFAULT_REPORT_PATH = Path("docs/rules/generated/betalactam_allergy_master_table_source_check_report.json")
+DEFAULT_SUMMARY_PATH = Path("docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json")
 
 DRUG_ALIASES: dict[str, list[str]] = {
     "septrim": ["septrim", "tmp", "smx", "cotrimoxazol"],
@@ -60,6 +60,7 @@ DRUG_ALIASES: dict[str, list[str]] = {
     "penicilina": ["penicilina"],
 }
 DRUG_RE = re.compile(r"\b(" + "|".join(sorted(map(re.escape, DRUG_ALIASES), key=len, reverse=True)) + r")\b", re.IGNORECASE)
+RISKY_STATUSES = {"source_not_found", "possible_option_change_or_table_source_mismatch", "needs_manual_review_no_drug_tokens_detected"}
 
 
 def load_json(path: Path) -> Any:
@@ -160,30 +161,28 @@ def check_record(record: dict[str, Any], by_id: dict[str, dict[str, Any]], by_ur
     return result
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Check draft beta-lactam allergy master table against current guide_topics text.")
-    parser.add_argument("--table", default=str(TABLE_PATH))
-    parser.add_argument("--guide-topics", default=str(GUIDE_TOPICS_PATH))
-    parser.add_argument("--output", default=str(DEFAULT_REPORT_PATH))
-    parser.add_argument("--fail-on-possible-change", action="store_true", help="Exit with non-zero status if possible changes/source mismatches are detected.")
-    args = parser.parse_args()
+def compact_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "rowNumber": row.get("rowNumber"),
+        "syndrome": row.get("syndrome"),
+        "subsyndrome": row.get("subsyndrome"),
+        "sourceTopicId": row.get("sourceTopicId"),
+        "status": row.get("status"),
+        "missingDrugTokens": row.get("missingDrugTokens") or [],
+        "qualityWarnings": row.get("qualityWarnings") or [],
+    }
 
-    table = load_json(Path(args.table))
-    topics = load_json(Path(args.guide_topics))
-    records = rows_to_records(table)
-    if not isinstance(topics, list):
-        raise SystemExit("ERROR: guide_topics must be a list")
 
-    by_id, by_url = build_topic_index(topics)
-    rows = [check_record(record, by_id, by_url) for record in records]
+def build_report(table: dict[str, Any], table_path: str, guide_topics_path: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
     status_counts = Counter(row["status"] for row in rows)
-    report = {
+    return {
         "metadata": {
             "title": "Beta-lactam allergy master table source check report",
-            "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "generatedAt": table.get("metadata", {}).get("generatedAt", "2026-06-24T00:00:00Z"),
             "status": "draft_source_change_detection_only",
-            "table": str(args.table),
-            "guideTopics": str(args.guide_topics),
+            "reportMode": "deterministic_committed_snapshot",
+            "table": table_path,
+            "guideTopics": guide_topics_path,
             "rowCount": len(rows),
             "statusCounts": dict(sorted(status_counts.items())),
             "clinicalUseAllowed": False,
@@ -199,14 +198,68 @@ def main() -> None:
         "rows": rows,
     }
 
-    output_path = Path(args.output)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Beta-lactam allergy master table source check report written to {output_path}")
+
+def build_summary(report: dict[str, Any]) -> dict[str, Any]:
+    rows = report.get("rows") or []
+    risky_rows = [row for row in rows if row.get("status") in RISKY_STATUSES]
+    warning_rows = [row for row in rows if row.get("qualityWarnings")]
+    return {
+        "metadata": {
+            "title": "Beta-lactam allergy master table source check summary",
+            "generatedAt": report.get("metadata", {}).get("generatedAt"),
+            "status": "draft_source_change_detection_summary_only",
+            "rowCount": report.get("metadata", {}).get("rowCount"),
+            "statusCounts": report.get("metadata", {}).get("statusCounts", {}),
+            "actionRequiredRowCount": len(risky_rows),
+            "qualityWarningRowCount": len(warning_rows),
+            "clinicalUseAllowed": False,
+            "clinicalDecisionSupportAllowed": False,
+            "therapeuticRecommendationAllowed": False,
+            "readyForAppConsultant": False,
+            "notes": [
+                "Compact deterministic summary for quick review in GitHub.",
+                "Not a clinical validation report.",
+                "Rows listed here require manual review before promotion."
+            ]
+        },
+        "actionRequiredRows": [compact_row(row) for row in risky_rows],
+        "qualityWarningRows": [compact_row(row) for row in warning_rows],
+    }
+
+
+def write_json(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Check draft beta-lactam allergy master table against current guide_topics text.")
+    parser.add_argument("--table", default=str(TABLE_PATH))
+    parser.add_argument("--guide-topics", default=str(GUIDE_TOPICS_PATH))
+    parser.add_argument("--output", default=str(DEFAULT_REPORT_PATH))
+    parser.add_argument("--summary-output", default=str(DEFAULT_SUMMARY_PATH))
+    parser.add_argument("--fail-on-possible-change", action="store_true", help="Exit with non-zero status if possible changes/source mismatches are detected.")
+    args = parser.parse_args()
+
+    table = load_json(Path(args.table))
+    topics = load_json(Path(args.guide_topics))
+    records = rows_to_records(table)
+    if not isinstance(topics, list):
+        raise SystemExit("ERROR: guide_topics must be a list")
+
+    by_id, by_url = build_topic_index(topics)
+    checked_rows = [check_record(record, by_id, by_url) for record in records]
+    report = build_report(table, args.table, args.guide_topics, checked_rows)
+    summary = build_summary(report)
+
+    write_json(Path(args.output), report)
+    write_json(Path(args.summary_output), summary)
+
+    print(f"Beta-lactam allergy master table source check report written to {args.output}")
+    print(f"Beta-lactam allergy master table source check summary written to {args.summary_output}")
     print(json.dumps(report["metadata"]["statusCounts"], ensure_ascii=False, sort_keys=True))
 
-    risky_statuses = {"source_not_found", "possible_option_change_or_table_source_mismatch"}
-    if args.fail_on_possible_change and any(status_counts.get(status, 0) for status in risky_statuses):
+    if args.fail_on_possible_change and summary["metadata"]["actionRequiredRowCount"]:
         raise SystemExit("ERROR: possible source/table changes detected")
 
 
