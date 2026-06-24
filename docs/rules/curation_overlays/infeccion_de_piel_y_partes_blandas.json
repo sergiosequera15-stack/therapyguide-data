@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Curation overlay - infeccion_de_piel_y_partes_blandas",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "manual_curation_overlay",
+    "topicId": "infeccion_de_piel_y_partes_blandas",
+    "source": "betalactam_allergy_options_candidate.json",
+    "readyForAppConsultant": false
+  },
+  "entries": [
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_001",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Celulitis en persona sana sin supuración y sin criterios de ingreso - alergia a beta-lactámicos",
+      "extractedOptions": [
+        {
+          "label": "Septrim Forte 1 comprimido cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Linezolid 600 mg vía oral cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita en celulitis sin supuración y sin criterios de ingreso. No fusionar con los fragmentos IV posteriores del mismo sourceText."
+    },
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_002",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Celulitis en persona sana con criterios de ingreso - alergia a betalactámicos",
+      "extractedOptions": [
+        {
+          "label": "Linezolid 600 mg IV cada 12 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Daptomicina 8-10 mg/kg IV cada 24 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita. El fragmento queda cerca del cambio a celulitis con supuración; revisar subcontexto definitivo antes de optionRecords."
+    },
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_003",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Celulitis - alergia a beta-lactámicos o riesgo de SAMR / problemas de adherencia",
+      "extractedOptions": [],
+      "curatorNotes": "El fragmento mezcla alergia a beta-lactámicos, riesgo de SAMR y alternativas por incumplimiento/interacciones. Revisar manualmente antes de promover opciones de larga vida media."
+    },
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_004",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Infección profunda de herida quirúrgica o aparición >48-72 horas - alergia a beta-lactámicos",
+      "extractedOptions": [
+        {
+          "label": "Daptomicina 8-10 mg/kg cada 24 horas IV o linezolid 600 mg cada 12 horas IV + aztreonam 1-2 g cada 8 horas + metronidazol 500 mg cada 8 horas IV + amikacina 20 mg/kg cada 24 horas IV los 2 primeros días",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Aztreonam 1-2 g cada 8 horas + tigeciclina 100 mg seguido de 50 mg cada 12 horas IV",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita. Revisar sintaxis de combinaciones antes de optionRecords porque el texto fuente contiene signos duplicados y opciones alternativas encadenadas."
+    },
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_005",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Celulitis/fascitis necrotizante y mionecrosis - alergia a beta-lactámicos",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 2 g cada 6-8 horas IV + linezolid 600 mg cada 12 horas IV + metronidazol 500 mg cada 8 horas o 1 g cada 12 horas IV",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido solo el núcleo explícito de alergia a beta-lactámicos. No promover aquí las opciones posteriores ligadas a riesgo de BGN productores de carbapenemasas ni la doxiciclina por heridas marinas/hepatopatía sin revisión final."
+    },
+    {
+      "candidateId": "infeccion_de_piel_y_partes_blandas__allergy_candidate_006",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección de piel y partes blandas",
+      "proposedSubsyndrome": "Piomiositis - alergia a beta-lactámicos",
+      "extractedOptions": [],
+      "curatorNotes": "El fragmento es explícito, pero la dosis de daptomicina aparece como '8-1 mg/kg/24 horas', probablemente truncada o errónea. No promover hasta revisar fuente completa."
+    }
+  ]
+}
