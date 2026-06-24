@@ -1,1 +1,867 @@
-PLACEHOLDER
+{
+  "metadata": {
+    "title": "Tabla maestra draft de opciones en alergia a betalactámicos/penicilina",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "draft_pending_source_verification_and_manual_review",
+    "source": "user_provided_markdown_table_2026-06-24",
+    "rowCount": 70,
+    "sourceRefCount": 20,
+    "canonicalSourceUrlCount": 16,
+    "sourceTopicIdCount": 16,
+    "clinicalUseAllowed": false,
+    "clinicalDecisionSupportAllowed": false,
+    "therapeuticRecommendationAllowed": false,
+    "readyForAppConsultant": false,
+    "automaticUpdateAllowed": false,
+    "changeDetectionOnly": true,
+    "requiresManualReviewBeforeClinicalUse": true,
+    "displayTerminology": {
+      "avoid": [
+        "recomendación automática",
+        "tratamiento recomendado",
+        "mejor opción"
+      ],
+      "preferred": "Opciones recogidas en la fuente para pacientes con alergia a betalactámicos/penicilina"
+    },
+    "notes": [
+      "Imported from a user-provided Markdown table as a draft master table.",
+      "Rows are not clinically approved and must not be used as decision support.",
+      "Tracking query parameters such as utm_source were removed from canonical sourceUrl fields.",
+      "Some rows may contain contextual shorthand, duplicate source URLs, beta-lactam alternatives, or age/resistance-specific conditions; qualityWarnings are advisory and not definitive."
+    ],
+    "schema": "compact_rows_v1",
+    "manualReviewStatus": "draft_pending_manual_review"
+  },
+  "columns": [
+    "rowNumber",
+    "syndrome",
+    "subsyndrome",
+    "optionsText",
+    "sourceRefId",
+    "sourceUrl",
+    "sourceTopicId",
+    "qualityWarnings"
+  ],
+  "rows": [
+    [
+      1,
+      "Sepsis / síndrome febril sin foco adultos",
+      "Comunidad, sin sepsis, ingreso, sin FR de bacterias resistentes",
+      "Levofloxacino 1000 mg/24 h IV + aztreonam 2 g/8 h IV. Alternativa: gentamicina 5 mg/kg/24 h IV + aztreonam 2 g/8 h IV.",
+      "1",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ]
+    ],
+    [
+      2,
+      "Sepsis / síndrome febril sin foco adultos",
+      "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
+      "Aztreonam + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "1",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      [
+        "alternative_wording_present"
+      ]
+    ],
+    [
+      3,
+      "Sepsis / síndrome febril sin foco adultos",
+      "Sepsis, sin fragilidad y sin FR MDR",
+      "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "1",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      4,
+      "Sepsis / síndrome febril sin foco adultos",
+      "Sepsis, frágil/vulnerable o con FR MDR",
+      "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "1",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      5,
+      "Sepsis en gestación/puerperio",
+      "ITU en gestación/puerperio, reevaluación",
+      "Fosfomicina IV, o aztreonam IV, o gentamicina IV. La guía advierte no usar fosfomicina en preeclampsia/HTA.",
+      "2",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "sepsis_en_gestacion_y_puerperio_1",
+      []
+    ],
+    [
+      6,
+      "Sepsis en gestación/puerperio",
+      "Aborto séptico",
+      "Metronidazol 500 mg/8 h IV + gentamicina 5 mg/kg/24 h IV.",
+      "2",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "sepsis_en_gestacion_y_puerperio_1",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      7,
+      "Sepsis en gestación/puerperio",
+      "Neumonía",
+      "Linezolid 600 mg/12 h IV + azitromicina 500 mg/24 h IV.",
+      "2",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "sepsis_en_gestacion_y_puerperio_1",
+      []
+    ],
+    [
+      8,
+      "Sepsis en gestación/puerperio",
+      "Apendicitis",
+      "Aztreonam 1 g/8 h IV + metronidazol 500 mg/8 h IV.",
+      "2",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1",
+      "sepsis_en_gestacion_y_puerperio_1",
+      []
+    ],
+    [
+      9,
+      "Meningitis",
+      "Meningitis bacteriana aguda en adultos, alergia a penicilina",
+      "Aztreonam 2 g/6–8 h + linezolid 600 mg/12 h IV/VO, con posible pauta de 600 mg/8 h las primeras 24–48 h, o vancomicina + rifampicina + dexametasona. Si secundaria a sinusitis u otitis, añadir metronidazol 500 mg/6 h IV.",
+      "3",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana",
+      "meningitis_bacteriana",
+      []
+    ],
+    [
+      10,
+      "Neumonía adultos",
+      "NAC leve sin comorbilidades ni FR MDR",
+      "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h.",
+      "4",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "neumonia_en_pacientes_adultos",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      11,
+      "Neumonía adultos",
+      "NAC leve con comorbilidades, sin FR MDR",
+      "Misma alternativa: moxifloxacino o levofloxacino en monoterapia.",
+      "4",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "neumonia_en_pacientes_adultos",
+      [
+        "alternative_wording_present",
+        "context_dependent_wording",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      12,
+      "Neumonía adultos",
+      "NAC moderada-grave con ingreso, sin FR MDR",
+      "Moxifloxacino 400 mg/24 h VO/IV o levofloxacino 750 mg/24 h VO/IV.",
+      "4",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "neumonia_en_pacientes_adultos",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      13,
+      "Neumonía adultos",
+      "Neumonía nosocomial o con FR MDR",
+      "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV inicial y luego 100 mg/12 h IV.",
+      "4",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "neumonia_en_pacientes_adultos",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      14,
+      "Neumonía pediátrica",
+      "Ambulatoria 4 meses–4 años, típica",
+      "Hipersensibilidad tipo I: macrólido —josamicina o midecamicina— o levofloxacino. No tipo I: cefuroxima.",
+      "5",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "neumonia_en_paciente_pediatrico",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      15,
+      "Neumonía pediátrica",
+      "Ambulatoria ≥5 años, típica",
+      "Igual que en menores, ajustando levofloxacino 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
+      "5",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "neumonia_en_paciente_pediatrico",
+      [
+        "age_or_weight_specific_review_needed",
+        "context_dependent_wording"
+      ]
+    ],
+    [
+      16,
+      "Neumonía pediátrica",
+      "Ingreso 4 meses–5 años, típica no complicada",
+      "Tipo I/anafilaxia: levofloxacino. No tipo I: ceftriaxona o cefotaxima.",
+      "5",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "neumonia_en_paciente_pediatrico",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      17,
+      "Neumonía pediátrica",
+      "Ingreso 4 meses–5 años, grave o con derrame pleural",
+      "Levofloxacino + vancomicina o linezolid.",
+      "5",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "neumonia_en_paciente_pediatrico",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      18,
+      "Neumonía pediátrica",
+      "Ingreso >5 años, típica no complicada",
+      "Tipo I: levofloxacino. No tipo I: ceftriaxona o cefotaxima.",
+      "5",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico",
+      "neumonia_en_paciente_pediatrico",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      19,
+      "ITU adultos",
+      "Pielonefritis/ITU sistémica sin ingreso",
+      "Amikacina 20 mg/kg/24 h IM hasta 3 días o ertapenem 1 g IM.",
+      "6",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
+      [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      20,
+      "ITU adultos",
+      "Pielonefritis/ITU con ingreso, FR MDR, sin sepsis/shock, sospecha de P. aeruginosa MDR",
+      "Aztreonam 2 g/8 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h hasta 3 días.",
+      "6",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
+      [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      21,
+      "ITU adultos",
+      "Pielonefritis/ITU con sepsis/shock, sospecha de resistencia a carbapenémicos o MDR",
+      "Aztreonam 2 g/6 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h hasta 3 días.",
+      "6",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
+      [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      22,
+      "ITU adultos",
+      "Prostatitis bacteriana con sepsis/shock",
+      "Fosfomicina IV + amikacina + linezolid, o aztreonam + linezolid.",
+      "7",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
+      "infeccion_del_tracto_urinario",
+      []
+    ],
+    [
+      23,
+      "Intraabdominal adultos",
+      "Peritonitis secundaria, sin sepsis grave, buen control del foco, sin FR MDR",
+      "Tigeciclina 100 mg inicial y luego 50 mg/12 h IV.",
+      "8",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      24,
+      "Intraabdominal adultos",
+      "Peritonitis secundaria, sin sepsis grave, con FR MDR",
+      "Tigeciclina, con dosis de carga de 100 mg y luego 50 mg/12 h IV.",
+      "8",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      25,
+      "Intraabdominal adultos",
+      "Peritonitis secundaria con sepsis grave, mala evolución o mal control de foco",
+      "Tigeciclina + aztreonam + amikacina + caspofungina.",
+      "8",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      []
+    ],
+    [
+      26,
+      "Intraabdominal pediátrica",
+      "Apendicitis aguda, profilaxis quirúrgica",
+      "Gentamicina + clindamicina.",
+      "9",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      27,
+      "Intraabdominal pediátrica",
+      "Apendicitis aguda con cirugía demorada",
+      "Ciprofloxacino + metronidazol.",
+      "9",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      28,
+      "Intraabdominal pediátrica",
+      "Colecistitis",
+      "Ciprofloxacino + metronidazol, o tigeciclina según edad/peso.",
+      "9",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      29,
+      "Intraabdominal pediátrica",
+      "Peritonitis primaria asociada a ascitis",
+      "Aztreonam + metronidazol + vancomicina.",
+      "9",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      30,
+      "Intraabdominal pediátrica",
+      "Peritonitis asociada a diálisis peritoneal",
+      "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
+      "10",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+      "infeccion_intraabdominal_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      31,
+      "Piel y partes blandas adultos",
+      "Celulitis, paciente sano, sin supuración, sin ingreso",
+      "Cotrimoxazol/Septrim Forte 1 comp/12 h o linezolid 600 mg/12 h VO.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      []
+    ],
+    [
+      32,
+      "Piel y partes blandas adultos",
+      "Celulitis sin supuración, con ingreso",
+      "Linezolid 600 mg/12 h IV o daptomicina 8–10 mg/kg/24 h IV.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      [
+        "age_or_weight_specific_review_needed"
+      ]
+    ],
+    [
+      33,
+      "Piel y partes blandas adultos",
+      "Celulitis con supuración o riesgo SARM, con ingreso",
+      "Linezolid o daptomicina. Si no ingreso pero riesgo de mala adherencia/interacciones: dalbavancina u oritavancina.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      34,
+      "Piel y partes blandas adultos",
+      "Infección de herida quirúrgica profunda o >48–72 h",
+      "Daptomicina o linezolid + aztreonam + metronidazol + amikacina, o aztreonam + tigeciclina.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      []
+    ],
+    [
+      35,
+      "Piel y partes blandas adultos",
+      "Celulitis necrotizante / fascitis / mionecrosis",
+      "Aztreonam + linezolid + metronidazol.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      []
+    ],
+    [
+      36,
+      "Piel y partes blandas adultos",
+      "Piomiositis",
+      "Linezolid, daptomicina, dalbavancina u oritavancina.",
+      "11",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas",
+      "infeccion_de_piel_y_partes_blandas",
+      []
+    ],
+    [
+      37,
+      "Endovascular",
+      "Endocarditis infecciosa sobre válvula nativa, alérgicos",
+      "Daptomicina 10–12 mg/kg/24 h + ceftriaxona 2 g IV/24 h.",
+      "12",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "infecciones_endovasculares",
+      [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      38,
+      "Endovascular",
+      "Endocarditis en ADVP, alternativa",
+      "Daptomicina 10 mg/kg IV/24 h + fosfomicina sódica 2 g IV/6 h.",
+      "12",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "infecciones_endovasculares",
+      [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ]
+    ],
+    [
+      39,
+      "Endovascular",
+      "Endocarditis asociada a dispositivos intracardiacos, alternativa",
+      "Daptomicina 10 mg/kg IV/24 h + fosfomicina sódica 2 g IV/6 h.",
+      "12",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "infecciones_endovasculares",
+      [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ]
+    ],
+    [
+      40,
+      "Osteoarticular adultos",
+      "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "Daptomicina o linezolid + ciprofloxacino o aztreonam o amikacina.",
+      "13",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      41,
+      "Osteoarticular adultos",
+      "Infección de prótesis articular / material de osteosíntesis, quirófano",
+      "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+      "14",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      42,
+      "Osteoarticular adultos",
+      "Infección de prótesis articular / material de osteosíntesis, planta",
+      "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+      "13",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      43,
+      "Osteoarticular adultos",
+      "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "Daptomicina o linezolid + ciprofloxacino o aztreonam o amikacina.",
+      "14",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      44,
+      "Osteoarticular adultos",
+      "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
+      "En quirófano: daptomicina + meropenem. En planta: linezolid + meropenem.",
+      "14",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      45,
+      "Osteoarticular pediátrica",
+      "MOS tras implantación, alergia a penicilina",
+      "Linezolid + meropenem, con posible rifampicina según situación.",
+      "13",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "infeccion_osteoarticular",
+      [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      46,
+      "Neutropenia febril",
+      "Bajo riesgo tras 6–8 h de observación y antibiótico IV",
+      "Ciprofloxacino 750 mg/12 h + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h.",
+      "15",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
+      "manejo_de_neutropenia_febril",
+      [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      47,
+      "ITS",
+      "Uretritis/cervicitis, alergia a penicilina",
+      "Metronidazol 2 g VO dosis única + moxifloxacino 400 mg/día durante 7 días.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      []
+    ],
+    [
+      48,
+      "ITS",
+      "EPI no grave / no hospitalizada, alérgicas",
+      "Levofloxacino + metronidazol 14 días o moxifloxacino 14 días.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      []
+    ],
+    [
+      49,
+      "ITS",
+      "EPI grave / hospitalizada",
+      "Clindamicina + gentamicina + doxiciclina, o tigeciclina + doxiciclina.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      []
+    ],
+    [
+      50,
+      "ITS",
+      "Sífilis primaria, secundaria o latente precoz, alternativas a penicilina",
+      "Doxiciclina 14 días, ceftriaxona 10–14 días o azitromicina 2 g VO dosis única.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      51,
+      "ITS",
+      "Sífilis latente indeterminada / terciaria, alternativas",
+      "Doxiciclina 28 días o ceftriaxona 10–14 días.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      52,
+      "ITS",
+      "Neurosífilis, alternativas",
+      "Penicilina procaína + probenecid, ceftriaxona, o doxiciclina.",
+      "16",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual",
+      "infecciones_de_transmision_sexual",
+      [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "contains_penicillin_named_option_review_needed"
+      ]
+    ],
+    [
+      53,
+      "ORL adultos",
+      "Faringoamigdalitis",
+      "Clindamicina 300 mg/8 h VO 5 días o azitromicina.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      54,
+      "ORL adultos",
+      "Complicación locorregional de faringoamigdalitis, no grave",
+      "Clindamicina 600 mg/6 h IV.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      55,
+      "ORL adultos",
+      "Complicación locorregional de faringoamigdalitis, grave",
+      "Moxifloxacino 400 mg/24 h IV + linezolid.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      56,
+      "ORL adultos",
+      "Otitis media aguda",
+      "Cefditoreno 400 mg/12 h VO o moxifloxacino 400 mg/24 h VO.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      57,
+      "ORL adultos",
+      "Mastoiditis aguda",
+      "Moxifloxacino 400 mg/24 h IV.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      58,
+      "ORL adultos",
+      "Mastoiditis crónica/postquirúrgica",
+      "Aztreonam + linezolid, con amikacina opcional inicial.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      59,
+      "ORL adultos",
+      "Otitis externa maligna",
+      "Aztreonam 2 g/6 h IV.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      60,
+      "ORL adultos",
+      "Sinusitis aguda comunitaria",
+      "Moxifloxacino 400 mg/24 h VO.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      61,
+      "ORL adultos",
+      "Sinusitis dental",
+      "Moxifloxacino 400 mg/24 h.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      62,
+      "ORL adultos",
+      "Sinusitis nosocomial/intrahospitalaria",
+      "Aztreonam + linezolid.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      63,
+      "ORL adultos",
+      "Sinusitis crónica sin muestra",
+      "Metronidazol 500 mg/8 h IV/VO durante 3–4 semanas.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      []
+    ],
+    [
+      64,
+      "ORL adultos",
+      "Parotiditis supurativa / glándulas salivales",
+      "Moxifloxacino, añadiendo linezolid si riesgo SARM.",
+      "17",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl",
+      "infecciones_orl",
+      [
+        "resistance_risk_context_present"
+      ]
+    ],
+    [
+      65,
+      "ORL pediátrica",
+      "OMA con alergia a penicilina",
+      "No anafiláctica: cefuroxima-axetilo. Anafilaxia: claritromicina o azitromicina; en fracaso, levofloxacino.",
+      "18",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "infecciones_orl_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      66,
+      "ORL pediátrica",
+      "Mastoiditis",
+      "Alergia no anafiláctica: cefuroxima IV. Alergia anafiláctica a betalactámicos: levofloxacino oral/IV.",
+      "18",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "infecciones_orl_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      67,
+      "ORL pediátrica",
+      "Sinusitis",
+      "No anafiláctica: cefuroxima-axetilo o ceftibuteno. Anafiláctica: claritromicina o azitromicina; si grave/fracaso, levofloxacino.",
+      "18",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "infecciones_orl_en_pacientes_pediatricos",
+      [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    ],
+    [
+      68,
+      "Ocular adultos",
+      "Celulitis orbitaria",
+      "Levofloxacino 750 mg/24 h + metronidazol 500 mg/8 h.",
+      "19",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "infecciones_oculares_en_pacientes_adultos",
+      []
+    ],
+    [
+      69,
+      "Ocular adultos",
+      "Endoftalmitis, tratamiento intravítreo alternativo",
+      "Vancomicina intravítrea + amikacina intravítrea.",
+      "20",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "infecciones_oculares_en_pacientes_adultos",
+      []
+    ],
+    [
+      70,
+      "Ocular adultos",
+      "Endoftalmitis, tratamiento sistémico alternativo",
+      "Linezolid o daptomicina + ciprofloxacino o levofloxacino.",
+      "19",
+      "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos",
+      "infecciones_oculares_en_pacientes_adultos",
+      []
+    ]
+  ]
+}
