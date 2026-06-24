@@ -122,6 +122,11 @@
     "qualityWarningRowCount": 63,
     "readyForAppConsultant": false,
     "rowCount": 76,
+    "sourceTextFields": [
+      "contentText",
+      "summary",
+      "contentHtml"
+    ],
     "status": "draft_source_change_detection_summary_only",
     "statusCounts": {
       "possible_option_change_or_table_source_mismatch": 6,

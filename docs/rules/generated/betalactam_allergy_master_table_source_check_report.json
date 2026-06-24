@@ -6,12 +6,17 @@
     "guideTopics": "docs/guide_topics.json",
     "notes": [
       "This report is a change-detection aid only.",
-      "It checks presence of drug tokens in the current source topic text; it does not validate clinical correctness.",
+      "It checks presence of drug tokens in the current source topic text fields; it does not validate clinical correctness.",
       "Rows flagged as possible changes require manual review before any table update."
     ],
     "readyForAppConsultant": false,
     "reportMode": "deterministic_committed_snapshot",
     "rowCount": 76,
+    "sourceTextFields": [
+      "contentText",
+      "summary",
+      "contentHtml"
+    ],
     "status": "draft_source_change_detection_only",
     "statusCounts": {
       "possible_option_change_or_table_source_mismatch": 6,
