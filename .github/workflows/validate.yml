@@ -32,6 +32,9 @@ jobs:
       - name: Validate beta-lactam allergy consultant
         run: python tools/validate_betalactam_allergy_consultant.py
 
+      - name: Generate beta-lactam allergy option candidates
+        run: python tools/extract_betalactam_allergy_option_candidates.py
+
       - name: Ensure generated enterobacteria artifacts are not committed
         run: |
           if [ -f docs/microbiology/preconsolidation_enterobacterias_draft_2025.json ]; then
@@ -73,6 +76,14 @@ jobs:
 
       - name: Validate published microbiology maps after dry-run
         run: python tools/validate_published_microbiology_maps.py
+
+      - name: Upload beta-lactam allergy option candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: betalactam-allergy-option-candidates
+          path: docs/rules/betalactam_allergy_options_candidate.json
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Upload enterobacteria preconsolidation draft
         uses: actions/upload-artifact@v4
