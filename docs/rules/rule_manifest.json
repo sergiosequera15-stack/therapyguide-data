@@ -1,5 +1,5 @@
 {
-  "version": "0.1.6",
+  "version": "0.1.7",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -70,6 +70,15 @@
       "therapeuticRecommendationAllowed": false,
       "readyForAppConsultant": false
     },
+    "betalactamAllergyDoseCompletionWorklist": {
+      "path": "rules/betalactam_allergy_dose_completion_worklist.json",
+      "required": true,
+      "status": "manual_dose_completion_pending",
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false
+    },
     "betalactamAllergyMasterTableManualReviewQueue": {
       "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
       "required": true,
@@ -91,6 +100,7 @@
     "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
     "Los informes de comprobación de fuente y de dosis son ayudas de detección: no validan clínicamente las opciones.",
     "Las filas con dosis incompleta deben completarse desde la fuente antes de cualquier visualización estructurada en APP.",
+    "La worklist de completado de dosis es el carril preferente para incorporar la revisión manual de Sergio.",
     "Las filas en la cola de revisión manual deben resolverse antes de cualquier promoción de la tabla.",
     "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
   ]
