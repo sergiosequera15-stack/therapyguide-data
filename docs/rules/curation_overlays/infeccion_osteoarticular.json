@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "title": "Curation overlay - infeccion_osteoarticular",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "manual_curation_overlay",
+    "topicId": "infeccion_osteoarticular",
+    "source": "betalactam_allergy_options_candidate.json",
+    "readyForAppConsultant": false
+  },
+  "entries": [
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_014",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - contexto quirófano",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 014",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido como candidato claro por mención explícita en el texto fuente. Extraer etiqueta farmacológica final en fase optionRecords."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_015",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - contexto quirófano",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 015",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido como candidato claro. Extraer etiqueta final desde sourceText antes de publicar optionRecords."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_016",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular pediátrica o edad específica",
+      "extractedOptions": [
+        {
+          "label": "Opción explícita en texto fuente 016",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido, pero mantener el matiz de edad al generar optionRecords."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_017",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente: contexto no suficientemente claro en el resumen de candidatos."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_018",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_019",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_020",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_021",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_022",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    },
+    {
+      "candidateId": "infeccion_osteoarticular__allergy_candidate_023",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infección osteoarticular",
+      "proposedSubsyndrome": "Infección osteoarticular - revisar contexto",
+      "extractedOptions": [],
+      "curatorNotes": "Revisar manualmente antes de incluir."
+    }
+  ]
+}
