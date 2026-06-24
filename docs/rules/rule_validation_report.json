@@ -1,25 +1,32 @@
 {
   "generatedAt": "2026-06-24T00:00:00Z",
-  "status": "passed_with_empty_therapeutic_rules_and_allergy_options_contract_draft",
+  "status": "passed_with_empty_therapeutic_rules_and_allergy_master_table_v2_draft",
   "checkedFiles": [
     "rules/recommendation_rules.json",
     "rules/allergy_rules.json",
     "rules/betalactam_allergy_consultant.json",
-    "rules/betalactam_allergy_options_master_table_draft.json"
+    "rules/betalactam_allergy_options_master_table_draft.json",
+    "rules/generated/betalactam_allergy_master_table_source_check_report.json",
+    "rules/generated/betalactam_allergy_master_table_source_check_summary.json",
+    "rules/generated/betalactam_allergy_master_table_dose_completeness_report.json",
+    "rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json",
+    "rules/betalactam_allergy_dose_completion_worklist.json"
   ],
   "summary": {
     "recommendationRuleCount": 0,
     "allergyRuleCount": 0,
     "allergyOptionsRecordCount": 0,
-    "allergyMasterTableDraftRowCount": 70,
+    "allergyMasterTableDraftRowCount": 76,
+    "allergyMasterTableSchema": "compact_rows_v2",
     "errors": 0,
-    "warnings": 4
+    "warnings": 5
   },
   "warnings": [
     "No hay reglas de recomendación terapéutica activas todavía.",
     "El consultor de alergia a betalactámicos está orientado a opciones por síndrome/subsíndrome.",
+    "La tabla maestra v2 procede de la hoja Alergia betalactamicos del XLSX revisado; otras hojas se han ignorado en esta pasada.",
     "La tabla maestra de opciones para alérgicos es un borrador pendiente de verificación de fuente y revisión manual.",
-    "El informe automático de cambios frente a guide_topics.json es una ayuda de detección, no una validación clínica."
+    "Los informes automáticos de fuente y dosis son ayudas de detección, no validación clínica."
   ],
   "errors": []
 }
