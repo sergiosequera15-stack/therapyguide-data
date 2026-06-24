@@ -50,6 +50,9 @@ jobs:
       - name: Check beta-lactam allergy master table against current guide topics
         run: python tools/check_betalactam_allergy_master_table_sources.py
 
+      - name: Audit beta-lactam allergy master table dose completeness
+        run: python tools/check_betalactam_allergy_master_table_dose_completeness.py
+
       - name: Commit beta-lactam allergy generated artifacts
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
@@ -61,7 +64,9 @@ jobs:
             docs/rules/betalactam_allergy_options_curation_worklist.json \
             docs/rules/betalactam_allergy_options_master_table_draft.json \
             docs/rules/generated/betalactam_allergy_master_table_source_check_report.json \
-            docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json
+            docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json \
+            docs/rules/generated/betalactam_allergy_master_table_dose_completeness_report.json \
+            docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json
           if git diff --cached --quiet; then
             echo "No beta-lactam allergy generated artifact changes to commit."
             exit 0
@@ -122,6 +127,8 @@ jobs:
             docs/rules/betalactam_allergy_options_master_table_draft.json
             docs/rules/generated/betalactam_allergy_master_table_source_check_report.json
             docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json
+            docs/rules/generated/betalactam_allergy_master_table_dose_completeness_report.json
+            docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json
           if-no-files-found: error
           retention-days: 30
 
