@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "title": "Curación manual inicial de opciones en alergia a betalactámicos",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "manual_curation_overlay",
+    "source": "betalactam_allergy_options_candidate.json",
+    "scope": "first_orl_pass",
+    "clinicalUseAllowed": false,
+    "clinicalDecisionSupportAllowed": false,
+    "therapeuticRecommendationAllowed": false,
+    "readyForAppConsultant": false
+  },
+  "entries": [
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_031",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Infección faringoamigdalar",
+      "extractedOptions": [
+        {
+          "label": "Clindamicina 300 mg cada 8 horas vo durante 5 días",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Azitromicina 500 mg vo el primer día seguido de 250 mg/día tres dosis más",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil. Corregir erratas fuente solo si se aplica normalización editorial posterior; conservar texto fuente literal."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_032",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Complicaciones locorregionales de la infección faringoamigdalar",
+      "extractedOptions": [
+        {
+          "label": "Clindamicina 600 mg cada 6 horas iv",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil para complicaciones locorregionales no graves según fragmento fuente."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_033",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Complicaciones locorregionales de la infección faringoamigdalar grave",
+      "extractedOptions": [
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas iv + linezolid 600 mg",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "El extractor mezcló el inicio de otitis media aguda en el matchedSentence. Mantener contexto corregido manualmente."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_034",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Otitis media aguda",
+      "extractedOptions": [
+        {
+          "label": "Cefditoreno 400 mg cada 12 horas vo",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas vo",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil. Revisar manualmente si cefditoreno debe mostrarse sin matizar el tipo de alergia antes de publicación."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_035",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Mastoiditis aguda",
+      "extractedOptions": [
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas iv",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil para mastoiditis aguda."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_036",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Mastoiditis crónica o postquirúrgica",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 2 g cada 8 horas iv + linezolid 600 mg cada 12 horas iv",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "El sourceText añade amikacina en línea posterior; revisar si forma parte de la opción antes de pasar a optionRecords."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_037",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Otitis externa",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 2 g cada 6 horas iv",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil. Contexto probablemente otitis externa grave; revisar título fuente antes de publicación."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_038",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Sinusitis aguda adquirida en la comunidad",
+      "extractedOptions": [
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas vo",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_039",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Sinusitis aguda de origen dental",
+      "extractedOptions": [
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "El matchedSentence incluye también el inicio de sinusitis intrahospitalaria; usar solo la opción dental explícita."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_040",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Sinusitis aguda intrahospitalaria o nosocomial",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 2 g cada 8 horas iv + linezolid 600 mg cada 12 horas iv",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil. Corregir errata fuente 'Aztreonan' solo si se aplica normalización editorial posterior."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_041",
+      "curationDecision": "needs_discussion",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Sinusitis crónica",
+      "extractedOptions": [],
+      "curatorNotes": "Necesita discusión: el fragmento menciona metronidazol como opción en alérgicos, pero puede estar incompleto como cobertura aislada. No incluir sin revisión manual específica."
+    },
+    {
+      "candidateId": "infecciones_orl__allergy_candidate_042",
+      "curationDecision": "include",
+      "proposedSyndrome": "Infecciones ORL",
+      "proposedSubsyndrome": "Parotiditis aguda",
+      "extractedOptions": [
+        {
+          "label": "Moxifloxacino 400 mg cada 24 horas iv + linezolid 600 mg cada 12 horas iv si riesgo de infección por SARM",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Candidato útil; mantiene condición de riesgo de SARM en la etiqueta."
+    }
+  ]
+}
