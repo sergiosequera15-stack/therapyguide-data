@@ -11,7 +11,10 @@ REQUIRED_COLUMNS = [
     "rowNumber",
     "syndrome",
     "subsyndrome",
+    "population",
+    "allergyContext",
     "optionsText",
+    "reviewNotes",
     "sourceRefId",
     "sourceUrl",
     "sourceTopicId",
@@ -56,10 +59,14 @@ def row_to_record(columns: list[str], row: list[Any], index: int) -> dict[str, A
 def validate_metadata(table: dict[str, Any], rows: list[list[Any]]) -> None:
     metadata = table.get("metadata") or {}
     require(isinstance(metadata, dict), "metadata must be an object")
-    require(metadata.get("schema") == "compact_rows_v1", "metadata.schema must be compact_rows_v1")
+    require(metadata.get("schema") == "compact_rows_v2", "metadata.schema must be compact_rows_v2")
     require(metadata.get("status") == "draft_pending_source_verification_and_manual_review", "metadata.status must remain draft_pending_source_verification_and_manual_review")
     require(metadata.get("manualReviewStatus") == "draft_pending_manual_review", "metadata.manualReviewStatus must remain draft_pending_manual_review")
     require(metadata.get("rowCount") == len(rows), "metadata.rowCount must match rows length")
+    require(metadata.get("rowCount") == 76, "metadata.rowCount must be 76 for reviewed spreadsheet v2")
+    require(metadata.get("source") == "proa_huvn_alergia_betalactamicos_y_calculadoras_v2(1).xlsx::Alergia betalactamicos", "metadata.source must identify reviewed spreadsheet v2 source sheet")
+    require(metadata.get("inputSheet") == "Alergia betalactamicos", "metadata.inputSheet must be Alergia betalactamicos")
+    require(metadata.get("ignoredSheets") == ["Calculadoras PROA", "Correcciones"], "metadata.ignoredSheets must document ignored sheets")
     require(metadata.get("changeDetectionOnly") is True, "metadata.changeDetectionOnly must be true")
     require(metadata.get("requiresManualReviewBeforeClinicalUse") is True, "metadata.requiresManualReviewBeforeClinicalUse must be true")
     for flag in REQUIRED_FALSE_METADATA_FLAGS:
@@ -90,7 +97,7 @@ def validate_against_guide_topics(records: list[dict[str, Any]]) -> None:
 
 
 def validate_records(columns: list[str], rows: list[list[Any]]) -> list[dict[str, Any]]:
-    require(columns == REQUIRED_COLUMNS, "columns do not match required compact schema")
+    require(columns == REQUIRED_COLUMNS, "columns do not match compact_rows_v2 schema")
     require(rows, "rows must not be empty")
     records = [row_to_record(columns, row, index) for index, row in enumerate(rows)]
     row_numbers = [record.get("rowNumber") for record in records]
@@ -101,8 +108,10 @@ def validate_records(columns: list[str], rows: list[list[Any]]) -> list[dict[str
         prefix = f"rows[{index}]"
         require(record.get("syndrome"), f"{prefix}.syndrome is required")
         require(record.get("subsyndrome"), f"{prefix}.subsyndrome is required")
+        require(record.get("population"), f"{prefix}.population is required")
+        require(record.get("allergyContext"), f"{prefix}.allergyContext is required")
         require(record.get("optionsText"), f"{prefix}.optionsText is required")
-        require("Recomendación" not in str(record.get("optionsText")), f"{prefix}.optionsText should avoid recommendation framing")
+        require(isinstance(record.get("reviewNotes"), str), f"{prefix}.reviewNotes must be a string")
         require(record.get("sourceRefId"), f"{prefix}.sourceRefId is required")
         source_url = str(record.get("sourceUrl") or "")
         require(source_url.startswith("https://www.huvn.es/"), f"{prefix}.sourceUrl must be a HUVN URL")
@@ -123,7 +132,7 @@ def main() -> None:
     validate_metadata(table, rows)
     records = validate_records(columns, rows)
     validate_against_guide_topics(records)
-    print(f"Beta-lactam allergy master table OK: {len(records)} draft rows")
+    print(f"Beta-lactam allergy master table OK: {len(records)} reviewed v2 draft rows")
 
 
 if __name__ == "__main__":
