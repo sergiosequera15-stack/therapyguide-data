@@ -35,12 +35,15 @@ jobs:
       - name: Generate beta-lactam allergy option candidates
         run: python tools/extract_betalactam_allergy_option_candidates.py
 
+      - name: Build beta-lactam allergy curation worklist
+        run: python tools/build_betalactam_allergy_curation_worklist.py
+
       - name: Commit beta-lactam allergy option candidates
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/rules/betalactam_allergy_options_candidate.json docs/rules/betalactam_allergy_options_candidate_summary.json
+          git add docs/rules/betalactam_allergy_options_candidate.json docs/rules/betalactam_allergy_options_candidate_summary.json docs/rules/betalactam_allergy_options_curation_worklist.json
           if git diff --cached --quiet; then
             echo "No beta-lactam allergy candidate changes to commit."
             exit 0
@@ -97,6 +100,7 @@ jobs:
           path: |
             docs/rules/betalactam_allergy_options_candidate.json
             docs/rules/betalactam_allergy_options_candidate_summary.json
+            docs/rules/betalactam_allergy_options_curation_worklist.json
           if-no-files-found: error
           retention-days: 30
 
