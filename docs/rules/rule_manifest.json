@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.2.0",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -27,7 +27,9 @@
       "path": "rules/betalactam_allergy_options_master_table_draft.json",
       "required": true,
       "status": "draft_pending_source_verification_and_manual_review",
-      "schema": "compact_rows_v1",
+      "schema": "compact_rows_v2",
+      "rowCount": 76,
+      "source": "proa_huvn_alergia_betalactamicos_y_calculadoras_v2(1).xlsx::Alergia betalactamicos",
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -97,6 +99,7 @@
   "warnings": [
     "Las reglas de recomendación están vacías en esta fase.",
     "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
+    "La tabla maestra v2 procede de la hoja Alergia betalactamicos; otras hojas del XLSX se han ignorado en esta pasada.",
     "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
     "Los informes de comprobación de fuente y de dosis son ayudas de detección: no validan clínicamente las opciones.",
     "Las filas con dosis incompleta deben completarse desde la fuente antes de cualquier visualización estructurada en APP.",
