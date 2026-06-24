@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/rules/betalactam_allergy_options_candidate.json
+          git add docs/rules/betalactam_allergy_options_candidate.json docs/rules/betalactam_allergy_options_candidate_summary.json
           if git diff --cached --quiet; then
             echo "No beta-lactam allergy candidate changes to commit."
             exit 0
@@ -94,7 +94,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: betalactam-allergy-option-candidates
-          path: docs/rules/betalactam_allergy_options_candidate.json
+          path: |
+            docs/rules/betalactam_allergy_options_candidate.json
+            docs/rules/betalactam_allergy_options_candidate_summary.json
           if-no-files-found: error
           retention-days: 30
 
