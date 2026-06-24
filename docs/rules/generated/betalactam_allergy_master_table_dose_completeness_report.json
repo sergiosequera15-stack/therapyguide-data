@@ -1,0 +1,1469 @@
+{
+  "metadata": {
+    "clinicalDecisionSupportAllowed": false,
+    "clinicalUseAllowed": false,
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "incompleteDoseInfoRowCount": 39,
+    "noExplicitDoseRowCount": 36,
+    "notes": [
+      "This report audits whether optionsText contains explicit dose, route, and frequency/duration patterns.",
+      "It does not validate dose correctness or clinical appropriateness.",
+      "Rows without explicit dose information require source-level review before structured APP display."
+    ],
+    "readyForAppConsultant": false,
+    "rowCount": 70,
+    "status": "draft_dose_completeness_audit_only",
+    "statusCounts": {
+      "class_or_context_shorthand_without_explicit_dose": 8,
+      "explicit_dose_frequency_route_unspecified": 3,
+      "explicit_dose_route_frequency": 31,
+      "missing_explicit_dose_information": 28
+    },
+    "table": "docs/rules/betalactam_allergy_options_master_table_draft.json",
+    "therapeuticRecommendationAllowed": false,
+    "title": "Beta-lactam allergy master table dose completeness report"
+  },
+  "rows": [
+    {
+      "doseMatches": [
+        "1000 mg",
+        "2 g",
+        "5 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Levofloxacino 1000 mg/24 h IV + aztreonam 2 g/8 h IV. Alternativa: gentamicina 5 mg/kg/24 h IV + aztreonam 2 g/8 h IV.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 1,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Comunidad, sin sepsis, ingreso, sin FR de bacterias resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "qualityWarnings": [
+        "alternative_wording_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 2,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Sin sepsis, ingreso, frágil/vulnerable o con FR de resistentes",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 3,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Sepsis, sin fragilidad y sin FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 4,
+      "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Sepsis, frágil/vulnerable o con FR MDR",
+      "syndrome": "Sepsis / síndrome febril sin foco adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": true,
+      "optionsText": "Fosfomicina IV, o aztreonam IV, o gentamicina IV. La guía advierte no usar fosfomicina en preeclampsia/HTA.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 5,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "ITU en gestación/puerperio, reevaluación",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "doseMatches": [
+        "5 mg",
+        "500 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Metronidazol 500 mg/8 h IV + gentamicina 5 mg/kg/24 h IV.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 6,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Aborto séptico",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "doseMatches": [
+        "500 mg",
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Linezolid 600 mg/12 h IV + azitromicina 500 mg/24 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 7,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Neumonía",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "doseMatches": [
+        "1 g",
+        "500 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 1 g/8 h IV + metronidazol 500 mg/8 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 8,
+      "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Apendicitis",
+      "syndrome": "Sepsis en gestación/puerperio"
+    },
+    {
+      "doseMatches": [
+        "2 g",
+        "500 mg",
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/6 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 2 g/6–8 h + linezolid 600 mg/12 h IV/VO, con posible pauta de 600 mg/8 h las primeras 24–48 h, o vancomicina + rifampicina + dexametasona. Si secundaria a sinusitis u otitis, añadir metronidazol 500 mg/6 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV",
+        "VO"
+      ],
+      "rowNumber": 9,
+      "sourceTopicId": "meningitis_bacteriana",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Meningitis bacteriana aguda en adultos, alergia a penicilina",
+      "syndrome": "Meningitis"
+    },
+    {
+      "doseMatches": [
+        "400 mg",
+        "500 mg",
+        "750 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 10,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "NAC leve sin comorbilidades ni FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Misma alternativa: moxifloxacino o levofloxacino en monoterapia.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "context_dependent_wording",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 11,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg",
+        "750 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Moxifloxacino 400 mg/24 h VO/IV o levofloxacino 750 mg/24 h VO/IV.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV",
+        "VO"
+      ],
+      "rowNumber": 12,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "NAC moderada-grave con ingreso, sin FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "doseMatches": [
+        "100 mg",
+        "2 g",
+        "200 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV inicial y luego 100 mg/12 h IV.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 13,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Neumonía nosocomial o con FR MDR",
+      "syndrome": "Neumonía adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Hipersensibilidad tipo I: macrólido —josamicina o midecamicina— o levofloxacino. No tipo I: cefuroxima.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 14,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Ambulatoria 4 meses–4 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "doseMatches": [
+        "10 mg",
+        "750 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "cada 24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "optionsText": "Igual que en menores, ajustando levofloxacino 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "context_dependent_wording"
+      ],
+      "routeMatches": [],
+      "rowNumber": 15,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Ambulatoria ≥5 años, típica",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Tipo I/anafilaxia: levofloxacino. No tipo I: ceftriaxona o cefotaxima.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 16,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Ingreso 4 meses–5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Levofloxacino + vancomicina o linezolid.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 17,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Ingreso 4 meses–5 años, grave o con derrame pleural",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Tipo I: levofloxacino. No tipo I: ceftriaxona o cefotaxima.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 18,
+      "sourceTopicId": "neumonia_en_paciente_pediatrico",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Ingreso >5 años, típica no complicada",
+      "syndrome": "Neumonía pediátrica"
+    },
+    {
+      "doseMatches": [
+        "1 g",
+        "20 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "3 días"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Amikacina 20 mg/kg/24 h IM hasta 3 días o ertapenem 1 g IM.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "IM"
+      ],
+      "rowNumber": 19,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Pielonefritis/ITU sistémica sin ingreso",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "doseMatches": [
+        "2 g",
+        "20 mg",
+        "4 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/6 h",
+        "/8 h",
+        "3 días"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 2 g/8 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h hasta 3 días.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 20,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Pielonefritis/ITU con ingreso, FR MDR, sin sepsis/shock, sospecha de P. aeruginosa MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "doseMatches": [
+        "2 g",
+        "20 mg",
+        "4 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/6 h",
+        "3 días"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 2 g/6 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h hasta 3 días.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 21,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Pielonefritis/ITU con sepsis/shock, sospecha de resistencia a carbapenémicos o MDR",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": true,
+      "optionsText": "Fosfomicina IV + amikacina + linezolid, o aztreonam + linezolid.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 22,
+      "sourceTopicId": "infeccion_del_tracto_urinario",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Prostatitis bacteriana con sepsis/shock",
+      "syndrome": "ITU adultos"
+    },
+    {
+      "doseMatches": [
+        "100 mg",
+        "50 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Tigeciclina 100 mg inicial y luego 50 mg/12 h IV.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 23,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, buen control del foco, sin FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "doseMatches": [
+        "100 mg",
+        "50 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Tigeciclina, con dosis de carga de 100 mg y luego 50 mg/12 h IV.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 24,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, con FR MDR",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Tigeciclina + aztreonam + amikacina + caspofungina.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 25,
+      "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Peritonitis secundaria con sepsis grave, mala evolución o mal control de foco",
+      "syndrome": "Intraabdominal adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Gentamicina + clindamicina.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 26,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Ciprofloxacino + metronidazol.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 27,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Apendicitis aguda con cirugía demorada",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Ciprofloxacino + metronidazol, o tigeciclina según edad/peso.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 28,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Colecistitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam + metronidazol + vancomicina.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 29,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Peritonitis primaria asociada a ascitis",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": true,
+      "optionsText": "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [
+        "intraperitoneal"
+      ],
+      "rowNumber": 30,
+      "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
+      "syndrome": "Intraabdominal pediátrica"
+    },
+    {
+      "doseMatches": [
+        "1 comp",
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Cotrimoxazol/Septrim Forte 1 comp/12 h o linezolid 600 mg/12 h VO.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 31,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Celulitis, paciente sano, sin supuración, sin ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [
+        "10 mg",
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Linezolid 600 mg/12 h IV o daptomicina 8–10 mg/kg/24 h IV.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 32,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Celulitis sin supuración, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Linezolid o daptomicina. Si no ingreso pero riesgo de mala adherencia/interacciones: dalbavancina u oritavancina.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 33,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Celulitis con supuración o riesgo SARM, con ingreso",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Daptomicina o linezolid + aztreonam + metronidazol + amikacina, o aztreonam + tigeciclina.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 34,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Infección de herida quirúrgica profunda o >48–72 h",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam + linezolid + metronidazol.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 35,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Celulitis necrotizante / fascitis / mionecrosis",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Linezolid, daptomicina, dalbavancina u oritavancina.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 36,
+      "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Piomiositis",
+      "syndrome": "Piel y partes blandas adultos"
+    },
+    {
+      "doseMatches": [
+        "12 mg",
+        "2 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Daptomicina 10–12 mg/kg/24 h + ceftriaxona 2 g IV/24 h.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 37,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Endocarditis infecciosa sobre válvula nativa, alérgicos",
+      "syndrome": "Endovascular"
+    },
+    {
+      "doseMatches": [
+        "10 mg",
+        "2 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/6 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Daptomicina 10 mg/kg IV/24 h + fosfomicina sódica 2 g IV/6 h.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 38,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Endocarditis en ADVP, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "doseMatches": [
+        "10 mg",
+        "2 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/6 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Daptomicina 10 mg/kg IV/24 h + fosfomicina sódica 2 g IV/6 h.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_wording_present"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 39,
+      "sourceTopicId": "infecciones_endovasculares",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos, alternativa",
+      "syndrome": "Endovascular"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Daptomicina o linezolid + ciprofloxacino o aztreonam o amikacina.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 40,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "doseMatches": [
+        "1 g",
+        "10 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 41,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, quirófano",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "doseMatches": [
+        "1 g",
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 42,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, planta",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Daptomicina o linezolid + ciprofloxacino o aztreonam o amikacina.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 43,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "En quirófano: daptomicina + meropenem. En planta: linezolid + meropenem.",
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 44,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Osteomielitis con FR quirúrgicos/sanitarios/BLEE/SARM",
+      "syndrome": "Osteoarticular adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Linezolid + meropenem, con posible rifampicina según situación.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 45,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "MOS tras implantación, alergia a penicilina",
+      "syndrome": "Osteoarticular pediátrica"
+    },
+    {
+      "doseMatches": [
+        "200 mg",
+        "600 mg",
+        "750 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Ciprofloxacino 750 mg/12 h + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h.",
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 46,
+      "sourceTopicId": "manejo_de_neutropenia_febril",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Bajo riesgo tras 6–8 h de observación y antibiótico IV",
+      "syndrome": "Neutropenia febril"
+    },
+    {
+      "doseMatches": [
+        "2 g",
+        "400 mg",
+        "dosis única"
+      ],
+      "frequencyOrDurationMatches": [
+        "7 días",
+        "dosis única"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Metronidazol 2 g VO dosis única + moxifloxacino 400 mg/día durante 7 días.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 47,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Uretritis/cervicitis, alergia a penicilina",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [
+        "14 días"
+      ],
+      "hasDose": false,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "optionsText": "Levofloxacino + metronidazol 14 días o moxifloxacino 14 días.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 48,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "EPI no grave / no hospitalizada, alérgicas",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Clindamicina + gentamicina + doxiciclina, o tigeciclina + doxiciclina.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 49,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "EPI grave / hospitalizada",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [
+        "2 g",
+        "dosis única"
+      ],
+      "frequencyOrDurationMatches": [
+        "14 días",
+        "dosis única"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Doxiciclina 14 días, ceftriaxona 10–14 días o azitromicina 2 g VO dosis única.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 50,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Sífilis primaria, secundaria o latente precoz, alternativas a penicilina",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [
+        "14 días",
+        "28 días"
+      ],
+      "hasDose": false,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "optionsText": "Doxiciclina 28 días o ceftriaxona 10–14 días.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 51,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Sífilis latente indeterminada / terciaria, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Penicilina procaína + probenecid, ceftriaxona, o doxiciclina.",
+      "qualityWarnings": [
+        "alternative_wording_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "contains_penicillin_named_option_review_needed"
+      ],
+      "routeMatches": [],
+      "rowNumber": 52,
+      "sourceTopicId": "infecciones_de_transmision_sexual",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Neurosífilis, alternativas",
+      "syndrome": "ITS"
+    },
+    {
+      "doseMatches": [
+        "300 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/8 h",
+        "5 días"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Clindamicina 300 mg/8 h VO 5 días o azitromicina.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 53,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Faringoamigdalitis",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "600 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/6 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Clindamicina 600 mg/6 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 54,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, no grave",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Moxifloxacino 400 mg/24 h IV + linezolid.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 55,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, grave",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/12 h",
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Cefditoreno 400 mg/12 h VO o moxifloxacino 400 mg/24 h VO.",
+      "qualityWarnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 56,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Moxifloxacino 400 mg/24 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 57,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Mastoiditis aguda",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam + linezolid, con amikacina opcional inicial.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 58,
+      "sourceTopicId": "infecciones_orl",
+      "status": "class_or_context_shorthand_without_explicit_dose",
+      "subsyndrome": "Mastoiditis crónica/postquirúrgica",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "2 g"
+      ],
+      "frequencyOrDurationMatches": [
+        "/6 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Aztreonam 2 g/6 h IV.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV"
+      ],
+      "rowNumber": 59,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Otitis externa maligna",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Moxifloxacino 400 mg/24 h VO.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "VO"
+      ],
+      "rowNumber": 60,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Sinusitis aguda comunitaria",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "400 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "optionsText": "Moxifloxacino 400 mg/24 h.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 61,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Sinusitis dental",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Aztreonam + linezolid.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 62,
+      "sourceTopicId": "infecciones_orl",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Sinusitis nosocomial/intrahospitalaria",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [
+        "500 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": true,
+      "optionsText": "Metronidazol 500 mg/8 h IV/VO durante 3–4 semanas.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "IV",
+        "VO"
+      ],
+      "rowNumber": 63,
+      "sourceTopicId": "infecciones_orl",
+      "status": "explicit_dose_route_frequency",
+      "subsyndrome": "Sinusitis crónica sin muestra",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Moxifloxacino, añadiendo linezolid si riesgo SARM.",
+      "qualityWarnings": [
+        "resistance_risk_context_present"
+      ],
+      "routeMatches": [],
+      "rowNumber": 64,
+      "sourceTopicId": "infecciones_orl",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
+      "syndrome": "ORL adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "No anafiláctica: cefuroxima-axetilo. Anafilaxia: claritromicina o azitromicina; en fracaso, levofloxacino.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 65,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "OMA con alergia a penicilina",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": true,
+      "optionsText": "Alergia no anafiláctica: cefuroxima IV. Alergia anafiláctica a betalactámicos: levofloxacino oral/IV.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [
+        "IV",
+        "oral"
+      ],
+      "rowNumber": 66,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Mastoiditis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "No anafiláctica: cefuroxima-axetilo o ceftibuteno. Anafiláctica: claritromicina o azitromicina; si grave/fracaso, levofloxacino.",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ],
+      "routeMatches": [],
+      "rowNumber": 67,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Sinusitis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "doseMatches": [
+        "500 mg",
+        "750 mg"
+      ],
+      "frequencyOrDurationMatches": [
+        "/24 h",
+        "/8 h"
+      ],
+      "hasDose": true,
+      "hasFrequencyOrDuration": true,
+      "hasRoute": false,
+      "optionsText": "Levofloxacino 750 mg/24 h + metronidazol 500 mg/8 h.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 68,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "status": "explicit_dose_frequency_route_unspecified",
+      "subsyndrome": "Celulitis orbitaria",
+      "syndrome": "Ocular adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": true,
+      "optionsText": "Vancomicina intravítrea + amikacina intravítrea.",
+      "qualityWarnings": [],
+      "routeMatches": [
+        "intravítrea"
+      ],
+      "rowNumber": 69,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Endoftalmitis, tratamiento intravítreo alternativo",
+      "syndrome": "Ocular adultos"
+    },
+    {
+      "doseMatches": [],
+      "frequencyOrDurationMatches": [],
+      "hasDose": false,
+      "hasFrequencyOrDuration": false,
+      "hasRoute": false,
+      "optionsText": "Linezolid o daptomicina + ciprofloxacino o levofloxacino.",
+      "qualityWarnings": [],
+      "routeMatches": [],
+      "rowNumber": 70,
+      "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+      "status": "missing_explicit_dose_information",
+      "subsyndrome": "Endoftalmitis, tratamiento sistémico alternativo",
+      "syndrome": "Ocular adultos"
+    }
+  ]
+}
