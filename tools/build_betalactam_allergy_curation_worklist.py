@@ -7,6 +7,7 @@ from typing import Any
 CANDIDATE_PATH = Path("docs/rules/betalactam_allergy_options_candidate.json")
 WORKLIST_PATH = Path("docs/rules/betalactam_allergy_options_curation_worklist.json")
 OVERLAY_PATH = Path("docs/rules/betalactam_allergy_options_manual_curation.json")
+OVERLAY_DIR = Path("docs/rules/curation_overlays")
 CURATION_FIELDS = (
     "curationDecision",
     "proposedSyndrome",
@@ -39,6 +40,14 @@ def entries_by_id(payload: dict[str, Any], key: str = "entries") -> dict[str, di
         for entry in entries
         if isinstance(entry, dict) and entry.get("candidateId")
     }
+
+
+def load_overlay_entries() -> dict[str, dict[str, Any]]:
+    merged = entries_by_id(load_json(OVERLAY_PATH))
+    if OVERLAY_DIR.exists():
+        for path in sorted(OVERLAY_DIR.glob("*.json")):
+            merged.update(entries_by_id(load_json(path)))
+    return merged
 
 
 def expand_options(options: Any, candidate: dict[str, Any]) -> list[dict[str, Any]]:
@@ -90,14 +99,13 @@ def build_entry(candidate: dict[str, Any], existing: dict[str, dict[str, Any]], 
     return entry
 
 
-def validate_overlay(overlay_payload: dict[str, Any], candidate_ids: set[str]) -> None:
-    overlay_entries = entries_by_id(overlay_payload)
-    unknown = sorted(set(overlay_entries) - candidate_ids)
+def validate_overlay(overlay: dict[str, dict[str, Any]], candidate_ids: set[str]) -> None:
+    unknown = sorted(set(overlay) - candidate_ids)
     if unknown:
         raise SystemExit(f"ERROR: overlay references unknown candidates: {', '.join(unknown)}")
 
 
-def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str, Any], overlay_payload: dict[str, Any]) -> dict[str, Any]:
+def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str, Any], overlay: dict[str, dict[str, Any]]) -> dict[str, Any]:
     candidates = candidate_payload.get("candidates") or []
     if not isinstance(candidates, list):
         raise SystemExit("ERROR: candidates must be a list")
@@ -107,9 +115,8 @@ def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str
         for candidate in candidates
         if isinstance(candidate, dict) and candidate.get("id")
     }
-    validate_overlay(overlay_payload, candidate_ids)
+    validate_overlay(overlay, candidate_ids)
     existing = entries_by_id(existing_payload)
-    overlay = entries_by_id(overlay_payload)
     entries = [
         build_entry(candidate, existing, overlay)
         for candidate in candidates
@@ -123,7 +130,7 @@ def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str
             "generatedAt": "2026-06-24T00:00:00Z",
             "status": "manual_curation_pending",
             "source": "betalactam_allergy_options_candidate.json",
-            "manualCurationSource": "betalactam_allergy_options_manual_curation.json",
+            "manualCurationSource": "betalactam_allergy_options_manual_curation.json plus docs/rules/curation_overlays/*.json",
             "candidateCount": len(entries),
             "pendingCount": sum(1 for entry in entries if entry.get("curationDecision") == "pending"),
             "includedCount": sum(1 for entry in entries if entry.get("curationDecision") == "include"),
@@ -148,8 +155,8 @@ def build_worklist(candidate_payload: dict[str, Any], existing_payload: dict[str
 def main() -> None:
     candidate_payload = load_json(CANDIDATE_PATH)
     existing_payload = load_json(WORKLIST_PATH)
-    overlay_payload = load_json(OVERLAY_PATH)
-    worklist = build_worklist(candidate_payload, existing_payload, overlay_payload)
+    overlay = load_overlay_entries()
+    worklist = build_worklist(candidate_payload, existing_payload, overlay)
     WORKLIST_PATH.write_text(json.dumps(worklist, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {WORKLIST_PATH} with {worklist['metadata']['candidateCount']} entries")
 
