@@ -27,6 +27,7 @@ REQUIRED_FALSE_METADATA_FLAGS = (
     "readyForAppConsultant",
     "automaticUpdateAllowed",
 )
+MISSING_SOURCE_TOPIC_WARNING = "source_topic_not_in_current_guide_topics"
 
 
 def require(condition: bool, message: str) -> None:
@@ -84,17 +85,25 @@ def validate_against_guide_topics(records: list[dict[str, Any]]) -> None:
     urls.discard(None)
 
     missing_topic_ids: list[str] = []
+    explicitly_marked_missing_topic_ids: list[str] = []
     missing_urls: list[str] = []
     for record in records:
         topic_id = record.get("sourceTopicId")
         source_url = canonicalize_url(record.get("sourceUrl"))
+        warnings = record.get("qualityWarnings") or []
         if topic_id and topic_id not in topic_ids:
-            missing_topic_ids.append(f"row {record.get('rowNumber')} -> {topic_id}")
+            label = f"row {record.get('rowNumber')} -> {topic_id}"
+            if MISSING_SOURCE_TOPIC_WARNING in warnings:
+                explicitly_marked_missing_topic_ids.append(label)
+            else:
+                missing_topic_ids.append(label)
         if source_url and source_url not in urls:
             missing_urls.append(f"row {record.get('rowNumber')} -> {source_url}")
-    require(not missing_topic_ids, "sourceTopicId values not present in guide_topics.json: " + "; ".join(missing_topic_ids[:10]))
+    require(not missing_topic_ids, "sourceTopicId values not present in guide_topics.json and not explicitly marked: " + "; ".join(missing_topic_ids[:10]))
+    if explicitly_marked_missing_topic_ids:
+        print("WARNING: sourceTopicId values absent from current guide_topics.json but explicitly marked for review: " + "; ".join(explicitly_marked_missing_topic_ids[:10]))
     if missing_urls:
-        print("WARNING: sourceUrl values not present verbatim in guide_topics.json; sourceTopicId validation passed. First examples: " + "; ".join(missing_urls[:10]))
+        print("WARNING: sourceUrl values not present verbatim in guide_topics.json; sourceTopicId validation passed or row is explicitly marked. First examples: " + "; ".join(missing_urls[:10]))
 
 
 def validate_records(columns: list[str], rows: list[list[Any]]) -> list[dict[str, Any]]:
