@@ -4,27 +4,20 @@ import json
 from pathlib import Path
 from typing import Any
 
-DOCS_DIR = Path("docs")
-CONSULTANT_PATH = DOCS_DIR / "rules" / "betalactam_allergy_consultant.json"
-ALLERGY_RULES_PATH = DOCS_DIR / "rules" / "allergy_rules.json"
-REQUIRED_ENTRY_OPTION_IDS = {
-    "no",
-    "penicillin_non_severe",
-    "immediate_severe",
-    "severe_cutaneous",
-    "unknown",
+CONSULTANT_PATH = Path("docs/rules/betalactam_allergy_consultant.json")
+ALLOWED_STATUSES = {
+    "draft_structure_pending_option_extraction",
+    "draft_with_source_backed_options_pending_manual_review",
 }
-REPORTED_ALLERGY_BUCKETS = {
-    "reported_non_severe_history",
-    "high_risk_immediate_reaction",
-    "very_high_risk_severe_cutaneous_reaction",
-    "uncertain_history",
-}
+
+
+def fail(message: str) -> None:
+    raise SystemExit(f"ERROR: {message}")
 
 
 def require(condition: bool, message: str) -> None:
     if not condition:
-        raise SystemExit(f"ERROR: {message}")
+        fail(message)
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -33,110 +26,93 @@ def load_json(path: Path) -> dict[str, Any]:
     except json.JSONDecodeError as exc:
         raise SystemExit(f"ERROR: invalid JSON in {path}: {exc}") from exc
 
-    require(isinstance(data, dict), f"{path} must contain a JSON object")
+    require(isinstance(data, dict), f"{path} must contain an object")
     return data
 
 
 def validate_metadata(data: dict[str, Any]) -> None:
     metadata = data.get("metadata") or {}
-    require(metadata.get("status") == "draft_structure_only", "consultant metadata.status must be draft_structure_only")
-    require(metadata.get("source") == "allergy_rules.json", "consultant metadata.source must be allergy_rules.json")
-    require(metadata.get("clinicalUseAllowed") is False, "consultant must block clinicalUseAllowed")
-    require(metadata.get("clinicalDecisionSupportAllowed") is False, "consultant must block clinicalDecisionSupportAllowed")
-    require(metadata.get("therapeuticRecommendationAllowed") is False, "consultant must block therapeuticRecommendationAllowed")
-    require(metadata.get("alternativeAntibioticRecommendationAllowed") is False, "consultant must block alternativeAntibioticRecommendationAllowed")
-    require(metadata.get("manualReviewStatus") == "pending", "consultant manualReviewStatus must remain pending")
+    require(metadata.get("status") in ALLOWED_STATUSES, "metadata.status is invalid")
+    require(metadata.get("consultationMode") == "syndrome_subsyndrome_allergy_options", "metadata.consultationMode is invalid")
+    require(metadata.get("source") == "guide_topics.json", "metadata.source is invalid")
+    require(metadata.get("manualReviewStatus") == "pending", "metadata.manualReviewStatus must remain pending")
+
+    for field in (
+        "clinicalUseAllowed",
+        "clinicalDecisionSupportAllowed",
+        "therapeuticRecommendationAllowed",
+        "alternativeAntibioticRecommendationAllowed",
+    ):
+        require(metadata.get(field) is False, f"metadata.{field} must be false")
 
 
-def validate_entry_question(data: dict[str, Any], allergy_rules: dict[str, Any]) -> None:
-    question = data.get("entryQuestion") or {}
-    allergy_question = allergy_rules.get("allergyQuestion") or {}
-
-    require(question.get("id") == "betalactam_allergy", "entryQuestion.id must be betalactam_allergy")
-    require(question.get("type") == "single_select", "entryQuestion.type must be single_select")
-    require(question.get("required") is True, "entryQuestion.required must be true")
-    require(allergy_question.get("id") == question.get("id"), "entryQuestion must reuse allergy_rules allergyQuestion id")
-
-    options = question.get("options") or []
-    require(isinstance(options, list) and options, "entryQuestion.options must be a non-empty list")
-    option_ids = {option.get("id") for option in options if isinstance(option, dict)}
-    require(option_ids == REQUIRED_ENTRY_OPTION_IDS, f"entryQuestion.options mismatch: {sorted(option_ids)}")
-
-    source_option_ids = {option.get("id") for option in allergy_question.get("options") or [] if isinstance(option, dict)}
-    require(option_ids == source_option_ids, "consultant entry options must match allergy_rules options by id")
-
-    for option in options:
-        require(isinstance(option, dict), "each entry option must be an object")
-        prefix = f"entryQuestion.options[{option.get('id')}]"
-        require(option.get("label"), f"{prefix} lacks label")
-        require(option.get("riskBucket"), f"{prefix} lacks riskBucket")
-        require(option.get("nextStep"), f"{prefix} lacks nextStep")
-        require(isinstance(option.get("mayContinueStandardGuide"), bool), f"{prefix}.mayContinueStandardGuide must be boolean")
+def validate_selectors(data: dict[str, Any]) -> None:
+    selectors = data.get("selectors") or []
+    require(isinstance(selectors, list), "selectors must be a list")
+    by_id = {selector.get("id"): selector for selector in selectors if isinstance(selector, dict)}
+    require("syndrome" in by_id, "missing syndrome selector")
+    require("subsyndrome" in by_id, "missing subsyndrome selector")
+    require(by_id["syndrome"].get("type") == "single_select_required", "syndrome selector type is invalid")
+    require(by_id["subsyndrome"].get("type") == "single_select_optional", "subsyndrome selector type is invalid")
+    require(by_id["subsyndrome"].get("dependsOn") == "syndrome", "subsyndrome must depend on syndrome")
 
 
-def validate_follow_up_questions(data: dict[str, Any]) -> None:
-    questions = data.get("followUpQuestions") or []
-    require(isinstance(questions, list) and questions, "followUpQuestions must be a non-empty list")
+def validate_records(data: dict[str, Any]) -> None:
+    records = data.get("optionRecords")
+    require(isinstance(records, list), "optionRecords must be a list")
 
-    question_ids = {question.get("id") for question in questions if isinstance(question, dict)}
-    required_ids = {"culpritDrug", "reactionType", "reactionTiming", "reactionDate", "subsequentTolerance"}
-    require(required_ids.issubset(question_ids), "followUpQuestions missing required allergy documentation fields")
+    if not records:
+        empty_state = data.get("emptyState") or {}
+        require(empty_state.get("title"), "emptyState.title is required when optionRecords is empty")
+        require(empty_state.get("message"), "emptyState.message is required when optionRecords is empty")
+        return
 
-    for question in questions:
-        require(isinstance(question, dict), "each follow-up question must be an object")
-        prefix = f"followUpQuestions[{question.get('id')}]"
-        require(question.get("label"), f"{prefix} lacks label")
-        require(question.get("type") in {"free_text", "single_select", "multi_select"}, f"{prefix}.type is invalid")
-        required_for = question.get("requiredForBuckets") or []
-        require(set(required_for) == REPORTED_ALLERGY_BUCKETS, f"{prefix}.requiredForBuckets must cover all reported allergy buckets")
-
-
-def validate_result_messages(data: dict[str, Any]) -> None:
-    messages = data.get("resultMessages") or {}
-    require(isinstance(messages, dict) and messages, "resultMessages must be a non-empty object")
-
-    entry_buckets = {option.get("riskBucket") for option in data.get("entryQuestion", {}).get("options") or [] if isinstance(option, dict)}
-    require(set(messages.keys()) == entry_buckets, "resultMessages must cover every riskBucket exactly")
-
-    for bucket, message in messages.items():
-        require(isinstance(message, dict), f"resultMessages[{bucket}] must be an object")
-        require(message.get("severity") in {"info", "caution", "high_risk", "very_high_risk"}, f"resultMessages[{bucket}].severity is invalid")
-        require(message.get("title"), f"resultMessages[{bucket}] lacks title")
-        require(message.get("message"), f"resultMessages[{bucket}] lacks message")
+    for index, record in enumerate(records):
+        require(isinstance(record, dict), f"optionRecords[{index}] must be an object")
+        for field in ("id", "syndrome", "allergyContext", "options", "source"):
+            require(field in record, f"optionRecords[{index}] lacks {field}")
+        require(isinstance(record["options"], list) and record["options"], f"optionRecords[{index}].options must be non-empty")
+        for option_index, option in enumerate(record["options"]):
+            require(isinstance(option, dict), f"optionRecords[{index}].options[{option_index}] must be an object")
+            require(option.get("label"), f"optionRecords[{index}].options[{option_index}] lacks label")
+            require(option.get("isTherapeuticRecommendation") is False, f"optionRecords[{index}].options[{option_index}] is not allowed")
 
 
 def validate_safety(data: dict[str, Any]) -> None:
     hard_safety = data.get("hardSafetyRules") or {}
     app_behavior = data.get("appBehavior") or {}
 
-    require(hard_safety.get("mustNotRecommendAlternativeAntibiotics") is True, "consultant must block alternative antibiotic recommendation")
-    require(hard_safety.get("mustNotOverrideDocumentedSevereAllergy") is True, "consultant must not override severe allergy")
-    require(hard_safety.get("mustNotInferToleranceWithoutDocumentation") is True, "consultant must not infer tolerance")
-    require(hard_safety.get("mustAlwaysAskReactionTypeForReportedAllergy") is True, "consultant must ask reaction type")
-    require(hard_safety.get("mustAlwaysShowClinicalUseBlockedBanner") is True, "consultant must show clinical-use blocked banner")
-    require(hard_safety.get("mustAdviseExpertReviewForSevereOrUnclearHistory") is True, "consultant must advise expert review")
+    for field in (
+        "mustNotRankOptions",
+        "mustNotGenerateTherapeuticRecommendations",
+        "mustNotInferOptionsFromAllergySeverity",
+        "mustOnlyShowSourceBackedOptions",
+        "mustShowPendingExtractionWhenNoRecords",
+        "mustShowClinicalUseBlockedBanner",
+        "mustPreserveSyndromeAndSubsyndromeContext",
+    ):
+        require(hard_safety.get(field) is True, f"hardSafetyRules.{field} must be true")
 
-    require(app_behavior.get("mayRenderAsQuestionnaire") is True, "app may render questionnaire")
-    require(app_behavior.get("mayStoreAnswersLocally") is False, "app must not store answers locally")
-    require(app_behavior.get("mayUseAnswersToFilterTherapeuticRules") is False, "app must not filter therapeutic rules")
-    require(app_behavior.get("mayUseAnswersToGenerateWarnings") is True, "app may generate warnings")
-    require(app_behavior.get("mayUseAnswersToGenerateAntibioticAlternatives") is False, "app must not generate alternatives")
+    require(app_behavior.get("mayRenderInResourcesConsultantsSection") is True, "appBehavior section flag must be true")
+    require(app_behavior.get("mayRenderAsSyndromeSubsyndromeLookup") is True, "appBehavior lookup flag must be true")
+    require(app_behavior.get("mayShowEmptyDraftState") is True, "appBehavior empty-state flag must be true")
+
+    for field in (
+        "mayStoreAnswersLocally",
+        "mayUseAnswersToFilterTherapeuticRules",
+        "mayUseAnswersToGenerateAntibioticAlternatives",
+    ):
+        require(app_behavior.get(field) is False, f"appBehavior.{field} must be false")
 
 
 def main() -> None:
     require(CONSULTANT_PATH.exists(), f"missing {CONSULTANT_PATH}")
-    require(ALLERGY_RULES_PATH.exists(), f"missing {ALLERGY_RULES_PATH}")
-
-    consultant = load_json(CONSULTANT_PATH)
-    allergy_rules = load_json(ALLERGY_RULES_PATH)
-
-    validate_metadata(consultant)
-    validate_entry_question(consultant, allergy_rules)
-    validate_follow_up_questions(consultant)
-    validate_result_messages(consultant)
-    validate_safety(consultant)
-
-    print("Beta-lactam allergy consultant OK")
+    data = load_json(CONSULTANT_PATH)
+    validate_metadata(data)
+    validate_selectors(data)
+    validate_records(data)
+    validate_safety(data)
+    print("Beta-lactam allergy options contract OK")
 
 
 if __name__ == "__main__":
