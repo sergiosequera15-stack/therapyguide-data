@@ -1,180 +1,84 @@
 {
   "metadata": {
-    "title": "Consultor estructurado de alergia a betalactámicos",
-    "version": "0.1.0",
-    "generatedAt": "2026-06-23T00:00:00Z",
-    "status": "draft_structure_only",
-    "source": "allergy_rules.json",
+    "title": "Opciones en alergia a betalactámicos por síndrome",
+    "version": "0.2.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "draft_structure_pending_option_extraction",
+    "consultationMode": "syndrome_subsyndrome_allergy_options",
+    "source": "guide_topics.json",
     "clinicalUseAllowed": false,
     "clinicalDecisionSupportAllowed": false,
     "therapeuticRecommendationAllowed": false,
     "alternativeAntibioticRecommendationAllowed": false,
     "manualReviewStatus": "pending",
     "notes": [
-      "Este contrato estructura la anamnesis de alergia a betalactámicos, pero no recomienda antibióticos alternativos.",
-      "No sustituye valoración clínica, PROA, Alergología, Microbiología ni Farmacia.",
-      "Debe usarse solo para documentar riesgo y orientar la necesidad de revisión experta."
+      "Este contrato se orienta a consultar opciones para pacientes alérgicos a betalactámicos según síndrome y subsíndrome.",
+      "No clasifica la gravedad de la alergia y no genera recomendaciones terapéuticas automáticas.",
+      "Las opciones clínicas aún deben extraerse de la guía y validarse manualmente antes de presentarse como contenido consultable."
     ]
   },
-  "entryQuestion": {
-    "id": "betalactam_allergy",
-    "label": "¿Alergia a betalactámicos?",
-    "type": "single_select",
-    "required": true,
-    "options": [
-      {
-        "id": "no",
-        "label": "No consta alergia a betalactámicos",
-        "riskBucket": "no_reported_allergy",
-        "nextStep": "document_standard_antibiotic_assessment",
-        "mayContinueStandardGuide": true
-      },
-      {
-        "id": "penicillin_non_severe",
-        "label": "Alergia a penicilina no grave / reacción tardía leve",
-        "riskBucket": "reported_non_severe_history",
-        "nextStep": "document_reaction_details_and_review_beta_lactam_options",
-        "mayContinueStandardGuide": false
-      },
-      {
-        "id": "immediate_severe",
-        "label": "Reacción inmediata grave: anafilaxia, angioedema o broncoespasmo",
-        "riskBucket": "high_risk_immediate_reaction",
-        "nextStep": "specialist_review_required",
-        "mayContinueStandardGuide": false
-      },
-      {
-        "id": "severe_cutaneous",
-        "label": "Reacción cutánea grave: DRESS, SJS/TEN, AGEP u otra SCAR",
-        "riskBucket": "very_high_risk_severe_cutaneous_reaction",
-        "nextStep": "avoid_unsupervised_beta_lactam_decisions_and_request_specialist_review",
-        "mayContinueStandardGuide": false
-      },
-      {
-        "id": "unknown",
-        "label": "Historia desconocida, incompleta o dudosa",
-        "riskBucket": "uncertain_history",
-        "nextStep": "clarify_history_before_antibiotic_selection",
-        "mayContinueStandardGuide": false
-      }
-    ]
-  },
-  "followUpQuestions": [
+  "selectors": [
     {
-      "id": "culpritDrug",
-      "label": "Fármaco implicado si se conoce",
-      "type": "free_text",
-      "requiredForBuckets": [
-        "reported_non_severe_history",
-        "high_risk_immediate_reaction",
-        "very_high_risk_severe_cutaneous_reaction",
-        "uncertain_history"
-      ]
+      "id": "syndrome",
+      "label": "Síndrome",
+      "type": "single_select_required",
+      "valuesFrom": "optionRecords.syndrome"
     },
     {
-      "id": "reactionType",
-      "label": "Tipo de reacción descrita",
-      "type": "multi_select",
-      "options": [
-        "exantema_macular",
-        "urticaria",
-        "angioedema",
-        "broncoespasmo",
-        "anafilaxia",
-        "fiebre_o_eosinofilia",
-        "afectacion_mucosa",
-        "ampollas_o_despegamiento_cutaneo",
-        "sintomas_gastrointestinales_aislados",
-        "desconocido"
-      ],
-      "requiredForBuckets": [
-        "reported_non_severe_history",
-        "high_risk_immediate_reaction",
-        "very_high_risk_severe_cutaneous_reaction",
-        "uncertain_history"
-      ]
-    },
-    {
-      "id": "reactionTiming",
-      "label": "Tiempo entre administración y reacción",
-      "type": "single_select",
-      "options": [
-        "menos_1_hora",
-        "1_6_horas",
-        "mas_6_horas",
-        "dias_despues",
-        "desconocido"
-      ],
-      "requiredForBuckets": [
-        "reported_non_severe_history",
-        "high_risk_immediate_reaction",
-        "very_high_risk_severe_cutaneous_reaction",
-        "uncertain_history"
-      ]
-    },
-    {
-      "id": "reactionDate",
-      "label": "Fecha aproximada de la reacción",
-      "type": "free_text",
-      "requiredForBuckets": [
-        "reported_non_severe_history",
-        "high_risk_immediate_reaction",
-        "very_high_risk_severe_cutaneous_reaction",
-        "uncertain_history"
-      ]
-    },
-    {
-      "id": "subsequentTolerance",
-      "label": "Tolerancias posteriores documentadas a betalactámicos",
-      "type": "free_text",
-      "requiredForBuckets": [
-        "reported_non_severe_history",
-        "high_risk_immediate_reaction",
-        "very_high_risk_severe_cutaneous_reaction",
-        "uncertain_history"
-      ]
+      "id": "subsyndrome",
+      "label": "Subsíndrome",
+      "type": "single_select_optional",
+      "valuesFrom": "optionRecords.subsyndrome",
+      "dependsOn": "syndrome"
     }
   ],
-  "resultMessages": {
-    "no_reported_allergy": {
-      "severity": "info",
-      "title": "No consta alergia a betalactámicos",
-      "message": "Continuar la valoración antibiótica habitual según síndrome, microbiología, función renal y guía local."
-    },
-    "reported_non_severe_history": {
-      "severity": "caution",
-      "title": "Alergia no grave referida",
-      "message": "Documentar fármaco, reacción, tiempo, fecha y tolerancias. No generar alternativa antibiótica automática hasta revisión de reglas clínicas validadas."
-    },
-    "high_risk_immediate_reaction": {
-      "severity": "high_risk",
-      "title": "Reacción inmediata grave referida",
-      "message": "No reinterpretar la alergia desde la app. Solicitar valoración experta si la elección antibiótica depende de betalactámicos."
-    },
-    "very_high_risk_severe_cutaneous_reaction": {
-      "severity": "very_high_risk",
-      "title": "Reacción cutánea grave referida",
-      "message": "No tomar decisiones no supervisadas con betalactámicos desde la app. Requiere valoración experta."
-    },
-    "uncertain_history": {
-      "severity": "caution",
-      "title": "Historia de alergia incompleta o dudosa",
-      "message": "Aclarar antecedentes antes de excluir o seleccionar betalactámicos. No generar alternativa automática."
-    }
+  "optionRecords": [],
+  "emptyState": {
+    "title": "Opciones para alérgicos pendientes de extracción",
+    "message": "Todavía no hay opciones por síndrome/subsíndrome publicadas en DATA. El consultor puede mostrarse como recurso en preparación, pero no debe usarse para seleccionar tratamiento."
+  },
+  "recordSchema": {
+    "requiredFields": [
+      "id",
+      "syndrome",
+      "allergyContext",
+      "options",
+      "source"
+    ],
+    "optionalFields": [
+      "subsyndrome",
+      "population",
+      "notes",
+      "warnings"
+    ],
+    "optionFields": [
+      "label",
+      "description",
+      "sourceText",
+      "isTherapeuticRecommendation"
+    ]
   },
   "hardSafetyRules": {
-    "mustNotRecommendAlternativeAntibiotics": true,
-    "mustNotOverrideDocumentedSevereAllergy": true,
-    "mustNotInferToleranceWithoutDocumentation": true,
-    "mustAlwaysAskReactionTypeForReportedAllergy": true,
-    "mustAlwaysShowClinicalUseBlockedBanner": true,
-    "mustAdviseExpertReviewForSevereOrUnclearHistory": true
+    "mustNotRankOptions": true,
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustNotInferOptionsFromAllergySeverity": true,
+    "mustOnlyShowSourceBackedOptions": true,
+    "mustShowPendingExtractionWhenNoRecords": true,
+    "mustShowClinicalUseBlockedBanner": true,
+    "mustPreserveSyndromeAndSubsyndromeContext": true
   },
   "appBehavior": {
-    "mayRenderAsQuestionnaire": true,
+    "mayRenderInResourcesConsultantsSection": true,
+    "mayRenderAsSyndromeSubsyndromeLookup": true,
     "mayStoreAnswersLocally": false,
     "mayUseAnswersToFilterTherapeuticRules": false,
-    "mayUseAnswersToGenerateWarnings": true,
-    "mayUseAnswersToGenerateAntibioticAlternatives": false
-  }
+    "mayUseAnswersToGenerateAntibioticAlternatives": false,
+    "mayShowEmptyDraftState": true
+  },
+  "nextExtractionTasks": [
+    "Extraer de la guía las opciones explícitas para alérgicos a betalactámicos por síndrome.",
+    "Separar síndrome y subsíndrome cuando la guía lo permita.",
+    "Guardar texto fuente y sourceUrl/sourceTopicId de cada opción.",
+    "Validar manualmente que ninguna opción se presenta como ranking ni recomendación automática."
+  ]
 }
