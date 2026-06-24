@@ -1,60 +1,35 @@
 from __future__ import annotations
 
-import base64
 import json
-import zlib
 from pathlib import Path
+from typing import Any
 
 OUTPUT_PATH = Path("docs/rules/betalactam_allergy_options_master_table_draft.json")
-COMPRESSED_MASTER_TABLE_JSON_B64 = """
-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
-cv9s5fQx11ac7H9y/AVhS3nw
-""".strip()
+EXPECTED_SCHEMA = "compact_rows_v2"
+EXPECTED_ROW_COUNT = 76
+
+
+def load_json(path: Path) -> Any:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError as exc:
+        raise SystemExit(f"ERROR: missing {path}; reviewed v2 master table must be committed before normalization") from exc
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"ERROR: invalid JSON in {path}: {exc}") from exc
 
 
 def main() -> None:
-    payload = zlib.decompress(base64.b64decode(COMPRESSED_MASTER_TABLE_JSON_B64.encode("ascii")))
-    data = json.loads(payload.decode("utf-8"))
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    data = load_json(OUTPUT_PATH)
+    if not isinstance(data, dict):
+        raise SystemExit(f"ERROR: {OUTPUT_PATH} must contain a JSON object")
+    metadata = data.get("metadata") or {}
+    rows = data.get("rows") or []
+    if metadata.get("schema") != EXPECTED_SCHEMA:
+        raise SystemExit(f"ERROR: expected {EXPECTED_SCHEMA}, found {metadata.get('schema')!r}")
+    if metadata.get("rowCount") != EXPECTED_ROW_COUNT or len(rows) != EXPECTED_ROW_COUNT:
+        raise SystemExit(f"ERROR: expected {EXPECTED_ROW_COUNT} v2 rows, found metadata={metadata.get('rowCount')!r}, rows={len(rows)}")
     OUTPUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    metadata = data.get("metadata", {})
-    print(f"Generated {OUTPUT_PATH} with {metadata.get('rowCount')} draft rows ({metadata.get('schema')})")
+    print(f"Normalized {OUTPUT_PATH} with {metadata.get('rowCount')} reviewed v2 draft rows ({metadata.get('schema')})")
 
 
 if __name__ == "__main__":
