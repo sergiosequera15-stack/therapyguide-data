@@ -38,6 +38,9 @@ jobs:
       - name: Build beta-lactam allergy curation worklist
         run: python tools/build_betalactam_allergy_curation_worklist.py
 
+      - name: Validate beta-lactam allergy curation worklist
+        run: python tools/validate_betalactam_allergy_curation_worklist.py
+
       - name: Commit beta-lactam allergy option candidates
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
