@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "title": "Curation overlay - sepsis_en_gestacion_y_puerperio_1",
+    "version": "0.1.0",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "status": "manual_curation_overlay",
+    "topicId": "sepsis_en_gestacion_y_puerperio_1",
+    "source": "betalactam_allergy_options_candidate.json",
+    "readyForAppConsultant": false
+  },
+  "entries": [
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_075",
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Sospecha de microorganismo multirresistente - pacientes alérgicas",
+      "extractedOptions": [
+        {
+          "label": "Fosfomicina IV 4 g cada 6-8 horas (no en preeclampsia o HTA)",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Aztreonam IV 1 g cada 8 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        },
+        {
+          "label": "Gentamicina IV 5 mg/kg cada 24 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita en pacientes alérgicas. Mantener nota de exclusión de fosfomicina en preeclampsia o HTA si se generan optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_076",
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Aborto séptico - alergia a penicilina",
+      "extractedOptions": [
+        {
+          "label": "Metronidazol 500 mg cada 8 horas IV + gentamicina 5 mg/kg cada 24 horas IV",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido como opción explícita. El contexto fuente lo sitúa tras aborto séptico y antes de endometritis; revisar subcontexto final antes de optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_077",
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Neumonía en gestación/puerperio - alergia a betalactámicos",
+      "extractedOptions": [
+        {
+          "label": "Linezolid 600 mg cada 12 horas IV + azitromicina IV 500 mg cada 24 horas",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita en el bloque de neumonía. Mantener limitación temporal de azitromicina si procede al generar optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_078",
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Apendicitis en gestación/puerperio - alergia a betalactámicos",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 1 g cada 8 horas + metronidazol 500 mg cada 8 horas IV",
+          "sourceTextField": "matchedSentence",
+          "isTherapeuticRecommendation": false
+        }
+      ],
+      "curatorNotes": "Incluido por mención explícita. El bloque inmediatamente previo menciona apendicitis; revisar contexto fuente completo antes de optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_079",
+      "curationDecision": "exclude",
+      "proposedSyndrome": null,
+      "proposedSubsyndrome": null,
+      "extractedOptions": [],
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_075 con diferencias menores de extracción/espaciado.",
+      "curatorNotes": "No promover duplicados a optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_080",
+      "curationDecision": "exclude",
+      "proposedSyndrome": null,
+      "proposedSubsyndrome": null,
+      "extractedOptions": [],
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_076 con diferencias menores de extracción/espaciado.",
+      "curatorNotes": "No promover duplicados a optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_081",
+      "curationDecision": "exclude",
+      "proposedSyndrome": null,
+      "proposedSubsyndrome": null,
+      "extractedOptions": [],
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_077.",
+      "curatorNotes": "No promover duplicados a optionRecords."
+    },
+    {
+      "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_082",
+      "curationDecision": "exclude",
+      "proposedSyndrome": null,
+      "proposedSubsyndrome": null,
+      "extractedOptions": [],
+      "excludeReason": "Duplicado/truncado de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_078; el texto fuente queda incompleto.",
+      "curatorNotes": "No usar como fuente primaria por truncamiento."
+    }
+  ]
+}
