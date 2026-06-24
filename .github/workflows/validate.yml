@@ -50,17 +50,23 @@ jobs:
       - name: Check beta-lactam allergy master table against current guide topics
         run: python tools/check_betalactam_allergy_master_table_sources.py
 
-      - name: Commit beta-lactam allergy option candidates
+      - name: Commit beta-lactam allergy generated artifacts
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/rules/betalactam_allergy_options_candidate.json docs/rules/betalactam_allergy_options_candidate_summary.json docs/rules/betalactam_allergy_options_curation_worklist.json docs/rules/betalactam_allergy_options_master_table_draft.json
+          git add \
+            docs/rules/betalactam_allergy_options_candidate.json \
+            docs/rules/betalactam_allergy_options_candidate_summary.json \
+            docs/rules/betalactam_allergy_options_curation_worklist.json \
+            docs/rules/betalactam_allergy_options_master_table_draft.json \
+            docs/rules/generated/betalactam_allergy_master_table_source_check_report.json \
+            docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json
           if git diff --cached --quiet; then
-            echo "No beta-lactam allergy candidate changes to commit."
+            echo "No beta-lactam allergy generated artifact changes to commit."
             exit 0
           fi
-          git commit -m "Update beta-lactam allergy option candidates"
+          git commit -m "Update beta-lactam allergy generated artifacts"
           git push
 
       - name: Ensure generated enterobacteria artifacts are not committed
@@ -115,6 +121,7 @@ jobs:
             docs/rules/betalactam_allergy_options_curation_worklist.json
             docs/rules/betalactam_allergy_options_master_table_draft.json
             docs/rules/generated/betalactam_allergy_master_table_source_check_report.json
+            docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json
           if-no-files-found: error
           retention-days: 30
 
