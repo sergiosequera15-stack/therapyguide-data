@@ -1,5 +1,5 @@
 {
-  "version": "0.2.2",
+  "version": "0.2.3",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -39,6 +39,7 @@
       "path": "rules/generated/betalactam_allergy_master_table_source_check_report.json",
       "required": true,
       "status": "draft_source_change_detection_only",
+      "sourceTextFields": ["contentText", "summary", "contentHtml"],
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -48,6 +49,7 @@
       "path": "rules/generated/betalactam_allergy_master_table_source_check_summary.json",
       "required": true,
       "status": "draft_source_change_detection_summary_only",
+      "sourceTextFields": ["contentText", "summary", "contentHtml"],
       "rowCount": 76,
       "actionRequiredRowCount": 7,
       "clinicalUseAllowed": false,
