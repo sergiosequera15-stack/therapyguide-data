@@ -19,6 +19,7 @@ SOURCE_URL_ALIASES = {
 }
 KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT = {
     "infeccion_intraabdominal_en_pacientes_pediatricos",
+    "neutropenia_febril",
 }
 
 
