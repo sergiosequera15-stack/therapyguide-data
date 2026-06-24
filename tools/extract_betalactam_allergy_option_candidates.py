@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
 TOPICS_PATH = Path("docs/guide_topics.json")
 OUTPUT_PATH = Path("docs/rules/betalactam_allergy_options_candidate.json")
+SUMMARY_PATH = Path("docs/rules/betalactam_allergy_options_candidate_summary.json")
 KEYWORD_RE = re.compile(
     r"(alergi[ao]s?|al[ée]rgic[ao]s?|betalact[áa]mic[oa]s?|beta[- ]?lact[áa]mic[oa]s?|b[- ]?lact[áa]mic[oa]s?)",
     re.IGNORECASE,
@@ -83,6 +85,59 @@ def extract_candidates(topics: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return candidates
 
 
+def build_summary(candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    by_topic: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for candidate in candidates:
+        by_topic[str(candidate.get("topicId") or "unknown")].append(candidate)
+
+    topic_summaries = []
+    for topic_id, topic_candidates in sorted(by_topic.items(), key=lambda item: (-len(item[1]), item[0])):
+        first = topic_candidates[0]
+        context_counts = Counter(
+            str(candidate.get("candidateContext") or "sin_contexto") for candidate in topic_candidates
+        )
+        topic_summaries.append(
+            {
+                "topicId": topic_id,
+                "topicTitle": first.get("topicTitle"),
+                "sourceUrl": first.get("sourceUrl"),
+                "candidateCount": len(topic_candidates),
+                "topContexts": [
+                    {"context": context, "count": count}
+                    for context, count in context_counts.most_common(8)
+                ],
+                "sampleCandidateIds": [candidate.get("id") for candidate in topic_candidates[:5]],
+                "sampleMatchedSentences": [
+                    candidate.get("matchedSentence") for candidate in topic_candidates[:3]
+                ],
+                "curationStatus": "pending_manual_review",
+            }
+        )
+
+    return {
+        "metadata": {
+            "title": "Resumen de candidatos de opciones para alergia a betalactámicos",
+            "version": "0.1.0",
+            "generatedAt": "2026-06-24T00:00:00Z",
+            "status": "summary_pending_manual_curation",
+            "source": "betalactam_allergy_options_candidate.json",
+            "topicCount": len(topic_summaries),
+            "candidateCount": len(candidates),
+            "clinicalUseAllowed": False,
+            "clinicalDecisionSupportAllowed": False,
+            "therapeuticRecommendationAllowed": False,
+            "readyForAppConsultant": False,
+        },
+        "topics": topic_summaries,
+        "manualCurationRequired": [
+            "Priorizar temas con más candidatos y contextos claros.",
+            "Fusionar duplicados por síndrome y subsíndrome.",
+            "Descartar menciones generales que no sean opciones para alérgicos.",
+            "Mantener sourceUrl, sourceText y trazabilidad antes de crear optionRecords.",
+        ],
+    }
+
+
 def main() -> None:
     topics = load_json(TOPICS_PATH)
     if not isinstance(topics, list):
@@ -111,8 +166,11 @@ def main() -> None:
             "No convertir candidatos en recomendaciones ni rankings.",
         ],
     }
+    summary = build_summary(candidates)
     OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    SUMMARY_PATH.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH} with {len(candidates)} candidates")
+    print(f"Wrote {SUMMARY_PATH} with {len(summary['topics'])} topic summaries")
 
 
 if __name__ == "__main__":
