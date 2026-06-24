@@ -1,27 +1,218 @@
 {
-  "metadata": {
-    "title": "Cola de revisión manual - tabla maestra de alergia a betalactámicos",
-    "version": "0.2.0",
-    "generatedAt": "2026-06-24T00:00:00Z",
-    "status": "superseded_by_reviewed_master_table_v2_pending_source_recheck",
-    "source": "docs/rules/betalactam_allergy_options_master_table_draft.json",
-    "rowCount": 0,
-    "supersededPreviousQueue": {
-      "previousVersion": "0.1.0",
-      "previousRowCount": 3,
-      "reason": "The reviewed v2 spreadsheet changed master table row numbering and provided corrected dose text for the previously flagged tigeciclina/fosfomicina rows. A new source-check queue must be generated from compact_rows_v2 if discrepancies remain."
+  "items": [
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "currentOptionsText": "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV. En caso de insuficiencia respiratoria asociar levofloxacino 500 mg/12 h IV.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "tigeciclina"
+      ],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "En casos graves, la página comenta dosis de carga de aztreonam y valorar doblar dosis inicial en neumonía nosocomial por BLEE/AMPC.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 14,
+      "sourceTopicId": "neumonia_en_pacientes_adultos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
+      "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
+      "syndrome": "Neumonía"
     },
-    "clinicalUseAllowed": false,
-    "clinicalDecisionSupportAllowed": false,
-    "therapeuticRecommendationAllowed": false,
-    "readyForAppConsultant": false,
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "currentOptionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "levofloxacino"
+      ],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "Agrupación tomada literalmente; conviene validar si la intención es (dapto/linezolid) + (cipro/levo) o alternativas independientes.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 44,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular"
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "currentOptionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "levofloxacino"
+      ],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "Agrupación tomada literalmente; conviene validar si la intención es (dapto/linezolid) + (cipro/levo) o alternativas independientes.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 46,
+      "sourceTopicId": "infeccion_osteoarticular",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
+      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular"
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "currentOptionsText": "Ciprofloxacino 750 mg/12 h VO + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h VO.",
+      "detectedIssue": "source_not_found",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "Contiene cefixima; confirmar tipo de alergia.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 49,
+      "sourceTopicId": "neutropenia_febril",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neutropenia_febril",
+      "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
+      "syndrome": "Neutropenia febril"
+    },
+    {
+      "allergyContext": "Alergia a penicilina no anafiláctica o anafiláctica",
+      "currentOptionsText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: aztreonam 150 mg/kg/día cada 8 h IV + linezolid 30 mg/kg/día cada 8 h IV.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "aztreonam",
+        "linezolid"
+      ],
+      "population": "Pediatría",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "Duración orientativa en guía: 7-10 días.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 70,
+      "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
+      "subsyndrome": "Mastoiditis",
+      "syndrome": "ORL pediátrica"
+    },
+    {
+      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
+      "currentOptionsText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 75,
+      "sourceTopicId": "infecciones_endovasculares",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "subsyndrome": "Endocarditis en ADVP",
+      "syndrome": "Endovascular"
+    },
+    {
+      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
+      "currentOptionsText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+      "detectedIssue": "possible_option_change_or_table_source_mismatch",
+      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
+      "missingDrugTokens": [
+        "fosfomicina"
+      ],
+      "population": "Adultos",
+      "qualityWarnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "review_note_present"
+      ],
+      "resolutionNote": "",
+      "resolutionStatus": "pending_manual_review",
+      "resolvedOptionsText": "",
+      "reviewNotes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
+      "reviewedAt": "",
+      "reviewer": "",
+      "rowNumber": 76,
+      "sourceTopicId": "infecciones_endovasculares",
+      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
+      "syndrome": "Endovascular"
+    }
+  ],
+  "metadata": {
+    "allowedResolutionStatuses": [
+      "pending_manual_review",
+      "accepted_source_reviewed",
+      "corrected_from_source",
+      "accepted_explicit_exception",
+      "needs_discussion",
+      "not_applicable"
+    ],
     "automaticUpdateAllowed": false,
+    "clinicalDecisionSupportAllowed": false,
+    "clinicalUseAllowed": false,
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "masterTable": "docs/rules/betalactam_allergy_options_master_table_draft.json",
+    "masterTableSchema": "compact_rows_v2",
     "notes": [
-      "The previous manual review queue was based on the 70-row compact_rows_v1 table.",
-      "It must not be used against the reviewed 76-row compact_rows_v2 table.",
-      "Run the source checker against the v2 table and create a new queue only if v2 discrepancies remain.",
-      "This file remains non-clinical and must not be used as CDS."
-    ]
-  },
-  "items": []
+      "Generated from v2 source-check summary actionRequiredRows.",
+      "This queue replaces the superseded compact_rows_v1 manual review queue.",
+      "Rows must not be automatically corrected or promoted.",
+      "This is source-review support only and must not be used as CDS."
+    ],
+    "readyForAppConsultant": false,
+    "rowCount": 7,
+    "source": "docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json",
+    "status": "manual_source_review_pending",
+    "therapeuticRecommendationAllowed": false,
+    "title": "Beta-lactam allergy source review queue",
+    "version": "0.3.0"
+  }
 }
