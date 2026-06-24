@@ -7,9 +7,9 @@
     "source": "betalactam_allergy_options_candidate.json",
     "manualCurationSource": "betalactam_allergy_options_manual_curation.json plus docs/rules/curation_overlays/*.json",
     "candidateCount": 82,
-    "pendingCount": 52,
-    "includedCount": 21,
-    "excludedCount": 0,
+    "pendingCount": 44,
+    "includedCount": 25,
+    "excludedCount": 4,
     "needsDiscussionCount": 9,
     "clinicalUseAllowed": false,
     "clinicalDecisionSupportAllowed": false,
@@ -1528,12 +1528,28 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Sospecha de microorganismo multirresistente - pacientes alérgicas",
+      "extractedOptions": [
+        {
+          "label": "Fosfomicina IV 4 g cada 6-8 horas (no en preeclampsia o HTA)",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "En pacientes alérgicas: Fosfomicina IV 4g/6-8h (No en Preeclampsia o HTA) o Aztreonam IV 1g/8h o Gentamicina IV 5mg/Kg/24h."
+        },
+        {
+          "label": "Aztreonam IV 1 g cada 8 horas",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "En pacientes alérgicas: Fosfomicina IV 4g/6-8h (No en Preeclampsia o HTA) o Aztreonam IV 1g/8h o Gentamicina IV 5mg/Kg/24h."
+        },
+        {
+          "label": "Gentamicina IV 5 mg/kg cada 24 horas",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "En pacientes alérgicas: Fosfomicina IV 4g/6-8h (No en Preeclampsia o HTA) o Aztreonam IV 1g/8h o Gentamicina IV 5mg/Kg/24h."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido por mención explícita en pacientes alérgicas. Mantener nota de exclusión de fosfomicina en preeclampsia o HTA si se generan optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_076",
@@ -1546,12 +1562,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Aborto séptico - alergia a penicilina",
+      "extractedOptions": [
+        {
+          "label": "Metronidazol 500 mg cada 8 horas IV + gentamicina 5 mg/kg cada 24 horas IV",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "Si alergia a penicilina Metronidazol 500 mg/8hr IV + Gentamicina 5mg/kg/24h IV."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido como opción explícita. El contexto fuente lo sitúa tras aborto séptico y antes de endometritis; revisar subcontexto final antes de optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_077",
@@ -1564,12 +1586,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Neumonía en gestación/puerperio - alergia a betalactámicos",
+      "extractedOptions": [
+        {
+          "label": "Linezolid 600 mg cada 12 horas IV + azitromicina IV 500 mg cada 24 horas",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "Alergia a betalactámicos: linezolid 600mg/12 IV + Azitromicina IV (500mg/24h)."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido por mención explícita en el bloque de neumonía. Mantener limitación temporal de azitromicina si procede al generar optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_078",
@@ -1582,12 +1610,18 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
-      "proposedSyndrome": null,
-      "proposedSubsyndrome": null,
-      "extractedOptions": [],
+      "curationDecision": "include",
+      "proposedSyndrome": "Sepsis en gestación y puerperio",
+      "proposedSubsyndrome": "Apendicitis en gestación/puerperio - alergia a betalactámicos",
+      "extractedOptions": [
+        {
+          "label": "Aztreonam 1 g cada 8 horas + metronidazol 500 mg cada 8 horas IV",
+          "isTherapeuticRecommendation": false,
+          "sourceText": "Alergia a betalactámicos: aztreonam 1g/8h + metronidazol 500mg/8h IV."
+        }
+      ],
       "excludeReason": null,
-      "curatorNotes": null
+      "curatorNotes": "Incluido por mención explícita. El bloque inmediatamente previo menciona apendicitis; revisar contexto fuente completo antes de optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_079",
@@ -1600,12 +1634,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
+      "curationDecision": "exclude",
       "proposedSyndrome": null,
       "proposedSubsyndrome": null,
       "extractedOptions": [],
-      "excludeReason": null,
-      "curatorNotes": null
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_075 con diferencias menores de extracción/espaciado.",
+      "curatorNotes": "No promover duplicados a optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_080",
@@ -1618,12 +1652,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
+      "curationDecision": "exclude",
       "proposedSyndrome": null,
       "proposedSubsyndrome": null,
       "extractedOptions": [],
-      "excludeReason": null,
-      "curatorNotes": null
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_076 con diferencias menores de extracción/espaciado.",
+      "curatorNotes": "No promover duplicados a optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_081",
@@ -1636,12 +1670,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
+      "curationDecision": "exclude",
       "proposedSyndrome": null,
       "proposedSubsyndrome": null,
       "extractedOptions": [],
-      "excludeReason": null,
-      "curatorNotes": null
+      "excludeReason": "Duplicado sustancial de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_077.",
+      "curatorNotes": "No promover duplicados a optionRecords."
     },
     {
       "candidateId": "sepsis_en_gestacion_y_puerperio_1__allergy_candidate_082",
@@ -1654,12 +1688,12 @@
       "sourceStatus": "candidate_pending_manual_curation",
       "readyForConsultant": false,
       "isTherapeuticRecommendation": false,
-      "curationDecision": "pending",
+      "curationDecision": "exclude",
       "proposedSyndrome": null,
       "proposedSubsyndrome": null,
       "extractedOptions": [],
-      "excludeReason": null,
-      "curatorNotes": null
+      "excludeReason": "Duplicado/truncado de sepsis_en_gestacion_y_puerperio_1__allergy_candidate_078; el texto fuente queda incompleto.",
+      "curatorNotes": "No usar como fuente primaria por truncamiento."
     }
   ]
 }
