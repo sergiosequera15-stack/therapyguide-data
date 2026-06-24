@@ -1,69 +1,27 @@
 {
   "metadata": {
     "title": "Cola de revisión manual - tabla maestra de alergia a betalactámicos",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "generatedAt": "2026-06-24T00:00:00Z",
-    "status": "manual_review_pending",
-    "source": "docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json",
-    "rowCount": 3,
+    "status": "superseded_by_reviewed_master_table_v2_pending_source_recheck",
+    "source": "docs/rules/betalactam_allergy_options_master_table_draft.json",
+    "rowCount": 0,
+    "supersededPreviousQueue": {
+      "previousVersion": "0.1.0",
+      "previousRowCount": 3,
+      "reason": "The reviewed v2 spreadsheet changed master table row numbering and provided corrected dose text for the previously flagged tigeciclina/fosfomicina rows. A new source-check queue must be generated from compact_rows_v2 if discrepancies remain."
+    },
     "clinicalUseAllowed": false,
     "clinicalDecisionSupportAllowed": false,
     "therapeuticRecommendationAllowed": false,
     "readyForAppConsultant": false,
     "automaticUpdateAllowed": false,
     "notes": [
-      "Manual review queue created from deterministic source-check summary.",
-      "Rows in this file must not be automatically corrected or promoted.",
-      "The source checker detects drug-token presence only; it does not validate clinical correctness."
+      "The previous manual review queue was based on the 70-row compact_rows_v1 table.",
+      "It must not be used against the reviewed 76-row compact_rows_v2 table.",
+      "Run the source checker against the v2 table and create a new queue only if v2 discrepancies remain.",
+      "This file remains non-clinical and must not be used as CDS."
     ]
   },
-  "items": [
-    {
-      "rowNumber": 13,
-      "syndrome": "Neumonía adultos",
-      "subsyndrome": "Neumonía nosocomial o con FR MDR",
-      "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "missingDrugTokens": [
-        "tigeciclina"
-      ],
-      "qualityWarnings": [
-        "resistance_risk_context_present"
-      ],
-      "manualReviewAction": "Verify whether tigeciclina remains in the current HUVN source for this subsyndrome or whether the table row came from an outdated/incorrect extraction.",
-      "resolutionStatus": "pending_manual_review"
-    },
-    {
-      "rowNumber": 38,
-      "syndrome": "Endovascular",
-      "subsyndrome": "Endocarditis en ADVP, alternativa",
-      "sourceTopicId": "infecciones_endovasculares",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_wording_present"
-      ],
-      "manualReviewAction": "Verify whether fosfomicina sódica is present in the current HUVN endovascular source for ADVP alternative therapy or whether the table row requires correction/removal.",
-      "resolutionStatus": "pending_manual_review"
-    },
-    {
-      "rowNumber": 39,
-      "syndrome": "Endovascular",
-      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos, alternativa",
-      "sourceTopicId": "infecciones_endovasculares",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_wording_present"
-      ],
-      "manualReviewAction": "Verify whether fosfomicina sódica is present in the current HUVN endovascular source for device-associated endocarditis alternative therapy or whether the table row requires correction/removal.",
-      "resolutionStatus": "pending_manual_review"
-    }
-  ]
+  "items": []
 }
