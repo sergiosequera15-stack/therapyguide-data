@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5",
+  "version": "0.1.6",
   "generatedAt": "2026-06-24T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -52,6 +52,24 @@
       "therapeuticRecommendationAllowed": false,
       "readyForAppConsultant": false
     },
+    "betalactamAllergyMasterTableDoseCompletenessReport": {
+      "path": "rules/generated/betalactam_allergy_master_table_dose_completeness_report.json",
+      "required": true,
+      "status": "draft_dose_completeness_audit_only",
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false
+    },
+    "betalactamAllergyMasterTableDoseCompletenessSummary": {
+      "path": "rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json",
+      "required": true,
+      "status": "draft_dose_completeness_summary_only",
+      "clinicalUseAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "readyForAppConsultant": false
+    },
     "betalactamAllergyMasterTableManualReviewQueue": {
       "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
       "required": true,
@@ -71,7 +89,8 @@
     "Las reglas de recomendación están vacías en esta fase.",
     "El consultor de alergia a betalactámicos debe consultar opciones por síndrome/subsíndrome, no clasificar gravedad de alergia.",
     "La tabla maestra de opciones es un borrador de trabajo: no debe mostrarse como recomendador clínico ni activar decisiones automáticas.",
-    "Los informes de comprobación de fuente son ayudas de detección: no validan clínicamente las opciones.",
+    "Los informes de comprobación de fuente y de dosis son ayudas de detección: no validan clínicamente las opciones.",
+    "Las filas con dosis incompleta deben completarse desde la fuente antes de cualquier visualización estructurada en APP.",
     "Las filas en la cola de revisión manual deben resolverse antes de cualquier promoción de la tabla.",
     "Los cambios detectados frente a guide_topics.json deben generar revisión manual antes de modificar filas aprobadas."
   ]
