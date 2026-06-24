@@ -4,19 +4,22 @@
   "checkedFiles": [
     "rules/recommendation_rules.json",
     "rules/allergy_rules.json",
-    "rules/betalactam_allergy_consultant.json"
+    "rules/betalactam_allergy_consultant.json",
+    "rules/betalactam_allergy_options_master_table_draft.json"
   ],
   "summary": {
     "recommendationRuleCount": 0,
     "allergyRuleCount": 0,
     "allergyOptionsRecordCount": 0,
+    "allergyMasterTableDraftRowCount": 70,
     "errors": 0,
-    "warnings": 3
+    "warnings": 4
   },
   "warnings": [
     "No hay reglas de recomendación terapéutica activas todavía.",
     "El consultor de alergia a betalactámicos está orientado a opciones por síndrome/subsíndrome.",
-    "Las opciones concretas para alérgicos aún están pendientes de extracción y revisión manual."
+    "La tabla maestra de opciones para alérgicos es un borrador pendiente de verificación de fuente y revisión manual.",
+    "El informe automático de cambios frente a guide_topics.json es una ayuda de detección, no una validación clínica."
   ],
   "errors": []
 }
