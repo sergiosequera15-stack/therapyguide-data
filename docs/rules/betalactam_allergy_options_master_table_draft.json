@@ -844,7 +844,7 @@
       "Adultos",
       "Alérgicos a beta-lactámicos",
       "Ciprofloxacino 750 mg/12 h VO + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h VO.",
-      "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril'. El capítulo no está incorporado como topic independiente en el snapshot actual de guide_topics.json.",
+      "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril', presente en guide_topics.json como manejo_de_neutropenia_febril.",
       "12",
       "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
       "manejo_de_neutropenia_febril",
@@ -852,7 +852,6 @@
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present",
-        "source_topic_not_in_current_guide_topics",
         "source_reviewed_row_correction_applied",
         "source_confirmed_by_user"
       ]

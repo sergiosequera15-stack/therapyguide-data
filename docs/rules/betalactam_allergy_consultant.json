@@ -1802,7 +1802,7 @@
       "clinicalDecisionSupportAllowed": false,
       "clinicalUseAllowed": false,
       "id": "allergy-option-row-049-neutropenia-febril-bajo-riesgo-tras-6-8-h-de-vigilancia-y-antibioti",
-      "notes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril'. El capítulo no está incorporado como topic independiente en el snapshot actual de guide_topics.json.",
+      "notes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril', presente en guide_topics.json como manejo_de_neutropenia_febril.",
       "options": [
         {
           "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
@@ -1821,7 +1821,7 @@
         "sourceConfirmedByUser": true,
         "sourceRefId": "12",
         "sourceTopicId": "manejo_de_neutropenia_febril",
-        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceTopicNotInCurrentSnapshot": false,
         "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril"
       },
       "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
@@ -1831,7 +1831,6 @@
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present",
-        "source_topic_not_in_current_guide_topics",
         "source_reviewed_row_correction_applied",
         "source_confirmed_by_user"
       ]
