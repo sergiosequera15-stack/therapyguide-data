@@ -1,22 +1,7 @@
 {
-  "actionRequiredRows": [
-    {
-      "missingDrugTokens": [],
-      "qualityWarnings": [
-        "alternative_or_contextual_source_wording",
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present",
-        "source_topic_not_in_current_guide_topics"
-      ],
-      "rowNumber": 49,
-      "sourceTopicId": "neutropenia_febril",
-      "status": "source_not_found",
-      "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
-      "syndrome": "Neutropenia febril"
-    }
-  ],
+  "actionRequiredRows": [],
   "metadata": {
-    "actionRequiredRowCount": 1,
+    "actionRequiredRowCount": 0,
     "clinicalDecisionSupportAllowed": false,
     "clinicalUseAllowed": false,
     "generatedAt": "2026-06-24T00:00:00Z",
@@ -35,8 +20,7 @@
     ],
     "status": "draft_source_change_detection_summary_only",
     "statusCounts": {
-      "source_contains_table_drug_tokens": 75,
-      "source_not_found": 1
+      "source_contains_table_drug_tokens": 76
     },
     "therapeuticRecommendationAllowed": false,
     "title": "Beta-lactam allergy master table source check summary"
@@ -612,11 +596,13 @@
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present",
-        "source_topic_not_in_current_guide_topics"
+        "source_topic_not_in_current_guide_topics",
+        "source_reviewed_row_correction_applied",
+        "source_confirmed_by_user"
       ],
       "rowNumber": 49,
-      "sourceTopicId": "neutropenia_febril",
-      "status": "source_not_found",
+      "sourceTopicId": "manejo_de_neutropenia_febril",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
       "syndrome": "Neutropenia febril"
     },

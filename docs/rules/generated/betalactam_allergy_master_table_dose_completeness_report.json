@@ -1337,13 +1337,15 @@
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present",
-        "source_topic_not_in_current_guide_topics"
+        "source_topic_not_in_current_guide_topics",
+        "source_reviewed_row_correction_applied",
+        "source_confirmed_by_user"
       ],
       "routeMatches": [
         "VO"
       ],
       "rowNumber": 49,
-      "sourceTopicId": "neutropenia_febril",
+      "sourceTopicId": "manejo_de_neutropenia_febril",
       "status": "explicit_dose_route_frequency",
       "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
       "syndrome": "Neutropenia febril"

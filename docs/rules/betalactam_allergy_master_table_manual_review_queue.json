@@ -1,31 +1,5 @@
 {
-  "items": [
-    {
-      "allergyContext": "Alérgicos a beta-lactámicos",
-      "currentOptionsText": "Ciprofloxacino 750 mg/12 h VO + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h VO.",
-      "detectedIssue": "source_not_found",
-      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
-      "missingDrugTokens": [],
-      "population": "Adultos",
-      "qualityWarnings": [
-        "alternative_or_contextual_source_wording",
-        "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present",
-        "source_topic_not_in_current_guide_topics"
-      ],
-      "resolutionNote": "",
-      "resolutionStatus": "pending_manual_review",
-      "resolvedOptionsText": "",
-      "reviewNotes": "Contiene cefixima; confirmar tipo de alergia.",
-      "reviewedAt": "",
-      "reviewer": "",
-      "rowNumber": 49,
-      "sourceTopicId": "neutropenia_febril",
-      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neutropenia_febril",
-      "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
-      "syndrome": "Neutropenia febril"
-    }
-  ],
+  "items": [],
   "metadata": {
     "allowedResolutionStatuses": [
       "pending_manual_review",
@@ -48,9 +22,9 @@
       "This is source-review support only and must not be used as CDS."
     ],
     "readyForAppConsultant": false,
-    "rowCount": 1,
+    "rowCount": 0,
     "source": "docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json",
-    "status": "manual_source_review_pending",
+    "status": "manual_source_review_clear",
     "therapeuticRecommendationAllowed": false,
     "title": "Beta-lactam allergy source review queue",
     "version": "0.3.0"
