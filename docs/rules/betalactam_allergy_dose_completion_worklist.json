@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
       "doseAuditStatus": "class_or_context_shorthand_without_explicit_dose",
       "doseMatches": [],
@@ -15,9 +15,9 @@
         "resistance_risk_context_present",
         "review_note_present"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 3,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
@@ -26,8 +26,8 @@
       "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
       "doseAuditStatus": "class_or_context_shorthand_without_explicit_dose",
       "doseMatches": [],
@@ -40,9 +40,9 @@
         "resistance_risk_context_present",
         "review_note_present"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 4,
       "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
@@ -51,8 +51,8 @@
       "syndrome": "Síndrome febril/sepsis sin foco"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Tipo I: josamicina 30-50 mg/kg/día cada 12 h o midecamicina 40 mg/kg/día cada 12 h. No tipo I: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Como alternativa/rescate: levofloxacino 20 mg/kg/día cada 12 h, máximo 500 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Tipo I: josamicina 30-50 mg/kg/día cada 12 h o midecamicina 40 mg/kg/día cada 12 h. No tipo I: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Como alternativa/rescate: levofloxacino 20 mg/kg/día cada 12 h, máximo 500 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -74,9 +74,9 @@
         "alternative_or_contextual_source_wording",
         "contains_beta_lactam_or_possible_cross_reactivity_option"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 15,
       "sourceTopicId": "neumonia_en_paciente_pediatrico",
@@ -85,8 +85,8 @@
       "syndrome": "Neumonía pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Igual que en <5 años; para levofloxacino usar 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Igual que en <5 años; para levofloxacino usar 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -103,9 +103,9 @@
         "age_or_weight_specific_review_needed",
         "allergy_reaction_subtype_present"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 16,
       "sourceTopicId": "neumonia_en_paciente_pediatrico",
@@ -114,8 +114,8 @@
       "syndrome": "Neumonía pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Gentamicina 1,5 mg/kg, máximo 240 mg/dosis + clindamicina 10 mg/kg, máximo 900 mg/dosis.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Gentamicina 1,5 mg/kg, máximo 240 mg/dosis + clindamicina 10 mg/kg, máximo 900 mg/dosis.",
       "doseAuditStatus": "partial_dose_information",
       "doseMatches": [
@@ -132,9 +132,9 @@
         "age_or_weight_specific_review_needed",
         "source_topic_not_in_current_guide_topics"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 28,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
@@ -143,8 +143,8 @@
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -164,9 +164,9 @@
         "age_or_weight_specific_review_needed",
         "source_topic_not_in_current_guide_topics"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 29,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
@@ -175,8 +175,8 @@
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -196,9 +196,9 @@
         "age_or_weight_specific_review_needed",
         "source_topic_not_in_current_guide_topics"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 30,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
@@ -207,8 +207,8 @@
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Aztreonam 150-200 mg/kg/día cada 6-8 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Aztreonam 150-200 mg/kg/día cada 6-8 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -226,9 +226,9 @@
         "age_or_weight_specific_review_needed",
         "source_topic_not_in_current_guide_topics"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 31,
       "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
@@ -237,8 +237,8 @@
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
       "doseAuditStatus": "missing_explicit_dose_information",
       "doseMatches": [],
@@ -251,9 +251,9 @@
         "review_note_present",
         "source_topic_not_in_current_guide_topics"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [
         "intraperitoneal"
       ],
@@ -264,8 +264,8 @@
       "syndrome": "Intraabdominal pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Alergia inmediata: clindamicina 20-30 mg/kg/día cada 12 h; posible josamicina 30-50 mg/kg/día cada 12 h. Alergia retardada: cefadroxilo 30 mg/kg cada 12 h, máximo 1 g/día, durante 5 días.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Alergia inmediata: clindamicina 20-30 mg/kg/día cada 12 h; posible josamicina 30-50 mg/kg/día cada 12 h. Alergia retardada: cefadroxilo 30 mg/kg cada 12 h, máximo 1 g/día, durante 5 días.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -286,9 +286,9 @@
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 68,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
@@ -297,8 +297,8 @@
       "syndrome": "ORL pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Anafilaxia: claritromicina 15 mg/kg/día cada 12 h.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Anafilaxia: claritromicina 15 mg/kg/día cada 12 h.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -316,9 +316,9 @@
         "allergy_reaction_subtype_present",
         "contains_beta_lactam_or_possible_cross_reactivity_option"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 69,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
@@ -327,8 +327,8 @@
       "syndrome": "ORL pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h o ceftibuteno 9 mg/kg/día cada 24 h, máximo 400 mg/día. Anafiláctica: levofloxacino 20 mg/kg/día cada 12 h en 6 meses-5 años; 10 mg/kg/día cada 24 h en >5 años, máximo 500 mg/día.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h o ceftibuteno 9 mg/kg/día cada 24 h, máximo 400 mg/día. Anafiláctica: levofloxacino 20 mg/kg/día cada 12 h en 6 meses-5 años; 10 mg/kg/día cada 24 h en >5 años, máximo 500 mg/día.",
       "doseAuditStatus": "explicit_dose_frequency_route_unspecified",
       "doseMatches": [
@@ -352,9 +352,9 @@
         "contains_beta_lactam_or_possible_cross_reactivity_option",
         "review_note_present"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [],
       "rowNumber": 71,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
@@ -363,8 +363,8 @@
       "syndrome": "ORL pediátrica"
     },
     {
-      "completedOptionsText": "",
-      "completionStatus": "pending_manual_completion",
+      "completedOptionsText": "Vancomicina intravítrea 1 mg + amikacina intravítrea 0,4 mg.",
+      "completionStatus": "accepted_unstructured_source_text",
       "currentOptionsText": "Vancomicina intravítrea 1 mg + amikacina intravítrea 0,4 mg.",
       "doseAuditStatus": "partial_dose_information",
       "doseMatches": [
@@ -378,9 +378,9 @@
       "qualityWarnings": [
         "alternative_or_contextual_source_wording"
       ],
-      "reviewNote": "",
-      "reviewedAt": "",
-      "reviewer": "",
+      "reviewNote": "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; do not infer missing route/frequency and do not convert to calculator logic.",
+      "reviewedAt": "2026-06-25",
+      "reviewer": "Sergio Sequera",
       "routeMatches": [
         "intravítrea"
       ],
@@ -406,16 +406,16 @@
     "masterTable": "docs/rules/betalactam_allergy_options_master_table_draft.json",
     "notes": [
       "Worklist generated from dose completeness audit.",
-      "Rows should be completed from the HUVN source, not inferred.",
-      "completedOptionsText should preserve dose, route and frequency/duration where the source provides them.",
+      "Sergio accepted displaying incomplete dose-audit rows as unstructured source text in APP draft mode.",
+      "completedOptionsText preserves current optionsText and must not be interpreted as structured calculator logic.",
       "This is not clinical validation and must not be used as CDS."
     ],
     "readyForAppConsultant": false,
     "rowCount": 13,
     "source": "docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json",
-    "status": "manual_dose_completion_pending",
+    "status": "accepted_unstructured_source_text",
     "therapeuticRecommendationAllowed": false,
     "title": "Beta-lactam allergy dose completion worklist",
-    "version": "0.1.0"
+    "version": "0.2.0"
   }
 }
