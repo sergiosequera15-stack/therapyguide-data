@@ -1,20 +1,2816 @@
 {
+  "appBehavior": {
+    "mayRenderAsSyndromeSubsyndromeLookup": true,
+    "mayRenderInResourcesConsultantsSection": true,
+    "mayShowEmptyDraftState": true,
+    "mayStoreAnswersLocally": false,
+    "mayUseAnswersToFilterTherapeuticRules": false,
+    "mayUseAnswersToGenerateAntibioticAlternatives": false,
+    "mustShowNonClinicalDraftBanner": true,
+    "mustShowSourceTextVerbatim": true
+  },
+  "emptyState": {
+    "message": "No hay opciones publicadas en DATA para esta combinación de síndrome/subsíndrome.",
+    "title": "Sin opciones para el filtro seleccionado"
+  },
+  "hardSafetyRules": {
+    "mustNotGenerateTherapeuticRecommendations": true,
+    "mustNotInferOptionsFromAllergySeverity": true,
+    "mustNotRankOptions": true,
+    "mustOnlyShowSourceBackedOptions": true,
+    "mustPreserveSyndromeAndSubsyndromeContext": true,
+    "mustShowClinicalUseBlockedBanner": true,
+    "mustShowPendingExtractionWhenNoRecords": true
+  },
   "metadata": {
-    "title": "Opciones en alergia a betalactámicos por síndrome",
-    "version": "0.2.0",
-    "generatedAt": "2026-06-24T00:00:00Z",
-    "status": "draft_structure_pending_option_extraction",
-    "consultationMode": "syndrome_subsyndrome_allergy_options",
-    "source": "guide_topics.json",
-    "clinicalUseAllowed": false,
-    "clinicalDecisionSupportAllowed": false,
-    "therapeuticRecommendationAllowed": false,
     "alternativeAntibioticRecommendationAllowed": false,
-    "manualReviewStatus": "pending",
+    "clinicalDecisionSupportAllowed": false,
+    "clinicalUseAllowed": false,
+    "consultationMode": "syndrome_subsyndrome_allergy_options",
+    "doseDisplayMode": "show_all_available_source_text_unstructured",
+    "generatedAt": "2026-06-24T00:00:00Z",
+    "manualReviewStatus": "accepted_for_draft_display_not_clinical_use",
+    "masterTableRowCount": 76,
+    "masterTableSchema": "compact_rows_v2",
     "notes": [
-      "Este contrato se orienta a consultar opciones para pacientes alérgicos a betalactámicos según síndrome y subsíndrome.",
-      "No clasifica la gravedad de la alergia y no genera recomendaciones terapéuticas automáticas.",
-      "Las opciones clínicas aún deben extraerse de la guía y validarse manualmente antes de presentarse como contenido consultable."
+      "Opciones generadas desde la tabla maestra v2 revisada.",
+      "Mostrar todas las dosis disponibles como texto fuente no estructurado.",
+      "No clasifica gravedad de alergia, no ordena opciones y no genera recomendaciones terapéuticas automáticas.",
+      "No usar como calculadora de dosis ni como CDS."
+    ],
+    "optionRecordCount": 76,
+    "readyForAppConsultant": false,
+    "source": "betalactam_allergy_options_master_table_draft.json",
+    "status": "draft_with_source_backed_options_pending_manual_review",
+    "syndromeCount": 16,
+    "therapeuticRecommendationAllowed": false,
+    "title": "Opciones en alergia a betalactámicos por síndrome",
+    "version": "0.3.0"
+  },
+  "nextExtractionTasks": [
+    "Mantener consulta por síndrome/subsíndrome sin ranking ni recomendación.",
+    "Si se crean calculadoras futuras, deben salir de módulo separado y validado, no de este texto fuente.",
+    "Actualizar automáticamente desde tabla maestra v2 cuando cambie DATA."
+  ],
+  "optionRecords": [
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-001-sindrome-febril-sepsis-sin-foco-sf-comunidad-sin-sepsis-ingreso-sin-fr-bacterias",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Preferente: levofloxacino 1000 mg/24 h IV + aztreonam 2 g/8 h IV. Alternativa: gentamicina 5 mg/kg peso ajustado/24 h IV + aztreonam 2 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Preferente: levofloxacino 1000 mg/24 h IV + aztreonam 2 g/8 h IV. Alternativa: gentamicina 5 mg/kg peso ajustado/24 h IV + aztreonam 2 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 1,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "01",
+        "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos"
+      },
+      "subsyndrome": "SF comunidad sin sepsis, ingreso, sin FR bacterias resistentes",
+      "syndrome": "Síndrome febril/sepsis sin foco",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-002-sindrome-febril-sepsis-sin-foco-sf-comunidad-sin-sepsis-ingreso-fragil-vulnerabl",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/8 h IV + metronidazol 1 g/12 h IV o 1,5 g/24 h IV + amikacina 15 mg/kg peso ajustado/24 h IV + daptomicina 8-10 mg/kg/24 h IV o linezolid 600 mg/12 h IV. Alternativa: tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV + amikacina 15 mg/kg peso ajustado/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/8 h IV + metronidazol 1 g/12 h IV o 1,5 g/24 h IV + amikacina 15 mg/kg peso ajustado/24 h IV + daptomicina 8-10 mg/kg/24 h IV o linezolid 600 mg/12 h IV. Alternativa: tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV + amikacina 15 mg/kg peso ajustado/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 2,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "01",
+        "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos"
+      },
+      "subsyndrome": "SF comunidad sin sepsis, ingreso, frágil/vulnerable o con FR bacterias resistentes",
+      "syndrome": "Síndrome febril/sepsis sin foco",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-003-sindrome-febril-sepsis-sin-foco-sf-con-sepsis-sin-fragilidad-ni-fr-mdr",
+      "notes": "Mantener como texto fuente no estructurado hasta confirmar dosis exactas de cada componente en este escenario.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 3,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "01",
+        "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos"
+      },
+      "subsyndrome": "SF con sepsis, sin fragilidad ni FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-004-sindrome-febril-sepsis-sin-foco-sf-con-sepsis-fragilidad-vulnerabilidad-o-fr-mdr",
+      "notes": "Mantener como texto fuente no estructurado hasta confirmar dosis exactas de cada componente en este escenario.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam en carga y perfusión extendida + metronidazol + amikacina + daptomicina o linezolid. Alternativa: tigeciclina + amikacina.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 4,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "01",
+        "sourceTopicId": "sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos"
+      },
+      "subsyndrome": "SF con sepsis, fragilidad/vulnerabilidad o FR MDR",
+      "syndrome": "Síndrome febril/sepsis sin foco",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Pacientes alérgicas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-005-sepsis-en-gestacion-puerperio-itu-en-gestacion-puerperio-sospecha-mdr-en-reeva",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Fosfomicina 4 g/6-8 h IV, o aztreonam 1 g/8 h IV, o gentamicina 5 mg/kg/24 h IV. La guía advierte no usar fosfomicina en preeclampsia/HTA.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Fosfomicina 4 g/6-8 h IV, o aztreonam 1 g/8 h IV, o gentamicina 5 mg/kg/24 h IV. La guía advierte no usar fosfomicina en preeclampsia/HTA.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Gestación/puerperio",
+      "rowNumber": 5,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "02",
+        "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1"
+      },
+      "subsyndrome": "ITU en gestación/puerperio, sospecha MDR en reevaluación 48-72 h",
+      "syndrome": "Sepsis en gestación/puerperio",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-006-sepsis-en-gestacion-puerperio-aborto-septico-endometritis-puerperal",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Metronidazol 500 mg/8 h IV + gentamicina 5 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Metronidazol 500 mg/8 h IV + gentamicina 5 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Gestación/puerperio",
+      "rowNumber": 6,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "02",
+        "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1"
+      },
+      "subsyndrome": "Aborto séptico / endometritis puerperal",
+      "syndrome": "Sepsis en gestación/puerperio",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-007-sepsis-en-gestacion-puerperio-neumonia-durante-gestacion-puerperio",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV + azitromicina 500 mg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV + azitromicina 500 mg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Gestación/puerperio",
+      "rowNumber": 7,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "02",
+        "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1"
+      },
+      "subsyndrome": "Neumonía durante gestación/puerperio",
+      "syndrome": "Sepsis en gestación/puerperio",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-008-sepsis-en-gestacion-puerperio-apendicitis-durante-gestacion-puerperio",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 1 g/8 h IV + metronidazol 500 mg/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 1 g/8 h IV + metronidazol 500 mg/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Gestación/puerperio",
+      "rowNumber": 8,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "02",
+        "sourceTopicId": "sepsis_en_gestacion_y_puerperio_1",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/sindrome_febril_y_sepsis_sin_foco_reconocible_en_adultos/sepsis_en_gestacion_y_puerperio_1"
+      },
+      "subsyndrome": "Apendicitis durante gestación/puerperio",
+      "syndrome": "Sepsis en gestación/puerperio",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-009-meningitis-bacteriana-meningitis-aguda-50-anos-sin-inmunodepresion-ni-",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/6-8 h IV + vancomicina 15-20 mg/kg/8-12 h IV + rifampicina 600 mg/24 h IV/VO + metronidazol 500 mg/6 h IV + dexametasona 10 mg/6 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/6-8 h IV + vancomicina 15-20 mg/kg/8-12 h IV + rifampicina 600 mg/24 h IV/VO + metronidazol 500 mg/6 h IV + dexametasona 10 mg/6 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 9,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "03",
+        "sourceTopicId": "meningitis_bacteriana",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana"
+      },
+      "subsyndrome": "Meningitis aguda <50 años sin inmunodepresión ni comorbilidad",
+      "syndrome": "Meningitis bacteriana",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-010-meningitis-bacteriana-meningitis-aguda-50-anos-o-con-inmunodepresion-c",
+      "notes": "La guía no explicita si los mg/kg de cotrimoxazol se refieren al componente trimetoprim; validar antes de uso estructurado.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/6-8 h IV + cotrimoxazol 5 mg/kg/6-8 h IV + linezolid 600 mg/12 h IV + rifampicina 600 mg/24 h IV/VO + metronidazol 500 mg/6 h IV + dexametasona 10 mg/6 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/6-8 h IV + cotrimoxazol 5 mg/kg/6-8 h IV + linezolid 600 mg/12 h IV + rifampicina 600 mg/24 h IV/VO + metronidazol 500 mg/6 h IV + dexametasona 10 mg/6 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 10,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "03",
+        "sourceTopicId": "meningitis_bacteriana",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/meningitis_bacteriana"
+      },
+      "subsyndrome": "Meningitis aguda >50 años o con inmunodepresión/comorbilidad",
+      "syndrome": "Meningitis bacteriana",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos o intolerancia a macrólidos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-011-neumonia-nac-leve-sin-comorbilidades-ni-fr-mdr-manejo-amb",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 11,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "04",
+        "sourceTopicId": "neumonia_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos"
+      },
+      "subsyndrome": "NAC leve sin comorbilidades ni FR MDR, manejo ambulatorio",
+      "syndrome": "Neumonía",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos o intolerancia a macrólidos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-012-neumonia-nac-leve-con-comorbilidades-sin-fr-mdr-manejo-am",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h VO o levofloxacino 750 mg/24 h VO el primer día y luego 500 mg/24 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 12,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "04",
+        "sourceTopicId": "neumonia_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos"
+      },
+      "subsyndrome": "NAC leve con comorbilidades, sin FR MDR, manejo ambulatorio",
+      "syndrome": "Neumonía",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos o intolerancia a macrólidos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-013-neumonia-nac-moderada-grave-con-ingreso-sin-fr-mdr",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h VO/IV o levofloxacino 750 mg/24 h VO/IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h VO/IV o levofloxacino 750 mg/24 h VO/IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 13,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "04",
+        "sourceTopicId": "neumonia_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos"
+      },
+      "subsyndrome": "NAC moderada-grave con ingreso, sin FR MDR",
+      "syndrome": "Neumonía",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-014-neumonia-neumonia-nosocomial-o-nac-con-fr-mdr",
+      "notes": "En casos graves, la página comenta dosis de carga de aztreonam y valorar doblar dosis inicial en neumonía nosocomial por BLEE/AMPC.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV. En caso de insuficiencia respiratoria asociar levofloxacino 500 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV. En caso de insuficiencia respiratoria asociar levofloxacino 500 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 14,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "04",
+        "sourceTopicId": "neumonia_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos"
+      },
+      "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
+      "syndrome": "Neumonía",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos tipo I o no tipo I",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-015-neumonia-pediatrica-nac-tipica-ambulatoria-4-meses-4-anos",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tipo I: josamicina 30-50 mg/kg/día cada 12 h o midecamicina 40 mg/kg/día cada 12 h. No tipo I: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Como alternativa/rescate: levofloxacino 20 mg/kg/día cada 12 h, máximo 500 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tipo I: josamicina 30-50 mg/kg/día cada 12 h o midecamicina 40 mg/kg/día cada 12 h. No tipo I: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Como alternativa/rescate: levofloxacino 20 mg/kg/día cada 12 h, máximo 500 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 15,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "05",
+        "sourceTopicId": "neumonia_en_paciente_pediatrico",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico"
+      },
+      "subsyndrome": "NAC típica ambulatoria 4 meses-4 años",
+      "syndrome": "Neumonía pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos tipo I o no tipo I",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-016-neumonia-pediatrica-nac-tipica-ambulatoria-5-anos",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Igual que en <5 años; para levofloxacino usar 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Igual que en <5 años; para levofloxacino usar 10 mg/kg/día cada 24 h, máximo 750 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 16,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "05",
+        "sourceTopicId": "neumonia_en_paciente_pediatrico",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico"
+      },
+      "subsyndrome": "NAC típica ambulatoria ≥5 años",
+      "syndrome": "Neumonía pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present"
+      ]
+    },
+    {
+      "allergyContext": "Tipo I/anafilaxia o no tipo I",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-017-neumonia-pediatrica-nac-tipica-no-complicada-con-ingreso-4-meses-5-a",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tipo I/anafilaxia: levofloxacino 20 mg/kg/día cada 12 h IV. No tipo I: ceftriaxona 50 mg/kg/día cada 24 h IV o cefotaxima 150 mg/kg/día cada 8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tipo I/anafilaxia: levofloxacino 20 mg/kg/día cada 12 h IV. No tipo I: ceftriaxona 50 mg/kg/día cada 24 h IV o cefotaxima 150 mg/kg/día cada 8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 17,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "05",
+        "sourceTopicId": "neumonia_en_paciente_pediatrico",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico"
+      },
+      "subsyndrome": "NAC típica no complicada con ingreso, 4 meses-5 años",
+      "syndrome": "Neumonía pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    },
+    {
+      "allergyContext": "Tipo I/anafilaxia o no tipo I",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-018-neumonia-pediatrica-nac-tipica-no-complicada-con-ingreso-5-anos",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tipo I/anafilaxia: levofloxacino 10 mg/kg/día cada 24 h IV, máximo 750 mg/día. No tipo I: ceftriaxona 50 mg/kg/día cada 24 h IV o cefotaxima 150 mg/kg/día cada 8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tipo I/anafilaxia: levofloxacino 10 mg/kg/día cada 24 h IV, máximo 750 mg/día. No tipo I: ceftriaxona 50 mg/kg/día cada 24 h IV o cefotaxima 150 mg/kg/día cada 8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 18,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "05",
+        "sourceTopicId": "neumonia_en_paciente_pediatrico",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico"
+      },
+      "subsyndrome": "NAC típica no complicada con ingreso, >5 años",
+      "syndrome": "Neumonía pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-019-neumonia-pediatrica-nac-grave-con-sin-derrame-pleural",
+      "notes": "La dosis de linezolid pediátrica aparece en la guía como mg/kg/día; revisar si máximo/intervalo es correcto antes de cálculo automático.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Levofloxacino IV: ≤5 años 20 mg/kg/día cada 12 h; >5 años 10 mg/kg/día cada 24 h, máximo 750 mg/día. Asociar vancomicina IV o linezolid IV: linezolid 30 mg/kg/día cada 8 h, máximo 600 mg cada 8 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Levofloxacino IV: ≤5 años 20 mg/kg/día cada 12 h; >5 años 10 mg/kg/día cada 24 h, máximo 750 mg/día. Asociar vancomicina IV o linezolid IV: linezolid 30 mg/kg/día cada 8 h, máximo 600 mg cada 8 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 19,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "05",
+        "sourceTopicId": "neumonia_en_paciente_pediatrico",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos/neumonia_en_paciente_pediatrico"
+      },
+      "subsyndrome": "NAC grave con/sin derrame pleural",
+      "syndrome": "Neumonía pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-020-itu-pielonefritis-itu-sistemica-sin-ingreso",
+      "notes": "Contiene carbapenémico como alternativa; valorar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Amikacina 20 mg/kg/24 h IM hasta 3 días o ertapenem 1 g IM.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Amikacina 20 mg/kg/24 h IM hasta 3 días o ertapenem 1 g IM.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 20,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "06",
+        "sourceTopicId": "infeccion_del_tracto_urinario",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario"
+      },
+      "subsyndrome": "Pielonefritis/ITU sistémica sin ingreso",
+      "syndrome": "ITU",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-021-itu-pielonefritis-itu-sistemica-con-ingreso-fr-mdr-s",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/8 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/8 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 21,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "06",
+        "sourceTopicId": "infeccion_del_tracto_urinario",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario"
+      },
+      "subsyndrome": "Pielonefritis/ITU sistémica con ingreso, FR MDR, sin sepsis/shock y sospecha de BLEE",
+      "syndrome": "ITU",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-022-itu-itu-urosepsis-con-sepsis-shock-y-sospecha-de-res",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/6 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/6 h IV o fosfomicina 4 g/6 h IV + amikacina 20 mg/kg/24 h IV hasta mejoría.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 22,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "06",
+        "sourceTopicId": "infeccion_del_tracto_urinario",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario"
+      },
+      "subsyndrome": "ITU/urosepsis con sepsis/shock y sospecha de resistencia a carbapenémicos/MDR",
+      "syndrome": "ITU",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-023-itu-prostatitis-bacteriana-con-sepsis-shock",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Fosfomicina 4 g IV/6 h + amikacina 20 mg/kg peso ajustado IV/24 h hasta 3 días tras estabilización o desaparición de fiebre.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Fosfomicina 4 g IV/6 h + amikacina 20 mg/kg peso ajustado IV/24 h hasta 3 días tras estabilización o desaparición de fiebre.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 23,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "06",
+        "sourceTopicId": "infeccion_del_tracto_urinario",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario"
+      },
+      "subsyndrome": "Prostatitis bacteriana con sepsis/shock",
+      "syndrome": "ITU",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-024-intraabdominal-complicada-peritonitis-secundaria-sin-sepsis-grave-buen-con",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 24,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "07",
+        "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos"
+      },
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, buen control de foco, sin FR MDR",
+      "syndrome": "Intraabdominal complicada",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-025-intraabdominal-complicada-peritonitis-secundaria-sin-sepsis-grave-buen-con",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 25,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "07",
+        "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos"
+      },
+      "subsyndrome": "Peritonitis secundaria, sin sepsis grave, buen control de foco, con FR MDR",
+      "syndrome": "Intraabdominal complicada",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-026-intraabdominal-complicada-peritonitis-secundaria-con-sepsis-grave-riesgo-d",
+      "notes": "Corrección: en esta fila la pauta de alergia de la guía no incluye amikacina; no añadirla salvo revisión local.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 2 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 2 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 26,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "07",
+        "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos"
+      },
+      "subsyndrome": "Peritonitis secundaria con sepsis grave, riesgo de mala evolución o mal control de foco",
+      "syndrome": "Intraabdominal complicada",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-027-intraabdominal-complicada-peritonitis-terciaria-con-fr-mdr-ingreso-recient",
+      "notes": "Fila omitida en la tabla previa.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 1-2 g/8 h IV. Alternativa: aztreonam 1-2 g/8 h IV + amikacina 15 mg/kg/24 h IV + linezolid 600 mg/12 h IV o daptomicina 10 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV + aztreonam 1-2 g/8 h IV. Alternativa: aztreonam 1-2 g/8 h IV + amikacina 15 mg/kg/24 h IV + linezolid 600 mg/12 h IV o daptomicina 10 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 27,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "07",
+        "sourceTopicId": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos"
+      },
+      "subsyndrome": "Peritonitis terciaria con FR MDR/ingreso reciente/Charlson ≥4/antibiótico previo",
+      "syndrome": "Intraabdominal complicada",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-028-intraabdominal-pediatrica-apendicitis-aguda-profilaxis-quirurgica",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Gentamicina 1,5 mg/kg, máximo 240 mg/dosis + clindamicina 10 mg/kg, máximo 900 mg/dosis.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Gentamicina 1,5 mg/kg, máximo 240 mg/dosis + clindamicina 10 mg/kg, máximo 900 mg/dosis.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 28,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "08",
+        "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Apendicitis aguda, profilaxis quirúrgica",
+      "syndrome": "Intraabdominal pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-029-intraabdominal-pediatrica-apendicitis-aguda-con-cirugia-demorada",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 29,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "08",
+        "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Apendicitis aguda con cirugía demorada",
+      "syndrome": "Intraabdominal pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-030-intraabdominal-pediatrica-colecistitis",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Ciprofloxacino 30 mg/kg/día, máximo 500 mg/dosis, cada 12 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 30,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "08",
+        "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Colecistitis",
+      "syndrome": "Intraabdominal pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-031-intraabdominal-pediatrica-peritonitis-primaria-asociada-a-ascitis",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 150-200 mg/kg/día cada 6-8 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 150-200 mg/kg/día cada 6-8 h + metronidazol 20-40 mg/kg/día cada 8 h, máximo 1500 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 31,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "08",
+        "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Peritonitis primaria asociada a ascitis",
+      "syndrome": "Intraabdominal pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "source_topic_not_in_current_guide_topics"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-032-intraabdominal-pediatrica-peritonitis-asociada-a-dialisis-peritoneal",
+      "notes": "La página no especifica dosis; revisar protocolo local de diálisis peritoneal.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Vancomicina intraperitoneal + gentamicina intraperitoneal.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 32,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "08",
+        "sourceTopicId": "infeccion_intraabdominal_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Peritonitis asociada a diálisis peritoneal",
+      "syndrome": "Intraabdominal pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-033-piel-y-partes-blandas-celulitis-paciente-sano-sin-supuracion-sin-ingre",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Cotrimoxazol/Septrim Forte 1 comprimido/12 h VO o linezolid 600 mg/12 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Cotrimoxazol/Septrim Forte 1 comprimido/12 h VO o linezolid 600 mg/12 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 33,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Celulitis, paciente sano, sin supuración, sin ingreso",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-034-piel-y-partes-blandas-celulitis-paciente-sano-sin-supuracion-con-ingre",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 34,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Celulitis, paciente sano, sin supuración, con ingreso",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-035-piel-y-partes-blandas-celulitis-con-supuracion-o-riesgo-de-sarm-con-in",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 35,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Celulitis con supuración o riesgo de SARM, con ingreso",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos o riesgo de SARM",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-036-piel-y-partes-blandas-celulitis-con-supuracion-riesgo-sarm-sin-ingreso",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Dalbavancina 1000 mg IV seguida de 500 mg IV el día 7, o dalbavancina 1500 mg IV dosis única, u oritavancina 1200 mg IV dosis única.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Dalbavancina 1000 mg IV seguida de 500 mg IV el día 7, o dalbavancina 1500 mg IV dosis única, u oritavancina 1200 mg IV dosis única.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 36,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Celulitis con supuración/riesgo SARM sin ingreso, pero riesgo de incumplimiento/interacciones",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-037-piel-y-partes-blandas-infeccion-de-herida-quirurgica-profunda-o-48-72-",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 8-10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + aztreonam 1-2 g/8 h IV + metronidazol 500 mg/8 h IV + amikacina 20 mg/kg/24 h IV los 2 primeros días. Alternativa: aztreonam 1-2 g/8 h IV + tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 8-10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + aztreonam 1-2 g/8 h IV + metronidazol 500 mg/8 h IV + amikacina 20 mg/kg/24 h IV los 2 primeros días. Alternativa: aztreonam 1-2 g/8 h IV + tigeciclina 100 mg IV dosis inicial, luego 50 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 37,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Infección de herida quirúrgica profunda o >48-72 h",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-038-piel-y-partes-blandas-celulitis-necrotizante-fascitis-necrotizante-mio",
+      "notes": "Si exposición a agua de mar o hepatopatía crónica, la guía indica añadir doxiciclina 100 mg/12 h IV.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/6-8 h IV + linezolid 600 mg/12 h IV + metronidazol 500 mg/8 h IV o 1 g/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/6-8 h IV + linezolid 600 mg/12 h IV + metronidazol 500 mg/8 h IV o 1 g/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 38,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Celulitis necrotizante / fascitis necrotizante / mionecrosis",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-039-piel-y-partes-blandas-piomiositis",
+      "notes": "Corrección interpretada de errata de fuente: la guía muestra “8-1 mg/kg”; se interpreta como 8-10 mg/kg.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV; o dalbavancina 1000 mg IV seguida de 500 mg IV el día 7, o dalbavancina 1500 mg IV dosis única, u oritavancina 1200 mg IV dosis única.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV; o dalbavancina 1000 mg IV seguida de 500 mg IV el día 7, o dalbavancina 1500 mg IV dosis única, u oritavancina 1200 mg IV dosis única.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 39,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "09",
+        "sourceTopicId": "infeccion_de_piel_y_partes_blandas",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_de_piel_y_partes_blandas"
+      },
+      "subsyndrome": "Piomiositis",
+      "syndrome": "Piel y partes blandas",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "En alérgicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-040-endovascular-endocarditis-infecciosa-sobre-valvula-nativa",
+      "notes": "La guía dice “en alérgicos” pero la pauta contiene ceftriaxona; confirmar tipo de alergia antes de uso estructurado.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10-12 mg/kg/24 h IV + ceftriaxona 2 g IV/24 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10-12 mg/kg/24 h IV + ceftriaxona 2 g IV/24 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 40,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "10",
+        "sourceTopicId": "infecciones_endovasculares",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares"
+      },
+      "subsyndrome": "Endocarditis infecciosa sobre válvula nativa",
+      "syndrome": "Endovascular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilinas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-041-osteoarticular-infeccion-de-protesis-articular-material-de-oste",
+      "notes": "Contiene carbapenémico; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 41,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, quirófano",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilinas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-042-osteoarticular-infeccion-de-protesis-articular-material-de-oste",
+      "notes": "Contiene carbapenémico; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 42,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Infección de prótesis articular / material de osteosíntesis, planta",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilinas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-043-osteoarticular-infeccion-de-material-de-osteosintesis-tras-impl",
+      "notes": "Contiene carbapenémico; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid: neonatos <7 días 10 mg/kg/12 h; niños hasta 12 años 10 mg/kg/8 h; adolescentes 600 mg/12 h. Asociar meropenem 20 mg/kg/8 h IV, máximo 1 g/8 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid: neonatos <7 días 10 mg/kg/12 h; niños hasta 12 años 10 mg/kg/8 h; adolescentes 600 mg/12 h. Asociar meropenem 20 mg/kg/8 h IV, máximo 1 g/8 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 43,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Infección de material de osteosíntesis tras implantación",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-044-osteoarticular-artritis-septica-comunitaria-sin-fr-blee-sarm",
+      "notes": "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 44,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
+      ]
+    },
+    {
+      "allergyContext": "Si alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-045-osteoarticular-artritis-septica-con-cuidados-sanitarios-o-fr-bl",
+      "notes": "La guía indica sustituir piperacilina-tazobactam por meropenem si alergia a beta-lactámicos; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 45,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Artritis séptica con cuidados sanitarios o FR BLEE/SARM",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-046-osteoarticular-osteomielitis-comunitaria-sin-fr-blee-sarm",
+      "notes": "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 46,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "resistance_risk_context_present",
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilinas/betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-047-osteoarticular-osteomielitis-con-cirugia-cuidados-sanitarios-o-",
+      "notes": "Contiene carbapenémico; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg/24 h IV + meropenem 1 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 47,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Osteomielitis con cirugía/cuidados sanitarios o FR BLEE/SARM, quirófano",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilinas/betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-048-osteoarticular-osteomielitis-con-cirugia-cuidados-sanitarios-o-",
+      "notes": "Contiene carbapenémico; confirmar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV + meropenem 1 g/8 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 48,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "11",
+        "sourceTopicId": "infeccion_osteoarticular",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular"
+      },
+      "subsyndrome": "Osteomielitis con cirugía/cuidados sanitarios o FR BLEE/SARM, planta",
+      "syndrome": "Osteoarticular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "resistance_risk_context_present",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-049-neutropenia-febril-bajo-riesgo-tras-6-8-h-de-vigilancia-y-antibioti",
+      "notes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril'. El capítulo no está incorporado como topic independiente en el snapshot actual de guide_topics.json.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Ciprofloxacino 750 mg/12 h VO + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Ciprofloxacino 750 mg/12 h VO + cefixima 200 mg/12 h VO + linezolid 600 mg/12 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 49,
+      "source": {
+        "sourceConfirmedByUser": true,
+        "sourceRefId": "12",
+        "sourceTopicId": "manejo_de_neutropenia_febril",
+        "sourceTopicNotInCurrentSnapshot": true,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril"
+      },
+      "subsyndrome": "Bajo riesgo tras 6-8 h de vigilancia y antibiótico IV",
+      "syndrome": "Neutropenia febril",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present",
+        "source_topic_not_in_current_guide_topics",
+        "source_reviewed_row_correction_applied",
+        "source_confirmed_by_user"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicos a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-050-its-uretritis-cervicitis",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Metronidazol 2 g VO dosis única + moxifloxacino 400 mg/día VO durante 7 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Metronidazol 2 g VO dosis única + moxifloxacino 400 mg/día VO durante 7 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 50,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Uretritis/cervicitis",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alternativas a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-051-its-sifilis-primaria-secundaria-o-latente-precoz",
+      "notes": "La guía las lista como alternativas, no solo como alergia; ceftriaxona requiere valorar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Doxiciclina 100 mg/12 h VO durante 14 días; o ceftriaxona 1 g IM/IV cada 24 h durante 10 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Doxiciclina 100 mg/12 h VO durante 14 días; o ceftriaxona 1 g IM/IV cada 24 h durante 10 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 51,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Sífilis primaria, secundaria o latente precoz",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alternativas a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-052-its-sifilis-latente-indeterminada-o-terciaria",
+      "notes": "No inventar dosis cuando la página no la especifica; validar.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Doxiciclina durante 28 días (dosis no especificada en esta entrada) o ceftriaxona 1 g IM/IV cada 24 h durante 10 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Doxiciclina durante 28 días (dosis no especificada en esta entrada) o ceftriaxona 1 g IM/IV cada 24 h durante 10 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 52,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Sífilis latente indeterminada o terciaria",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alternativas a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-053-its-neurosifilis",
+      "notes": "Incluye penicilina procaína como alternativa indicada por la guía; no es opción para alergia verdadera a penicilina sin valoración.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Penicilina procaína 2,4 MU IM cada 24 h durante 10-14 días + probenecid 0,5 g VO cada 6 h, o ceftriaxona 2 g IV/24 h durante 10-14 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Penicilina procaína 2,4 MU IM cada 24 h durante 10-14 días + probenecid 0,5 g VO cada 6 h, o ceftriaxona 2 g IV/24 h durante 10-14 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 53,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Neurosífilis",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alérgicas a penicilinas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-054-its-enfermedad-pelvica-inflamatoria-no-grave-no-hosp",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Levofloxacino 500 mg/día VO durante 14 días + metronidazol 500 mg/12 h VO durante 14 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Levofloxacino 500 mg/día VO durante 14 días + metronidazol 500 mg/12 h VO durante 14 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 54,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Enfermedad pélvica inflamatoria no grave / no hospitalizada",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alérgicas a penicilinas",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-055-its-enfermedad-pelvica-inflamatoria-grave-hospitaliz",
+      "notes": "La guía pauta tigeciclina 50 mg/24 h, no 50 mg/12 h en esta fila.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Clindamicina 900 mg/8 h IV + gentamicina 5 mg/kg/día IV hasta 3 días tras defervescencia. Alternativa: tigeciclina 50 mg/24 h IV + metronidazol 500 mg/12 h IV durante 14 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Clindamicina 900 mg/8 h IV + gentamicina 5 mg/kg/día IV hasta 3 días tras defervescencia. Alternativa: tigeciclina 50 mg/24 h IV + metronidazol 500 mg/12 h IV durante 14 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 55,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "13",
+        "sourceTopicId": "infecciones_de_transmision_sexual",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_de_transmision_sexual"
+      },
+      "subsyndrome": "Enfermedad pélvica inflamatoria grave / hospitalizada",
+      "syndrome": "ITS",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-056-orl-faringoamigdalitis",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Clindamicina 300 mg/8 h VO durante 5 días o azitromicina 500 mg VO el primer día y luego 250 mg VO/24 h durante 4 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Clindamicina 300 mg/8 h VO durante 5 días o azitromicina 500 mg VO el primer día y luego 250 mg VO/24 h durante 4 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 56,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Faringoamigdalitis",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-057-orl-complicacion-locorregional-de-faringoamigdalitis",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Clindamicina 600 mg/6 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Clindamicina 600 mg/6 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 57,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, no grave",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-058-orl-complicacion-locorregional-de-faringoamigdalitis",
+      "notes": "El intervalo de linezolid se toma de la pauta grave inmediatamente previa de cobertura SARM; validar antes de uso estructurado.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h IV + linezolid 600 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h IV + linezolid 600 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 58,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Complicación locorregional de faringoamigdalitis, grave",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-059-orl-otitis-media-aguda",
+      "notes": "Cefditoreno requiere valorar tipo de alergia.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Cefditoreno 400 mg/12 h VO o moxifloxacino 400 mg/24 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Cefditoreno 400 mg/12 h VO o moxifloxacino 400 mg/24 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 59,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-060-orl-mastoiditis-aguda",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 60,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Mastoiditis aguda",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-061-orl-mastoiditis-cronica-o-postquirurgica",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/8 h IV + linezolid 600 mg/12 h IV, con/sin amikacina inicial 20 mg/kg/24 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/8 h IV + linezolid 600 mg/12 h IV, con/sin amikacina inicial 20 mg/kg/24 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 61,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Mastoiditis crónica o postquirúrgica",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-062-orl-otitis-externa-maligna",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/6 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/6 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 62,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Otitis externa maligna",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-063-orl-sinusitis-aguda-comunitaria",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 63,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Sinusitis aguda comunitaria",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-064-orl-sinusitis-de-origen-dental",
+      "notes": "La vía no se especifica de forma separada; la página lista moxifloxacino 400 mg cada 24 h.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h VO/IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h VO/IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 64,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Sinusitis de origen dental",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-065-orl-sinusitis-intrahospitalaria-nosocomial",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Aztreonam 2 g/8 h IV + linezolid 600 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Aztreonam 2 g/8 h IV + linezolid 600 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 65,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Sinusitis intrahospitalaria/nosocomial",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-066-orl-sinusitis-cronica-sin-muestra",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Metronidazol 500 mg/8 h IV/VO durante 3-4 semanas.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Metronidazol 500 mg/8 h IV/VO durante 3-4 semanas.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 66,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Sinusitis crónica sin muestra",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alergia a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-067-orl-parotiditis-supurativa-glandulas-salivales",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Moxifloxacino 400 mg/24 h IV; añadir linezolid 600 mg/12 h IV si riesgo de SARM.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Moxifloxacino 400 mg/24 h IV; añadir linezolid 600 mg/12 h IV si riesgo de SARM.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 67,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "14",
+        "sourceTopicId": "infecciones_orl",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl"
+      },
+      "subsyndrome": "Parotiditis supurativa / glándulas salivales",
+      "syndrome": "ORL",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "resistance_risk_context_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia inmediata o retardada a penicilina",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-068-orl-pediatrica-faringoamigdalitis",
+      "notes": "La dosis de cefadroxilo aparece literalmente como 30 mg/kg cada 12 h; validar si debería expresarse como mg/kg/día.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Alergia inmediata: clindamicina 20-30 mg/kg/día cada 12 h; posible josamicina 30-50 mg/kg/día cada 12 h. Alergia retardada: cefadroxilo 30 mg/kg cada 12 h, máximo 1 g/día, durante 5 días.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Alergia inmediata: clindamicina 20-30 mg/kg/día cada 12 h; posible josamicina 30-50 mg/kg/día cada 12 h. Alergia retardada: cefadroxilo 30 mg/kg cada 12 h, máximo 1 g/día, durante 5 días.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 68,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "15",
+        "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Faringoamigdalitis",
+      "syndrome": "ORL pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina no anafiláctica o anafiláctica",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-069-orl-pediatrica-otitis-media-aguda",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Anafilaxia: claritromicina 15 mg/kg/día cada 12 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h. Anafilaxia: claritromicina 15 mg/kg/día cada 12 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 69,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "15",
+        "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Otitis media aguda",
+      "syndrome": "ORL pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina no anafiláctica o anafiláctica",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-070-orl-pediatrica-mastoiditis",
+      "notes": "Corregido frente a fuente HUVN actual de ORL pediátrica: para mastoiditis con alergia anafiláctica se lista levofloxacino, no aztreonam + linezolid.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 70,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "15",
+        "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Mastoiditis",
+      "syndrome": "ORL pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a penicilina no anafiláctica o anafiláctica",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-071-orl-pediatrica-sinusitis",
+      "notes": "Duración orientativa en guía: 7-10 días.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h o ceftibuteno 9 mg/kg/día cada 24 h, máximo 400 mg/día. Anafiláctica: levofloxacino 20 mg/kg/día cada 12 h en 6 meses-5 años; 10 mg/kg/día cada 24 h en >5 años, máximo 500 mg/día.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "No anafiláctica: cefuroxima-axetilo 30 mg/kg/día cada 12 h o ceftibuteno 9 mg/kg/día cada 24 h, máximo 400 mg/día. Anafiláctica: levofloxacino 20 mg/kg/día cada 12 h en 6 meses-5 años; 10 mg/kg/día cada 24 h en >5 años, máximo 500 mg/día.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Pediatría",
+      "rowNumber": 71,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "15",
+        "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos"
+      },
+      "subsyndrome": "Sinusitis",
+      "syndrome": "ORL pediátrica",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "allergy_reaction_subtype_present",
+        "contains_beta_lactam_or_possible_cross_reactivity_option",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Alergia a betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-072-ocular-celulitis-orbitaria",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Levofloxacino 750 mg/24 h IV/VO + metronidazol 500 mg/8 h IV/VO.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Levofloxacino 750 mg/24 h IV/VO + metronidazol 500 mg/8 h IV/VO.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 72,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "16",
+        "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos"
+      },
+      "subsyndrome": "Celulitis orbitaria",
+      "syndrome": "Ocular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": []
+    },
+    {
+      "allergyContext": "Alternativa en alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-073-ocular-endoftalmitis-tratamiento-intravitreo",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Vancomicina intravítrea 1 mg + amikacina intravítrea 0,4 mg.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Vancomicina intravítrea 1 mg + amikacina intravítrea 0,4 mg.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 73,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "16",
+        "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos"
+      },
+      "subsyndrome": "Endoftalmitis, tratamiento intravítreo",
+      "syndrome": "Ocular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "alternative_or_contextual_source_wording"
+      ]
+    },
+    {
+      "allergyContext": "Alternativa en alergia a beta-lactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-074-ocular-endoftalmitis-tratamiento-sistemico",
+      "notes": "",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Linezolid 600 mg/12 h IV o daptomicina 8-10 mg/kg/24 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 74,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "16",
+        "sourceTopicId": "infecciones_oculares_en_pacientes_adultos",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_oculares_en_pacientes_adultos"
+      },
+      "subsyndrome": "Endoftalmitis, tratamiento sistémico",
+      "syndrome": "Ocular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording"
+      ]
+    },
+    {
+      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-075-endovascular-endocarditis-en-advp",
+      "notes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 75,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "10",
+        "sourceTopicId": "infecciones_endovasculares",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares"
+      },
+      "subsyndrome": "Endocarditis en ADVP",
+      "syndrome": "Endovascular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "review_note_present"
+      ]
+    },
+    {
+      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
+      "alternativeAntibioticRecommendationAllowed": false,
+      "clinicalDecisionSupportAllowed": false,
+      "clinicalUseAllowed": false,
+      "id": "allergy-option-row-076-endovascular-endocarditis-asociada-a-dispositivos-intracardia",
+      "notes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
+      "options": [
+        {
+          "description": "Texto fuente disponible para consulta; no es recomendación automática ni ranking.",
+          "displayText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+          "isDoseCalculator": false,
+          "isRanked": false,
+          "isTherapeuticRecommendation": false,
+          "label": "Opciones recogidas en la fuente",
+          "sourceText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
+          "structuredDoseAvailable": false
+        }
+      ],
+      "population": "Adultos",
+      "rowNumber": 76,
+      "source": {
+        "sourceConfirmedByUser": false,
+        "sourceRefId": "10",
+        "sourceTopicId": "infecciones_endovasculares",
+        "sourceTopicNotInCurrentSnapshot": false,
+        "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares"
+      },
+      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
+      "syndrome": "Endovascular",
+      "therapeuticRecommendationAllowed": false,
+      "warnings": [
+        "age_or_weight_specific_review_needed",
+        "alternative_or_contextual_source_wording",
+        "review_note_present"
+      ]
+    }
+  ],
+  "recordSchema": {
+    "optionFields": [
+      "label",
+      "description",
+      "sourceText",
+      "displayText",
+      "isTherapeuticRecommendation",
+      "isRanked",
+      "isDoseCalculator"
+    ],
+    "optionalFields": [
+      "subsyndrome",
+      "population",
+      "notes",
+      "warnings",
+      "rowNumber"
+    ],
+    "requiredFields": [
+      "id",
+      "syndrome",
+      "allergyContext",
+      "options",
+      "source"
     ]
   },
   "selectors": [
@@ -25,60 +2821,11 @@
       "valuesFrom": "optionRecords.syndrome"
     },
     {
+      "dependsOn": "syndrome",
       "id": "subsyndrome",
       "label": "Subsíndrome",
       "type": "single_select_optional",
-      "valuesFrom": "optionRecords.subsyndrome",
-      "dependsOn": "syndrome"
+      "valuesFrom": "optionRecords.subsyndrome"
     }
-  ],
-  "optionRecords": [],
-  "emptyState": {
-    "title": "Opciones para alérgicos pendientes de extracción",
-    "message": "Todavía no hay opciones por síndrome/subsíndrome publicadas en DATA. El consultor puede mostrarse como recurso en preparación, pero no debe usarse para seleccionar tratamiento."
-  },
-  "recordSchema": {
-    "requiredFields": [
-      "id",
-      "syndrome",
-      "allergyContext",
-      "options",
-      "source"
-    ],
-    "optionalFields": [
-      "subsyndrome",
-      "population",
-      "notes",
-      "warnings"
-    ],
-    "optionFields": [
-      "label",
-      "description",
-      "sourceText",
-      "isTherapeuticRecommendation"
-    ]
-  },
-  "hardSafetyRules": {
-    "mustNotRankOptions": true,
-    "mustNotGenerateTherapeuticRecommendations": true,
-    "mustNotInferOptionsFromAllergySeverity": true,
-    "mustOnlyShowSourceBackedOptions": true,
-    "mustShowPendingExtractionWhenNoRecords": true,
-    "mustShowClinicalUseBlockedBanner": true,
-    "mustPreserveSyndromeAndSubsyndromeContext": true
-  },
-  "appBehavior": {
-    "mayRenderInResourcesConsultantsSection": true,
-    "mayRenderAsSyndromeSubsyndromeLookup": true,
-    "mayStoreAnswersLocally": false,
-    "mayUseAnswersToFilterTherapeuticRules": false,
-    "mayUseAnswersToGenerateAntibioticAlternatives": false,
-    "mayShowEmptyDraftState": true
-  },
-  "nextExtractionTasks": [
-    "Extraer de la guía las opciones explícitas para alérgicos a betalactámicos por síndrome.",
-    "Separar síndrome y subsíndrome cuando la guía lo permita.",
-    "Guardar texto fuente y sourceUrl/sourceTopicId de cada opción.",
-    "Validar manualmente que ninguna opción se presenta como ranking ni recomendación automática."
   ]
 }
