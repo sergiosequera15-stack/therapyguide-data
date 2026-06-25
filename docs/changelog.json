@@ -1,7 +1,55 @@
 {
-  "version": 1,
-  "generatedAt": "2026-06-10T00:00:00Z",
+  "version": 2,
+  "generatedAt": "2026-06-25T00:00:00Z",
   "entries": [
+    {
+      "id": "2026-06-25-pdf-opening-share-sheet",
+      "date": "2026-06-25",
+      "type": "app_resource_fix",
+      "title": "Corrección de apertura de PDFs",
+      "description": "La apertura de documentos PDF pasa a priorizar el selector del sistema para evitar pantallas en blanco al abrir archivos descargados.",
+      "priority": "high"
+    },
+    {
+      "id": "2026-06-25-resources-consultants-centralized",
+      "date": "2026-06-25",
+      "type": "app_resources",
+      "title": "Recursos y consultores centralizados",
+      "description": "Los recursos descargables y los consultores en borrador se concentran en la pestaña de recursos. El consultor de alergia a betalactámicos queda como sección desplegable.",
+      "priority": "high"
+    },
+    {
+      "id": "2026-06-25-proa-contact-phones",
+      "date": "2026-06-25",
+      "type": "app_contact_updated",
+      "title": "Teléfonos PROA actualizados",
+      "description": "Se actualiza la lista de teléfonos de contacto PROA. La app muestra los números cortos como referencia, pero usa los números largos para iniciar llamadas.",
+      "priority": "normal"
+    },
+    {
+      "id": "2026-06-25-allergy-consultant-draft",
+      "date": "2026-06-25",
+      "type": "data_module_rules",
+      "title": "Consultor de alergia a betalactámicos en borrador",
+      "description": "Se incorpora una consulta por síndrome y subsíndrome basada en texto fuente. No realiza recomendación automática, no ordena opciones y no calcula dosis.",
+      "priority": "normal"
+    },
+    {
+      "id": "2026-06-25-microbiology-preview",
+      "date": "2026-06-25",
+      "type": "data_module_microbiology",
+      "title": "Microbiología DATA en vista previa",
+      "description": "Se mantiene una vista de datos microbiológicos como consulta no clínica y pendiente de revisión. No debe usarse como soporte de decisión terapéutica.",
+      "priority": "normal"
+    },
+    {
+      "id": "2026-06-25-online-preflight",
+      "date": "2026-06-25",
+      "type": "app_validation",
+      "title": "Validación remota antes de APK",
+      "description": "Se añade preflight online para comprobar tipos, contratos DATA y empaquetado JS antes de gastar una build EAS.",
+      "priority": "normal"
+    },
     {
       "id": "2026-06-10-structured-content",
       "date": "2026-06-10",
