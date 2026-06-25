@@ -21,6 +21,15 @@ ALLOWED_COMPLETION_STATUSES = {
     "not_applicable",
     "needs_discussion",
 }
+ALLOWED_METADATA_STATUSES = {
+    "manual_dose_completion_pending",
+    "accepted_unstructured_source_text",
+}
+RESOLVED_COMPLETION_STATUSES = {
+    "completed_from_source",
+    "accepted_unstructured_source_text",
+    "not_applicable",
+}
 
 
 def require(condition: bool, message: str) -> None:
@@ -53,7 +62,7 @@ def rows_to_records(table: dict[str, Any]) -> list[dict[str, Any]]:
 def validate_metadata(worklist: dict[str, Any], expected_count: int) -> None:
     metadata = worklist.get("metadata") or {}
     require(isinstance(metadata, dict), "metadata must be an object")
-    require(metadata.get("status") == "manual_dose_completion_pending", "worklist status must remain manual_dose_completion_pending")
+    require(metadata.get("status") in ALLOWED_METADATA_STATUSES, "worklist status is invalid")
     require(metadata.get("rowCount") == expected_count, "metadata.rowCount must match expected incomplete row count")
     require(set(metadata.get("allowedCompletionStatuses") or []) == ALLOWED_COMPLETION_STATUSES, "allowedCompletionStatuses do not match expected values")
     for flag in REQUIRED_FALSE_METADATA_FLAGS:
@@ -86,9 +95,12 @@ def validate_items(worklist: dict[str, Any], master_records: dict[int, dict[str,
 
         if item.get("completionStatus") == "completed_from_source":
             require(item.get("completedOptionsText"), f"{prefix} completed row lacks completedOptionsText")
-            require(item.get("reviewer"), f"{prefix} completed row lacks reviewer")
-            require(item.get("reviewedAt"), f"{prefix} completed row lacks reviewedAt")
-
+        if item.get("completionStatus") == "accepted_unstructured_source_text":
+            require(item.get("completedOptionsText") == item.get("currentOptionsText"), f"{prefix} accepted unstructured row must preserve currentOptionsText")
+        if item.get("completionStatus") in RESOLVED_COMPLETION_STATUSES:
+            require(item.get("reviewer"), f"{prefix} resolved row lacks reviewer")
+            require(item.get("reviewedAt"), f"{prefix} resolved row lacks reviewedAt")
+            require(item.get("reviewNote"), f"{prefix} resolved row lacks reviewNote")
 
 
 def main() -> None:
