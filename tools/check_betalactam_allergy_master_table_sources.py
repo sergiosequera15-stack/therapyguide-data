@@ -42,7 +42,7 @@ DRUG_ALIASES: dict[str, list[str]] = {
     "imipenem": ["imipenem"],
     "vaborbactam": ["vaborbactam"],
     "relebactam": ["relebactam"],
-    "fosfomicina": ["fosfomicina"],
+    "fosfomicina": ["fosfomicina", "fosfomcina"],
     "vancomicina": ["vancomicina"],
     "rifampicina": ["rifampicina"],
     "dexametasona": ["dexametasona"],
@@ -84,6 +84,10 @@ def normalize_text(text: str | None) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def compact_text(text: str | None) -> str:
+    return normalize_text(text).replace(" ", "")
+
+
 def combined_topic_text(topic: dict[str, Any]) -> str:
     # Use all committed source text fields. Some source tokens may survive in HTML while
     # being absent from the extracted text summary, so checking only one field can create
@@ -98,7 +102,14 @@ def extract_drug_tokens(text: str) -> list[str]:
 
 def token_present(token: str, haystack: str) -> bool:
     aliases = DRUG_ALIASES.get(token, [token])
-    return any(normalize_text(alias) in haystack for alias in aliases)
+    compact_haystack = compact_text(haystack)
+    for alias in aliases:
+        normalized_alias = normalize_text(alias)
+        if normalized_alias in haystack:
+            return True
+        if compact_text(alias) in compact_haystack:
+            return True
+    return False
 
 
 def rows_to_records(table: dict[str, Any]) -> list[dict[str, Any]]:
