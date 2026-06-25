@@ -11,15 +11,17 @@ SOURCE_TOPIC_ALIASES = {
     "tratamiento_de_infecciones_urinarias": "infeccion_del_tracto_urinario",
     "infeccion_intraabdominal_complicada": "infeccion_intraabdominal_complicada_en_pacientes_adultos",
     "infeccion_intrabdominal_complicada_infantil": "infeccion_intraabdominal_en_pacientes_pediatricos",
+    "neutropenia_febril": "manejo_de_neutropenia_febril",
 }
 SOURCE_URL_ALIASES = {
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/tratamiento_de_infecciones_urinarias": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_del_tracto_urinario",
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos",
     "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intrabdominal_complicada_infantil": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_intraabdominal_complicada_en_pacientes_adultos/infeccion_intraabdominal_en_pacientes_pediatricos",
+    "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neutropenia_febril": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/manejo_de_neutropenia_febril",
 }
 KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT = {
     "infeccion_intraabdominal_en_pacientes_pediatricos",
-    "neutropenia_febril",
+    "manejo_de_neutropenia_febril",
 }
 SOURCE_REVIEWED_ROW_CORRECTIONS = {
     44: {
@@ -34,8 +36,12 @@ SOURCE_REVIEWED_ROW_CORRECTIONS = {
         "optionsText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
         "reviewNotes": "Corregido frente a fuente HUVN actual de ORL pediátrica: para mastoiditis con alergia anafiláctica se lista levofloxacino, no aztreonam + linezolid.",
     },
+    49: {
+        "reviewNotes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril'. El capítulo no está incorporado como topic independiente en el snapshot actual de guide_topics.json.",
+    },
 }
 SOURCE_REVIEWED_WARNING = "source_reviewed_row_correction_applied"
+SOURCE_CONFIRMED_BY_USER_WARNING = "source_confirmed_by_user"
 
 
 def load_json(path: Path) -> Any:
@@ -83,15 +89,18 @@ def normalize_rows(data: dict[str, Any]) -> int:
             changed += 1
         correction = SOURCE_REVIEWED_ROW_CORRECTIONS.get(row_number)
         if correction:
-            if row[options_idx] != correction["optionsText"]:
+            if "optionsText" in correction and row[options_idx] != correction["optionsText"]:
                 row[options_idx] = correction["optionsText"]
                 changed += 1
-            if row[review_notes_idx] != correction["reviewNotes"]:
+            if "reviewNotes" in correction and row[review_notes_idx] != correction["reviewNotes"]:
                 row[review_notes_idx] = correction["reviewNotes"]
                 changed += 1
             if SOURCE_REVIEWED_WARNING not in warnings:
                 warnings.append(SOURCE_REVIEWED_WARNING)
                 changed += 1
+        if row_number == 49 and SOURCE_CONFIRMED_BY_USER_WARNING not in warnings:
+            warnings.append(SOURCE_CONFIRMED_BY_USER_WARNING)
+            changed += 1
     return changed
 
 
