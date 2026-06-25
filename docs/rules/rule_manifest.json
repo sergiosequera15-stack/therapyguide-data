@@ -1,6 +1,6 @@
 {
-  "version": "0.2.3",
-  "generatedAt": "2026-06-24T00:00:00Z",
+  "version": "0.2.4",
+  "generatedAt": "2026-06-25T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
   "files": {
@@ -51,7 +51,7 @@
       "status": "draft_source_change_detection_summary_only",
       "sourceTextFields": ["contentText", "summary", "contentHtml"],
       "rowCount": 76,
-      "actionRequiredRowCount": 7,
+      "actionRequiredRowCount": 1,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -61,7 +61,7 @@
       "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
       "required": true,
       "status": "manual_source_review_pending",
-      "rowCount": 7,
+      "rowCount": 1,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -108,6 +108,7 @@
   "warnings": [
     "La tabla maestra v2 es borrador y procede solo de la hoja Alergia betalactamicos.",
     "Los informes de fuente y dosis son ayudas de deteccion, no validacion de uso.",
-    "La cola fuente v2 y la worklist de dosis v2 deben revisarse antes de cualquier promocion."
+    "Queda una fila de revision fuente por source topic no incorporado al snapshot actual.",
+    "La worklist de dosis v2 debe revisarse antes de cualquier promocion."
   ]
 }
