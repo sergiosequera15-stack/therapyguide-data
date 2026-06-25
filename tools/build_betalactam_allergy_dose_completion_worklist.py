@@ -7,6 +7,12 @@ from typing import Any
 MASTER_TABLE_PATH = Path("docs/rules/betalactam_allergy_options_master_table_draft.json")
 DOSE_SUMMARY_PATH = Path("docs/rules/generated/betalactam_allergy_master_table_dose_completeness_summary.json")
 OUTPUT_PATH = Path("docs/rules/betalactam_allergy_dose_completion_worklist.json")
+REVIEWER = "Sergio Sequera"
+REVIEWED_AT = "2026-06-25"
+UNSTRUCTURED_REVIEW_NOTE = (
+    "Accepted by Sergio for APP draft display as unstructured source text: show all available doses in optionsText; "
+    "do not infer missing route/frequency and do not convert to calculator logic."
+)
 
 
 def load_json(path: Path) -> Any:
@@ -42,6 +48,7 @@ def main() -> None:
         source_record = master_records.get(row_number)
         if source_record is None:
             raise SystemExit(f"ERROR: rowNumber {row_number} not found in master table")
+        current_options_text = source_record.get("optionsText") or ""
         items.append(
             {
                 "rowNumber": row_number,
@@ -49,7 +56,7 @@ def main() -> None:
                 "subsyndrome": source_record.get("subsyndrome"),
                 "sourceTopicId": source_record.get("sourceTopicId"),
                 "sourceUrl": source_record.get("sourceUrl"),
-                "currentOptionsText": source_record.get("optionsText"),
+                "currentOptionsText": current_options_text,
                 "doseAuditStatus": row.get("status"),
                 "hasDose": row.get("hasDose"),
                 "hasRoute": row.get("hasRoute"),
@@ -58,20 +65,20 @@ def main() -> None:
                 "routeMatches": row.get("routeMatches") or [],
                 "frequencyOrDurationMatches": row.get("frequencyOrDurationMatches") or [],
                 "qualityWarnings": source_record.get("qualityWarnings") or [],
-                "completionStatus": "pending_manual_completion",
-                "completedOptionsText": "",
-                "reviewNote": "",
-                "reviewer": "",
-                "reviewedAt": ""
+                "completionStatus": "accepted_unstructured_source_text",
+                "completedOptionsText": current_options_text,
+                "reviewNote": UNSTRUCTURED_REVIEW_NOTE,
+                "reviewer": REVIEWER,
+                "reviewedAt": REVIEWED_AT
             }
         )
 
     worklist = {
         "metadata": {
             "title": "Beta-lactam allergy dose completion worklist",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "generatedAt": master_table.get("metadata", {}).get("generatedAt", "2026-06-24T00:00:00Z"),
-            "status": "manual_dose_completion_pending",
+            "status": "accepted_unstructured_source_text",
             "source": str(DOSE_SUMMARY_PATH),
             "masterTable": str(MASTER_TABLE_PATH),
             "rowCount": len(items),
@@ -89,8 +96,8 @@ def main() -> None:
             "automaticUpdateAllowed": False,
             "notes": [
                 "Worklist generated from dose completeness audit.",
-                "Rows should be completed from the HUVN source, not inferred.",
-                "completedOptionsText should preserve dose, route and frequency/duration where the source provides them.",
+                "Sergio accepted displaying incomplete dose-audit rows as unstructured source text in APP draft mode.",
+                "completedOptionsText preserves current optionsText and must not be interpreted as structured calculator logic.",
                 "This is not clinical validation and must not be used as CDS."
             ]
         },
@@ -98,7 +105,7 @@ def main() -> None:
     }
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(worklist, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(f"Generated {OUTPUT_PATH} with {len(items)} dose-completion rows")
+    print(f"Generated {OUTPUT_PATH} with {len(items)} accepted unstructured source-text dose rows")
 
 
 if __name__ == "__main__":
