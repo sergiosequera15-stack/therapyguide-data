@@ -1169,23 +1169,26 @@
     {
       "doseMatches": [
         "10 mg",
+        "2 g",
+        "20 mg",
         "400 mg",
-        "500 mg",
         "600 mg"
       ],
       "frequencyOrDurationMatches": [
         "/12 h",
-        "/24 h"
+        "/24 h",
+        "/8 h"
       ],
       "hasDose": true,
       "hasFrequencyOrDuration": true,
       "hasRoute": true,
-      "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+      "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "routeMatches": [
         "IV"
@@ -1230,23 +1233,26 @@
     {
       "doseMatches": [
         "10 mg",
+        "2 g",
+        "20 mg",
         "400 mg",
-        "500 mg",
         "600 mg"
       ],
       "frequencyOrDurationMatches": [
         "/12 h",
-        "/24 h"
+        "/24 h",
+        "/8 h"
       ],
       "hasDose": true,
       "hasFrequencyOrDuration": true,
       "hasRoute": true,
-      "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
+      "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "routeMatches": [
         "IV"
@@ -1844,26 +1850,29 @@
     },
     {
       "doseMatches": [
-        "150 mg",
-        "30 mg",
-        "60 mg"
+        "10 mg",
+        "60 mg",
+        "750 mg"
       ],
       "frequencyOrDurationMatches": [
-        "cada 12 h",
-        "cada 8 h"
+        "/12 h",
+        "/24 h",
+        "cada 12 h"
       ],
       "hasDose": true,
       "hasFrequencyOrDuration": true,
       "hasRoute": true,
-      "optionsText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: aztreonam 150 mg/kg/día cada 8 h IV + linezolid 30 mg/kg/día cada 8 h IV.",
+      "optionsText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "allergy_reaction_subtype_present",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "routeMatches": [
-        "IV"
+        "IV",
+        "oral"
       ],
       "rowNumber": 70,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",

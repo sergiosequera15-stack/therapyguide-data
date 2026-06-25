@@ -749,8 +749,8 @@
       "Artritis séptica comunitaria sin FR BLEE/SARM",
       "Adultos",
       "Alergia a beta-lactámicos",
-      "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
-      "Agrupación tomada literalmente; conviene validar si la intención es (dapto/linezolid) + (cipro/levo) o alternativas independientes.",
+      "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+      "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
       "11",
       "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
       "infeccion_osteoarticular",
@@ -758,7 +758,8 @@
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ]
     ],
     [
@@ -786,8 +787,8 @@
       "Osteomielitis comunitaria sin FR BLEE/SARM",
       "Adultos",
       "Alergia a beta-lactámicos",
-      "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
-      "Agrupación tomada literalmente; conviene validar si la intención es (dapto/linezolid) + (cipro/levo) o alternativas independientes.",
+      "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+      "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
       "11",
       "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
       "infeccion_osteoarticular",
@@ -795,7 +796,8 @@
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ]
     ],
     [
@@ -1155,8 +1157,8 @@
       "Mastoiditis",
       "Pediatría",
       "Alergia a penicilina no anafiláctica o anafiláctica",
-      "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: aztreonam 150 mg/kg/día cada 8 h IV + linezolid 30 mg/kg/día cada 8 h IV.",
-      "Duración orientativa en guía: 7-10 días.",
+      "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
+      "Corregido frente a fuente HUVN actual de ORL pediátrica: para mastoiditis con alergia anafiláctica se lista levofloxacino, no aztreonam + linezolid.",
       "15",
       "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
       "infecciones_orl_en_pacientes_pediatricos",
@@ -1164,7 +1166,8 @@
         "age_or_weight_specific_review_needed",
         "allergy_reaction_subtype_present",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ]
     ],
     [

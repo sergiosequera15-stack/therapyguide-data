@@ -19,8 +19,7 @@
     ],
     "status": "draft_source_change_detection_only",
     "statusCounts": {
-      "possible_option_change_or_table_source_mismatch": 3,
-      "source_contains_table_drug_tokens": 72,
+      "source_contains_table_drug_tokens": 75,
       "source_not_found": 1
     },
     "table": "docs/rules/betalactam_allergy_options_master_table_draft.json",
@@ -842,27 +841,25 @@
     },
     {
       "drugTokens": [
+        "amikacina",
+        "aztreonam",
         "ciprofloxacino",
         "daptomicina",
-        "levofloxacino",
         "linezolid"
       ],
-      "missingDrugTokens": [
-        "levofloxacino"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "rowNumber": 44,
       "sourceTopicId": "infeccion_osteoarticular",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Artritis séptica comunitaria sin FR BLEE/SARM",
       "syndrome": "Osteoarticular"
     },
@@ -890,27 +887,25 @@
     },
     {
       "drugTokens": [
+        "amikacina",
+        "aztreonam",
         "ciprofloxacino",
         "daptomicina",
-        "levofloxacino",
         "linezolid"
       ],
-      "missingDrugTokens": [
-        "levofloxacino"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "rowNumber": 46,
       "sourceTopicId": "infeccion_osteoarticular",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infeccion_osteoarticular",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Osteomielitis comunitaria sin FR BLEE/SARM",
       "syndrome": "Osteoarticular"
     },
@@ -1310,27 +1305,22 @@
     },
     {
       "drugTokens": [
-        "aztreonam",
         "cefuroxima",
-        "linezolid"
+        "levofloxacino"
       ],
-      "missingDrugTokens": [
-        "aztreonam",
-        "linezolid"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "allergy_reaction_subtype_present",
         "contains_beta_lactam_or_possible_cross_reactivity_option",
-        "review_note_present"
+        "review_note_present",
+        "source_reviewed_row_correction_applied"
       ],
       "rowNumber": 70,
       "sourceTopicId": "infecciones_orl_en_pacientes_pediatricos",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Mastoiditis",
       "syndrome": "ORL pediátrica"
     },
