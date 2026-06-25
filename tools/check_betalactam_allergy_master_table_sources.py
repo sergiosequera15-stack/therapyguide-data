@@ -62,6 +62,8 @@ DRUG_ALIASES: dict[str, list[str]] = {
 DRUG_RE = re.compile(r"\b(" + "|".join(sorted(map(re.escape, DRUG_ALIASES), key=len, reverse=True)) + r")\b", re.IGNORECASE)
 RISKY_STATUSES = {"source_not_found", "possible_option_change_or_table_source_mismatch", "needs_manual_review_no_drug_tokens_detected"}
 SOURCE_TEXT_FIELDS = ("contentText", "summary", "contentHtml")
+SOURCE_CONFIRMED_BY_USER_WARNING = "source_confirmed_by_user"
+SOURCE_TOPIC_NOT_IN_SNAPSHOT_WARNING = "source_topic_not_in_current_guide_topics"
 
 
 def load_json(path: Path) -> Any:
@@ -160,6 +162,11 @@ def check_record(record: dict[str, Any], by_id: dict[str, dict[str, Any]], by_ur
         "notes": [],
     }
     if topic is None:
+        warnings = set(result["qualityWarnings"])
+        if SOURCE_CONFIRMED_BY_USER_WARNING in warnings and SOURCE_TOPIC_NOT_IN_SNAPSHOT_WARNING in warnings:
+            result["status"] = "source_confirmed_outside_current_snapshot"
+            result["notes"].append("Source chapter was confirmed by user but is not present in the committed guide_topics.json snapshot.")
+            return result
         result["status"] = "source_not_found"
         result["notes"].append("No matching topic found by sourceTopicId or sourceUrl.")
         return result
