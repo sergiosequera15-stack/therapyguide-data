@@ -1,32 +1,6 @@
 {
   "items": [
     {
-      "allergyContext": "Alergia a betalactámicos",
-      "currentOptionsText": "Aztreonam 2 g/8 h IV + tigeciclina 200 mg IV dosis inicial, luego 100 mg/12 h IV. En caso de insuficiencia respiratoria asociar levofloxacino 500 mg/12 h IV.",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
-      "missingDrugTokens": [
-        "tigeciclina"
-      ],
-      "population": "Adultos",
-      "qualityWarnings": [
-        "alternative_or_contextual_source_wording",
-        "resistance_risk_context_present",
-        "review_note_present"
-      ],
-      "resolutionNote": "",
-      "resolutionStatus": "pending_manual_review",
-      "resolvedOptionsText": "",
-      "reviewNotes": "En casos graves, la página comenta dosis de carga de aztreonam y valorar doblar dosis inicial en neumonía nosocomial por BLEE/AMPC.",
-      "reviewedAt": "",
-      "reviewer": "",
-      "rowNumber": 14,
-      "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-      "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
-      "syndrome": "Neumonía"
-    },
-    {
       "allergyContext": "Alergia a beta-lactámicos",
       "currentOptionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/12 h IV o levofloxacino 500 mg/12 h IV.",
       "detectedIssue": "possible_option_change_or_table_source_mismatch",
@@ -132,58 +106,6 @@
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_orl/infecciones_orl_en_pacientes_pediatricos",
       "subsyndrome": "Mastoiditis",
       "syndrome": "ORL pediátrica"
-    },
-    {
-      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
-      "currentOptionsText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "population": "Adultos",
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_or_contextual_source_wording",
-        "review_note_present"
-      ],
-      "resolutionNote": "",
-      "resolutionStatus": "pending_manual_review",
-      "resolvedOptionsText": "",
-      "reviewNotes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
-      "reviewedAt": "",
-      "reviewer": "",
-      "rowNumber": 75,
-      "sourceTopicId": "infecciones_endovasculares",
-      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-      "subsyndrome": "Endocarditis en ADVP",
-      "syndrome": "Endovascular"
-    },
-    {
-      "allergyContext": "Antibioterapia alternativa libre de betalactámicos",
-      "currentOptionsText": "Daptomicina 10 mg/kg IV cada 24 h + fosfomicina sódica 2 g IV cada 6 h.",
-      "detectedIssue": "possible_option_change_or_table_source_mismatch",
-      "manualReviewAction": "Verify current HUVN source text and decide whether to accept as source-reviewed, correct the master row, or keep as explicitly accepted exception.",
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "population": "Adultos",
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_or_contextual_source_wording",
-        "review_note_present"
-      ],
-      "resolutionNote": "",
-      "resolutionStatus": "pending_manual_review",
-      "resolvedOptionsText": "",
-      "reviewNotes": "La guía la marca como “Antibioterapia alternativa”, no específicamente como alergia; se incluye por ser pauta libre de betalactámicos.",
-      "reviewedAt": "",
-      "reviewer": "",
-      "rowNumber": 76,
-      "sourceTopicId": "infecciones_endovasculares",
-      "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
-      "syndrome": "Endovascular"
     }
   ],
   "metadata": {
@@ -208,7 +130,7 @@
       "This is source-review support only and must not be used as CDS."
     ],
     "readyForAppConsultant": false,
-    "rowCount": 7,
+    "rowCount": 4,
     "source": "docs/rules/generated/betalactam_allergy_master_table_source_check_summary.json",
     "status": "manual_source_review_pending",
     "therapeuticRecommendationAllowed": false,

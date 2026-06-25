@@ -19,8 +19,8 @@
     ],
     "status": "draft_source_change_detection_only",
     "statusCounts": {
-      "possible_option_change_or_table_source_mismatch": 6,
-      "source_contains_table_drug_tokens": 69,
+      "possible_option_change_or_table_source_mismatch": 3,
+      "source_contains_table_drug_tokens": 72,
       "source_not_found": 1
     },
     "table": "docs/rules/betalactam_allergy_options_master_table_draft.json",
@@ -282,12 +282,8 @@
         "levofloxacino",
         "tigeciclina"
       ],
-      "missingDrugTokens": [
-        "tigeciclina"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
@@ -296,7 +292,7 @@
       "rowNumber": 14,
       "sourceTopicId": "neumonia_en_pacientes_adultos",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/neumonia_en_pacientes_adultos",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
       "syndrome": "Neumonía"
     },
@@ -1416,12 +1412,8 @@
         "daptomicina",
         "fosfomicina"
       ],
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -1430,7 +1422,7 @@
       "rowNumber": 75,
       "sourceTopicId": "infecciones_endovasculares",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Endocarditis en ADVP",
       "syndrome": "Endovascular"
     },
@@ -1439,12 +1431,8 @@
         "daptomicina",
         "fosfomicina"
       ],
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "notes": [
-        "One or more drug tokens from the table were not found in the current source topic text."
-      ],
+      "missingDrugTokens": [],
+      "notes": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -1453,7 +1441,7 @@
       "rowNumber": 76,
       "sourceTopicId": "infecciones_endovasculares",
       "sourceUrl": "https://www.huvn.es/profesionales/de_interes_sanitario/proa_programa_de_optimizacion_de_la_antibioterapia/guia_de_antibioterapia/infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
       "syndrome": "Endovascular"
     }

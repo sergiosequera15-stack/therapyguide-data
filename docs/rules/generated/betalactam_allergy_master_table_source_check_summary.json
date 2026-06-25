@@ -2,21 +2,6 @@
   "actionRequiredRows": [
     {
       "missingDrugTokens": [
-        "tigeciclina"
-      ],
-      "qualityWarnings": [
-        "alternative_or_contextual_source_wording",
-        "resistance_risk_context_present",
-        "review_note_present"
-      ],
-      "rowNumber": 14,
-      "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "status": "possible_option_change_or_table_source_mismatch",
-      "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
-      "syndrome": "Neumonía"
-    },
-    {
-      "missingDrugTokens": [
         "levofloxacino"
       ],
       "qualityWarnings": [
@@ -77,40 +62,10 @@
       "status": "possible_option_change_or_table_source_mismatch",
       "subsyndrome": "Mastoiditis",
       "syndrome": "ORL pediátrica"
-    },
-    {
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_or_contextual_source_wording",
-        "review_note_present"
-      ],
-      "rowNumber": 75,
-      "sourceTopicId": "infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
-      "subsyndrome": "Endocarditis en ADVP",
-      "syndrome": "Endovascular"
-    },
-    {
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
-      "qualityWarnings": [
-        "age_or_weight_specific_review_needed",
-        "alternative_or_contextual_source_wording",
-        "review_note_present"
-      ],
-      "rowNumber": 76,
-      "sourceTopicId": "infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
-      "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
-      "syndrome": "Endovascular"
     }
   ],
   "metadata": {
-    "actionRequiredRowCount": 7,
+    "actionRequiredRowCount": 4,
     "clinicalDecisionSupportAllowed": false,
     "clinicalUseAllowed": false,
     "generatedAt": "2026-06-24T00:00:00Z",
@@ -129,8 +84,8 @@
     ],
     "status": "draft_source_change_detection_summary_only",
     "statusCounts": {
-      "possible_option_change_or_table_source_mismatch": 6,
-      "source_contains_table_drug_tokens": 69,
+      "possible_option_change_or_table_source_mismatch": 3,
+      "source_contains_table_drug_tokens": 72,
       "source_not_found": 1
     },
     "therapeuticRecommendationAllowed": false,
@@ -269,9 +224,7 @@
       "syndrome": "Neumonía"
     },
     {
-      "missingDrugTokens": [
-        "tigeciclina"
-      ],
+      "missingDrugTokens": [],
       "qualityWarnings": [
         "alternative_or_contextual_source_wording",
         "resistance_risk_context_present",
@@ -279,7 +232,7 @@
       ],
       "rowNumber": 14,
       "sourceTopicId": "neumonia_en_pacientes_adultos",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Neumonía nosocomial o NAC con FR MDR",
       "syndrome": "Neumonía"
     },
@@ -909,9 +862,7 @@
       "syndrome": "Ocular"
     },
     {
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
+      "missingDrugTokens": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -919,14 +870,12 @@
       ],
       "rowNumber": 75,
       "sourceTopicId": "infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Endocarditis en ADVP",
       "syndrome": "Endovascular"
     },
     {
-      "missingDrugTokens": [
-        "fosfomicina"
-      ],
+      "missingDrugTokens": [],
       "qualityWarnings": [
         "age_or_weight_specific_review_needed",
         "alternative_or_contextual_source_wording",
@@ -934,7 +883,7 @@
       ],
       "rowNumber": 76,
       "sourceTopicId": "infecciones_endovasculares",
-      "status": "possible_option_change_or_table_source_mismatch",
+      "status": "source_contains_table_drug_tokens",
       "subsyndrome": "Endocarditis asociada a dispositivos intracardiacos",
       "syndrome": "Endovascular"
     }
