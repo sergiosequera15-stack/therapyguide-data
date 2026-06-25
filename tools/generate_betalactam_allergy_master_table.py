@@ -21,6 +21,21 @@ KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT = {
     "infeccion_intraabdominal_en_pacientes_pediatricos",
     "neutropenia_febril",
 }
+SOURCE_REVIEWED_ROW_CORRECTIONS = {
+    44: {
+        "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+        "reviewNotes": "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
+    },
+    46: {
+        "optionsText": "Daptomicina 10 mg/kg/24 h IV o linezolid 600 mg/12 h IV + ciprofloxacino 400 mg/8-12 h IV o aztreonam 2 g/8 h IV o amikacina 15-20 mg/kg/24 h IV.",
+        "reviewNotes": "Corregido frente a fuente HUVN actual: la pauta de alergia a betalactámicos lista ciprofloxacino, aztreonam o amikacina; no levofloxacino.",
+    },
+    70: {
+        "optionsText": "No anafiláctica: cefuroxima 60 mg/kg/día cada 12 h IV. Anafiláctica a betalactámicos: levofloxacino oral o IV 10 mg/kg/12 h en <5 años y 10 mg/kg/24 h en >5 años, dosis máxima 750 mg/día.",
+        "reviewNotes": "Corregido frente a fuente HUVN actual de ORL pediátrica: para mastoiditis con alergia anafiláctica se lista levofloxacino, no aztreonam + linezolid.",
+    },
+}
+SOURCE_REVIEWED_WARNING = "source_reviewed_row_correction_applied"
 
 
 def load_json(path: Path) -> Any:
@@ -41,6 +56,8 @@ def normalize_rows(data: dict[str, Any]) -> int:
         topic_idx = columns.index("sourceTopicId")
         url_idx = columns.index("sourceUrl")
         warning_idx = columns.index("qualityWarnings")
+        options_idx = columns.index("optionsText")
+        review_notes_idx = columns.index("reviewNotes")
     except ValueError as exc:
         raise SystemExit("ERROR: compact_rows_v2 source columns are missing") from exc
 
@@ -64,6 +81,17 @@ def normalize_rows(data: dict[str, Any]) -> int:
         if row[topic_idx] in KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT and "source_topic_not_in_current_guide_topics" not in warnings:
             warnings.append("source_topic_not_in_current_guide_topics")
             changed += 1
+        correction = SOURCE_REVIEWED_ROW_CORRECTIONS.get(row_number)
+        if correction:
+            if row[options_idx] != correction["optionsText"]:
+                row[options_idx] = correction["optionsText"]
+                changed += 1
+            if row[review_notes_idx] != correction["reviewNotes"]:
+                row[review_notes_idx] = correction["reviewNotes"]
+                changed += 1
+            if SOURCE_REVIEWED_WARNING not in warnings:
+                warnings.append(SOURCE_REVIEWED_WARNING)
+                changed += 1
     return changed
 
 
