@@ -29,9 +29,6 @@ jobs:
       - name: Verify data modules
         run: python tools/validate_data_modules.py
 
-      - name: Validate beta-lactam allergy consultant
-        run: python tools/validate_betalactam_allergy_consultant.py
-
       - name: Generate beta-lactam allergy option candidates
         run: python tools/extract_betalactam_allergy_option_candidates.py
 
@@ -46,6 +43,12 @@ jobs:
 
       - name: Validate beta-lactam allergy master table draft
         run: python tools/validate_betalactam_allergy_master_table.py
+
+      - name: Build beta-lactam allergy consultant options
+        run: python tools/build_betalactam_allergy_consultant.py
+
+      - name: Validate beta-lactam allergy consultant
+        run: python tools/validate_betalactam_allergy_consultant.py
 
       - name: Check beta-lactam allergy master table against current guide topics
         run: python tools/check_betalactam_allergy_master_table_sources.py
@@ -71,6 +74,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
+            docs/rules/betalactam_allergy_consultant.json \
             docs/rules/betalactam_allergy_options_candidate.json \
             docs/rules/betalactam_allergy_options_candidate_summary.json \
             docs/rules/betalactam_allergy_options_curation_worklist.json \
@@ -135,6 +139,7 @@ jobs:
         with:
           name: betalactam-allergy-artifacts
           path: |
+            docs/rules/betalactam_allergy_consultant.json
             docs/rules/betalactam_allergy_options_candidate.json
             docs/rules/betalactam_allergy_options_candidate_summary.json
             docs/rules/betalactam_allergy_options_curation_worklist.json
