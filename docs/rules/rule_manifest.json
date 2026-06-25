@@ -1,5 +1,5 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.5",
   "generatedAt": "2026-06-25T00:00:00Z",
   "status": "draft",
   "basePath": "rules/",
@@ -26,7 +26,7 @@
     "betalactamAllergyMasterTableDraft": {
       "path": "rules/betalactam_allergy_options_master_table_draft.json",
       "required": true,
-      "status": "draft_pending_source_verification_and_manual_review",
+      "status": "draft_pending_app_facing_module",
       "schema": "compact_rows_v2",
       "rowCount": 76,
       "clinicalUseAllowed": false,
@@ -51,7 +51,7 @@
       "status": "draft_source_change_detection_summary_only",
       "sourceTextFields": ["contentText", "summary", "contentHtml"],
       "rowCount": 76,
-      "actionRequiredRowCount": 1,
+      "actionRequiredRowCount": 0,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -60,8 +60,8 @@
     "betalactamAllergySourceReviewQueue": {
       "path": "rules/betalactam_allergy_master_table_manual_review_queue.json",
       "required": true,
-      "status": "manual_source_review_pending",
-      "rowCount": 1,
+      "status": "manual_source_review_clear",
+      "rowCount": 0,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
       "therapeuticRecommendationAllowed": false,
@@ -92,7 +92,7 @@
     "betalactamAllergyDoseCompletionWorklist": {
       "path": "rules/betalactam_allergy_dose_completion_worklist.json",
       "required": true,
-      "status": "manual_dose_completion_pending",
+      "status": "accepted_unstructured_source_text",
       "rowCount": 13,
       "clinicalUseAllowed": false,
       "clinicalDecisionSupportAllowed": false,
@@ -108,7 +108,7 @@
   "warnings": [
     "La tabla maestra v2 es borrador y procede solo de la hoja Alergia betalactamicos.",
     "Los informes de fuente y dosis son ayudas de deteccion, no validacion de uso.",
-    "Queda una fila de revision fuente por source topic no incorporado al snapshot actual.",
-    "La worklist de dosis v2 debe revisarse antes de cualquier promocion."
+    "La indicacion de neutropenia febril fue confirmada por Sergio como perteneciente al capitulo Manejo de Neutropenia Febril.",
+    "Las dosis incompletas estructuralmente se aceptan para visualizacion como texto fuente no estructurado; no son calculadora ni logica CDS."
   ]
 }
