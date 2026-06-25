@@ -21,7 +21,6 @@ SOURCE_URL_ALIASES = {
 }
 KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT = {
     "infeccion_intraabdominal_en_pacientes_pediatricos",
-    "manejo_de_neutropenia_febril",
 }
 SOURCE_REVIEWED_ROW_CORRECTIONS = {
     44: {
@@ -37,11 +36,12 @@ SOURCE_REVIEWED_ROW_CORRECTIONS = {
         "reviewNotes": "Corregido frente a fuente HUVN actual de ORL pediátrica: para mastoiditis con alergia anafiláctica se lista levofloxacino, no aztreonam + linezolid.",
     },
     49: {
-        "reviewNotes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril'. El capítulo no está incorporado como topic independiente en el snapshot actual de guide_topics.json.",
+        "reviewNotes": "Fuente confirmada por Sergio: la indicación pertenece al capítulo HUVN 'Manejo de Neutropenia Febril', presente en guide_topics.json como manejo_de_neutropenia_febril.",
     },
 }
 SOURCE_REVIEWED_WARNING = "source_reviewed_row_correction_applied"
 SOURCE_CONFIRMED_BY_USER_WARNING = "source_confirmed_by_user"
+SNAPSHOT_MISSING_WARNING = "source_topic_not_in_current_guide_topics"
 
 
 def load_json(path: Path) -> Any:
@@ -84,8 +84,11 @@ def normalize_rows(data: dict[str, Any]) -> int:
         warnings = row[warning_idx]
         if not isinstance(warnings, list):
             raise SystemExit(f"ERROR: row {row_number} qualityWarnings must be a list")
-        if row[topic_idx] in KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT and "source_topic_not_in_current_guide_topics" not in warnings:
-            warnings.append("source_topic_not_in_current_guide_topics")
+        if row[topic_idx] in KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT and SNAPSHOT_MISSING_WARNING not in warnings:
+            warnings.append(SNAPSHOT_MISSING_WARNING)
+            changed += 1
+        if row[topic_idx] not in KNOWN_SOURCE_TOPICS_NOT_IN_CURRENT_GUIDE_SNAPSHOT and SNAPSHOT_MISSING_WARNING in warnings:
+            warnings.remove(SNAPSHOT_MISSING_WARNING)
             changed += 1
         correction = SOURCE_REVIEWED_ROW_CORRECTIONS.get(row_number)
         if correction:
