@@ -1,21 +1,33 @@
 {
-  "generatedAt": "2026-06-18T00:00:00Z",
-  "status": "passed_with_disabled_draft_tools",
+  "generatedAt": "2026-06-26T00:00:00Z",
+  "status": "passed_with_single_validated_renal_function_calculator",
   "checkedFiles": [
     "tools/scores.json",
     "tools/dose_calculators.json"
   ],
   "summary": {
     "scoreCount": 1,
-    "calculatorCount": 1,
-    "enabledCalculatorCount": 0,
-    "validatedCalculatorCount": 0,
+    "calculatorCount": 2,
+    "enabledCalculatorCount": 1,
+    "validatedCalculatorCount": 1,
     "errors": 0,
     "warnings": 2
   },
+  "validatedCalculators": [
+    {
+      "id": "cockcroft_gault_clcr_rccc",
+      "title": "ClCr estimado (Cockcroft-Gault)",
+      "status": "validated",
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "automaticDoseAdjustmentAllowed": false,
+      "testCaseCount": 3,
+      "sourceUrl": "https://www.rccc.eu/Nefro/IFG.html"
+    }
+  ],
   "warnings": [
-    "Todos los scores están en estado draft o sin implementación completa.",
-    "No hay calculadoras activas validadas todavía."
+    "La calculadora Cockcroft-Gault estima función renal; no ajusta automáticamente dosis de antimicrobianos.",
+    "El resto de scores/calculadoras permanecen en estado draft o sin implementación completa."
   ],
   "errors": []
 }
