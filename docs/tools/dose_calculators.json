@@ -1,25 +1,154 @@
 {
   "metadata": {
     "title": "Calculadoras de dosis",
-    "version": "0.1.0",
-    "generatedAt": "2026-06-18T00:00:00Z",
-    "validationStatus": "draft",
+    "version": "0.2.0",
+    "generatedAt": "2026-06-26T00:00:00Z",
+    "validationStatus": "validated_with_single_renal_function_calculator",
     "allowedFormulaKinds": [
+      "cockcroft_gault",
       "mg_per_kg",
       "mg_per_kg_per_day",
       "max_dose",
       "simple_rounding",
-      "cockcroft_gault",
       "weight_descriptor"
-    ]
+    ],
+    "clinicalDecisionSupportAllowed": false,
+    "therapeuticRecommendationAllowed": false,
+    "automaticDoseAdjustmentAllowed": false
   },
   "calculators": [
+    {
+      "id": "cockcroft_gault_clcr_rccc",
+      "title": "ClCr estimado (Cockcroft-Gault)",
+      "category": "renal_function_for_dose_adjustment",
+      "type": "renal_function",
+      "enabled": true,
+      "validated": true,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "automaticDoseAdjustmentAllowed": false,
+      "drug": null,
+      "inputs": [
+        {
+          "id": "ageYears",
+          "label": "Edad",
+          "unit": "años",
+          "type": "number",
+          "required": true,
+          "min": 1,
+          "max": 120
+        },
+        {
+          "id": "weightKg",
+          "label": "Peso",
+          "unit": "kg",
+          "type": "number",
+          "required": true,
+          "min": 1,
+          "max": 300
+        },
+        {
+          "id": "serumCreatinineMgDl",
+          "label": "Creatinina sérica",
+          "unit": "mg/dL",
+          "type": "number",
+          "required": true,
+          "min": 0.1,
+          "max": 20
+        },
+        {
+          "id": "sex",
+          "label": "Sexo",
+          "type": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "male",
+              "label": "Varón"
+            },
+            {
+              "value": "female",
+              "label": "Mujer"
+            }
+          ]
+        }
+      ],
+      "formula": {
+        "kind": "cockcroft_gault",
+        "maleExpression": "((140 - ageYears) * weightKg) / (serumCreatinineMgDl * 72)",
+        "femaleMultiplier": 0.85,
+        "rounding": {
+          "decimals": 1,
+          "mode": "nearest"
+        }
+      },
+      "output": {
+        "unit": "mL/min",
+        "label": "Aclaramiento de creatinina estimado",
+        "precision": 1
+      },
+      "warnings": [
+        "Herramienta de cálculo. No ajusta automáticamente dosis de antimicrobianos.",
+        "Usar solo si la fórmula Cockcroft-Gault es adecuada para el contexto clínico. Revisar peso usado e interpretación clínica."
+      ],
+      "source": {
+        "sourceName": "RCCC",
+        "sourceCalculatorTitle": "Indice de Filtración Glomerular Clcr estimado (Cockcroft-Gault)",
+        "sourceUrl": "https://www.rccc.eu/Nefro/IFG.html",
+        "sourceText": "ClCr-varón = ((140 - edad años) x Peso kg) / Cr sérica x 72; ClCr-Mujer = (ClCr varón) x 0.85",
+        "reference": "Cockroft DW, Gault MH. Prediction of creatinine clearance from serum creatinine. Nephron. 1976;16(1):31-41."
+      },
+      "validation": {
+        "status": "validated",
+        "validatedAt": "2026-06-26T00:00:00Z",
+        "testCases": [
+          {
+            "id": "male_60y_70kg_cr1",
+            "inputs": {
+              "ageYears": 60,
+              "weightKg": 70,
+              "serumCreatinineMgDl": 1,
+              "sex": "male"
+            },
+            "expectedValue": 77.8,
+            "expectedUnit": "mL/min",
+            "tolerance": 0.05
+          },
+          {
+            "id": "female_60y_70kg_cr1",
+            "inputs": {
+              "ageYears": 60,
+              "weightKg": 70,
+              "serumCreatinineMgDl": 1,
+              "sex": "female"
+            },
+            "expectedValue": 66.1,
+            "expectedUnit": "mL/min",
+            "tolerance": 0.05
+          },
+          {
+            "id": "invalid_zero_creatinine",
+            "inputs": {
+              "ageYears": 60,
+              "weightKg": 70,
+              "serumCreatinineMgDl": 0,
+              "sex": "male"
+            },
+            "expectError": true
+          }
+        ]
+      }
+    },
     {
       "id": "example_mg_per_kg_disabled",
       "title": "Ejemplo de calculadora mg/kg pendiente de validación",
       "type": "dose_by_weight",
       "drug": null,
       "enabled": false,
+      "validated": false,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "automaticDoseAdjustmentAllowed": false,
       "inputs": [
         {
           "id": "weightKg",
