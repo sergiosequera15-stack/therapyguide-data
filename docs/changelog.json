@@ -1,7 +1,23 @@
 {
-  "version": 2,
-  "generatedAt": "2026-06-25T00:00:00Z",
+  "version": 3,
+  "generatedAt": "2026-06-26T00:00:00Z",
   "entries": [
+    {
+      "id": "2026-06-26-cockcroft-gault-calculator",
+      "date": "2026-06-26",
+      "type": "app_tools_calculator",
+      "title": "Calculadora Cockcroft-Gault",
+      "description": "Se añade una herramienta local para estimar ClCr mediante Cockcroft-Gault basada en RCCC. Es solo una calculadora renal y no modifica tratamientos.",
+      "priority": "high"
+    },
+    {
+      "id": "2026-06-26-topic-allergy-compact-plan",
+      "date": "2026-06-26",
+      "type": "app_consultant_layout",
+      "title": "Consultor de alergia preparado para vista compacta por tema",
+      "description": "Se prepara el consultor para filtrado por tema y vista compacta colapsada, manteniendo texto fuente y bloqueo de automatismos clínicos.",
+      "priority": "normal"
+    },
     {
       "id": "2026-06-25-pdf-opening-share-sheet",
       "date": "2026-06-25",
