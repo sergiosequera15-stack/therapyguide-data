@@ -1,11 +1,12 @@
 {
   "metadata": {
     "title": "Calculadoras de dosis",
-    "version": "0.2.0",
-    "generatedAt": "2026-06-26T00:00:00Z",
-    "validationStatus": "validated_with_single_renal_function_calculator",
+    "version": "0.3.0",
+    "generatedAt": "2026-07-01T00:00:00Z",
+    "validationStatus": "validated_with_two_general_calculators",
     "allowedFormulaKinds": [
       "cockcroft_gault",
+      "bsa_mosteller",
       "mg_per_kg",
       "mg_per_kg_per_day",
       "max_dose",
@@ -133,6 +134,96 @@
               "weightKg": 70,
               "serumCreatinineMgDl": 0,
               "sex": "male"
+            },
+            "expectError": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bsa_mosteller",
+      "title": "Superficie corporal estimada (Mosteller)",
+      "category": "anthropometry",
+      "type": "body_surface_area",
+      "enabled": true,
+      "validated": true,
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "automaticDoseAdjustmentAllowed": false,
+      "drug": null,
+      "inputs": [
+        {
+          "id": "heightCm",
+          "label": "Talla",
+          "unit": "cm",
+          "type": "number",
+          "required": true,
+          "min": 30,
+          "max": 250
+        },
+        {
+          "id": "weightKg",
+          "label": "Peso",
+          "unit": "kg",
+          "type": "number",
+          "required": true,
+          "min": 1,
+          "max": 300
+        }
+      ],
+      "formula": {
+        "kind": "bsa_mosteller",
+        "expression": "sqrt((heightCm * weightKg) / 3600)",
+        "rounding": {
+          "decimals": 2,
+          "mode": "nearest"
+        }
+      },
+      "output": {
+        "unit": "m²",
+        "label": "Superficie corporal estimada",
+        "precision": 2
+      },
+      "warnings": [
+        "Herramienta antropométrica. No recomienda tratamiento ni ajusta dosis automáticamente.",
+        "Interpretar el resultado en el contexto clínico y de la fuente que lo requiera."
+      ],
+      "source": {
+        "sourceName": "Mosteller RD",
+        "sourceCalculatorTitle": "Simplified calculation of body-surface area",
+        "sourceUrl": "https://www.nejm.org/doi/full/10.1056/NEJM198710223171717",
+        "sourceText": "BSA (m²) = sqrt((height cm x weight kg) / 3600)",
+        "reference": "Mosteller RD. Simplified calculation of body-surface area. N Engl J Med. 1987;317:1098."
+      },
+      "validation": {
+        "status": "validated",
+        "validatedAt": "2026-07-01T00:00:00Z",
+        "testCases": [
+          {
+            "id": "adult_170cm_70kg",
+            "inputs": {
+              "heightCm": 170,
+              "weightKg": 70
+            },
+            "expectedValue": 1.82,
+            "expectedUnit": "m²",
+            "tolerance": 0.005
+          },
+          {
+            "id": "adult_160cm_60kg",
+            "inputs": {
+              "heightCm": 160,
+              "weightKg": 60
+            },
+            "expectedValue": 1.63,
+            "expectedUnit": "m²",
+            "tolerance": 0.005
+          },
+          {
+            "id": "invalid_zero_height",
+            "inputs": {
+              "heightCm": 0,
+              "weightKg": 70
             },
             "expectError": true
           }
