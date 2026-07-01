@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-26T00:00:00Z",
-  "status": "passed_with_single_validated_renal_function_calculator",
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "status": "passed_with_two_validated_general_calculators",
   "checkedFiles": [
     "tools/scores.json",
     "tools/dose_calculators.json"
   ],
   "summary": {
     "scoreCount": 1,
-    "calculatorCount": 2,
-    "enabledCalculatorCount": 1,
-    "validatedCalculatorCount": 1,
+    "calculatorCount": 3,
+    "enabledCalculatorCount": 2,
+    "validatedCalculatorCount": 2,
     "errors": 0,
     "warnings": 2
   },
@@ -23,11 +23,21 @@
       "automaticDoseAdjustmentAllowed": false,
       "testCaseCount": 3,
       "sourceUrl": "https://www.rccc.eu/Nefro/IFG.html"
+    },
+    {
+      "id": "bsa_mosteller",
+      "title": "Superficie corporal estimada (Mosteller)",
+      "status": "validated",
+      "clinicalDecisionSupportAllowed": false,
+      "therapeuticRecommendationAllowed": false,
+      "automaticDoseAdjustmentAllowed": false,
+      "testCaseCount": 3,
+      "sourceUrl": "https://www.nejm.org/doi/full/10.1056/NEJM198710223171717"
     }
   ],
   "warnings": [
     "La calculadora Cockcroft-Gault estima función renal; no ajusta automáticamente dosis de antimicrobianos.",
-    "El resto de scores/calculadoras permanecen en estado draft o sin implementación completa."
+    "La calculadora Mosteller estima superficie corporal; no recomienda tratamiento ni ajusta dosis automáticamente."
   ],
   "errors": []
 }
